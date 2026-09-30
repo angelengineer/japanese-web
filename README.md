@@ -58,6 +58,12 @@ translation. New verbs show up under `--todo`: translate them in a new
 duplicate senses, and overrides 14 rows whose Notion `Grupo` is wrong
 (see `GROUP_FIXES`; remove an entry once it is fixed in Notion).
 
+## Deploying
+
+GitHub Pages lets browsers cache assets for 10 minutes, so after changing
+anything under `js/`, `css/` or `data/` run `scripts/bump_version.sh` before
+committing; it stamps a fresh `?v=` on every asset link.
+
 ## Run locally
 
 Open `index.html` directly, or `python3 -m http.server` and visit http://localhost:8000.
