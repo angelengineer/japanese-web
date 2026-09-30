@@ -167,3 +167,32 @@ footer a { color: inherit; }
   .stats { gap: 12px; }
 }
 #answer::placeholder { font-size: 1rem; font-weight: 400; color: var(--muted); vertical-align: middle; }
+
+/* help link + help page */
+.stats { align-items: center; }
+a.help {
+  display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  border: 1px solid var(--border); color: var(--muted); text-decoration: none; font-weight: 700;
+}
+a.help:hover, a.help:focus-visible { border-color: var(--accent); color: var(--accent); }
+.hint a { color: inherit; }
+
+.doc { line-height: 1.65; }
+.doc section { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); padding: 4px 20px 16px; margin-bottom: 14px; }
+.doc h2 { font-size: 1.1rem; margin: 16px 0 8px; }
+.doc h3 { font-size: 1rem; margin: 18px 0 4px; }
+.doc h3 .ja { font-family: var(--jp); color: var(--accent); margin-right: .35em; }
+.doc p, .doc li { color: var(--text); }
+.doc .muted { color: var(--muted); font-size: .9rem; }
+.doc code, .doc kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; padding: 0 5px; }
+.doc .ex { font-family: var(--jp); }
+.back { display: inline-block; margin: 0 0 12px; color: var(--accent); text-decoration: none; font-weight: 600; }
+.demo { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px 0; }
+table.ref { border-collapse: collapse; width: 100%; font-size: .9rem; min-width: 460px; }
+.ref th, .ref td { border-bottom: 1px solid var(--border); padding: 5px 8px; text-align: left; vertical-align: top; }
+.ref th { color: var(--muted); font-weight: 600; font-size: .8rem; }
+.ref td.jp { font-family: var(--jp); white-space: nowrap; }
+.ref td.jp small { display: block; color: var(--muted); font-size: .78em; }
+.ref td.lbl { color: var(--muted); font-size: .82rem; white-space: nowrap; }
+table.romaji { min-width: 0; }
