@@ -1,0 +1,354 @@
+== 淹れる|いれる
+src: コーヒーを
+plain: Preparo café | No preparo café | Preparé café | No preparé café | Voy a preparar café | ¡Prepara café! | ¡No prepares café!
+pot: Puedo preparar café | No puedo preparar café | Pude preparar café | No pude preparar café
+pas: Me preparan café | No me preparan café | Me prepararon café | No me prepararon café
+cau: Le hago preparar café | No le hago preparar café | Le hice preparar café | No le hice preparar café | Voy a hacerle preparar café | ¡Hazle preparar café! | ¡No le hagas preparar café!
+cp: Me obligan a preparar café | No me obligan a preparar café | Me obligaron a preparar café | No me obligaron a preparar café
+tai: Quiero preparar café | No quiero preparar café | Quería preparar café | No quería preparar café
+
+== 入れる|いれる
+src: かばんに本を
+plain: Meto el libro en la bolsa | No meto el libro en la bolsa | Metí el libro en la bolsa | No metí el libro en la bolsa | Voy a meter el libro en la bolsa | ¡Mete el libro en la bolsa! | ¡No metas el libro en la bolsa!
+pot: Puedo meter el libro en la bolsa | No puedo meter el libro en la bolsa | Pude meter el libro en la bolsa | No pude meter el libro en la bolsa
+pas: Me meten el libro en la bolsa | No me meten el libro en la bolsa | Me metieron el libro en la bolsa | No me metieron el libro en la bolsa
+cau: Le hago meter el libro en la bolsa | No le hago meter el libro en la bolsa | Le hice meter el libro en la bolsa | No le hice meter el libro en la bolsa | Voy a hacerle meter el libro en la bolsa | ¡Hazle meter el libro en la bolsa! | ¡No le hagas meter el libro en la bolsa!
+cp: Me obligan a meter el libro en la bolsa | No me obligan a meter el libro en la bolsa | Me obligaron a meter el libro en la bolsa | No me obligaron a meter el libro en la bolsa
+tai: Quiero meter el libro en la bolsa | No quiero meter el libro en la bolsa | Quería meter el libro en la bolsa | No quería meter el libro en la bolsa
+
+== インタビューする|いんたびゅうする
+src: 選手に
+plain: Entrevisto al jugador | No entrevisto al jugador | Entrevisté al jugador | No entrevisté al jugador | Voy a entrevistar al jugador | ¡Entrevista al jugador! | ¡No entrevistes al jugador!
+pot: Puedo entrevistar al jugador | No puedo entrevistar al jugador | Pude entrevistar al jugador | No pude entrevistar al jugador
+pas: El jugador me entrevista | El jugador no me entrevista | El jugador me entrevistó | El jugador no me entrevistó
+cau: Hago que el jugador haga la entrevista | No hago que el jugador haga la entrevista | Hice que el jugador hiciera la entrevista | No hice que el jugador hiciera la entrevista | Voy a hacer que el jugador haga la entrevista | ¡Haz que el jugador haga la entrevista! | ¡No hagas que el jugador haga la entrevista!
+cp: El jugador me obliga a hacer la entrevista | El jugador no me obliga a hacer la entrevista | El jugador me obligó a hacer la entrevista | El jugador no me obligó a hacer la entrevista
+tai: Quiero entrevistar al jugador | No quiero entrevistar al jugador | Quería entrevistar al jugador | No quería entrevistar al jugador
+
+== 植える|うえる
+src: 庭に花を
+plain: Planto flores en el jardín | No planto flores en el jardín | Planté flores en el jardín | No planté flores en el jardín | Voy a plantar flores en el jardín | ¡Planta flores en el jardín! | ¡No plantes flores en el jardín!
+pot: Puedo plantar flores en el jardín | No puedo plantar flores en el jardín | Pude plantar flores en el jardín | No pude plantar flores en el jardín
+pas: Me plantan flores en el jardín | No me plantan flores en el jardín | Me plantaron flores en el jardín | No me plantaron flores en el jardín
+cau: Le hago plantar flores en el jardín | No le hago plantar flores en el jardín | Le hice plantar flores en el jardín | No le hice plantar flores en el jardín | Voy a hacerle plantar flores en el jardín | ¡Hazle plantar flores en el jardín! | ¡No le hagas plantar flores en el jardín!
+cp: Me obligan a plantar flores en el jardín | No me obligan a plantar flores en el jardín | Me obligaron a plantar flores en el jardín | No me obligaron a plantar flores en el jardín
+tai: Quiero plantar flores en el jardín | No quiero plantar flores en el jardín | Quería plantar flores en el jardín | No quería plantar flores en el jardín
+
+== 伺う|うかがう
+src: 明日お宅に
+plain: Mañana visito su casa | Mañana no visito su casa | Visité su casa al día siguiente | No visité su casa al día siguiente | Mañana voy a visitar su casa | ¡Visite su casa mañana! | ¡No visite su casa mañana!
+pot: Mañana puedo visitar su casa | Mañana no puedo visitar su casa | Pude visitar su casa al día siguiente | No pude visitar su casa al día siguiente
+pas: Mañana me visitan en casa | Mañana no me visitan en casa | Me visitaron en casa al día siguiente | No me visitaron en casa al día siguiente
+cau: Mañana le dejo visitar su casa | Mañana no le dejo visitar su casa | Le dejé visitar su casa al día siguiente | No le dejé visitar su casa al día siguiente | Mañana voy a dejarle visitar su casa | ¡Déjele visitar su casa mañana! | ¡No le deje visitar su casa mañana!
+cp: Mañana me obligan a visitar su casa | Mañana no me obligan a visitar su casa | Me obligaron a visitar su casa al día siguiente | No me obligaron a visitar su casa al día siguiente
+tai: Mañana quiero visitar su casa | Mañana no quiero visitar su casa | Quería visitar su casa al día siguiente | No quería visitar su casa al día siguiente
+
+== 受け取る|うけとる
+src: 荷物を
+plain: Recibo el paquete | No recibo el paquete | Recibí el paquete | No recibí el paquete | Voy a recoger el paquete | ¡Recoge el paquete! | ¡No recojas el paquete!
+pot: Puedo recibir el paquete | No puedo recibir el paquete | Pude recibir el paquete | No pude recibir el paquete
+pas: Me recogen el paquete | No me recogen el paquete | Me recogieron el paquete | No me recogieron el paquete
+cau: Le hago recoger el paquete | No le hago recoger el paquete | Le hice recoger el paquete | No le hice recoger el paquete | Voy a hacerle recoger el paquete | ¡Hazle recoger el paquete! | ¡No le hagas recoger el paquete!
+cp: Me obligan a recoger el paquete | No me obligan a recoger el paquete | Me obligaron a recoger el paquete | No me obligaron a recoger el paquete
+tai: Quiero recibir el paquete | No quiero recibir el paquete | Quería recibir el paquete | No quería recibir el paquete
+
+== 受ける|うける
+src: 試験を
+plain: Hago el examen | No hago el examen | Hice el examen | No hice el examen | Voy a hacer el examen | ¡Haz el examen! | ¡No hagas el examen!
+pot: Puedo hacer el examen | No puedo hacer el examen | Pude hacer el examen | No pude hacer el examen
+pas: Se me presentan al examen | No se me presentan al examen | Se me presentaron al examen | No se me presentaron al examen
+cau: Le hago presentarse al examen | No le hago presentarse al examen | Le hice presentarse al examen | No le hice presentarse al examen | Voy a hacer que se presente al examen | ¡Haz que se presente al examen! | ¡No hagas que se presente al examen!
+cp: Me obligan a hacer el examen | No me obligan a hacer el examen | Me obligaron a hacer el examen | No me obligaron a hacer el examen
+tai: Quiero hacer el examen | No quiero hacer el examen | Quería hacer el examen | No quería hacer el examen
+
+== 動く|うごく
+src: この機械は
+plain: Esta máquina funciona | Esta máquina no funciona | Esta máquina funcionó | Esta máquina no funcionó | Esta máquina va a funcionar | ¡Funciona, máquina! | ¡No funciones, máquina!
+pot: Esta máquina puede funcionar | Esta máquina no puede funcionar | Esta máquina pudo funcionar | Esta máquina no pudo funcionar
+pas: Esta máquina se me pone en marcha | Esta máquina no se me pone en marcha | Esta máquina se me puso en marcha | Esta máquina no se me puso en marcha
+cau: Hago funcionar esta máquina | No hago funcionar esta máquina | Hice funcionar esta máquina | No hice funcionar esta máquina | Voy a hacer funcionar esta máquina | ¡Haz funcionar esta máquina! | ¡No hagas funcionar esta máquina!
+cp: Esta máquina se ve obligada a funcionar | Esta máquina no se ve obligada a funcionar | Esta máquina se vio obligada a funcionar | Esta máquina no se vio obligada a funcionar
+tai: Esta máquina quiere funcionar | Esta máquina no quiere funcionar | Esta máquina quería funcionar | Esta máquina no quería funcionar
+
+== 嘘をつく|うそをつく
+src: 弟は
+plain: Mi hermano menor dice mentiras | Mi hermano menor no dice mentiras | Mi hermano menor dijo una mentira | Mi hermano menor no dijo ninguna mentira | Mi hermano menor va a mentir | ¡Hermano, miente! | ¡Hermano, no mientas!
+pot: Mi hermano menor puede mentir | Mi hermano menor no puede mentir | Mi hermano menor pudo mentir | Mi hermano menor no pudo mentir
+pas: A mi hermano menor le mienten | A mi hermano menor no le mienten | A mi hermano menor le mintieron | A mi hermano menor no le mintieron
+cau: Hago que mi hermano menor mienta | No hago que mi hermano menor mienta | Hice que mi hermano menor mintiera | No hice que mi hermano menor mintiera | Voy a hacer que mi hermano menor mienta | ¡Haz que tu hermano mienta! | ¡No hagas que tu hermano mienta!
+cp: A mi hermano menor le obligan a mentir | A mi hermano menor no le obligan a mentir | A mi hermano menor le obligaron a mentir | A mi hermano menor no le obligaron a mentir
+tai: Mi hermano menor quiere mentir | Mi hermano menor no quiere mentir | Mi hermano menor quería mentir | Mi hermano menor no quería mentir
+
+== 歌う|うたう
+src: カラオケで歌を
+plain: Canto en el karaoke | No canto en el karaoke | Canté en el karaoke | No canté en el karaoke | Voy a cantar en el karaoke | ¡Canta en el karaoke! | ¡No cantes en el karaoke!
+pot: Puedo cantar en el karaoke | No puedo cantar en el karaoke | Pude cantar en el karaoke | No pude cantar en el karaoke
+pas: Me cantan la canción en el karaoke | No me cantan la canción en el karaoke | Me cantaron la canción en el karaoke | No me cantaron la canción en el karaoke
+cau: Le hago cantar en el karaoke | No le hago cantar en el karaoke | Le hice cantar en el karaoke | No le hice cantar en el karaoke | Voy a hacerle cantar en el karaoke | ¡Hazle cantar en el karaoke! | ¡No le hagas cantar en el karaoke!
+cp: Me obligan a cantar en el karaoke | No me obligan a cantar en el karaoke | Me obligaron a cantar en el karaoke | No me obligaron a cantar en el karaoke
+tai: Quiero cantar en el karaoke | No quiero cantar en el karaoke | Quería cantar en el karaoke | No quería cantar en el karaoke
+
+== 移す|うつす
+src: 風邪を友達に
+plain: Le contagio el resfriado a mi amigo | No le contagio el resfriado a mi amigo | Le contagié el resfriado a mi amigo | No le contagié el resfriado a mi amigo | Voy a contagiarle el resfriado a mi amigo | ¡Contágiale el resfriado a tu amigo! | ¡No le contagies el resfriado a tu amigo!
+pot: Puedo contagiarle el resfriado a mi amigo | No puedo contagiarle el resfriado a mi amigo | Pude contagiarle el resfriado a mi amigo | No pude contagiarle el resfriado a mi amigo
+pas: Mi amigo me contagia el resfriado | Mi amigo no me contagia el resfriado | Mi amigo me contagió el resfriado | Mi amigo no me contagió el resfriado
+cau: Hago que mi amigo contagie el resfriado | No hago que mi amigo contagie el resfriado | Hice que mi amigo contagiara el resfriado | No hice que mi amigo contagiara el resfriado | Voy a hacer que mi amigo contagie el resfriado | ¡Haz que tu amigo contagie el resfriado! | ¡No hagas que tu amigo contagie el resfriado!
+cp: Mi amigo me obliga a contagiar el resfriado | Mi amigo no me obliga a contagiar el resfriado | Mi amigo me obligó a contagiar el resfriado | Mi amigo no me obligó a contagiar el resfriado
+tai: Quiero contagiarle el resfriado a mi amigo | No quiero contagiarle el resfriado a mi amigo | Quería contagiarle el resfriado a mi amigo | No quería contagiarle el resfriado a mi amigo
+
+== 写す|うつす
+src: ノートを
+plain: Copio los apuntes | No copio los apuntes | Copié los apuntes | No copié los apuntes | Voy a copiar los apuntes | ¡Copia los apuntes! | ¡No copies los apuntes!
+pot: Puedo copiar los apuntes | No puedo copiar los apuntes | Pude copiar los apuntes | No pude copiar los apuntes
+pas: Me copian los apuntes | No me copian los apuntes | Me copiaron los apuntes | No me copiaron los apuntes
+cau: Le dejo copiar los apuntes | No le dejo copiar los apuntes | Le dejé copiar los apuntes | No le dejé copiar los apuntes | Voy a dejarle copiar los apuntes | ¡Déjale copiar los apuntes! | ¡No le dejes copiar los apuntes!
+cp: Me obligan a copiar los apuntes | No me obligan a copiar los apuntes | Me obligaron a copiar los apuntes | No me obligaron a copiar los apuntes
+tai: Quiero copiar los apuntes | No quiero copiar los apuntes | Quería copiar los apuntes | No quería copiar los apuntes
+
+== 写る|うつる
+src: 写真によく
+plain: Salgo bien en las fotos | No salgo bien en las fotos | Salí bien en las fotos | No salí bien en las fotos | Voy a salir bien en las fotos | ¡Sal bien en las fotos! | ¡No salgas bien en las fotos!
+pot: Puedo salir bien en las fotos | No puedo salir bien en las fotos | Pude salir bien en las fotos | No pude salir bien en las fotos
+pas: Me salen bien en las fotos, para mi fastidio | No me salen bien en las fotos | Me salieron bien en las fotos, para mi fastidio | No me salieron bien en las fotos
+cau: Hago que salga bien en las fotos | No hago que salga bien en las fotos | Hice que saliera bien en las fotos | No hice que saliera bien en las fotos | Voy a hacer que salga bien en las fotos | ¡Haz que salga bien en las fotos! | ¡No hagas que salga bien en las fotos!
+cp: Me obligan a salir bien en las fotos | No me obligan a salir bien en las fotos | Me obligaron a salir bien en las fotos | No me obligaron a salir bien en las fotos
+tai: Quiero salir bien en las fotos | No quiero salir bien en las fotos | Quería salir bien en las fotos | No quería salir bien en las fotos
+
+== 生まれる|うまれる
+src: 赤ちゃんが
+plain: Nace un bebé | No nace el bebé | Nació un bebé | No nació el bebé | Va a nacer un bebé | ¡Nace, bebé! | ¡No nazcas todavía, bebé!
+pot: El bebé puede nacer | El bebé no puede nacer | El bebé pudo nacer | El bebé no pudo nacer
+pas: Me nace un bebé | No me nace el bebé | Me nació un bebé | No me nació el bebé
+cau: Hago que nazca el bebé | No hago que nazca el bebé | Hice que naciera el bebé | No hice que naciera el bebé | Voy a hacer que nazca el bebé | ¡Haz que nazca el bebé! | ¡No hagas que nazca el bebé!
+cp: El bebé se ve obligado a nacer | El bebé no se ve obligado a nacer | El bebé se vio obligado a nacer | El bebé no se vio obligado a nacer
+tai: El bebé quiere nacer | El bebé no quiere nacer | El bebé quería nacer | El bebé no quería nacer
+
+== 産む|うむ
+src: 猫が子猫を
+plain: La gata pare gatitos | La gata no pare gatitos | La gata parió gatitos | La gata no parió gatitos | La gata va a parir gatitos | ¡Gata, pare a tus gatitos! | ¡Gata, no pares todavía!
+pot: La gata puede parir gatitos | La gata no puede parir gatitos | La gata pudo parir gatitos | La gata no pudo parir gatitos
+pas: La gata me pare gatitos | La gata no me pare gatitos | La gata me parió gatitos | La gata no me parió gatitos
+cau: Hago que la gata para gatitos | No hago que la gata para gatitos | Hice que la gata pariera gatitos | No hice que la gata pariera gatitos | Voy a hacer que la gata para gatitos | ¡Haz que la gata para gatitos! | ¡No hagas que la gata para gatitos!
+cp: La gata se ve obligada a parir gatitos | La gata no se ve obligada a parir gatitos | La gata se vio obligada a parir gatitos | La gata no se vio obligada a parir gatitos
+tai: La gata quiere parir gatitos | La gata no quiere parir gatitos | La gata quería parir gatitos | La gata no quería parir gatitos
+
+== 売る|うる
+src: 店で野菜を
+plain: Vendo verduras en la tienda | No vendo verduras en la tienda | Vendí verduras en la tienda | No vendí verduras en la tienda | Voy a vender verduras en la tienda | ¡Vende verduras en la tienda! | ¡No vendas verduras en la tienda!
+pot: Puedo vender verduras en la tienda | No puedo vender verduras en la tienda | Pude vender verduras en la tienda | No pude vender verduras en la tienda
+pas: Venden verduras en la tienda | No venden verduras en la tienda | Vendieron verduras en la tienda | No vendieron verduras en la tienda
+cau: Le hago vender verduras en la tienda | No le hago vender verduras en la tienda | Le hice vender verduras en la tienda | No le hice vender verduras en la tienda | Voy a hacerle vender verduras en la tienda | ¡Hazle vender verduras en la tienda! | ¡No le hagas vender verduras en la tienda!
+cp: Me obligan a vender verduras en la tienda | No me obligan a vender verduras en la tienda | Me obligaron a vender verduras en la tienda | No me obligaron a vender verduras en la tienda
+tai: Quiero vender verduras en la tienda | No quiero vender verduras en la tienda | Quería vender verduras en la tienda | No quería vender verduras en la tienda
+
+== 運転する|うんてんする
+src: 車を
+plain: Conduzco el coche | No conduzco el coche | Conduje el coche | No conduje el coche | Voy a conducir el coche | ¡Conduce el coche! | ¡No conduzcas el coche!
+pot: Puedo conducir el coche | No puedo conducir el coche | Pude conducir el coche | No pude conducir el coche
+pas: Me conducen el coche | No me conducen el coche | Me condujeron el coche | No me condujeron el coche
+cau: Le dejo conducir el coche | No le dejo conducir el coche | Le dejé conducir el coche | No le dejé conducir el coche | Voy a dejarle conducir el coche | ¡Déjale conducir el coche! | ¡No le dejes conducir el coche!
+cp: Me obligan a conducir el coche | No me obligan a conducir el coche | Me obligaron a conducir el coche | No me obligaron a conducir el coche
+tai: Quiero conducir el coche | No quiero conducir el coche | Quería conducir el coche | No quería conducir el coche
+
+== 運動する|うんどうする
+src: 毎朝
+plain: Hago ejercicio cada mañana | No hago ejercicio por las mañanas | Hacía ejercicio cada mañana | No hacía ejercicio por las mañanas | Voy a hacer ejercicio cada mañana | ¡Haz ejercicio cada mañana! | ¡No hagas ejercicio por las mañanas!
+pot: Puedo hacer ejercicio cada mañana | No puedo hacer ejercicio por las mañanas | Podía hacer ejercicio cada mañana | No podía hacer ejercicio por las mañanas
+pas: Cada mañana se ponen a hacer ejercicio, para mi fastidio | Por las mañanas no se ponen a hacer ejercicio | Cada mañana se ponían a hacer ejercicio, para mi fastidio | Por las mañanas no se ponían a hacer ejercicio
+cau: Le hago hacer ejercicio cada mañana | No le hago hacer ejercicio por las mañanas | Le hacía hacer ejercicio cada mañana | No le hacía hacer ejercicio por las mañanas | Voy a hacerle hacer ejercicio cada mañana | ¡Hazle hacer ejercicio cada mañana! | ¡No le hagas hacer ejercicio por las mañanas!
+cp: Me obligan a hacer ejercicio cada mañana | No me obligan a hacer ejercicio por las mañanas | Me obligaban a hacer ejercicio cada mañana | No me obligaban a hacer ejercicio por las mañanas
+tai: Quiero hacer ejercicio cada mañana | No quiero hacer ejercicio por las mañanas | Quería hacer ejercicio cada mañana | No quería hacer ejercicio por las mañanas
+
+== 選ぶ|えらぶ
+src: プレゼントを
+plain: Escojo un regalo | No escojo el regalo | Escogí un regalo | No escogí el regalo | Voy a escoger un regalo | ¡Escoge un regalo! | ¡No escojas el regalo!
+pot: Puedo escoger un regalo | No puedo escoger el regalo | Pude escoger un regalo | No pude escoger el regalo
+pas: Me escogen el regalo | No me escogen el regalo | Me escogieron el regalo | No me escogieron el regalo
+cau: Le dejo escoger un regalo | No le dejo escoger el regalo | Le dejé escoger un regalo | No le dejé escoger el regalo | Voy a dejarle escoger un regalo | ¡Déjale escoger un regalo! | ¡No le dejes escoger el regalo!
+cp: Me obligan a escoger un regalo | No me obligan a escoger el regalo | Me obligaron a escoger un regalo | No me obligaron a escoger el regalo
+tai: Quiero escoger un regalo | No quiero escoger el regalo | Quería escoger un regalo | No quería escoger el regalo
+
+== 遠慮する|えんりょする
+src: お酒は
+plain: Prefiero no tomar alcohol | No me privo del alcohol | Preferí no tomar alcohol | No me privé del alcohol | Voy a abstenerme del alcohol | ¡Abstente del alcohol! | ¡No te prives del alcohol!
+pot: Puedo abstenerme del alcohol | No puedo abstenerme del alcohol | Pude abstenerme del alcohol | No pude abstenerme del alcohol
+pas: Rechazan el alcohol que les ofrezco | No rechazan el alcohol que les ofrezco | Rechazaron el alcohol que les ofrecí | No rechazaron el alcohol que les ofrecí
+cau: Le hago abstenerse del alcohol | No le hago abstenerse del alcohol | Le hice abstenerse del alcohol | No le hice abstenerse del alcohol | Voy a hacer que se abstenga del alcohol | ¡Haz que se abstenga del alcohol! | ¡No hagas que se abstenga del alcohol!
+cp: Me obligan a abstenerme del alcohol | No me obligan a abstenerme del alcohol | Me obligaron a abstenerme del alcohol | No me obligaron a abstenerme del alcohol
+tai: Quiero abstenerme del alcohol | No quiero privarme del alcohol | Quería abstenerme del alcohol | No quería privarme del alcohol
+
+== お祝いする|おいわいする
+src: 友達の合格を
+plain: Celebro el aprobado de mi amigo | No celebro el aprobado de mi amigo | Celebré el aprobado de mi amigo | No celebré el aprobado de mi amigo | Voy a celebrar el aprobado de mi amigo | ¡Celebra el aprobado de tu amigo! | ¡No celebres el aprobado de tu amigo!
+pot: Puedo celebrar el aprobado de mi amigo | No puedo celebrar el aprobado de mi amigo | Pude celebrar el aprobado de mi amigo | No pude celebrar el aprobado de mi amigo
+pas: Celebran el aprobado de mi amigo | No celebran el aprobado de mi amigo | Celebraron el aprobado de mi amigo | No celebraron el aprobado de mi amigo
+cau: Le hago celebrar el aprobado de su amigo | No le hago celebrar el aprobado de su amigo | Le hice celebrar el aprobado de su amigo | No le hice celebrar el aprobado de su amigo | Voy a hacerle celebrar el aprobado de su amigo | ¡Hazle celebrar el aprobado de su amigo! | ¡No le hagas celebrar el aprobado de su amigo!
+cp: Me obligan a celebrar el aprobado de mi amigo | No me obligan a celebrar el aprobado de mi amigo | Me obligaron a celebrar el aprobado de mi amigo | No me obligaron a celebrar el aprobado de mi amigo
+tai: Quiero celebrar el aprobado de mi amigo | No quiero celebrar el aprobado de mi amigo | Quería celebrar el aprobado de mi amigo | No quería celebrar el aprobado de mi amigo
+
+== 応援する|おうえんする
+src: チームを
+plain: Animo al equipo | No animo al equipo | Animé al equipo | No animé al equipo | Voy a animar al equipo | ¡Anima al equipo! | ¡No animes al equipo!
+pot: Puedo animar al equipo | No puedo animar al equipo | Pude animar al equipo | No pude animar al equipo
+pas: Animan a mi equipo | No animan a mi equipo | Animaron a mi equipo | No animaron a mi equipo
+cau: Le hago animar al equipo | No le hago animar al equipo | Le hice animar al equipo | No le hice animar al equipo | Voy a hacerle animar al equipo | ¡Hazle animar al equipo! | ¡No le hagas animar al equipo!
+cp: Me obligan a animar al equipo | No me obligan a animar al equipo | Me obligaron a animar al equipo | No me obligaron a animar al equipo
+tai: Quiero animar al equipo | No quiero animar al equipo | Quería animar al equipo | No quería animar al equipo
+
+== 起きる|おきる
+src: 毎朝六時に
+plain: Me despierto a las seis cada mañana | No me despierto a las seis por las mañanas | Me despertaba a las seis cada mañana | No me despertaba a las seis por las mañanas | Voy a levantarme a las seis cada mañana | ¡Levántate a las seis cada mañana! | ¡No te levantes a las seis por las mañanas!
+pot: Puedo levantarme a las seis cada mañana | No puedo levantarme a las seis por las mañanas | Podía levantarme a las seis cada mañana | No podía levantarme a las seis por las mañanas
+pas: Cada mañana se me levantan a las seis | Por las mañanas no se me levantan a las seis | Cada mañana se me levantaban a las seis | Por las mañanas no se me levantaban a las seis
+cau: Le hago levantarse a las seis cada mañana | No le hago levantarse a las seis por las mañanas | Le hacía levantarse a las seis cada mañana | No le hacía levantarse a las seis por las mañanas | Voy a hacer que se levante a las seis cada mañana | ¡Haz que se levante a las seis cada mañana! | ¡No hagas que se levante a las seis por las mañanas!
+cp: Me obligan a levantarme a las seis cada mañana | No me obligan a levantarme a las seis por las mañanas | Me obligaban a levantarme a las seis cada mañana | No me obligaban a levantarme a las seis por las mañanas
+tai: Quiero levantarme a las seis cada mañana | No quiero levantarme a las seis por las mañanas | Quería levantarme a las seis cada mañana | No quería levantarme a las seis por las mañanas
+
+== 置く|おく
+src: テーブルにコップを
+plain: Pongo el vaso en la mesa | No pongo el vaso en la mesa | Puse el vaso en la mesa | No puse el vaso en la mesa | Voy a poner el vaso en la mesa | ¡Pon el vaso en la mesa! | ¡No pongas el vaso en la mesa!
+pot: Puedo poner el vaso en la mesa | No puedo poner el vaso en la mesa | Pude poner el vaso en la mesa | No pude poner el vaso en la mesa
+pas: Me ponen el vaso en la mesa | No me ponen el vaso en la mesa | Me pusieron el vaso en la mesa | No me pusieron el vaso en la mesa
+cau: Le hago poner el vaso en la mesa | No le hago poner el vaso en la mesa | Le hice poner el vaso en la mesa | No le hice poner el vaso en la mesa | Voy a hacerle poner el vaso en la mesa | ¡Hazle poner el vaso en la mesa! | ¡No le hagas poner el vaso en la mesa!
+cp: Me obligan a poner el vaso en la mesa | No me obligan a poner el vaso en la mesa | Me obligaron a poner el vaso en la mesa | No me obligaron a poner el vaso en la mesa
+tai: Quiero poner el vaso en la mesa | No quiero poner el vaso en la mesa | Quería poner el vaso en la mesa | No quería poner el vaso en la mesa
+
+== 送る|おくる
+src: 友達を駅まで
+plain: Llevo a mi amigo hasta la estación | No llevo a mi amigo hasta la estación | Llevé a mi amigo hasta la estación | No llevé a mi amigo hasta la estación | Voy a llevar a mi amigo hasta la estación | ¡Lleva a tu amigo hasta la estación! | ¡No lleves a tu amigo hasta la estación!
+pot: Puedo llevar a mi amigo hasta la estación | No puedo llevar a mi amigo hasta la estación | Pude llevar a mi amigo hasta la estación | No pude llevar a mi amigo hasta la estación
+pas: Llevan a mi amigo hasta la estación | No llevan a mi amigo hasta la estación | Llevaron a mi amigo hasta la estación | No llevaron a mi amigo hasta la estación
+cau: Le hago llevar a su amigo hasta la estación | No le hago llevar a su amigo hasta la estación | Le hice llevar a su amigo hasta la estación | No le hice llevar a su amigo hasta la estación | Voy a hacerle llevar a su amigo hasta la estación | ¡Hazle llevar a su amigo hasta la estación! | ¡No le hagas llevar a su amigo hasta la estación!
+cp: Me obligan a llevar a mi amigo hasta la estación | No me obligan a llevar a mi amigo hasta la estación | Me obligaron a llevar a mi amigo hasta la estación | No me obligaron a llevar a mi amigo hasta la estación
+tai: Quiero llevar a mi amigo hasta la estación | No quiero llevar a mi amigo hasta la estación | Quería llevar a mi amigo hasta la estación | No quería llevar a mi amigo hasta la estación
+
+== 遅れる|おくれる
+src: 授業に
+plain: Llego tarde a clase | No llego tarde a clase | Llegué tarde a clase | No llegué tarde a clase | Voy a llegar tarde a clase | ¡Llega tarde a clase! | ¡No llegues tarde a clase!
+pot: Puedo llegar tarde a clase | No puedo llegar tarde a clase | Pude llegar tarde a clase | No pude llegar tarde a clase
+pas: Se me llega tarde a clase | No se me llega tarde a clase | Se me llegó tarde a clase | No se me llegó tarde a clase
+cau: Le hago llegar tarde a clase | No le hago llegar tarde a clase | Le hice llegar tarde a clase | No le hice llegar tarde a clase | Voy a hacerle llegar tarde a clase | ¡Hazle llegar tarde a clase! | ¡No le hagas llegar tarde a clase!
+cp: Me obligan a llegar tarde a clase | No me obligan a llegar tarde a clase | Me obligaron a llegar tarde a clase | No me obligaron a llegar tarde a clase
+tai: Quiero llegar tarde a clase | No quiero llegar tarde a clase | Quería llegar tarde a clase | No quería llegar tarde a clase
+
+== 起こす|おこす
+src: 母が私を
+plain: Mi madre me despierta | Mi madre no me despierta | Mi madre me despertó | Mi madre no me despertó | Mi madre va a despertarme | ¡Mamá, despiértame! | ¡Mamá, no me despiertes!
+pot: Mi madre puede despertarme | Mi madre no puede despertarme | Mi madre pudo despertarme | Mi madre no pudo despertarme
+pas: A mi madre y a mí nos despiertan | A mi madre y a mí no nos despiertan | A mi madre y a mí nos despertaron | A mi madre y a mí no nos despertaron
+cau: Mi madre hace que me despierten | Mi madre no hace que me despierten | Mi madre hizo que me despertaran | Mi madre no hizo que me despertaran | Mi madre va a hacer que me despierten | ¡Mamá, haz que me despierten! | ¡Mamá, no hagas que me despierten!
+cp: Obligan a mi madre a despertarme | No obligan a mi madre a despertarme | Obligaron a mi madre a despertarme | No obligaron a mi madre a despertarme
+tai: Mi madre quiere despertarme | Mi madre no quiere despertarme | Mi madre quería despertarme | Mi madre no quería despertarme
+
+== 行う|おこなう
+src: 会議を
+plain: Llevamos a cabo la reunión | No llevamos a cabo la reunión | Llevamos a cabo la reunión (ayer) | No llevamos a cabo la reunión (ayer) | Vamos a llevar a cabo la reunión | ¡Celebrad la reunión! | ¡No celebréis la reunión!
+pot: Podemos llevar a cabo la reunión | No podemos llevar a cabo la reunión | Pudimos llevar a cabo la reunión | No pudimos llevar a cabo la reunión
+pas: Se celebra la reunión | No se celebra la reunión | Se celebró la reunión | No se celebró la reunión
+cau: Hago que se celebre la reunión | No hago que se celebre la reunión | Hice que se celebrara la reunión | No hice que se celebrara la reunión | Voy a hacer que se celebre la reunión | ¡Haz que se celebre la reunión! | ¡No hagas que se celebre la reunión!
+cp: Nos obligan a celebrar la reunión | No nos obligan a celebrar la reunión | Nos obligaron a celebrar la reunión | No nos obligaron a celebrar la reunión
+tai: Queremos celebrar la reunión | No queremos celebrar la reunión | Queríamos celebrar la reunión | No queríamos celebrar la reunión
+
+== 起こる|おこる
+src: 地震が
+plain: Ocurre un terremoto | No ocurre ningún terremoto | Ocurrió un terremoto | No ocurrió ningún terremoto | Va a ocurrir un terremoto | ¡Que ocurra un terremoto! | ¡Que no ocurra un terremoto!
+pot: Puede ocurrir un terremoto | No puede ocurrir un terremoto | Pudo ocurrir un terremoto | No pudo ocurrir un terremoto
+pas: Me sorprende un terremoto | No me sorprende ningún terremoto | Me sorprendió un terremoto | No me sorprendió ningún terremoto
+cau: Provoco un terremoto | No provoco ningún terremoto | Provoqué un terremoto | No provoqué ningún terremoto | Voy a provocar un terremoto | ¡Provoca un terremoto! | ¡No provoques un terremoto!
+cp: El terremoto se ve obligado a ocurrir | El terremoto no se ve obligado a ocurrir | El terremoto se vio obligado a ocurrir | El terremoto no se vio obligado a ocurrir
+tai: El terremoto quiere ocurrir | El terremoto no quiere ocurrir | El terremoto quería ocurrir | El terremoto no quería ocurrir
+
+== 怒る|おこる
+src: 先生は遅刻に
+plain: El profesor se enfada por los retrasos | El profesor no se enfada por los retrasos | El profesor se enfadó por el retraso | El profesor no se enfadó por el retraso | El profesor se va a enfadar por el retraso | ¡Profesor, enfádese por el retraso! | ¡Profesor, no se enfade por el retraso!
+pot: El profesor puede enfadarse por los retrasos | El profesor no puede enfadarse por los retrasos | El profesor pudo enfadarse por el retraso | El profesor no pudo enfadarse por el retraso
+pas: Al profesor le regañan por llegar tarde | Al profesor no le regañan por llegar tarde | Al profesor le regañaron por llegar tarde | Al profesor no le regañaron por llegar tarde
+cau: Hago que el profesor se enfade por el retraso | No hago que el profesor se enfade por el retraso | Hice que el profesor se enfadara por el retraso | No hice que el profesor se enfadara por el retraso | Voy a hacer que el profesor se enfade por el retraso | ¡Haz que el profesor se enfade por el retraso! | ¡No hagas que el profesor se enfade por el retraso!
+cp: Al profesor le obligan a enfadarse por los retrasos | Al profesor no le obligan a enfadarse por los retrasos | Al profesor le obligaron a enfadarse por el retraso | Al profesor no le obligaron a enfadarse por el retraso
+tai: El profesor quiere enfadarse por los retrasos | El profesor no quiere enfadarse por los retrasos | El profesor quería enfadarse por el retraso | El profesor no quería enfadarse por el retraso
+
+== 教える|おしえる
+src: 日本語を
+plain: Enseño japonés | No enseño japonés | Enseñé japonés | No enseñé japonés | Voy a enseñar japonés | ¡Enseña japonés! | ¡No enseñes japonés!
+pot: Puedo enseñar japonés | No puedo enseñar japonés | Pude enseñar japonés | No pude enseñar japonés
+pas: Me enseñan japonés | No me enseñan japonés | Me enseñaron japonés | No me enseñaron japonés
+cau: Le hago enseñar japonés | No le hago enseñar japonés | Le hice enseñar japonés | No le hice enseñar japonés | Voy a hacerle enseñar japonés | ¡Hazle enseñar japonés! | ¡No le hagas enseñar japonés!
+cp: Me obligan a enseñar japonés | No me obligan a enseñar japonés | Me obligaron a enseñar japonés | No me obligaron a enseñar japonés
+tai: Quiero enseñar japonés | No quiero enseñar japonés | Quería enseñar japonés | No quería enseñar japonés
+
+== お辞儀する|おじぎする
+src: 先生に
+plain: Hago una reverencia al profesor | No hago una reverencia al profesor | Hice una reverencia al profesor | No hice una reverencia al profesor | Voy a hacer una reverencia al profesor | ¡Haz una reverencia al profesor! | ¡No hagas una reverencia al profesor!
+pot: Puedo hacer una reverencia al profesor | No puedo hacer una reverencia al profesor | Pude hacer una reverencia al profesor | No pude hacer una reverencia al profesor
+pas: El profesor me hace una reverencia | El profesor no me hace una reverencia | El profesor me hizo una reverencia | El profesor no me hizo una reverencia
+cau: Hago que el profesor haga una reverencia | No hago que el profesor haga una reverencia | Hice que el profesor hiciera una reverencia | No hice que el profesor hiciera una reverencia | Voy a hacer que el profesor haga una reverencia | ¡Haz que el profesor haga una reverencia! | ¡No hagas que el profesor haga una reverencia!
+cp: El profesor me obliga a hacer una reverencia | El profesor no me obliga a hacer una reverencia | El profesor me obligó a hacer una reverencia | El profesor no me obligó a hacer una reverencia
+tai: Quiero hacer una reverencia al profesor | No quiero hacer una reverencia al profesor | Quería hacer una reverencia al profesor | No quería hacer una reverencia al profesor
+
+== 押す|おす
+src: ボタンを
+plain: Pulso el botón | No pulso el botón | Pulsé el botón | No pulsé el botón | Voy a pulsar el botón | ¡Pulsa el botón! | ¡No pulses el botón!
+pot: Puedo pulsar el botón | No puedo pulsar el botón | Pude pulsar el botón | No pude pulsar el botón
+pas: Me pulsan el botón | No me pulsan el botón | Me pulsaron el botón | No me pulsaron el botón
+cau: Le hago pulsar el botón | No le hago pulsar el botón | Le hice pulsar el botón | No le hice pulsar el botón | Voy a hacerle pulsar el botón | ¡Hazle pulsar el botón! | ¡No le hagas pulsar el botón!
+cp: Me obligan a pulsar el botón | No me obligan a pulsar el botón | Me obligaron a pulsar el botón | No me obligaron a pulsar el botón
+tai: Quiero pulsar el botón | No quiero pulsar el botón | Quería pulsar el botón | No quería pulsar el botón
+
+== 遅くなる|おそくなる
+src: 帰りが
+plain: Se me hace tarde para volver | No se me hace tarde para volver | Se me hizo tarde para volver | No se me hizo tarde para volver | Se me va a hacer tarde para volver | ¡Que se haga tarde la vuelta! | ¡Que no se haga tarde la vuelta!
+pot: Puede hacerse tarde para volver | No puede hacerse tarde para volver | Pudo hacerse tarde para volver | No pudo hacerse tarde para volver
+pas: Se me retrasa la vuelta, para mi fastidio | No se me retrasa la vuelta | Se me retrasó la vuelta, para mi fastidio | No se me retrasó la vuelta
+cau: Hago que la vuelta se retrase | No hago que la vuelta se retrase | Hice que la vuelta se retrasara | No hice que la vuelta se retrasara | Voy a hacer que la vuelta se retrase | ¡Haz que la vuelta se retrase! | ¡No hagas que la vuelta se retrase!
+cp: La vuelta se ve obligada a retrasarse | La vuelta no se ve obligada a retrasarse | La vuelta se vio obligada a retrasarse | La vuelta no se vio obligada a retrasarse
+tai: Quiero volver tarde | No quiero volver tarde | Quería volver tarde | No quería volver tarde
+
+== 落ち込む|おちこむ
+src: 試験に落ちて
+plain: Me deprimo por suspender el examen | No me deprimo por suspender el examen | Me deprimí por suspender el examen | No me deprimí por suspender el examen | Voy a deprimirme por suspender el examen | ¡Deprímete por suspender el examen! | ¡No te deprimas por suspender el examen!
+pot: Puedo deprimirme por suspender el examen | No puedo deprimirme por suspender el examen | Pude deprimirme por suspender el examen | No pude deprimirme por suspender el examen
+pas: Suspende el examen y se me deprime | Suspende el examen y no se me deprime | Suspendió el examen y se me deprimió | Suspendió el examen y no se me deprimió
+cau: Suspender el examen le hace deprimirse | Suspender el examen no le hace deprimirse | Suspender el examen le hizo deprimirse | Suspender el examen no le hizo deprimirse | Voy a hacer que se deprima por suspender | ¡Haz que se deprima por suspender! | ¡No hagas que se deprima por suspender!
+cp: Suspender el examen me hunde | Suspender el examen no me hunde | Suspender el examen me hundió | Suspender el examen no me hundió
+tai: Quiero deprimirme por suspender el examen | No quiero deprimirme por suspender el examen | Quería deprimirme por suspender el examen | No quería deprimirme por suspender el examen
+
+== 落ちる|おちる
+src: 葉が木から
+plain: Las hojas caen del árbol | Las hojas no caen del árbol | Las hojas cayeron del árbol | Las hojas no cayeron del árbol | Las hojas van a caer del árbol | ¡Hojas, caed del árbol! | ¡Hojas, no caigáis del árbol!
+pot: Las hojas pueden caer del árbol | Las hojas no pueden caer del árbol | Las hojas pudieron caer del árbol | Las hojas no pudieron caer del árbol
+pas: Se me caen las hojas del árbol | No se me caen las hojas del árbol | Se me cayeron las hojas del árbol | No se me cayeron las hojas del árbol
+cau: Hago caer las hojas del árbol | No hago caer las hojas del árbol | Hice caer las hojas del árbol | No hice caer las hojas del árbol | Voy a hacer caer las hojas del árbol | ¡Haz caer las hojas del árbol! | ¡No hagas caer las hojas del árbol!
+cp: Las hojas se ven obligadas a caer del árbol | Las hojas no se ven obligadas a caer del árbol | Las hojas se vieron obligadas a caer del árbol | Las hojas no se vieron obligadas a caer del árbol
+tai: Las hojas quieren caer del árbol | Las hojas no quieren caer del árbol | Las hojas querían caer del árbol | Las hojas no querían caer del árbol
+
+== おっしゃる|おっしゃる
+src: 先生がそう
+plain: El profesor lo dice | El profesor no lo dice | El profesor lo dijo | El profesor no lo dijo | El profesor lo va a decir | ¡Dígalo así, profesor! | ¡No lo diga así, profesor!
+
+== 落とす|おとす
+src: 財布を
+plain: Se me cae la cartera | No se me cae la cartera | Se me cayó la cartera | No se me cayó la cartera | Voy a tirar la cartera | ¡Tira la cartera! | ¡No se te caiga la cartera!
+pot: Puedo tirar la cartera | No puedo tirar la cartera | Pude tirar la cartera | No pude tirar la cartera
+pas: Me tiran la cartera | No me tiran la cartera | Me tiraron la cartera | No me tiraron la cartera
+cau: Le hago tirar la cartera | No le hago tirar la cartera | Le hice tirar la cartera | No le hice tirar la cartera | Voy a hacerle tirar la cartera | ¡Hazle tirar la cartera! | ¡No le hagas tirar la cartera!
+cp: Me obligan a tirar la cartera | No me obligan a tirar la cartera | Me obligaron a tirar la cartera | No me obligaron a tirar la cartera
+tai: Quiero tirar la cartera | No quiero perder la cartera | Quería tirar la cartera | No quería perder la cartera
+
+== 踊る|おどる
+src: 祭りで
+plain: Bailo en el festival | No bailo en el festival | Bailé en el festival | No bailé en el festival | Voy a bailar en el festival | ¡Baila en el festival! | ¡No bailes en el festival!
+pot: Puedo bailar en el festival | No puedo bailar en el festival | Pude bailar en el festival | No pude bailar en el festival
+pas: Se ponen a bailar en el festival, para mi fastidio | No bailan en el festival | Se pusieron a bailar en el festival, para mi fastidio | No bailaron en el festival
+cau: Le hago bailar en el festival | No le hago bailar en el festival | Le hice bailar en el festival | No le hice bailar en el festival | Voy a hacerle bailar en el festival | ¡Hazle bailar en el festival! | ¡No le hagas bailar en el festival!
+cp: Me obligan a bailar en el festival | No me obligan a bailar en el festival | Me obligaron a bailar en el festival | No me obligaron a bailar en el festival
+tai: Quiero bailar en el festival | No quiero bailar en el festival | Quería bailar en el festival | No quería bailar en el festival
+
+== 驚く|おどろく
+src: ニュースに
+plain: Me sorprendo con la noticia | No me sorprendo con la noticia | Me sorprendí con la noticia | No me sorprendí con la noticia | Voy a sorprenderme con la noticia | ¡Sorpréndete con la noticia! | ¡No te sorprendas con la noticia!
+pot: Puedo sorprenderme con la noticia | No puedo sorprenderme con la noticia | Pude sorprenderme con la noticia | No pude sorprenderme con la noticia
+pas: Se sorprenden con la noticia, para mi fastidio | No se sorprenden con la noticia | Se sorprendieron con la noticia, para mi fastidio | No se sorprendieron con la noticia
+cau: La noticia le sorprende | La noticia no le sorprende | La noticia le sorprendió | La noticia no le sorprendió | Voy a sorprenderle con la noticia | ¡Sorpréndele con la noticia! | ¡No le sorprendas con la noticia!
+cp: La noticia me deja asombrado | La noticia no me deja asombrado | La noticia me dejó asombrado | La noticia no me dejó asombrado
+tai: Quiero sorprenderme con la noticia | No quiero sorprenderme con la noticia | Quería sorprenderme con la noticia | No quería sorprenderme con la noticia

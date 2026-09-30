@@ -1,0 +1,358 @@
+# Spanish for the example sentence rewritten into each form. Format and rules:
+# scripts/build_translations.js. Conventions used throughout:
+#   pas  に + person → that person is the agent ("El profesor me saluda");
+#        otherwise impersonal or the affected "me" ("Me suben los precios").
+#   cau  "Le hago / le dejo + infinitivo", or "Hago que + subjuntivo" when
+#        the に phrase is the person made to act.
+#   cp   "Me obligan a …" (or "X me obliga a …" when に marks a person).
+#   tai  "Quiero …". Inanimate subjects are translated literally.
+
+== 挨拶する|あいさつする
+src: 先生に
+plain: Saludo al profesor | No saludo al profesor | Saludé al profesor | No saludé al profesor | Voy a saludar al profesor | ¡Saluda al profesor! | ¡No saludes al profesor!
+pot: Puedo saludar al profesor | No puedo saludar al profesor | Pude saludar al profesor | No pude saludar al profesor
+pas: El profesor me saluda | El profesor no me saluda | El profesor me saludó | El profesor no me saludó
+cau: Hago que el profesor salude | No hago que el profesor salude | Hice que el profesor saludara | No hice que el profesor saludara | Voy a hacer que el profesor salude | ¡Haz que el profesor salude! | ¡No hagas que el profesor salude!
+cp: El profesor me obliga a saludar | El profesor no me obliga a saludar | El profesor me obligó a saludar | El profesor no me obligó a saludar
+tai: Quiero saludar al profesor | No quiero saludar al profesor | Quería saludar al profesor | No quería saludar al profesor
+
+== 愛する|あいする
+src: 家族を
+plain: Amo a mi familia | No amo a mi familia | Amé a mi familia | No amé a mi familia | Voy a amar a mi familia | ¡Ama a tu familia! | ¡No ames a tu familia!
+pot: Puedo amar a mi familia | No puedo amar a mi familia | Pude amar a mi familia | No pude amar a mi familia
+pas: Aman a mi familia | No aman a mi familia | Amaron a mi familia | No amaron a mi familia
+cau: Le hago amar a su familia | No le hago amar a su familia | Le hice amar a su familia | No le hice amar a su familia | Voy a hacerle amar a su familia | ¡Hazle amar a su familia! | ¡No le hagas amar a su familia!
+cp: Me obligan a amar a mi familia | No me obligan a amar a mi familia | Me obligaron a amar a mi familia | No me obligaron a amar a mi familia
+tai: Quiero amar a mi familia | No quiero amar a mi familia | Quería amar a mi familia | No quería amar a mi familia
+
+== 会う|あう
+src: 駅で友達に
+plain: Quedo con un amigo en la estación | No quedo con un amigo en la estación | Quedé con un amigo en la estación | No quedé con un amigo en la estación | Voy a quedar con un amigo en la estación | ¡Queda con tu amigo en la estación! | ¡No quedes con tu amigo en la estación!
+pot: Puedo ver a un amigo en la estación | No puedo ver a un amigo en la estación | Pude ver a un amigo en la estación | No pude ver a un amigo en la estación
+pas: Mi amigo me encuentra en la estación | Mi amigo no me encuentra en la estación | Mi amigo me encontró en la estación | Mi amigo no me encontró en la estación
+cau: Dejo que mi amigo lo vea en la estación | No dejo que mi amigo lo vea en la estación | Dejé que mi amigo lo viera en la estación | No dejé que mi amigo lo viera en la estación | Voy a dejar que mi amigo lo vea en la estación | ¡Deja que tu amigo lo vea en la estación! | ¡No dejes que tu amigo lo vea en la estación!
+cp: Mi amigo me obliga a verle en la estación | Mi amigo no me obliga a verle en la estación | Mi amigo me obligó a verle en la estación | Mi amigo no me obligó a verle en la estación
+tai: Quiero ver a un amigo en la estación | No quiero ver a un amigo en la estación | Quería ver a un amigo en la estación | No quería ver a un amigo en la estación
+
+== 上がる|あがる
+src: 物価が
+plain: Los precios suben | Los precios no suben | Los precios subieron | Los precios no subieron | Los precios van a subir | ¡Que suban los precios! | ¡Que no suban los precios!
+pot: Los precios pueden subir | Los precios no pueden subir | Los precios pudieron subir | Los precios no pudieron subir
+pas: Me suben los precios | No me suben los precios | Me subieron los precios | No me subieron los precios
+cau: Hago subir los precios | No hago subir los precios | Hice subir los precios | No hice subir los precios | Voy a hacer subir los precios | ¡Haz subir los precios! | ¡No hagas subir los precios!
+cp: Los precios se ven obligados a subir | Los precios no se ven obligados a subir | Los precios se vieron obligados a subir | Los precios no se vieron obligados a subir
+tai: Los precios quieren subir | Los precios no quieren subir | Los precios querían subir | Los precios no querían subir
+
+== 諦める|あきらめる
+src: 夢を
+plain: Renuncio a mi sueño | No renuncio a mi sueño | Renuncié a mi sueño | No renuncié a mi sueño | Voy a renunciar a mi sueño | ¡Renuncia a tu sueño! | ¡No renuncies a tu sueño!
+pot: Puedo renunciar a mi sueño | No puedo renunciar a mi sueño | Pude renunciar a mi sueño | No pude renunciar a mi sueño
+pas: Renuncian a su sueño, para mi pesar | No renuncian a su sueño | Renunciaron a su sueño, para mi pesar | No renunciaron a su sueño
+cau: Le hago renunciar a su sueño | No le hago renunciar a su sueño | Le hice renunciar a su sueño | No le hice renunciar a su sueño | Voy a hacerle renunciar a su sueño | ¡Hazle renunciar a su sueño! | ¡No le hagas renunciar a su sueño!
+cp: Me obligan a renunciar a mi sueño | No me obligan a renunciar a mi sueño | Me obligaron a renunciar a mi sueño | No me obligaron a renunciar a mi sueño
+tai: Quiero renunciar a mi sueño | No quiero renunciar a mi sueño | Quería renunciar a mi sueño | No quería renunciar a mi sueño
+
+== 飽きる|あきる
+src: 同じ料理に
+plain: Me canso de la misma comida | No me canso de la misma comida | Me cansé de la misma comida | No me cansé de la misma comida | Voy a cansarme de la misma comida | ¡Cánsate de la misma comida! | ¡No te canses de la misma comida!
+pot: Puedo cansarme de la misma comida | No puedo cansarme de la misma comida | Pude cansarme de la misma comida | No pude cansarme de la misma comida
+pas: Se cansan de la misma comida, para mi pesar | No se cansan de la misma comida | Se cansaron de la misma comida, para mi pesar | No se cansaron de la misma comida
+cau: Hago que se canse de la misma comida | No hago que se canse de la misma comida | Hice que se cansara de la misma comida | No hice que se cansara de la misma comida | Voy a hacer que se canse de la misma comida | ¡Haz que se canse de la misma comida! | ¡No hagas que se canse de la misma comida!
+cp: Me obligan a hartarme de la misma comida | No me obligan a hartarme de la misma comida | Me obligaron a hartarme de la misma comida | No me obligaron a hartarme de la misma comida
+tai: Quiero cansarme de la misma comida | No quiero cansarme de la misma comida | Quería cansarme de la misma comida | No quería cansarme de la misma comida
+
+== 空く|あく
+src: 電車の席が
+plain: Queda libre un asiento en el tren | No queda libre ningún asiento en el tren | Quedó libre un asiento en el tren | No quedó libre ningún asiento en el tren | Va a quedar libre un asiento en el tren | ¡Que quede libre un asiento en el tren! | ¡Que no quede libre el asiento del tren!
+pot: Puede quedar libre un asiento en el tren | No puede quedar libre el asiento del tren | Pudo quedar libre un asiento en el tren | No pudo quedar libre el asiento del tren
+pas: Me dejan libre el asiento del tren | No me dejan libre el asiento del tren | Me dejaron libre el asiento del tren | No me dejaron libre el asiento del tren
+cau: Hago que quede libre un asiento en el tren | No hago que quede libre el asiento del tren | Hice que quedara libre un asiento en el tren | No hice que quedara libre el asiento del tren | Voy a hacer que quede libre un asiento en el tren | ¡Haz que quede libre un asiento en el tren! | ¡No hagas que quede libre el asiento del tren!
+cp: El asiento del tren se ve obligado a quedar libre | El asiento del tren no se ve obligado a quedar libre | El asiento del tren se vio obligado a quedar libre | El asiento del tren no se vio obligado a quedar libre
+tai: El asiento del tren quiere quedar libre | El asiento del tren no quiere quedar libre | El asiento del tren quería quedar libre | El asiento del tren no quería quedar libre
+
+== 開く|あく
+src: ドアが
+plain: La puerta se abre | La puerta no se abre | La puerta se abrió | La puerta no se abrió | La puerta se va a abrir | ¡Ábrete, puerta! | ¡No te abras, puerta!
+pot: La puerta puede abrirse | La puerta no puede abrirse | La puerta pudo abrirse | La puerta no pudo abrirse
+pas: Se me abre la puerta | No se me abre la puerta | Se me abrió la puerta | No se me abrió la puerta
+cau: Hago que la puerta se abra | No hago que la puerta se abra | Hice que la puerta se abriera | No hice que la puerta se abriera | Voy a hacer que la puerta se abra | ¡Haz que la puerta se abra! | ¡No hagas que la puerta se abra!
+cp: La puerta se ve obligada a abrirse | La puerta no se ve obligada a abrirse | La puerta se vio obligada a abrirse | La puerta no se vio obligada a abrirse
+tai: La puerta quiere abrirse | La puerta no quiere abrirse | La puerta quería abrirse | La puerta no quería abrirse
+
+== 握手する|あくしゅする
+src: 選手と
+plain: Le doy la mano al jugador | No le doy la mano al jugador | Le di la mano al jugador | No le di la mano al jugador | Voy a darle la mano al jugador | ¡Dale la mano al jugador! | ¡No le des la mano al jugador!
+pot: Puedo darle la mano al jugador | No puedo darle la mano al jugador | Pude darle la mano al jugador | No pude darle la mano al jugador
+pas: Le dan la mano al jugador, para mi pesar | No le dan la mano al jugador | Le dieron la mano al jugador, para mi pesar | No le dieron la mano al jugador
+cau: Hago que le dé la mano al jugador | No hago que le dé la mano al jugador | Hice que le diera la mano al jugador | No hice que le diera la mano al jugador | Voy a hacer que le dé la mano al jugador | ¡Haz que le dé la mano al jugador! | ¡No hagas que le dé la mano al jugador!
+cp: Me obligan a darle la mano al jugador | No me obligan a darle la mano al jugador | Me obligaron a darle la mano al jugador | No me obligaron a darle la mano al jugador
+tai: Quiero darle la mano al jugador | No quiero darle la mano al jugador | Quería darle la mano al jugador | No quería darle la mano al jugador
+
+== 開ける|あける
+src: 窓を
+plain: Abro la ventana | No abro la ventana | Abrí la ventana | No abrí la ventana | Voy a abrir la ventana | ¡Abre la ventana! | ¡No abras la ventana!
+pot: Puedo abrir la ventana | No puedo abrir la ventana | Pude abrir la ventana | No pude abrir la ventana
+pas: Me abren la ventana | No me abren la ventana | Me abrieron la ventana | No me abrieron la ventana
+cau: Le hago abrir la ventana | No le hago abrir la ventana | Le hice abrir la ventana | No le hice abrir la ventana | Voy a hacerle abrir la ventana | ¡Hazle abrir la ventana! | ¡No le hagas abrir la ventana!
+cp: Me obligan a abrir la ventana | No me obligan a abrir la ventana | Me obligaron a abrir la ventana | No me obligaron a abrir la ventana
+tai: Quiero abrir la ventana | No quiero abrir la ventana | Quería abrir la ventana | No quería abrir la ventana
+
+== 揚げる|あげる
+src: 天ぷらを
+plain: Frío tempura | No frío tempura | Freí tempura | No freí tempura | Voy a freír tempura | ¡Fríe tempura! | ¡No frías tempura!
+pot: Puedo freír tempura | No puedo freír tempura | Pude freír tempura | No pude freír tempura
+pas: Me fríen tempura | No me fríen tempura | Me frieron tempura | No me frieron tempura
+cau: Le hago freír tempura | No le hago freír tempura | Le hice freír tempura | No le hice freír tempura | Voy a hacerle freír tempura | ¡Hazle freír tempura! | ¡No le hagas freír tempura!
+cp: Me obligan a freír tempura | No me obligan a freír tempura | Me obligaron a freír tempura | No me obligaron a freír tempura
+tai: Quiero freír tempura | No quiero freír tempura | Quería freír tempura | No quería freír tempura
+
+== 上げる|あげる
+src: 手を
+plain: Levanto la mano | No levanto la mano | Levanté la mano | No levanté la mano | Voy a levantar la mano | ¡Levanta la mano! | ¡No levantes la mano!
+pot: Puedo levantar la mano | No puedo levantar la mano | Pude levantar la mano | No pude levantar la mano
+pas: Me levantan la mano | No me levantan la mano | Me levantaron la mano | No me levantaron la mano
+cau: Le hago levantar la mano | No le hago levantar la mano | Le hice levantar la mano | No le hice levantar la mano | Voy a hacerle levantar la mano | ¡Hazle levantar la mano! | ¡No le hagas levantar la mano!
+cp: Me obligan a levantar la mano | No me obligan a levantar la mano | Me obligaron a levantar la mano | No me obligaron a levantar la mano
+tai: Quiero levantar la mano | No quiero levantar la mano | Quería levantar la mano | No quería levantar la mano
+
+== あげる|あげる
+src: 友達にプレゼントを
+plain: Le doy un regalo a mi amigo | No le doy un regalo a mi amigo | Le di un regalo a mi amigo | No le di un regalo a mi amigo | Voy a darle un regalo a mi amigo | ¡Dale un regalo a tu amigo! | ¡No le des un regalo a tu amigo!
+pot: Puedo darle un regalo a mi amigo | No puedo darle un regalo a mi amigo | Pude darle un regalo a mi amigo | No pude darle un regalo a mi amigo
+pas: Mi amigo le da el regalo a otro | Mi amigo no le da el regalo a otro | Mi amigo le dio el regalo a otro | Mi amigo no le dio el regalo a otro
+cau: Hago que mi amigo dé un regalo | No hago que mi amigo dé un regalo | Hice que mi amigo diera un regalo | No hice que mi amigo diera un regalo | Voy a hacer que mi amigo dé un regalo | ¡Haz que tu amigo dé un regalo! | ¡No hagas que tu amigo dé un regalo!
+cp: Mi amigo me obliga a dar un regalo | Mi amigo no me obliga a dar un regalo | Mi amigo me obligó a dar un regalo | Mi amigo no me obligó a dar un regalo
+tai: Quiero darle un regalo a mi amigo | No quiero darle un regalo a mi amigo | Quería darle un regalo a mi amigo | No quería darle un regalo a mi amigo
+
+== 預ける|あずける
+src: 銀行にお金を
+plain: Deposito dinero en el banco | No deposito dinero en el banco | Deposité dinero en el banco | No deposité dinero en el banco | Voy a depositar dinero en el banco | ¡Deposita dinero en el banco! | ¡No deposites dinero en el banco!
+pot: Puedo depositar dinero en el banco | No puedo depositar dinero en el banco | Pude depositar dinero en el banco | No pude depositar dinero en el banco
+pas: Me depositan dinero en el banco | No me depositan dinero en el banco | Me depositaron dinero en el banco | No me depositaron dinero en el banco
+cau: Le hago depositar dinero en el banco | No le hago depositar dinero en el banco | Le hice depositar dinero en el banco | No le hice depositar dinero en el banco | Voy a hacerle depositar dinero en el banco | ¡Hazle depositar dinero en el banco! | ¡No le hagas depositar dinero en el banco!
+cp: Me obligan a depositar dinero en el banco | No me obligan a depositar dinero en el banco | Me obligaron a depositar dinero en el banco | No me obligaron a depositar dinero en el banco
+tai: Quiero depositar dinero en el banco | No quiero depositar dinero en el banco | Quería depositar dinero en el banco | No quería depositar dinero en el banco
+
+== 遊びに行く|あそびにいく
+src: 友達の家に
+plain: Voy a casa de un amigo a pasar el rato | No voy a casa de un amigo a pasar el rato | Fui a casa de un amigo a pasar el rato | No fui a casa de un amigo a pasar el rato | Voy a ir a casa de un amigo a pasar el rato | ¡Ve a casa de tu amigo a pasar el rato! | ¡No vayas a casa de tu amigo a pasar el rato!
+pot: Puedo ir a casa de un amigo a pasar el rato | No puedo ir a casa de un amigo a pasar el rato | Pude ir a casa de un amigo a pasar el rato | No pude ir a casa de un amigo a pasar el rato
+pas: Se me va a casa de un amigo a pasar el rato | No se me va a casa de un amigo | Se me fue a casa de un amigo a pasar el rato | No se me fue a casa de un amigo
+cau: Le dejo ir a casa de un amigo a pasar el rato | No le dejo ir a casa de un amigo | Le dejé ir a casa de un amigo a pasar el rato | No le dejé ir a casa de un amigo | Voy a dejarle ir a casa de un amigo a pasar el rato | ¡Déjale ir a casa de su amigo a pasar el rato! | ¡No le dejes ir a casa de su amigo!
+cp: Me obligan a ir a casa de un amigo a pasar el rato | No me obligan a ir a casa de un amigo | Me obligaron a ir a casa de un amigo a pasar el rato | No me obligaron a ir a casa de un amigo
+tai: Quiero ir a casa de un amigo a pasar el rato | No quiero ir a casa de un amigo a pasar el rato | Quería ir a casa de un amigo a pasar el rato | No quería ir a casa de un amigo a pasar el rato
+
+== 遊ぶ|あそぶ
+src: 公園で
+plain: Juego en el parque | No juego en el parque | Jugué en el parque | No jugué en el parque | Voy a jugar en el parque | ¡Juega en el parque! | ¡No juegues en el parque!
+pot: Puedo jugar en el parque | No puedo jugar en el parque | Pude jugar en el parque | No pude jugar en el parque
+pas: Juegan en el parque, para mi fastidio | No juegan en el parque | Jugaron en el parque, para mi fastidio | No jugaron en el parque
+cau: Le dejo jugar en el parque | No le dejo jugar en el parque | Le dejé jugar en el parque | No le dejé jugar en el parque | Voy a dejarle jugar en el parque | ¡Déjale jugar en el parque! | ¡No le dejes jugar en el parque!
+cp: Me obligan a jugar en el parque | No me obligan a jugar en el parque | Me obligaron a jugar en el parque | No me obligaron a jugar en el parque
+tai: Quiero jugar en el parque | No quiero jugar en el parque | Quería jugar en el parque | No quería jugar en el parque
+
+== 集まる|あつまる
+src: 学生が教室に
+plain: Los estudiantes se reúnen en el aula | Los estudiantes no se reúnen en el aula | Los estudiantes se reunieron en el aula | Los estudiantes no se reunieron en el aula | Los estudiantes van a reunirse en el aula | ¡Estudiantes, reuníos en el aula! | ¡Estudiantes, no os reunáis en el aula!
+pot: Los estudiantes pueden reunirse en el aula | Los estudiantes no pueden reunirse en el aula | Los estudiantes pudieron reunirse en el aula | Los estudiantes no pudieron reunirse en el aula
+pas: Se me reúnen los estudiantes en el aula | No se me reúnen los estudiantes en el aula | Se me reunieron los estudiantes en el aula | No se me reunieron los estudiantes en el aula
+cau: Hago que los estudiantes se reúnan en el aula | No hago que los estudiantes se reúnan en el aula | Hice que los estudiantes se reunieran en el aula | No hice que los estudiantes se reunieran en el aula | Voy a hacer que los estudiantes se reúnan en el aula | ¡Haz que los estudiantes se reúnan en el aula! | ¡No hagas que los estudiantes se reúnan en el aula!
+cp: Los estudiantes se ven obligados a reunirse en el aula | Los estudiantes no se ven obligados a reunirse en el aula | Los estudiantes se vieron obligados a reunirse en el aula | Los estudiantes no se vieron obligados a reunirse en el aula
+tai: Los estudiantes quieren reunirse en el aula | Los estudiantes no quieren reunirse en el aula | Los estudiantes querían reunirse en el aula | Los estudiantes no querían reunirse en el aula
+
+== 集める|あつめる
+src: 切手を
+plain: Colecciono sellos | No colecciono sellos | Coleccioné sellos | No coleccioné sellos | Voy a coleccionar sellos | ¡Colecciona sellos! | ¡No colecciones sellos!
+pot: Puedo coleccionar sellos | No puedo coleccionar sellos | Pude coleccionar sellos | No pude coleccionar sellos
+pas: Me recogen los sellos | No me recogen los sellos | Me recogieron los sellos | No me recogieron los sellos
+cau: Le hago coleccionar sellos | No le hago coleccionar sellos | Le hice coleccionar sellos | No le hice coleccionar sellos | Voy a hacerle coleccionar sellos | ¡Hazle coleccionar sellos! | ¡No le hagas coleccionar sellos!
+cp: Me obligan a coleccionar sellos | No me obligan a coleccionar sellos | Me obligaron a coleccionar sellos | No me obligaron a coleccionar sellos
+tai: Quiero coleccionar sellos | No quiero coleccionar sellos | Quería coleccionar sellos | No quería coleccionar sellos
+
+== アドバイスする|あどばいすする
+src: 後輩に
+plain: Doy consejos a mi compañero | No doy consejos a mi compañero | Di consejos a mi compañero | No di consejos a mi compañero | Voy a dar consejos a mi compañero | ¡Da consejos a tu compañero! | ¡No des consejos a tu compañero!
+pot: Puedo dar consejos a mi compañero | No puedo dar consejos a mi compañero | Pude dar consejos a mi compañero | No pude dar consejos a mi compañero
+pas: Mi compañero me da consejos | Mi compañero no me da consejos | Mi compañero me dio consejos | Mi compañero no me dio consejos
+cau: Hago que mi compañero dé consejos | No hago que mi compañero dé consejos | Hice que mi compañero diera consejos | No hice que mi compañero diera consejos | Voy a hacer que mi compañero dé consejos | ¡Haz que tu compañero dé consejos! | ¡No hagas que tu compañero dé consejos!
+cp: Mi compañero me obliga a dar consejos | Mi compañero no me obliga a dar consejos | Mi compañero me obligó a dar consejos | Mi compañero no me obligó a dar consejos
+tai: Quiero dar consejos a mi compañero | No quiero dar consejos a mi compañero | Quería dar consejos a mi compañero | No quería dar consejos a mi compañero
+
+== 浴びる|あびる
+src: シャワーを
+plain: Me ducho | No me ducho | Me duché | No me duché | Voy a ducharme | ¡Dúchate! | ¡No te duches!
+pot: Puedo ducharme | No puedo ducharme | Pude ducharme | No pude ducharme
+pas: Me ocupan la ducha | No me ocupan la ducha | Me ocuparon la ducha | No me ocuparon la ducha
+cau: Le hago ducharse | No le hago ducharse | Le hice ducharse | No le hice ducharse | Voy a hacer que se duche | ¡Haz que se duche! | ¡No hagas que se duche!
+cp: Me obligan a ducharme | No me obligan a ducharme | Me obligaron a ducharme | No me obligaron a ducharme
+tai: Quiero ducharme | No quiero ducharme | Quería ducharme | No quería ducharme
+
+== 謝る|あやまる
+src: 友達に
+plain: Me disculpo con mi amigo | No me disculpo con mi amigo | Me disculpé con mi amigo | No me disculpé con mi amigo | Voy a disculparme con mi amigo | ¡Discúlpate con tu amigo! | ¡No te disculpes con tu amigo!
+pot: Puedo disculparme con mi amigo | No puedo disculparme con mi amigo | Pude disculparme con mi amigo | No pude disculparme con mi amigo
+pas: Mi amigo se disculpa conmigo | Mi amigo no se disculpa conmigo | Mi amigo se disculpó conmigo | Mi amigo no se disculpó conmigo
+cau: Hago que mi amigo se disculpe | No hago que mi amigo se disculpe | Hice que mi amigo se disculpara | No hice que mi amigo se disculpara | Voy a hacer que mi amigo se disculpe | ¡Haz que tu amigo se disculpe! | ¡No hagas que tu amigo se disculpe!
+cp: Mi amigo me obliga a disculparme | Mi amigo no me obliga a disculparme | Mi amigo me obligó a disculparme | Mi amigo no me obligó a disculparme
+tai: Quiero disculparme con mi amigo | No quiero disculparme con mi amigo | Quería disculparme con mi amigo | No quería disculparme con mi amigo
+
+== 洗う|あらう
+src: 手を
+plain: Me lavo las manos | No me lavo las manos | Me lavé las manos | No me lavé las manos | Voy a lavarme las manos | ¡Lávate las manos! | ¡No te laves las manos!
+pot: Puedo lavarme las manos | No puedo lavarme las manos | Pude lavarme las manos | No pude lavarme las manos
+pas: Me lavan las manos | No me lavan las manos | Me lavaron las manos | No me lavaron las manos
+cau: Le hago lavarse las manos | No le hago lavarse las manos | Le hice lavarse las manos | No le hice lavarse las manos | Voy a hacer que se lave las manos | ¡Haz que se lave las manos! | ¡No hagas que se lave las manos!
+cp: Me obligan a lavarme las manos | No me obligan a lavarme las manos | Me obligaron a lavarme las manos | No me obligaron a lavarme las manos
+tai: Quiero lavarme las manos | No quiero lavarme las manos | Quería lavarme las manos | No quería lavarme las manos
+
+== 表す|あらわす
+src: 感謝の気持ちを
+plain: Expreso mi gratitud | No expreso mi gratitud | Expresé mi gratitud | No expresé mi gratitud | Voy a expresar mi gratitud | ¡Expresa tu gratitud! | ¡No expreses tu gratitud!
+pot: Puedo expresar mi gratitud | No puedo expresar mi gratitud | Pude expresar mi gratitud | No pude expresar mi gratitud
+pas: Me expresan su gratitud | No me expresan su gratitud | Me expresaron su gratitud | No me expresaron su gratitud
+cau: Le hago expresar su gratitud | No le hago expresar su gratitud | Le hice expresar su gratitud | No le hice expresar su gratitud | Voy a hacerle expresar su gratitud | ¡Hazle expresar su gratitud! | ¡No le hagas expresar su gratitud!
+cp: Me obligan a expresar mi gratitud | No me obligan a expresar mi gratitud | Me obligaron a expresar mi gratitud | No me obligaron a expresar mi gratitud
+tai: Quiero expresar mi gratitud | No quiero expresar mi gratitud | Quería expresar mi gratitud | No quería expresar mi gratitud
+
+== ある|ある
+src: 机の上に本が
+plain: Hay un libro sobre la mesa | No hay ningún libro sobre la mesa | Había un libro sobre la mesa | No había ningún libro sobre la mesa
+
+== 歩く|あるく
+src: 駅まで
+plain: Camino hasta la estación | No camino hasta la estación | Caminé hasta la estación | No caminé hasta la estación | Voy a caminar hasta la estación | ¡Camina hasta la estación! | ¡No camines hasta la estación!
+pot: Puedo caminar hasta la estación | No puedo caminar hasta la estación | Pude caminar hasta la estación | No pude caminar hasta la estación
+pas: Se me van andando hasta la estación | No se me van andando hasta la estación | Se me fueron andando hasta la estación | No se me fueron andando hasta la estación
+cau: Le hago caminar hasta la estación | No le hago caminar hasta la estación | Le hice caminar hasta la estación | No le hice caminar hasta la estación | Voy a hacerle caminar hasta la estación | ¡Hazle caminar hasta la estación! | ¡No le hagas caminar hasta la estación!
+cp: Me obligan a caminar hasta la estación | No me obligan a caminar hasta la estación | Me obligaron a caminar hasta la estación | No me obligaron a caminar hasta la estación
+tai: Quiero caminar hasta la estación | No quiero caminar hasta la estación | Quería caminar hasta la estación | No quería caminar hasta la estación
+
+== アンケートする|あんけーとする
+src: 学生に
+plain: Hago una encuesta a los estudiantes | No hago una encuesta a los estudiantes | Hice una encuesta a los estudiantes | No hice una encuesta a los estudiantes | Voy a hacer una encuesta a los estudiantes | ¡Haz una encuesta a los estudiantes! | ¡No hagas una encuesta a los estudiantes!
+pot: Puedo hacer una encuesta a los estudiantes | No puedo hacer una encuesta a los estudiantes | Pude hacer una encuesta a los estudiantes | No pude hacer una encuesta a los estudiantes
+pas: Los estudiantes me hacen una encuesta | Los estudiantes no me hacen una encuesta | Los estudiantes me hicieron una encuesta | Los estudiantes no me hicieron una encuesta
+cau: Hago que los estudiantes hagan una encuesta | No hago que los estudiantes hagan una encuesta | Hice que los estudiantes hicieran una encuesta | No hice que los estudiantes hicieran una encuesta | Voy a hacer que los estudiantes hagan una encuesta | ¡Haz que los estudiantes hagan una encuesta! | ¡No hagas que los estudiantes hagan una encuesta!
+cp: Los estudiantes me obligan a hacer una encuesta | Los estudiantes no me obligan a hacer una encuesta | Los estudiantes me obligaron a hacer una encuesta | Los estudiantes no me obligaron a hacer una encuesta
+tai: Quiero hacer una encuesta a los estudiantes | No quiero hacer una encuesta a los estudiantes | Quería hacer una encuesta a los estudiantes | No quería hacer una encuesta a los estudiantes
+
+== 安心する|あんしんする
+src: 母の声を聞いて
+plain: Me tranquilizo al oír la voz de mi madre | No me tranquilizo al oír la voz de mi madre | Me tranquilicé al oír la voz de mi madre | No me tranquilicé al oír la voz de mi madre | Voy a tranquilizarme al oír la voz de mi madre | ¡Tranquilízate al oír la voz de tu madre! | ¡No te tranquilices al oír la voz de tu madre!
+pot: Puedo tranquilizarme al oír la voz de mi madre | No puedo tranquilizarme al oír la voz de mi madre | Pude tranquilizarme al oír la voz de mi madre | No pude tranquilizarme al oír la voz de mi madre
+pas: Se tranquilizan al oír la voz de mi madre, para mi pesar | No se tranquilizan al oír la voz de mi madre | Se tranquilizaron al oír la voz de mi madre, para mi pesar | No se tranquilizaron al oír la voz de mi madre
+cau: Hago que se tranquilice al oír la voz de mi madre | No hago que se tranquilice al oír la voz de mi madre | Hice que se tranquilizara al oír la voz de mi madre | No hice que se tranquilizara al oír la voz de mi madre | Voy a hacer que se tranquilice al oír la voz de mi madre | ¡Haz que se tranquilice al oír la voz de tu madre! | ¡No hagas que se tranquilice al oír la voz de tu madre!
+cp: Me obligan a tranquilizarme al oír la voz de mi madre | No me obligan a tranquilizarme al oír la voz de mi madre | Me obligaron a tranquilizarme al oír la voz de mi madre | No me obligaron a tranquilizarme al oír la voz de mi madre
+tai: Quiero tranquilizarme al oír la voz de mi madre | No quiero tranquilizarme al oír la voz de mi madre | Quería tranquilizarme al oír la voz de mi madre | No quería tranquilizarme al oír la voz de mi madre
+
+== 案内する|あんないする
+src: 京都を
+plain: Hago de guía por Kioto | No hago de guía por Kioto | Hice de guía por Kioto | No hice de guía por Kioto | Voy a hacer de guía por Kioto | ¡Haz de guía por Kioto! | ¡No hagas de guía por Kioto!
+pot: Puedo hacer de guía por Kioto | No puedo hacer de guía por Kioto | Pude hacer de guía por Kioto | No pude hacer de guía por Kioto
+pas: Me enseñan Kioto | No me enseñan Kioto | Me enseñaron Kioto | No me enseñaron Kioto
+cau: Le hago hacer de guía por Kioto | No le hago hacer de guía por Kioto | Le hice hacer de guía por Kioto | No le hice hacer de guía por Kioto | Voy a hacerle hacer de guía por Kioto | ¡Hazle hacer de guía por Kioto! | ¡No le hagas hacer de guía por Kioto!
+cp: Me obligan a hacer de guía por Kioto | No me obligan a hacer de guía por Kioto | Me obligaron a hacer de guía por Kioto | No me obligaron a hacer de guía por Kioto
+tai: Quiero hacer de guía por Kioto | No quiero hacer de guía por Kioto | Quería hacer de guía por Kioto | No quería hacer de guía por Kioto
+
+== 言う|いう
+src: 本当のことを
+plain: Digo la verdad | No digo la verdad | Dije la verdad | No dije la verdad | Voy a decir la verdad | ¡Di la verdad! | ¡No digas la verdad!
+pot: Puedo decir la verdad | No puedo decir la verdad | Pude decir la verdad | No pude decir la verdad
+pas: Me dicen la verdad | No me dicen la verdad | Me dijeron la verdad | No me dijeron la verdad
+cau: Le hago decir la verdad | No le hago decir la verdad | Le hice decir la verdad | No le hice decir la verdad | Voy a hacerle decir la verdad | ¡Hazle decir la verdad! | ¡No le hagas decir la verdad!
+cp: Me obligan a decir la verdad | No me obligan a decir la verdad | Me obligaron a decir la verdad | No me obligaron a decir la verdad
+tai: Quiero decir la verdad | No quiero decir la verdad | Quería decir la verdad | No quería decir la verdad
+
+== 息抜きする|いきぬきする
+src: 散歩して
+plain: Me despejo dando un paseo | No me despejo dando un paseo | Me despejé dando un paseo | No me despejé dando un paseo | Voy a despejarme dando un paseo | ¡Despéjate dando un paseo! | ¡No te despejes dando un paseo!
+pot: Puedo despejarme dando un paseo | No puedo despejarme dando un paseo | Pude despejarme dando un paseo | No pude despejarme dando un paseo
+pas: Se despejan dando un paseo, para mi fastidio | No se despejan dando un paseo | Se despejaron dando un paseo, para mi fastidio | No se despejaron dando un paseo
+cau: Le dejo despejarse dando un paseo | No le dejo despejarse dando un paseo | Le dejé despejarse dando un paseo | No le dejé despejarse dando un paseo | Voy a dejarle despejarse dando un paseo | ¡Déjale despejarse dando un paseo! | ¡No le dejes despejarse dando un paseo!
+cp: Me obligan a despejarme dando un paseo | No me obligan a despejarme dando un paseo | Me obligaron a despejarme dando un paseo | No me obligaron a despejarme dando un paseo
+tai: Quiero despejarme dando un paseo | No quiero despejarme dando un paseo | Quería despejarme dando un paseo | No quería despejarme dando un paseo
+
+== 生きる|いきる
+src: 祖父は元気に
+plain: Mi abuelo vive con salud | Mi abuelo no vive con salud | Mi abuelo vivió con salud | Mi abuelo no vivió con salud | Mi abuelo va a vivir con salud | ¡Abuelo, vive con salud! | ¡Abuelo, no vivas así!
+pot: Mi abuelo puede vivir con salud | Mi abuelo no puede vivir con salud | Mi abuelo pudo vivir con salud | Mi abuelo no pudo vivir con salud
+pas: Mi abuelo vive con salud, para mi sorpresa | Mi abuelo no vive con salud | Mi abuelo vivió con salud, para mi sorpresa | Mi abuelo no vivió con salud
+cau: Hago que mi abuelo viva con salud | No hago que mi abuelo viva con salud | Hice que mi abuelo viviera con salud | No hice que mi abuelo viviera con salud | Voy a hacer que mi abuelo viva con salud | ¡Haz que tu abuelo viva con salud! | ¡No hagas que tu abuelo viva así!
+cp: Mi abuelo se ve obligado a vivir con salud | Mi abuelo no se ve obligado a vivir con salud | Mi abuelo se vio obligado a vivir con salud | Mi abuelo no se vio obligado a vivir con salud
+tai: Mi abuelo quiere vivir con salud | Mi abuelo no quiere vivir con salud | Mi abuelo quería vivir con salud | Mi abuelo no quería vivir con salud
+
+== 行く|いく
+src: 学校に
+plain: Voy a la escuela | No voy a la escuela | Fui a la escuela | No fui a la escuela | Voy a ir a la escuela | ¡Ve a la escuela! | ¡No vayas a la escuela!
+pot: Puedo ir a la escuela | No puedo ir a la escuela | Pude ir a la escuela | No pude ir a la escuela
+pas: Se me va a la escuela | No se me va a la escuela | Se me fue a la escuela | No se me fue a la escuela
+cau: Le hago ir a la escuela | No le hago ir a la escuela | Le hice ir a la escuela | No le hice ir a la escuela | Voy a hacerle ir a la escuela | ¡Hazle ir a la escuela! | ¡No le hagas ir a la escuela!
+cp: Me obligan a ir a la escuela | No me obligan a ir a la escuela | Me obligaron a ir a la escuela | No me obligaron a ir a la escuela
+tai: Quiero ir a la escuela | No quiero ir a la escuela | Quería ir a la escuela | No quería ir a la escuela
+
+== 急ぐ|いそぐ
+src: 駅へ
+plain: Me apresuro hacia la estación | No me apresuro hacia la estación | Me apresuré hacia la estación | No me apresuré hacia la estación | Voy a apresurarme hacia la estación | ¡Date prisa hacia la estación! | ¡No te des prisa hacia la estación!
+pot: Puedo ir deprisa a la estación | No puedo ir deprisa a la estación | Pude ir deprisa a la estación | No pude ir deprisa a la estación
+pas: Se me van corriendo a la estación | No se me van corriendo a la estación | Se me fueron corriendo a la estación | No se me fueron corriendo a la estación
+cau: Le hago ir deprisa a la estación | No le hago ir deprisa a la estación | Le hice ir deprisa a la estación | No le hice ir deprisa a la estación | Voy a hacerle ir deprisa a la estación | ¡Hazle ir deprisa a la estación! | ¡No le hagas ir deprisa a la estación!
+cp: Me obligan a ir deprisa a la estación | No me obligan a ir deprisa a la estación | Me obligaron a ir deprisa a la estación | No me obligaron a ir deprisa a la estación
+tai: Quiero ir deprisa a la estación | No quiero ir deprisa a la estación | Quería ir deprisa a la estación | No quería ir deprisa a la estación
+
+== 致す|いたす
+src: 私が
+plain: Yo lo hago | Yo no lo hago | Yo lo hice | Yo no lo hice | Lo haré yo | ¡Hazlo tú! | ¡No lo hagas!
+pot: Yo puedo hacerlo | Yo no puedo hacerlo | Yo pude hacerlo | Yo no pude hacerlo
+pas: A mí me lo hacen | A mí no me lo hacen | A mí me lo hicieron | A mí no me lo hicieron
+cau: Yo hago que lo hagan | Yo no hago que lo hagan | Yo hice que lo hicieran | Yo no hice que lo hicieran | Yo voy a hacer que lo hagan | ¡Haz que lo hagan! | ¡No hagas que lo hagan!
+cp: A mí me obligan a hacerlo | A mí no me obligan a hacerlo | A mí me obligaron a hacerlo | A mí no me obligaron a hacerlo
+tai: Yo quiero hacerlo | Yo no quiero hacerlo | Yo quería hacerlo | Yo no quería hacerlo
+
+== 頂く|いただく
+src: 先生にお土産を
+plain: Recibo un regalo del profesor | No recibo ningún regalo del profesor | Recibí un regalo del profesor | No recibí ningún regalo del profesor | Voy a recibir un regalo del profesor | ¡Acepta el regalo del profesor! | ¡No aceptes el regalo del profesor!
+pot: Puedo recibir un regalo del profesor | No puedo recibir el regalo del profesor | Pude recibir un regalo del profesor | No pude recibir el regalo del profesor
+pas: El profesor se queda con el regalo | El profesor no se queda con el regalo | El profesor se quedó con el regalo | El profesor no se quedó con el regalo
+cau: Hago que el profesor acepte el regalo | No hago que el profesor acepte el regalo | Hice que el profesor aceptara el regalo | No hice que el profesor aceptara el regalo | Voy a hacer que el profesor acepte el regalo | ¡Haz que el profesor acepte el regalo! | ¡No hagas que el profesor acepte el regalo!
+cp: El profesor me obliga a aceptar un regalo | El profesor no me obliga a aceptar un regalo | El profesor me obligó a aceptar un regalo | El profesor no me obligó a aceptar un regalo
+tai: Quiero recibir un regalo del profesor | No quiero recibir ningún regalo del profesor | Quería recibir un regalo del profesor | No quería recibir ningún regalo del profesor
+
+== 炒める|いためる
+src: 野菜を
+plain: Salteo verduras | No salteo verduras | Salteé verduras | No salteé verduras | Voy a saltear verduras | ¡Saltea las verduras! | ¡No saltees las verduras!
+pot: Puedo saltear verduras | No puedo saltear verduras | Pude saltear verduras | No pude saltear verduras
+pas: Me saltean las verduras | No me saltean las verduras | Me saltearon las verduras | No me saltearon las verduras
+cau: Le hago saltear verduras | No le hago saltear verduras | Le hice saltear verduras | No le hice saltear verduras | Voy a hacerle saltear verduras | ¡Hazle saltear las verduras! | ¡No le hagas saltear las verduras!
+cp: Me obligan a saltear verduras | No me obligan a saltear verduras | Me obligaron a saltear verduras | No me obligaron a saltear verduras
+tai: Quiero saltear verduras | No quiero saltear verduras | Quería saltear verduras | No quería saltear verduras
+
+== 行って来る|いってくる
+src: ちょっと
+plain: Salgo un momento y vuelvo | No salgo ni un momento | Salí un momento y volví | No salí ni un momento | Voy a salir un momento y vuelvo | ¡Sal un momento y vuelve! | ¡No salgas ni un momento!
+pot: Puedo salir un momento y volver | No puedo salir ni un momento | Pude salir un momento y volver | No pude salir ni un momento
+pas: Se me va un momento | No se me va ni un momento | Se me fue un momento | No se me fue ni un momento
+cau: Le dejo salir un momento | No le dejo salir ni un momento | Le dejé salir un momento | No le dejé salir ni un momento | Voy a dejarle salir un momento | ¡Déjale salir un momento! | ¡No le dejes salir ni un momento!
+cp: Me obligan a salir un momento | No me obligan a salir | Me obligaron a salir un momento | No me obligaron a salir
+tai: Quiero salir un momento | No quiero salir ni un momento | Quería salir un momento | No quería salir ni un momento
+
+== 苛々する|いらいらする
+src: 渋滞で
+plain: Me irrito con el atasco | No me irrito con el atasco | Me irrité con el atasco | No me irrité con el atasco | Voy a irritarme con el atasco | ¡Irrítate con el atasco! | ¡No te irrites con el atasco!
+pot: Puedo irritarme con el atasco | No puedo irritarme con el atasco | Pude irritarme con el atasco | No pude irritarme con el atasco
+pas: Se irritan con el atasco, para mi fastidio | No se irritan con el atasco | Se irritaron con el atasco, para mi fastidio | No se irritaron con el atasco
+cau: Hago que se irrite con el atasco | No hago que se irrite con el atasco | Hice que se irritara con el atasco | No hice que se irritara con el atasco | Voy a hacer que se irrite con el atasco | ¡Haz que se irrite con el atasco! | ¡No hagas que se irrite con el atasco!
+cp: El atasco me pone de los nervios | El atasco no me pone de los nervios | El atasco me puso de los nervios | El atasco no me puso de los nervios
+tai: Quiero irritarme con el atasco | No quiero irritarme con el atasco | Quería irritarme con el atasco | No quería irritarme con el atasco
+
+== いらっしゃる|いらっしゃる
+src: 先生は教室に
+plain: El profesor está en el aula | El profesor no está en el aula | El profesor estaba en el aula | El profesor no estaba en el aula | El profesor va a estar en el aula | ¡Venga al aula, profesor! | ¡No venga al aula, profesor!
+
+== いる|いる
+src: 猫が部屋に
+plain: Hay un gato en la habitación | No hay ningún gato en la habitación | Había un gato en la habitación | No había ningún gato en la habitación | El gato va a quedarse en la habitación | ¡Gato, quédate en la habitación! | ¡Gato, no te quedes en la habitación!
+pot: El gato puede quedarse en la habitación | El gato no puede quedarse en la habitación | El gato pudo quedarse en la habitación | El gato no pudo quedarse en la habitación
+pas: Se me mete un gato en la habitación | No se me mete ningún gato en la habitación | Se me metió un gato en la habitación | No se me metió ningún gato en la habitación
+cau: Dejo que el gato se quede en la habitación | No dejo que el gato se quede en la habitación | Dejé que el gato se quedara en la habitación | No dejé que el gato se quedara en la habitación | Voy a dejar que el gato se quede en la habitación | ¡Deja que el gato se quede en la habitación! | ¡No dejes que el gato se quede en la habitación!
+cp: El gato se ve obligado a quedarse en la habitación | El gato no se ve obligado a quedarse en la habitación | El gato se vio obligado a quedarse en la habitación | El gato no se vio obligado a quedarse en la habitación
+tai: El gato quiere quedarse en la habitación | El gato no quiere quedarse en la habitación | El gato quería quedarse en la habitación | El gato no quería quedarse en la habitación

@@ -87,8 +87,8 @@
   // Forms that cannot end a sentence get "…" instead of the original 。
   const OPEN_ENDED = ['te', 'ba', 'tara', 'tari', 'nagara'];
 
-  // The example with its final verb swapped for `ans`, or null when the
-  // sentence does not end in a recognisable form of the verb.
+  // The example with its final verb swapped for `ans`: {html, prefix}, or null
+  // when the sentence does not end in a recognisable form of the verb.
   function rewriteExample(vi, segs, ans, combo) {
     const surface = segs.map((g) => g.s).join('');
     const body = surface.replace(/[。．.！!？?」]+$/, '');
@@ -105,7 +105,34 @@
       pos = end;
     }
     const tailPunct = OPEN_ENDED.includes(combo.infl) ? '…' : surface.slice(body.length);
-    return `${html}<mark>${ruby(ans.k, ans.r)}</mark>${esc(tailPunct)}`;
+    return { html: `${html}<mark>${ruby(ans.k, ans.r)}</mark>${esc(tailPunct)}`, prefix: body.slice(0, cut) };
+  }
+
+  // Spanish for the rewritten example, from data/examples_es.js. Each entry
+  // holds [present, present neg, past, past neg] per voice, plus [volitional,
+  // imperative, imperative neg] for plain/causative; the connective forms are
+  // built on top of those. Politeness does not change the Spanish.
+  const lc = (s) => (/^[¡¿]/.test(s) ? s : s.charAt(0).toLowerCase() + s.slice(1));
+  const bare = (s) => s.replace(/[.。…]+$/, '');
+  function spanishFor(vi, combo, prefix) {
+    const v = VERBS[vi];
+    const e = (window.EXAMPLES_ES || {})[v.k + '|' + v.r];
+    const t = e && e.src === prefix && e[combo.voice];
+    if (!t) return null;
+    const pres = t[combo.neg ? 1 : 0], past = t[combo.neg ? 3 : 2];
+    switch (combo.infl) {
+      case 'pres': return pres;
+      case 'past': return past;
+      case 'te': return bare(past) + ' y…';
+      case 'ba': return 'Si ' + lc(bare(pres)) + '…';
+      case 'tara': return 'Cuando ' + lc(bare(past)) + '…';
+      case 'tari': return bare(past) + ', entre otras cosas…';
+      case 'nagara': return 'Mientras ' + lc(bare(pres)) + '…';
+      case 'sou': return 'Parece que ' + lc(pres);
+      case 'vol': return t[4] || null;
+      case 'imp': return t[combo.neg ? 6 : 5] || null;
+    }
+    return null;
   }
 
   function exampleHTML(vi, ans, combo) {
@@ -117,9 +144,10 @@
     const rewritten = rewriteExample(vi, segs, ans, combo);
     const esHTML = es ? `<div class="es">${esc(es)}</div>` : '';
     if (!rewritten) return `<div class="example"><div class="ja" lang="ja">${original}</div>${esHTML}</div>`;
+    const tr = spanishFor(vi, combo, rewritten.prefix);
     return `<div class="example">
         <div class="lbl">Ejemplo en esta forma</div>
-        <div class="ja" lang="ja">${rewritten}</div>
+        <div class="ja" lang="ja">${rewritten.html}</div>${tr ? `<div class="es">${esc(tr)}</div>` : ''}
         <div class="lbl">Frase original</div>
         <div class="ja orig" lang="ja">${original}</div>${esHTML}
       </div>`;
