@@ -173,10 +173,20 @@
       .map((combo) => ({ combo, verbs: verbIdx.filter((i) => verbAllows(VERBS[i], combo)) }))
       .filter((p) => p.verbs.length);
     const n = pool.reduce((a, p) => a + p.verbs.length, 0);
+    // Name the section that left the pool empty instead of a generic warning.
+    const empty = [
+      !settings.voices.length && 'Voz / base',
+      !settings.infls.length && 'Forma',
+      !settings.aff && !settings.neg && 'Afirmativo o Negativo',
+      !settings.plain && !settings.polite && 'Llano o Cortés',
+      !settings.groups.length && 'Grupos de verbos',
+    ].filter(Boolean);
     const el = $('pool-count');
     el.textContent = pool.length
       ? `${pool.length} formas × ${verbIdx.length} verbos → ${n.toLocaleString('es')} preguntas posibles`
-      : 'Ninguna combinación posible: activa más opciones.';
+      : empty.length
+        ? `Sin preguntas: marca al menos una opción en ${empty.join(', ')}.`
+        : 'Sin preguntas: esas voces y formas no se combinan entre sí (p. ej. 可能 no tiene 意向 ni 命令). Activa otra forma.';
     el.classList.toggle('warn', !pool.length);
   }
 
