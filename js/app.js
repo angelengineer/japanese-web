@@ -48,12 +48,81 @@
     return segs.map((s, i) => (isKanjiRun(s) ? `<ruby>${esc(s)}<rt>${esc(m[i + 1])}</rt></ruby>` : esc(s))).join('');
   }
 
-  // Notion example sentences: "電車(でんしゃ)の席(せき)が… — Quedó libre…"
-  function exampleHTML(ej) {
+  // Notion example sentences: "電車(でんしゃ)の席(せき)が… — Quedó libre…",
+  // parsed into segments {s, rt}; rt is the furigana of a kanji run.
+  function parseJa(ja) {
+    const segs = [];
+    const re = new RegExp('([' + KANJI + ']+)[(（]([^)）]+)[)）]', 'g');
+    let at = 0, m;
+    while ((m = re.exec(ja))) {
+      if (m.index > at) segs.push({ s: ja.slice(at, m.index) });
+      segs.push({ s: m[1], rt: m[2] });
+      at = re.lastIndex;
+    }
+    if (at < ja.length) segs.push({ s: ja.slice(at) });
+    return segs;
+  }
+  const segHTML = (g) => (g.rt ? `<ruby>${esc(g.s)}<rt>${esc(g.rt)}</rt></ruby>` : esc(g.s));
+
+  // Every spelling (kanji and kana) of every form of verb vi, longest first,
+  // including 〜ている so progressive examples (住んでいます) are recognised.
+  const IRU = ['いませんでした', 'いました', 'いません', 'います', 'いなかった', 'いない', 'いた', 'いる'];
+  const formCache = new Map();
+  function knownForms(vi) {
+    if (formCache.has(vi)) return formCache.get(vi);
+    const v = VERBS[vi];
+    const set = new Set([v.k, v.r]);
+    for (const c of COMBOS) {
+      if (!verbAllows(v, c)) continue;
+      for (const a of conjugate(v, c).answers) { set.add(a.k); set.add(a.r); }
+    }
+    for (const t of conjugate(v, { voice: 'plain', infl: 'te', neg: false, pol: false }).answers) {
+      for (const i of IRU) { set.add(t.k + i); set.add(t.r + i); }
+    }
+    const list = [...set].sort((a, b) => b.length - a.length);
+    formCache.set(vi, list);
+    return list;
+  }
+
+  // Forms that cannot end a sentence get "…" instead of the original 。
+  const OPEN_ENDED = ['te', 'ba', 'tara', 'tari', 'nagara'];
+
+  // The example with its final verb swapped for `ans`, or null when the
+  // sentence does not end in a recognisable form of the verb.
+  function rewriteExample(vi, segs, ans, combo) {
+    const surface = segs.map((g) => g.s).join('');
+    const body = surface.replace(/[。．.！!？?」]+$/, '');
+    const hit = knownForms(vi).find((f) => body.endsWith(f));
+    if (!hit) return null;
+    const cut = body.length - hit.length;
+    let html = '', pos = 0;
+    for (const g of segs) {
+      if (pos >= cut) break;
+      const end = pos + g.s.length;
+      if (end <= cut) html += segHTML(g);
+      else if (g.rt) return null; // the verb starts inside a kanji compound
+      else html += esc(g.s.slice(0, cut - pos));
+      pos = end;
+    }
+    const tailPunct = OPEN_ENDED.includes(combo.infl) ? '…' : surface.slice(body.length);
+    return `${html}<mark>${ruby(ans.k, ans.r)}</mark>${esc(tailPunct)}`;
+  }
+
+  function exampleHTML(vi, ans, combo) {
+    const ej = VERBS[vi].ej;
     if (!ej) return '';
     const [ja, es] = ej.split(/\s+[—–-]\s+/);
-    const jaHTML = esc(ja).replace(new RegExp('([' + KANJI + ']+)[(（]([^)）]+)[)）]', 'g'), '<ruby>$1<rt>$2</rt></ruby>');
-    return `<div class="example"><div class="ja" lang="ja">${jaHTML}</div>${es ? `<div class="es">${esc(es)}</div>` : ''}</div>`;
+    const segs = parseJa(ja);
+    const original = segs.map(segHTML).join('');
+    const rewritten = rewriteExample(vi, segs, ans, combo);
+    const esHTML = es ? `<div class="es">${esc(es)}</div>` : '';
+    if (!rewritten) return `<div class="example"><div class="ja" lang="ja">${original}</div>${esHTML}</div>`;
+    return `<div class="example">
+        <div class="lbl">Ejemplo en esta forma</div>
+        <div class="ja" lang="ja">${rewritten}</div>
+        <div class="lbl">Frase original</div>
+        <div class="ja orig" lang="ja">${original}</div>${esHTML}
+      </div>`;
   }
 
   // Comparison key: NFKC, no spaces, katakana folded to hiragana (ー kept).
@@ -196,7 +265,7 @@
     const [main, ...alts] = result.answers;
     const chain = [ruby(v.k, v.r)];
     if (result.base) chain.push(ruby(result.base.k, result.base.r));
-    chain.push(ruby(main.k, main.r));
+    if (!result.base || result.base.k !== main.k) chain.push(ruby(main.k, main.r));
     const altText = alts.map((a) => (a.k !== a.r ? `${a.k}（${a.r}）` : a.r)).join('、 ');
     const fb = $('feedback');
     fb.className = 'feedback ' + (correct ? 'ok' : 'bad');
@@ -207,7 +276,7 @@
       ${alts.length ? `<div class="row"><span>También vale</span><span class="alt" lang="ja">${esc(altText)}</span></div>` : ''}
       <div class="row"><span>Derivación</span><span class="chain" lang="ja">${chain.join('<span class="arrow">→</span>')}</span></div>
       <div class="row"><span>Significado</span><span>${esc(v.es)}</span></div>
-      ${exampleHTML(v.ej)}`;
+      ${exampleHTML(q.verb, main, q.combo)}`;
     fb.hidden = false;
   }
 

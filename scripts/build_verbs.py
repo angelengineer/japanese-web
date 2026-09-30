@@ -26,6 +26,11 @@ GROUP_FIXES = {
     "とじる": "2",      # 閉じる is ichidan
     "もっている": "2",  # ends in いる (ichidan)
     "いってくる": "3",  # compound of 来る
+    # -eru/-iru ichidan verbs tagged Grupo 1
+    "おちる": "2", "さげる": "2", "さめる": "2", "たずねる": "2", "てれびにでる": "2",
+    "でかける": "2", "とれる": "2", "ながれる": "2", "みつける": "2",
+    # godan verbs tagged Grupo 2
+    "まいる": "1", "とりにかえる": "1",
 }
 
 

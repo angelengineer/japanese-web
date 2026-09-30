@@ -14,6 +14,8 @@ Each question takes a random verb and a random form:
 Only real combinations are asked (108 forms; no potential volitional, no 〜たい imperative, …).
 Type in romaji (converted live by WanaKana) or with a Japanese IME; kana and kanji
 answers are both accepted. Missed questions come back four turns later.
+After each answer the verb's Notion example sentence is shown rewritten in the
+asked form, next to the original.
 Settings and per-form accuracy are kept in `localStorage`.
 
 ## Layout
@@ -41,8 +43,8 @@ node tests/test_conjugate.js             # every verb × every form must conjuga
 ```
 
 `build_verbs.py` skips grammar auxiliaries (〜てある, てみる, てもらう…), merges
-duplicate senses, and overrides three rows whose Notion `Grupo` is wrong
-(閉じる, 持っている, 行って来る — see `GROUP_FIXES`).
+duplicate senses, and overrides 14 rows whose Notion `Grupo` is wrong
+(see `GROUP_FIXES`; remove an entry once it is fixed in Notion).
 
 ## Run locally
 
