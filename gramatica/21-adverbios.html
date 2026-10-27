@@ -1,148 +1,36 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<!--gen-head-->
+<title>副詞 &middot; Gram&aacute;tica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css?v=f11c584602">
+<link rel="stylesheet" href="../css/ficha.css?v=f11c584602">
+<!--/gen-head-->
 <style>
-:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
---shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
-font-size:15px;line-height:1.55;padding:20px 16px 34px;}
-.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
-ruby{ruby-position:over;-webkit-ruby-position:before;}
-rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
-line-height:1.1;user-select:none;}
-header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
-padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
-align-items:flex-end;gap:12px;}
-.head-l{flex:1 1 240px;}
-h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
-font-weight:700;line-height:1.15;}
-.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
-.sub b{color:var(--midori);}
-.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
-.badge{flex:0 0 auto;text-align:right;}
-.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
-font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
-padding:4px 9px;border-radius:4px;}
-.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
-letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
-h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
-text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
-border-bottom:1px solid var(--kasumi);}
-h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
-text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
-.lead b{color:var(--midori);}
-ul.nuance{list-style:none;margin-top:12px;}
-ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
-ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
-/* figura generica de tarjetas */
-.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
-.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
-border-radius:6px;padding:12px;}
-.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
-.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
-.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
-.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
-.fig .z.solid h4{color:#fff;}
-.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
-.fig .z.solid .d{color:#DCE7DC;}
-.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
-.figcap b{color:var(--midori);}
-/* figura de filas comparadas */
-.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
-.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
-border-bottom:1px dotted #E6E9E2;}
-.rows .r:last-child{border:none;}
-.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
-.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
-color:var(--sub);text-transform:uppercase;}
-/* escala horizontal */
-.scale{display:flex;margin-top:14px;}
-.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
-.scale .c:last-child{border-right:none;}
-.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
-.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
-table{width:100%;border-collapse:collapse;margin-top:4px;}
-th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
-text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
-border-bottom:1px solid var(--kasumi);}
-th.g{color:var(--midori);}
-td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
-td.ctx{width:26%;color:var(--sub);font-size:13px;}
-td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
-td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
-.hi{color:var(--midori);font-weight:700;}
-.rd{color:var(--shu);font-weight:700;}
-@media(max-width:560px){
- thead{display:none;}
- tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
- td{display:block;border:none;padding:1px 0;width:auto;}
- td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
-}
-.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
-.ex-item:last-child{border:none;}
-.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
-.t{font-size:13.5px;color:#333;margin-top:1px;}
-.t em{color:var(--sub);font-size:12.5px;}
-.cols{display:flex;gap:22px;flex-wrap:wrap;}
-.cols>div{flex:1 1 250px;}
-.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
-.where .row{display:flex;gap:12px;padding:6px 0;
-border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
-.where .row:last-child{border:none;}
-.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
-color:var(--midori);font-weight:700;}
-.where .v2{flex:1 1 200px;font-size:13.5px;}
-.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
-border-radius:5px;padding:13px 15px;margin-top:8px;}
-.errors h3{color:var(--shu);margin:0 0 9px;}
-.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
-.err:last-child{border:none;}
-.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
-.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
-.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
-footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
-font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
-
 .zonelab{display:flex;margin-top:12px;}
-.zonelab .z{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:5px 0;text-align:center;}
+.zonelab .z{font-family:var(--ui);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 0;text-align:center;}
 .zonelab .neg{flex:3;background:var(--shu-pale);color:var(--shu);font-weight:600;}
 .zonelab .pos{flex:5;background:var(--midori-pale);color:var(--midori);margin-left:2px;}
-.pair{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dotted #E6E9E2;font-size:13px;gap:8px;}
-.pair .a{font-family:"Noto Serif JP",serif;}
+.pair{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dotted var(--line);font-size:13px;gap:8px;}
+.pair .a{font-family:var(--jp);}
 .pair .a.neg{color:var(--shu);font-weight:700;}
 .pair .b{font-size:11px;color:var(--sub);font-style:italic;text-align:right;}
-.pair .b.jp{font-family:"Noto Serif JP",serif;font-style:normal;color:var(--midori);font-size:12.5px;}
+.pair .b.jp{font-family:var(--jp);font-style:normal;color:var(--midori);font-size:12.5px;}
 .dk{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
 .dk .col{flex:1 1 150px;}
-.dk h4{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:5px;text-align:center;}
+.dk h4{font-family:var(--ui);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:5px;text-align:center;}
 .dk h4.g{color:var(--midori);font-weight:600;}
-.dk .r{background:#fff;border:1px solid var(--kasumi);border-radius:4px;padding:5px;text-align:center;margin-bottom:3px;}
+.dk .r{background:var(--surface);border:1px solid var(--kasumi);border-radius:4px;padding:5px;text-align:center;margin-bottom:3px;}
 .dk .r.g{background:var(--midori-pale);}
-.dk .w{font-family:"Noto Serif JP",serif;font-size:14px;}
-.dk .e{font-size:9.5px;color:var(--sub);font-style:italic;}
-.it{padding:3px 0;border-bottom:1px dotted #E6E9E2;}
-.it .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
-.it .g{font-size:10.5px;color:var(--sub);font-style:italic;display:block;}
-</style><!--gen-head-->
-<title>副詞 &middot; Gram&aacute;tica</title>
-<style>
-.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
-font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-color:var(--sub);margin-bottom:10px;}
-.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
-.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
-.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
-border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
-.gpn a:hover{border-color:var(--midori);}
-.gpn a.next{text-align:right;}
-.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
-text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
-.gpn .jp{font-size:15px;color:var(--midori);}
-</style>
-<!--/gen-head-->
-</head><body>
+.dk .w{font-family:var(--jp);font-size:14px;}
+.dk .e{font-size:11px;color:var(--sub);font-style:italic;}
+.it{padding:3px 0;border-bottom:1px dotted var(--line);}
+.it .w{font-family:var(--jp);font-size:13.5px;}
+.it .g{font-size:11px;color:var(--sub);font-style:italic;display:block;}
+</style></head><body>
 <!--gen-top--><nav class="gnav"><a href="./#C">&larr; Gram&aacute;tica</a><span>C &middot; Vocabulario pr&#225;ctico</span></nav><!--/gen-top-->
 <header><div class="head-l">
 <h1 class="jp"><ruby>副詞<rt>ふくし</rt></ruby></h1>
@@ -158,9 +46,9 @@ text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
 <div class="c" style="background:var(--shu-pale)"><div class="w jp">あまり</div><div class="g">no mucho</div></div>
 <div class="c" style="background:var(--midori-pale)"><div class="w jp">たまに</div><div class="g">de vez en cuando</div></div>
 <div class="c" style="background:var(--midori-pale)"><div class="w jp">ときどき</div><div class="g">a veces</div></div>
-<div class="c" style="background:#E3EBE2"><div class="w jp">よく</div><div class="g">a menudo</div></div>
-<div class="c" style="background:#D9E6DC"><div class="w jp">たいてい</div><div class="g">casi siempre</div></div>
-<div class="c" style="background:var(--midori);color:#fff"><div class="w jp">いつも</div><div class="g" style="color:#DCE7DC">siempre</div></div>
+<div class="c" style="background:var(--accent-mid)"><div class="w jp">よく</div><div class="g">a menudo</div></div>
+<div class="c" style="background:var(--accent-mid)"><div class="w jp">たいてい</div><div class="g">casi siempre</div></div>
+<div class="c" style="background:var(--midori);color:var(--on-accent)"><div class="w jp">いつも</div><div class="g" style="color:var(--on-accent-muted)">siempre</div></div>
 </div>
 
 <h2>Grado y modo</h2>

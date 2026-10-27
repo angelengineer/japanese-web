@@ -1,0 +1,58 @@
+/* Colour and font tokens shared by the whole site: drill, help page and grammar fichas. */
+:root {
+  --bg: #f6f3ee;
+  --surface: #ffffff;
+  --text: #1f1c19;
+  --muted: #6d665e;
+  --border: #e3ddd4;
+  --accent: #b8412c;       /* 朱色 */
+  --accent-soft: #f6e3de;
+  --ok: #2f7d4f;
+  --ok-soft: #e1f1e6;
+  --bad: #b3261e;
+  --bad-soft: #f9e1df;
+  --chip-voice: #e7eefb;   --chip-voice-t: #24467f;
+  --chip-infl: #f3e9fb;    --chip-infl-t: #5d2a86;
+  --chip-neg: #fbeee2;     --chip-neg-t: #8a4414;
+  --chip-pol: #e4f4f1;     --chip-pol-t: #1d6559;
+  --shadow: 0 1px 2px rgba(0,0,0,.05), 0 6px 24px rgba(0,0,0,.06);
+  --jp: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --jp-serif: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+  /* used by the grammar fichas */
+  --line: #eee8df;          /* row separators inside a card */
+  --tint: #f6f2ec;          /* neutral panel on a card */
+  --accent-mid: #edcdc3;    /* stronger accent tint for bars and cells */
+  --accent-line: rgba(184,65,44,.16);
+  --bad-line: #ecd0cb;
+  --on-accent: #fff;        /* text on a solid accent background */
+  --on-accent-muted: #f8ddd6;
+  --ui: system-ui, -apple-system, "Segoe UI", Roboto, var(--jp);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171513; --surface: #221f1c; --text: #eee8e1; --muted: #a39a90; --border: #38332e;
+    --accent: #e0765f; --accent-soft: #3a241f;
+    --ok: #6cc28e; --ok-soft: #1c3226; --bad: #f08a80; --bad-soft: #3a1f1d;
+    --chip-voice: #1f2b40; --chip-voice-t: #a9c3f0;
+    --chip-infl: #2e2238;  --chip-infl-t: #d6b5ef;
+    --chip-neg: #3a2a1d;   --chip-neg-t: #f0bf93;
+    --chip-pol: #17322d;   --chip-pol-t: #93d8c9;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 24px rgba(0,0,0,.3);
+    --line: #302b27; --tint: #2a2622; --accent-mid: #4c2c24; --accent-line: rgba(224,118,95,.22);
+    --bad-line: #5a2e2a; --on-accent: #1b1412; --on-accent-muted: #3d2620;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171513; --surface: #221f1c; --text: #eee8e1; --muted: #a39a90; --border: #38332e;
+  --accent: #e0765f; --accent-soft: #3a241f;
+  --ok: #6cc28e; --ok-soft: #1c3226; --bad: #f08a80; --bad-soft: #3a1f1d;
+  --chip-voice: #1f2b40; --chip-voice-t: #a9c3f0;
+  --chip-infl: #2e2238;  --chip-infl-t: #d6b5ef;
+  --chip-neg: #3a2a1d;   --chip-neg-t: #f0bf93;
+  --chip-pol: #17322d;   --chip-pol-t: #93d8c9;
+  --line: #302b27; --tint: #2a2622; --accent-mid: #4c2c24; --accent-line: rgba(224,118,95,.22);
+  --bad-line: #5a2e2a; --on-accent: #1b1412; --on-accent-muted: #3d2620;
+  color-scheme: dark;
+}

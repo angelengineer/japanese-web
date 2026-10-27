@@ -8,14 +8,18 @@ The study order lives in gramatica/bloques.json: eleven blocks, each with its
 fichas in the order they are meant to be studied. Every gramatica/NN-*.html must
 appear there exactly once; the build fails otherwise.
 
-The fichas are hand-written, self-contained pages. This script only maintains
-three generated regions in each, delimited by HTML comments so a rebuild
-replaces them in place: <!--gen-head--> (title + nav styles) before </head>,
+The fichas are hand-written pages. Their shared look lives in css/tokens.css
+(the site palette, light and dark) and css/ficha.css (layout and the common
+components); a ficha's own <style> holds only its figure-specific rules. This
+script maintains three generated regions in each ficha, delimited by HTML
+comments so a rebuild replaces them in place: <!--gen-head--> (title, fonts and
+the shared stylesheets, before the ficha's own <style> so that one wins),
 <!--gen-top--> (back to the index) after <body>, and <!--gen-bottom-->
 (previous / next ficha) before <footer>. Edit everything else by hand.
 Stdlib only. Files are rewritten only when their content changes.
 """
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -29,22 +33,17 @@ DIR = ROOT / "gramatica"
 BLOCKS = DIR / "bloques.json"
 INDEX = DIR / "index.html"
 
-FONTS = ("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400"
-         "&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap")
+FONTS = ("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700"
+         "&family=Noto+Serif+JP:wght@500;700&display=swap")
+CSS = ["tokens.css", "style.css", "ficha.css"]
 
-NAV_CSS = """\
-.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
-font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
-color:var(--sub);margin-bottom:10px;}
-.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
-.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
-.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
-border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
-.gpn a:hover{border-color:var(--midori);}
-.gpn a.next{text-align:right;}
-.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
-text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
-.gpn .jp{font-size:15px;color:var(--midori);}"""
+
+def css_version():
+    """Cache-busting stamp: GitHub Pages lets browsers keep CSS for 10 minutes."""
+    h = hashlib.sha1()
+    for name in CSS:
+        h.update((ROOT / "css" / name).read_bytes())
+    return h.hexdigest()[:10]
 
 
 def log(msg):
@@ -122,10 +121,15 @@ def write(path, content):
     return True
 
 
-def build_ficha(f, block, prev, nxt):
+def build_ficha(f, block, prev, nxt, v):
     path = DIR / f["name"]
     src = path.read_text()
-    head = f"\n<title>{jp(f['title'])} &middot; Gram&aacute;tica</title>\n<style>\n{NAV_CSS}\n</style>\n"
+    head = (f"\n<title>{jp(f['title'])} &middot; Gram&aacute;tica</title>\n"
+            f'<link rel="preconnect" href="https://fonts.googleapis.com">\n'
+            f'<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+            f'<link href="{FONTS}" rel="stylesheet">\n'
+            f'<link rel="stylesheet" href="../css/tokens.css?v={v}">\n'
+            f'<link rel="stylesheet" href="../css/ficha.css?v={v}">\n')
     top = (f'<nav class="gnav"><a href="./#{block["id"]}">&larr; Gram&aacute;tica</a>'
            f'<span>{block["id"]} &middot; {esc(block["title"])}</span></nav>')
     links = []
@@ -136,7 +140,7 @@ def build_ficha(f, block, prev, nxt):
         links.append(f'<a class="next" href="{nxt["name"]}"><small>Siguiente &rarr;</small>'
                      f'<span class="jp">{jp(nxt["title"])}</span></a>')
     bottom = f'<nav class="gpn">{"".join(links)}</nav>'
-    src = region(src, "gen-head", head, r"</head>")
+    src = region(src, "gen-head", head, r"<style>|</head>")
     src = region(src, "gen-top", top, r"<body[^>]*>", before=False)
     src = region(src, "gen-bottom", bottom, r"<footer>")
     return write(path, src)
@@ -152,7 +156,7 @@ def fold(s):
     return unicodedata.normalize("NFC", re.sub("[\u0300-\u036f]", "", s))
 
 
-def build_index(blocks, fichas):
+def build_index(blocks, fichas, v):
     levels = sorted({lv for f in fichas.values() for lv in re.findall(r"N\d", f["level"])}, reverse=True)
     chips = "".join(f'<a href="#{b["id"]}">{b["emoji"]} {b["id"]}</a>' for b in blocks)
     sections = []
@@ -171,11 +175,11 @@ def build_index(blocks, fichas):
         sections.append(
             f'<section class="block" id="{b["id"]}">\n'
             f'<h2><span class="emo">{b["emoji"]}</span> {b["id"]} &middot; {jp(b["title"])}'
-            f' <span class="desc">— {jp(b["desc"])}</span></h2>\n'
+            f' <span class="desc">{jp(b["desc"])}</span></h2>\n'
             f'<p class="intro">{b["intro"]}</p>\n{warn}\n'
             f'<ol class="list">\n' + "\n".join(items) + "\n</ol>\n</section>")
     page = TEMPLATE.format(
-        fonts=FONTS,
+        fonts=FONTS, v=v,
         count=len(fichas), nblocks=len(blocks), levels=" → ".join(levels),
         chips=chips, sections="\n\n".join(sections))
     return write(INDEX, page)
@@ -189,67 +193,57 @@ TEMPLATE = """<!doctype html>
 <title>文法 · Gramática japonesa</title>
 <meta name="description" content="Fichas de gramática japonesa en español, de N5 a N3, en orden de estudio.">
 <!-- GENERATED by scripts/build_gramatica.py from bloques.json; do not edit. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{fonts}" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css?v={v}">
+<link rel="stylesheet" href="../css/style.css?v={v}">
 <style>
-:root{{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
---shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}}
-*{{box-sizing:border-box;margin:0;padding:0;}}
-body{{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
-font-size:15px;line-height:1.55;padding:20px 16px 40px;}}
-.wrap{{max-width:760px;margin:0 auto;}}
-.jp{{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}}
-.switch{{display:flex;gap:4px;padding:4px;background:#fff;border:1px solid var(--kasumi);border-radius:12px;
-box-shadow:0 1px 2px rgba(0,0,0,.05),0 6px 24px rgba(0,0,0,.06);}}
-.switch a{{flex:1;text-align:center;padding:10px 8px;border-radius:9px;font-family:"Poppins",sans-serif;
-font-weight:600;font-size:15px;color:var(--sub);text-decoration:none;}}
-.switch a .jp{{margin-right:.2em;}}
-.switch a:hover{{background:var(--midori-pale);color:var(--sumi);}}
-.switch a[aria-current="page"]{{background:var(--midori);color:#fff;}}
-header{{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);padding:14px 0 14px;margin:18px 0 16px;}}
-h1{{font-size:clamp(24px,5.4vw,34px);font-weight:700;line-height:1.15;}}
-h1 .jp{{color:var(--midori);margin-right:.3em;}}
-.lede{{margin-top:8px;font-size:clamp(14px,2.6vw,16px);}}
-.lede b{{color:var(--midori);}}
-.tools{{position:sticky;top:0;background:var(--washi);padding:10px 0;z-index:1;border-bottom:1px solid var(--kasumi);}}
-#q{{width:100%;font:inherit;font-size:16px;padding:9px 12px;border:1px solid var(--kasumi);
-border-radius:6px;background:#fff;color:var(--sumi);}}
-#q:focus{{outline:2px solid var(--midori);outline-offset:-1px;}}
-.chips{{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px;}}
-.chips a{{font-family:"Poppins",sans-serif;font-size:12px;text-decoration:none;color:var(--midori);
-background:var(--midori-pale);border-radius:99px;padding:3px 10px;}}
-.block{{margin-top:26px;scroll-margin-top:110px;}}
-h2{{font-family:"Poppins",sans-serif;font-weight:600;font-size:13px;letter-spacing:.12em;
-text-transform:uppercase;color:var(--midori);padding-bottom:6px;border-bottom:1px solid var(--kasumi);}}
-h2 .desc{{font-weight:400;color:var(--sub);text-transform:none;letter-spacing:0;font-size:12.5px;}}
-.intro{{margin-top:9px;font-size:14px;}}
-.intro b,.warn b{{color:var(--midori);}}
-.warn{{margin-top:9px;font-size:13.5px;background:var(--shu-pale);border:1px solid #EBD6D3;
-border-left:3px solid var(--shu);border-radius:5px;padding:9px 12px;}}
-.warn b{{color:var(--shu);}}
-.list{{list-style:none;margin-top:10px;}}
-.list a{{display:flex;gap:12px;align-items:baseline;padding:10px 4px;border-bottom:1px solid #EFF1EC;
-text-decoration:none;color:inherit;}}
-.list a:hover{{background:var(--midori-pale);}}
-.num{{font-family:"Poppins",sans-serif;font-size:11px;color:var(--sub);flex:0 0 20px;}}
+.wrap{{max-width:680px;margin:0 auto;padding:0 16px;}}
+.wrap>header{{padding:20px 0 14px;}}
+h1{{font-size:1.15rem;font-weight:600;margin:0;}}
+h1 .jp{{color:var(--accent);font-family:var(--jp-serif);margin-right:.25em;}}
+.lede{{margin:6px 0 0;color:var(--muted);}}
+.lede b{{color:var(--text);}}
+.tools{{position:sticky;top:0;z-index:1;background:var(--bg);padding:8px 0 10px;}}
+#q{{width:100%;font:inherit;font-size:16px;padding:10px 14px;border:2px solid var(--border);border-radius:12px;
+background:var(--surface);color:var(--text);outline:none;}}
+#q:focus{{border-color:var(--accent);}}
+.chips{{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}}
+.chips a{{font-size:.88rem;text-decoration:none;color:var(--muted);border:1px solid var(--border);
+background:var(--surface);border-radius:999px;padding:4px 11px;}}
+.chips a:hover{{border-color:var(--accent);color:var(--text);background:var(--accent-soft);}}
+.block{{margin-top:16px;scroll-margin-top:120px;background:var(--surface);border:1px solid var(--border);
+border-radius:14px;box-shadow:var(--shadow);padding:16px 20px 8px;}}
+h2{{font-size:1.1rem;margin:0;}}
+h2 .desc{{display:block;font-weight:400;font-size:.88rem;color:var(--muted);margin-top:2px;}}
+.intro{{margin:10px 0 0;font-size:.95rem;line-height:1.6;}}
+.intro b{{color:var(--accent);}}
+.warn{{margin:10px 0 0;font-size:.92rem;line-height:1.6;background:var(--bad-soft);border-left:4px solid var(--bad);
+border-radius:10px;padding:9px 12px;}}
+.warn b{{color:var(--bad);}}
+.list{{list-style:none;margin:8px 0 0;padding:0;}}
+.list a{{display:flex;gap:12px;align-items:baseline;padding:11px 6px;border-top:1px solid var(--line);
+text-decoration:none;color:inherit;border-radius:8px;}}
+.list a:hover{{background:var(--accent-soft);}}
+.num{{font-size:.78rem;color:var(--muted);flex:0 0 20px;font-variant-numeric:tabular-nums;}}
 .body{{flex:1;min-width:0;}}
-.t{{display:block;font-size:16px;font-weight:700;color:var(--midori);}}
-.s{{display:block;font-size:13.5px;margin-top:1px;}}
-.lv{{flex:0 0 auto;font-family:"Poppins",sans-serif;font-size:10.5px;letter-spacing:.08em;color:var(--midori);
-border:1px solid var(--midori);border-radius:4px;padding:2px 6px;white-space:nowrap;}}
-#none{{margin-top:24px;color:var(--sub);}}
-footer{{margin-top:34px;padding-top:10px;border-top:1px solid var(--kasumi);font-family:"Poppins",sans-serif;
-font-size:11px;color:#9AA69E;text-align:center;}}
+.t{{display:block;font-size:1.05rem;font-weight:700;color:var(--accent);}}
+.s{{display:block;font-size:.92rem;color:var(--text);margin-top:1px;}}
+.lv{{flex:0 0 auto;font-size:.75rem;font-weight:600;color:var(--chip-pol-t);background:var(--chip-pol);
+border-radius:8px;padding:2px 8px;white-space:nowrap;}}
+#none{{margin-top:24px;color:var(--muted);text-align:center;}}
 </style>
 </head>
 <body>
-<div class="wrap">
 <nav class="switch" aria-label="Sección">
-<a href="../"><span class="jp">活用</span> Conjugación</a>
-<a href="./" aria-current="page"><span class="jp">文法</span> Gramática</a>
+<a href="../"><span lang="ja">活用</span> Conjugación</a>
+<a href="./" aria-current="page"><span lang="ja">文法</span> Gramática</a>
 </nav>
+<div class="wrap">
 <header>
-<h1><span class="jp">文法</span>Gramática</h1>
-<p class="lede"><b>{count} fichas · {nblocks} bloques · {levels}</b>. Referencia de gramática japonesa en español, en orden de estudio. Cada ficha trae el matiz que la separa de sus vecinas, la formación, ejemplos con furigana, dónde la vas a encontrar y los errores más comunes.</p>
+<h1><span class="jp">文法</span> Gramática</h1>
+<p class="lede"><b>{count} fichas · {nblocks} bloques · {levels}</b> — en orden de estudio. Cada ficha trae el matiz que la separa de sus vecinas, la formación, ejemplos con furigana y los errores más comunes.</p>
 </header>
 <div class="tools">
 <input id="q" type="search" placeholder="Buscar: わけ, condicional, keigo…" aria-label="Buscar ficha" autocomplete="off">
@@ -259,8 +253,8 @@ font-size:11px;color:#9AA69E;text-align:center;}}
 {sections}
 
 <p id="none" hidden>Ninguna ficha coincide.</p>
-<footer>Biblioteca de gramática japonesa</footer>
 </div>
+<footer>Biblioteca de gramática japonesa</footer>
 <script>
 // Filter fichas by title, reading, romaji, description or category, ignoring accents.
 const fold = s => s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").normalize("NFC");
@@ -299,13 +293,14 @@ def main():
                 print(f"{b['id']}  {n:30} {f['level']:9} {f['title']}  — {f['sub']}")
         return
 
+    v = css_version()
     order = [(b, fichas[n]) for b in blocks for n in b["fichas"]]
     changed = 0
     for i, (b, f) in enumerate(order):
         prev = order[i - 1][1] if i > 0 else None
         nxt = order[i + 1][1] if i + 1 < len(order) else None
-        changed += build_ficha(f, b, prev, nxt)
-    idx = build_index(blocks, fichas)
+        changed += build_ficha(f, b, prev, nxt, v)
+    idx = build_index(blocks, fichas, v)
     log(f"{len(order)} fichas in {len(blocks)} blocks; {changed} fichas updated"
         f"{', index rebuilt' if idx else ''}")
 
