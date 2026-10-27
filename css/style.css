@@ -54,6 +54,16 @@ body {
 [lang="ja"], .jp { font-family: var(--jp); }
 
 .top, main, footer { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+
+/* Conjugación / Gramática switcher; same markup in gramatica/index.html */
+.switch { display: flex; gap: 4px; max-width: 648px; margin: 16px auto 0; padding: 4px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); }
+@media (max-width: 680px) { .switch { margin: 16px 16px 0; } }
+.switch a { flex: 1; text-align: center; padding: 10px 8px; border-radius: 9px; font-weight: 600;
+  color: var(--muted); text-decoration: none; }
+.switch a span { font-family: var(--jp-serif); margin-right: .2em; }
+.switch a:hover { background: var(--accent-soft); color: var(--text); }
+.switch a[aria-current="page"] { background: var(--accent); color: #fff; }
 .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 20px; padding-bottom: 12px; flex-wrap: wrap; }
 .top h1 { font-size: 1.15rem; margin: 0; font-weight: 600; }
 .top h1 span { color: var(--accent); font-family: var(--jp-serif); margin-right: .25em; }

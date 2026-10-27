@@ -198,9 +198,14 @@ body{{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi)
 font-size:15px;line-height:1.55;padding:20px 16px 40px;}}
 .wrap{{max-width:760px;margin:0 auto;}}
 .jp{{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}}
-.back{{font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;}}
-.back a{{color:var(--midori);text-decoration:none;font-weight:500;}}
-header{{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);padding:14px 0 14px;margin:10px 0 16px;}}
+.switch{{display:flex;gap:4px;padding:4px;background:#fff;border:1px solid var(--kasumi);border-radius:12px;
+box-shadow:0 1px 2px rgba(0,0,0,.05),0 6px 24px rgba(0,0,0,.06);}}
+.switch a{{flex:1;text-align:center;padding:10px 8px;border-radius:9px;font-family:"Poppins",sans-serif;
+font-weight:600;font-size:15px;color:var(--sub);text-decoration:none;}}
+.switch a .jp{{margin-right:.2em;}}
+.switch a:hover{{background:var(--midori-pale);color:var(--sumi);}}
+.switch a[aria-current="page"]{{background:var(--midori);color:#fff;}}
+header{{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);padding:14px 0 14px;margin:18px 0 16px;}}
 h1{{font-size:clamp(24px,5.4vw,34px);font-weight:700;line-height:1.15;}}
 h1 .jp{{color:var(--midori);margin-right:.3em;}}
 .lede{{margin-top:8px;font-size:clamp(14px,2.6vw,16px);}}
@@ -234,12 +239,14 @@ border:1px solid var(--midori);border-radius:4px;padding:2px 6px;white-space:now
 #none{{margin-top:24px;color:var(--sub);}}
 footer{{margin-top:34px;padding-top:10px;border-top:1px solid var(--kasumi);font-family:"Poppins",sans-serif;
 font-size:11px;color:#9AA69E;text-align:center;}}
-footer a{{color:inherit;}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="back"><a href="../">&larr; 活用 Conjugación</a></div>
+<nav class="switch" aria-label="Sección">
+<a href="../"><span class="jp">活用</span> Conjugación</a>
+<a href="./" aria-current="page"><span class="jp">文法</span> Gramática</a>
+</nav>
 <header>
 <h1><span class="jp">文法</span>Gramática</h1>
 <p class="lede"><b>{count} fichas · {nblocks} bloques · {levels}</b>. Referencia de gramática japonesa en español, en orden de estudio. Cada ficha trae el matiz que la separa de sus vecinas, la formación, ejemplos con furigana, dónde la vas a encontrar y los errores más comunes.</p>
@@ -252,7 +259,7 @@ footer a{{color:inherit;}}
 {sections}
 
 <p id="none" hidden>Ninguna ficha coincide.</p>
-<footer>Biblioteca de gramática japonesa · <a href="https://github.com/angelengineer/japanese-web">código</a></footer>
+<footer>Biblioteca de gramática japonesa</footer>
 </div>
 <script>
 // Filter fichas by title, reading, romaji, description or category, ignoring accents.
