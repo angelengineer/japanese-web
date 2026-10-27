@@ -73,7 +73,9 @@
    "26-uchini.html",
    "27-antes-despues.html",
    "28-tekuru-teiku.html",
-   "29-tokoro.html"
+   "29-tokoro.html",
+   "64-nitsurete.html",
+   "65-totan.html"
   ]
  },
  {
@@ -89,6 +91,7 @@
    "32-explicar.html",
    "33-causa.html",
    "34-contraste.html",
+   "66-wari-ni.html",
    "35-shi.html",
    "36-wake.html",
    "63-conectores.html"
@@ -103,6 +106,7 @@
   "warning": "Las <b>dos そうだ</b> se distinguen solo por el enganche: 降りそう (raíz de ます) es lo que ves venir; 降るそう (forma simple) es lo que te han contado.",
   "fichas": [
    "37-posibilidad-certeza.html",
+   "67-towa-kagiranai.html",
    "38-parece-de-oidas.html",
    "39-tendencias.html",
    "40-generalizar.html",
