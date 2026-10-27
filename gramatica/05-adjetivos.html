@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>い形容詞・な形容詞 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#A">&larr; Gram&aacute;tica</a><span>A &middot; Cimientos</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">い<ruby>形容詞<rt>けいようし</rt></ruby>・な<ruby>形容詞<rt>けいようし</rt></ruby></h1>
+<div class="sub">Dos clases de adjetivo: <b>una se conjuga, la otra no</b>.</div>
+<div class="rom">i-keiy&#333;shi &middot; na-keiy&#333;shi</div>
+</div><div class="badge"><span class="tag">JLPT N5</span><span class="cat">Adjetivos</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Los <b>い</b>-adjetivos se conjugan <b>solos</b>, como un verbo: la い final se cae y se sustituye. Los <b>な</b>-adjetivos <b>no se conjugan nunca</b>: quien cambia es el だ／です que llevan detr&aacute;s. Esa es toda la diferencia, y de ah&iacute; sale el resto.</p>
+<div class="fig">
+<div class="z pale"><h4 class="jp"><ruby>高<rt>たか</rt></ruby>い</h4><div class="d">la <b>い</b> es parte de la palabra y se conjuga<br><ruby>高<rt>たか</rt></ruby>くない &middot; <ruby>高<rt>たか</rt></ruby>かった &middot; <ruby>高<rt>たか</rt></ruby>くて</div></div>
+<div class="z"><h4 class="jp"><ruby>静<rt>しず</rt></ruby>かだ</h4><div class="d">la palabra no cambia; cambia el <b>だ</b><br><ruby>静<rt>しず</rt></ruby>かじゃない &middot; <ruby>静<rt>しず</rt></ruby>かだった &middot; <ruby>静<rt>しず</rt></ruby>かで</div></div>
+<div class="figcap">La <b>い</b> es parte de la palabra; la <b>だ</b> no:<br>por eso los <b>な</b> se comportan como sustantivos.</div>
+</div>
+<ul class="nuance">
+<li><b>Los い-adjetivos no llevan nunca だ</b>: <ruby>高<rt>たか</rt></ruby>いです s&iacute;, <span class="rd">&#10005; <ruby>高<rt>たか</rt></ruby>いだ</span> no. Los な, al rev&eacute;s, lo necesitan en llano.</li>
+<li>La な de <ruby>静<rt>しず</rt></ruby>かな<ruby>部屋<rt>へや</rt></ruby> es ese mismo だ transformado cuando va delante de un sustantivo. No es un adorno.</li>
+<li><b>Trampa</b>: <span class="rd">きれい</span>, <span class="rd"><ruby>有名<rt>ゆうめい</rt></ruby></span>, <span class="rd"><ruby>嫌<rt>きら</rt></ruby>い</span>, <span class="rd"><ruby>失礼<rt>しつれい</rt></ruby></span> y <span class="rd"><ruby>丁寧<rt>ていねい</rt></ruby></span> acaban en い y aun as&iacute; son <b>な</b>-adjetivos. La terminaci&oacute;n no basta; hay que saberlo de cada palabra.</li>
+<li>いい se conjuga desde <span class="rd">よい</span>: <span class="rd">よ</span>くない, <span class="rd">よ</span>かった, <span class="rd">よ</span>くて. Nunca <span class="rd">&#10005; いくない</span>. Y arrastra a sus compuestos: かっこいい &rarr; かっこ<span class="rd">よ</span>かった.</li>
+<li>Para <b>encadenar dos adjetivos</b> se usa la forma て: <ruby>安<rt>やす</rt></ruby>くておいしい, <ruby>静<rt>しず</rt></ruby>かできれい.</li>
+<li><b>Delante de un sustantivo no se usa です</b>: se dice <ruby>高<rt>たか</rt></ruby>い<ruby>本<rt>ほん</rt></ruby>, no <span class="rd">&#10005; <ruby>高<rt>たか</rt></ruby>いです<ruby>本<rt>ほん</rt></ruby></span>. La cortes&iacute;a va solo al final de la frase.</li>
+<li><b>Enlace escrito (<ruby>連用中止形<rt>れんようちゅうしけい</rt></ruby>)</b>: en textos, el adjetivo -い enlaza con 〜く a secas, sin て: <ruby>今日<rt>きょう</rt></ruby>は<ruby>暖<rt>あたた</rt></ruby>か<span class="hi">く</span>、<ruby>風<rt>かぜ</rt></ruby>もない. Es lo mismo que <ruby>暖<rt>あたた</rt></ruby>かくて, pero escrito. Con -な y sustantivos se usa であり: <ruby>静<rt>しず</rt></ruby>か<span class="hi">であり</span>、&hellip;; con verbos, la ra&iacute;z de ます: <ruby>朝<rt>あさ</rt></ruby><ruby>起<rt>お</rt></ruby>き、<ruby>顔<rt>かお</rt></ruby>を<ruby>洗<rt>あら</rt></ruby>う.</li>
+<li><b><ruby>幼<rt>おさな</rt></ruby>い ≠ <ruby>幼稚<rt>ようち</rt></ruby>な</b>: <ruby>幼<rt>おさな</rt></ruby>い (-い) es &laquo;de muy corta edad&raquo;, descriptivo (<ruby>幼<rt>おさな</rt></ruby>い<ruby>子供<rt>こども</rt></ruby>, <ruby>幼<rt>おさな</rt></ruby>い<ruby>頃<rt>ころ</rt></ruby>); <ruby>幼稚<rt>ようち</rt></ruby>な (-な) es &laquo;infantil, inmaduro&raquo;, casi siempre una cr&iacute;tica y tambi&eacute;n de adultos (<ruby>幼稚<rt>ようち</rt></ruby>な<ruby>考<rt>かんが</rt></ruby>え).</li>
+</ul>
+
+<h2>Conjugaci&oacute;n completa</h2>
+<table>
+<thead><tr><th>Forma</th><th>い-adjetivo &middot; <ruby>高<rt>たか</rt></ruby>い</th><th>な-adjetivo &middot; <ruby>静<rt>しず</rt></ruby>か</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Presente</td><td class="jp2"><ruby>高<rt>たか</rt></ruby>い</td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">だ</span></td></tr>
+<tr><td class="ctx">Presente cort&eacute;s</td><td class="jp2"><ruby>高<rt>たか</rt></ruby>い<span class="hi">です</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">です</span></td></tr>
+<tr><td class="ctx">Negativo</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">くない</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">じゃない</span></td></tr>
+<tr><td class="ctx">Negativo cort&eacute;s</td><td class="jp2"><ruby>高<rt>たか</rt></ruby>くない<span class="hi">です</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">じゃありません</span></td></tr>
+<tr><td class="ctx">Pasado</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">かった</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">だった</span></td></tr>
+<tr><td class="ctx">Pasado negativo</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">くなかった</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">じゃなかった</span></td></tr>
+<tr><td class="ctx">Delante de sustantivo</td><td class="jp2"><ruby>高<rt>たか</rt></ruby>い ＋N</td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">な</span> ＋N</td></tr>
+<tr><td class="ctx">Enlazar (forma て)</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">くて</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">で</span></td></tr>
+<tr><td class="ctx">Como adverbio</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">く</span> ＋V</td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">に</span> ＋V</td></tr>
+<tr><td class="ctx">Volverse&hellip;</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">くなる</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">になる</span></td></tr>
+<tr><td class="ctx">Hacer que sea&hellip;</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">くする</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">にする</span></td></tr>
+<tr><td class="ctx">Sustantivo (grado)</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">さ</span> <em>altura</em></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">さ</span> <em>calma</em></td></tr>
+<tr><td class="ctx">Apariencia</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">そう</span> <em>parece caro</em></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">そう</span></td></tr>
+<tr><td class="ctx">Condicional</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">ければ</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">なら</span></td></tr>
+<tr><td class="ctx">Aunque</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">くても</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">でも</span></td></tr>
+<tr><td class="ctx">Enlace escrito</td><td class="jp2"><ruby>高<rt>たか</rt></ruby><span class="hi">く</span>、</td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">であり</span>、</td></tr>
+
+</tbody></table>
+
+<h2>La excepci&oacute;n いい, y los な que enga&ntilde;an</h2>
+<table>
+<tbody>
+<tr><td class="ctx"><span class="rd">いい</span> se conjuga desde よい</td><td class="jp2"><span class="rd">よ</span>くない &nbsp; <span class="rd">よ</span>かった &nbsp; <span class="rd">よ</span>くて &nbsp; <span class="rd">よ</span>さそう &nbsp; <span class="rd">よ</span>ければ</td></tr>
+<tr><td class="ctx">Compuestos de いい</td><td class="jp2">かっこいい &rarr; かっこ<span class="rd">よ</span>かった &nbsp; <ruby>心地<rt>ここち</rt></ruby>いい &rarr; <ruby>心地<rt>ここち</rt></ruby><span class="rd">よ</span>かった</td></tr>
+<tr><td class="ctx"><span class="rd">な</span>-adjetivos que acaban en い</td><td class="jp2">きれい &nbsp; <ruby>有名<rt>ゆうめい</rt></ruby> &nbsp; <ruby>嫌<rt>きら</rt></ruby>い &nbsp; <ruby>失礼<rt>しつれい</rt></ruby> &nbsp; <ruby>丁寧<rt>ていねい</rt></ruby> &nbsp; <ruby>大嫌<rt>だいきら</rt></ruby>い &nbsp; <ruby>幸<rt>さいわ</rt></ruby>い</td></tr>
+<tr><td class="ctx">い-adjetivos frecuentes</td><td class="jp2"><ruby>大<rt>おお</rt></ruby>きい &nbsp; <ruby>小<rt>ちい</rt></ruby>さい &nbsp; <ruby>新<rt>あたら</rt></ruby>しい &nbsp; <ruby>難<rt>むずか</rt></ruby>しい &nbsp; <ruby>楽<rt>たの</rt></ruby>しい &nbsp; <ruby>忙<rt>いそが</rt></ruby>しい</td></tr>
+<tr><td class="ctx">な-adjetivos frecuentes</td><td class="jp2"><ruby>便利<rt>べんり</rt></ruby> &nbsp; <ruby>大切<rt>たいせつ</rt></ruby> &nbsp; <ruby>大変<rt>たいへん</rt></ruby> &nbsp; <ruby>親切<rt>しんせつ</rt></ruby> &nbsp; <ruby>簡単<rt>かんたん</rt></ruby> &nbsp; <ruby>真面目<rt>まじめ</rt></ruby></td></tr>
+</tbody></table>
+<p style="font-size:13px;color:var(--sub);margin-top:9px;"><ruby>大<rt>おお</rt></ruby>きい y <ruby>小<rt>ちい</rt></ruby>さい tienen adem&aacute;s una versi&oacute;n <b>な</b> delante de sustantivo: <ruby>大<rt>おお</rt></ruby>きな<ruby>木<rt>き</rt></ruby>, <ruby>小<rt>ちい</rt></ruby>さな<ruby>声<rt>こえ</rt></ruby>. Suena algo m&aacute;s literario que <ruby>大<rt>おお</rt></ruby>きい<ruby>木<rt>き</rt></ruby>.</p>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">この<ruby>店<rt>みせ</rt></ruby>は<ruby>安<rt>やす</rt></ruby><span class="hi">くて</span>おいしいです。</div><div class="t">Este sitio es barato y est&aacute; bueno. <em>(encadenar con くて)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>昨日<rt>きのう</rt></ruby>の<ruby>試験<rt>しけん</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>し<span class="hi">かった</span>です。</div><div class="t">El examen de ayer fue dif&iacute;cil. <em>(el pasado va en el adjetivo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>静<rt>しず</rt></ruby>か<span class="hi">な</span><ruby>部屋<rt>へや</rt></ruby>を<ruby>探<rt>さが</rt></ruby>しています。</div><div class="t">Busco una habitaci&oacute;n tranquila.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>天気<rt>てんき</rt></ruby>が<span class="rd">よ</span><span class="hi">く</span>なりました。</div><div class="t">El tiempo ha mejorado. <em>(いい &rarr; よく)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">この<ruby>町<rt>まち</rt></ruby>は<ruby>有名<rt>ゆうめい</rt></ruby><span class="hi">じゃありません</span>。</div><div class="t">Esta ciudad no es famosa. <em>(<ruby>有名<rt>ゆうめい</rt></ruby> acaba en い pero es な)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>静<rt>しず</rt></ruby>か<span class="hi">に</span><ruby>話<rt>はな</rt></ruby>してください。</div><div class="t">Hable en voz baja. <em>(な-adjetivo como adverbio: に)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>値段<rt>ねだん</rt></ruby>が<ruby>高<rt>たか</rt></ruby><span class="hi">くても</span><ruby>買<rt>か</rt></ruby>います。</div><div class="t">Aunque sea caro, lo compro.</div></div>
+<div class="ex-item"><div class="s jp">この<ruby>荷物<rt>にもつ</rt></ruby>、<ruby>重<rt>おも</rt></ruby><span class="hi">そう</span>ですね。</div><div class="t">Este paquete parece pesado. <em>(そう de apariencia)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>部屋<rt>へや</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby><span class="hi">く</span>、<ruby>明<rt>あか</rt></ruby>るい。</div><div class="t">La habitaci&oacute;n es amplia y luminosa. <em>(enlace escrito)</em></div></div>
+
+</div>
+</div>
+
+<h2>D&oacute;nde lo vas a encontrar</h2>
+<div class="where">
+<div class="row"><div class="k2 jp">〜くて / 〜で</div><div class="v2">Describir cualquier cosa encadena adjetivos as&iacute;. Es lo primero que te piden al presentarte.</div></div>
+<div class="row"><div class="k2 jp">〜く / 〜に</div><div class="v2">La forma adverbial abre media gram&aacute;tica posterior: なる, する, してください.</div></div>
+<div class="row"><div class="k2 jp">〜さ</div><div class="v2">Muy usado en carteles y datos: <ruby>高<rt>たか</rt></ruby>さ (altura), <ruby>広<rt>ひろ</rt></ruby>さ (superficie), <ruby>重<rt>おも</rt></ruby>さ (peso).</div></div>
+<div class="row"><div class="k2 jp">よろしい</div><div class="v2">El いい formal: よろしいですか (&laquo;&iquest;le parece bien?&raquo;), en tiendas y trabajo.</div></div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>高<rt>たか</rt></ruby>いだ。</span> &nbsp; &#9675; <span class="good jp"><ruby>高<rt>たか</rt></ruby>い。／<ruby>高<rt>たか</rt></ruby>いです。</span></div><div class="why">Los い-adjetivos no llevan nunca だ.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>静<rt>しず</rt></ruby>か<ruby>部屋<rt>へや</rt></ruby></span> &nbsp; &#9675; <span class="good jp"><ruby>静<rt>しず</rt></ruby>かな<ruby>部屋<rt>へや</rt></ruby></span></div><div class="why">Delante de sustantivo, el な-adjetivo recupera su な.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">いくない。</span> &nbsp; &#9675; <span class="good jp"><span class="rd">よ</span>くない。</span></div><div class="why">いい se conjuga siempre desde よい.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">きれいい<ruby>部屋<rt>へや</rt></ruby></span> &nbsp; &#9675; <span class="good jp">きれいな<ruby>部屋<rt>へや</rt></ruby></span></div><div class="why">きれい acaba en い pero es な-adjetivo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>難<rt>むずか</rt></ruby>しいでした。</span> &nbsp; &#9675; <span class="good jp"><ruby>難<rt>むずか</rt></ruby>しかったです。</span></div><div class="why">El pasado va <b>en el adjetivo</b>, no en です.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>高<rt>たか</rt></ruby>いです<ruby>本<rt>ほん</rt></ruby></span> &nbsp; &#9675; <span class="good jp"><ruby>高<rt>たか</rt></ruby>い<ruby>本<rt>ほん</rt></ruby></span></div><div class="why">Delante de sustantivo no se usa です.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>幼稚<rt>ようち</rt></ruby>な<ruby>子供<rt>こども</rt></ruby> <em>(por &laquo;ni&ntilde;o peque&ntilde;o&raquo;)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>幼<rt>おさな</rt></ruby>い<ruby>子供<rt>こども</rt></ruby></span></div><div class="why">幼稚な no es la edad: es una cr&iacute;tica, &laquo;infantil&raquo;.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="04-existencia.html"><small>&larr; Anterior</small><span class="jp">あります／います</span></a><a class="next" href="06-conjugacion.html"><small>Siguiente &rarr;</small><span class="jp">動詞活用表</span></a></nav><!--/gen-bottom-->
+<footer>い形容詞・な形容詞 &middot; Adjetivos &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

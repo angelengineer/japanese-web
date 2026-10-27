@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.entry{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:13px 15px;margin-bottom:9px;}
+.entry .hd{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:6px;}
+.entry .term{font-family:"Noto Serif JP",serif;font-size:18px;color:var(--midori);font-weight:700;}
+.entry .gloss{font-family:"Poppins",sans-serif;font-size:10.5px;color:var(--sub);}
+.entry .pat{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--sub);background:var(--midori-pale);border-radius:4px;padding:2px 7px;margin-left:auto;}
+.entry .body2{font-size:13.5px;}
+.entry .body2 b{color:var(--midori);}
+.entry .ex2{font-family:"Noto Serif JP",serif;font-size:14.5px;margin-top:7px;padding-top:7px;border-top:1px dotted #E6E9E2;}
+.entry .ex2 .t2{font-family:"Lora",serif;font-size:12.5px;color:var(--sub);margin-top:2px;}
+</style><!--gen-head-->
+<title>N3の仕上げ &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#K">&larr; Gram&aacute;tica</a><span>K &middot; Remate</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">N3の<ruby>仕上<rt>しあ</rt></ruby>げ</h1>
+<div class="sub">Diez puntos sueltos que <b>completan el N3</b>.</div>
+<div class="rom">N3 no shiage</div>
+</div><div class="badge"><span class="tag">JLPT N3</span><span class="cat">Remate</span></div></header>
+<p class="lead">Diez estructuras que no encajan en ning&uacute;n bloque anterior pero completan el nivel N3. Cada una tiene un uso claro: con un ejemplo bien elegido se fijan.</p>
+
+<div class="entry"><div class="hd"><span class="term jp">〜だらけ</span><span class="gloss">lleno de (algo malo)</span><span class="pat">N＋だらけ</span></div><div class="body2">Cubierto de algo sucio o indeseable. <b>Siempre negativo</b> &mdash; nunca &laquo;lleno de flores&raquo;. Distinto de いっぱい, que es neutro.</div><div class="ex2 jp"><ruby>泥<rt>どろ</rt></ruby>だらけの<ruby>靴<rt>くつ</rt></ruby>で<ruby>帰<rt>かえ</rt></ruby>ってきた。<div class="t2">Volvi&oacute; con los zapatos llenos de barro.</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜ぶり</span><span class="gloss">despu&eacute;s de tanto tiempo</span><span class="pat">periodo＋ぶり</span></div><div class="body2">Marca un reencuentro tras un intervalo largo. Tambi&eacute;n existe <ruby>久<rt>ひさ</rt></ruby>しぶり, la f&oacute;rmula fija de saludo tras mucho tiempo sin verse.</div><div class="ex2 jp"><ruby>三年<rt>さんねん</rt></ruby>ぶりに<ruby>国<rt>くに</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>った。<div class="t2">Volv&iacute; a mi pa&iacute;s despu&eacute;s de tres a&ntilde;os.</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜てたまらない</span><span class="gloss">no puedo aguantar lo&hellip;</span><span class="pat">Aくて／Vたくて＋たまらない</span></div><div class="body2">Sensaci&oacute;n f&iacute;sica o emocional llevada al extremo. Emparentada con 〜てしょうがない y 〜てならない, que son casi sin&oacute;nimas.</div><div class="ex2 jp">この<ruby>暑<rt>あつ</rt></ruby>さで<ruby>喉<rt>のど</rt></ruby>が<ruby>渇<rt>かわ</rt></ruby>いてたまらない。<div class="t2">Con este calor tengo una sed insoportable.</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜ようがない</span><span class="gloss">no hay manera de&hellip;</span><span class="pat">ra&iacute;z ます＋ようがない</span></div><div class="body2">No existe forma posible de hacerlo. <b>No es que no quieras</b>: es que no hay v&iacute;a. Distinto de できない, que es falta de capacidad.</div><div class="ex2 jp"><ruby>連絡先<rt>れんらくさき</rt></ruby>が<ruby>分<rt>わ</rt></ruby>からないので、<ruby>知<rt>し</rt></ruby>らせようがない。<div class="t2">Como no tengo su contacto, no hay manera de avisarle.</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜ばかりに <span style="font-family:Poppins,sans-serif;font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--shu,#B23A2E);border:1px solid #EBD6D3;border-radius:3px;padding:0 4px;vertical-align:2px;">N2</span></span><span class="gloss">solo por&hellip;, y mira</span><span class="pat">forma simple＋ばかりに</span></div><div class="body2">Una causa peque&ntilde;a con una consecuencia desproporcionadamente mala. Siempre con arrepentimiento &mdash; nunca para algo que sali&oacute; bien.</div><div class="ex2 jp"><ruby>近道<rt>ちかみち</rt></ruby>をしたばかりに、<ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>ってしまった。<div class="t2">Solo por tomar un atajo, acab&eacute; perdi&eacute;ndome.</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜どころではない</span><span class="gloss">ni de lejos es momento de</span><span class="pat">N／Vる＋どころではない</span></div><div class="body2">La situaci&oacute;n est&aacute; tan mal que ni se plantea. <b>No confundir con どころか</b>, que corrige lo dicho en vez de descartarlo.</div><div class="ex2 jp"><ruby>忙<rt>いそが</rt></ruby>しくて、<ruby>旅行<rt>りょこう</rt></ruby>どころではない。<div class="t2">Estoy tan liado que ni me planteo viajar.</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜ことか <span style="font-family:Poppins,sans-serif;font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--shu,#B23A2E);border:1px solid #EBD6D3;border-radius:3px;padding:0 4px;vertical-align:2px;">N2</span></span><span class="gloss">&iexcl;cu&aacute;nto&hellip;!</span><span class="pat">どんなに／どれほど＋forma simple＋ことか</span></div><div class="body2">Exclamaci&oacute;n ret&oacute;rica sobre el grado de algo. No espera respuesta; casi siempre con どんなに o どれほど delante.</div><div class="ex2 jp">どんなに<ruby>心配<rt>しんぱい</rt></ruby>したことか。<div class="t2">&iexcl;No sabes lo preocupado que estaba!</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜<ruby>向<rt>む</rt></ruby>け／〜<ruby>向<rt>む</rt></ruby>き</span><span class="gloss">dirigido a / apto para</span><span class="pat">N＋<ruby>向<rt>む</rt></ruby>け・<ruby>向<rt>む</rt></ruby>き</span></div><div class="body2"><b><ruby>向<rt>む</rt></ruby>け</b> es que se dise&ntilde;&oacute; <b>pensando</b> en ese p&uacute;blico; <b><ruby>向<rt>む</rt></ruby>き</b> es que <b>resulta apropiado</b>, aunque no se hiciera para eso. <ruby>子供<rt>こども</rt></ruby><ruby>向<rt>む</rt></ruby>けの<ruby>本<rt>ほん</rt></ruby> frente a この<ruby>仕事<rt>しごと</rt></ruby>は<ruby>私<rt>わたし</rt></ruby><ruby>向<rt>む</rt></ruby>きだ.</div><div class="ex2 jp">これは<ruby>初心者<rt>しょしんしゃ</rt></ruby><ruby>向<rt>む</rt></ruby>けの<ruby>教科書<rt>きょうかしょ</rt></ruby>です。<div class="t2">Este es un libro de texto pensado para principiantes.</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜おそれがある</span><span class="gloss">existe el riesgo de que</span><span class="pat">Vる／Nの＋おそれがある</span></div><div class="body2">Registro formal, propio de avisos y partes meteorol&oacute;gicos. Anuncia un riesgo posible, no una certeza. Nunca para cosas buenas.</div><div class="ex2 jp"><ruby>今夜<rt>こんや</rt></ruby>、<ruby>大雨<rt>おおあめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るおそれがあります。<div class="t2">Existe riesgo de lluvias fuertes esta noche.</div></div></div>
+<div class="entry"><div class="hd"><span class="term jp">〜<ruby>一方<rt>いっぽう</rt></ruby>だ</span><span class="gloss">no para de&hellip;</span><span class="pat">Vる＋<ruby>一方<rt>いっぽう</rt></ruby>だ</span></div><div class="body2">Una tendencia que solo va en una direcci&oacute;n, sin frenar. Casi siempre con matiz preocupante. No confundir con <ruby>一方<rt>いっぽう</rt></ruby>で, que es contraste.</div><div class="ex2 jp"><ruby>物価<rt>ぶっか</rt></ruby>は<ruby>上<rt>あ</rt></ruby>がる<ruby>一方<rt>いっぽう</rt></ruby>だ。<div class="t2">Los precios no paran de subir.</div></div></div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="61-depende-de.html"><small>&larr; Anterior</small><span class="jp">によって・次第で</span></a></nav><!--/gen-bottom-->
+<footer>N3の仕上げ &middot; Remate &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

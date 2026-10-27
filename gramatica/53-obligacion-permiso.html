@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;}
+.grid2 .c{border-radius:6px;padding:13px;text-align:center;}
+.grid2 .w{font-family:"Noto Serif JP",serif;font-size:15px;}
+.grid2 .l{font-family:"Poppins",sans-serif;font-size:8.5px;letter-spacing:.07em;margin-top:5px;text-transform:uppercase;}
+@media(max-width:520px){.grid2{grid-template-columns:1fr;}}
+.tri{display:flex;gap:8px;flex-wrap:wrap;}
+.tri .z{flex:1 1 140px;border-radius:6px;padding:12px;text-align:center;}
+.tri .w{font-family:"Noto Serif JP",serif;font-size:16px;}
+.tri .d{font-size:10.5px;margin-top:5px;line-height:1.4;}
+</style><!--gen-head-->
+<title>なければならない・べきだ・なくてもいい &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#I">&larr; Gram&aacute;tica</a><span>I &middot; Voluntad, trato y relaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">なければならない・べきだ・なくてもいい</h1>
+<div class="sub">Obligaci&oacute;n, deber moral y cu&aacute;ndo <b>no hace falta</b>.</div>
+<div class="rom">&hellip;nakereba naranai &middot; &hellip;beki da &middot; &hellip;nakutemo ii</div>
+</div><div class="badge"><span class="tag">JLPT N4 &ndash; N3</span><span class="cat">Obligaci&oacute;n y permiso</span></div></header>
+
+<h2>Cuatro casillas</h2>
+<div class="grid2">
+<div class="c" style="background:var(--midori);color:#fff"><div class="w jp">なければならない</div><div class="l" style="color:#C9DAC9">HAY QUE &middot; POR NORMA</div></div>
+<div class="c" style="background:var(--midori-pale)"><div class="w jp">べきだ</div><div class="l" style="color:var(--sub)">DEBER&Iacute;A &middot; MORAL</div></div>
+<div class="c" style="background:#fff;border:1px solid var(--kasumi)"><div class="w jp">なくてもいい</div><div class="l" style="color:var(--sub)">NO HACE FALTA</div></div>
+<div class="c" style="background:var(--shu-pale)"><div class="w jp">てはいけない</div><div class="l" style="color:var(--shu)">PROHIBIDO</div></div>
+</div>
+<ul class="nuance">
+<li><b>なければならない es obligaci&oacute;n externa</b>: una norma, un horario, una circunstancia. En habla informal se contrae mucho: なきゃ, なくちゃ. Y muy frecuente: <b>〜ないと(いけない)</b>, que al hablar se queda en <ruby>行<rt>い</rt></ruby>かないと (&laquo;tengo que ir&raquo;).</li>
+<li><b>べきだった</b> es el reproche hacia el pasado: もっと<ruby>早<rt>はや</rt></ruby>く<ruby>謝<rt>あやま</rt></ruby>るべきだった (&laquo;deber&iacute;a haberse disculpado antes&raquo;).</li>
+<li><b>べきだ es opini&oacute;n moral</b>, no norma. <ruby>謝<rt>あやま</rt></ruby>るべきだ es &laquo;lo correcto ser&iacute;a que se disculpara&raquo;. Dirigido a alguien suena a serm&oacute;n.</li>
+<li><b>なければいけない y なければならない son casi iguales</b>: ならない suena algo m&aacute;s impersonal y escrito; いけない, m&aacute;s del caso concreto.</li>
+<li><b>てもいい pide permiso; てはいけない lo niega</b>: <ruby>入<rt>はい</rt></ruby>ってもいいですか / <ruby>入<rt>はい</rt></ruby>ってはいけません.</li>
+<li><b>べきではない es m&aacute;s suave que てはいけない</b>: apela a lo correcto, no a una norma impuesta. Y con する, la forma cl&aacute;sica es <span class="rd">するべき</span> o <span class="rd">すべき</span> &mdash; las dos valen.</li>
+<li><b>Contracciones de てはいけない</b>: ては &rarr; ちゃ y では &rarr; じゃ. <ruby>入<rt>はい</rt></ruby>っ<span class="hi">ちゃいけない</span>, <ruby>飲<rt>の</rt></ruby>ん<span class="hi">じゃだめ</span>. Es la misma ちゃ de なくちゃ (= なくては): <ruby>行<rt>い</rt></ruby>かなくちゃいけない &rarr; <ruby>行<rt>い</rt></ruby>かなくちゃ &rarr; <ruby>行<rt>い</rt></ruby>かなきゃ. Solo al hablar.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Obligaci&oacute;n (norma)</td><td class="jp2">Vない&minus;い <span class="hi">＋ければならない</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>かな<span class="hi">ければならない</span></td></tr>
+<tr><td class="ctx">Hay que (hablado)</td><td class="jp2">Vない <span class="hi">＋と(いけない)</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>かない<span class="hi">と</span></td></tr>
+<tr><td class="ctx">Contracci&oacute;n hablada</td><td class="jp2">〜<span class="hi">なきゃ</span>／<span class="hi">なくちゃ</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>か<span class="hi">なきゃ</span></td></tr>
+<tr><td class="ctx">Deber moral</td><td class="jp2">Vる <span class="hi">＋べきだ</span></td><td class="jp2"><ruby>謝<rt>あやま</rt></ruby>る<span class="hi">べきだ</span></td></tr>
+<tr><td class="ctx">Deber&iacute;a haber&hellip;</td><td class="jp2">Vる <span class="hi">＋べきだった</span></td><td class="jp2"><ruby>謝<rt>あやま</rt></ruby>る<span class="hi">べきだった</span></td></tr>
+<tr><td class="ctx">No deber&iacute;a</td><td class="jp2">Vる <span class="hi">＋べきではない</span></td><td class="jp2"><ruby>言<rt>い</rt></ruby>う<span class="hi">べきではない</span></td></tr>
+<tr><td class="ctx">No hace falta</td><td class="jp2">Vない&minus;い <span class="hi">＋くてもいい</span></td><td class="jp2"><ruby>来<rt>こ</rt></ruby>な<span class="hi">くてもいい</span></td></tr>
+<tr><td class="ctx">Pedir permiso</td><td class="jp2">Vて <span class="hi">＋もいいですか</span></td><td class="jp2"><ruby>入<rt>はい</rt></ruby>って<span class="hi">もいいですか</span></td></tr>
+<tr><td class="ctx">Prohibir</td><td class="jp2">Vて <span class="hi">＋はいけない</span></td><td class="jp2"><ruby>入<rt>はい</rt></ruby>って<span class="hi">はいけない</span></td></tr>
+<tr><td class="ctx">する &middot; forma cl&aacute;sica</td><td class="jp2"><span class="rd">するべき</span>／<span class="rd">すべき</span></td><td class="jp2"><span class="rd">すべき</span>だ</td></tr>
+<tr><td class="ctx">Prohibir (hablado)</td><td class="jp2">Vて &rarr; <span class="hi">ちゃ／じゃ</span> ＋いけない／だめ</td><td class="jp2"><ruby>入<rt>はい</rt></ruby>っちゃいけない ・ <ruby>飲<rt>の</rt></ruby>んじゃだめ</td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>明日<rt>あした</rt></ruby>までにレポートを<ruby>出<rt>だ</rt></ruby>さ<span class="hi">なければなりません</span>。</div><div class="t">Tengo que entregar el informe antes de ma&ntilde;ana.</div></div>
+<div class="ex-item"><div class="s jp">もう<ruby>行<rt>い</rt></ruby>か<span class="hi">なきゃ</span>。</div><div class="t">Ya me tengo que ir. <em>(contracci&oacute;n)</em></div></div>
+<div class="ex-item"><div class="s jp">もっと<ruby>早<rt>はや</rt></ruby>く<ruby>謝<rt>あやま</rt></ruby>る<span class="hi">べきだった</span>と<ruby>思<rt>おも</rt></ruby>います。</div><div class="t">Creo que deber&iacute;a haberse disculpado antes.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>土曜日<rt>どようび</rt></ruby>は<ruby>来<rt>こ</rt></ruby><span class="hi">なくてもいいです</span>。</div><div class="t">El s&aacute;bado no hace falta que vengas.</div></div>
+<div class="ex-item"><div class="s jp">ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>って<span class="hi">もいいですか</span>。</div><div class="t">&iquest;Puedo hacer fotos aqu&iacute;?</div></div>
+<div class="ex-item"><div class="s jp">そんなことを<ruby>言<rt>い</rt></ruby>う<span class="hi">べきではありません</span>。</div><div class="t">No deber&iacute;as decir esas cosas.</div></div>
+<div class="ex-item"><div class="s jp">ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>っ<span class="hi">ちゃだめ</span>だよ。</div><div class="t">Aqu&iacute; no se pueden hacer fotos, &iquest;eh? <em>(= 撮ってはだめ)</em></div></div>
+
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>行<rt>い</rt></ruby>くべきではならない</span> &nbsp; &#9675; <span class="good jp"><ruby>行<rt>い</rt></ruby>くべきではない</span></div><div class="why">No se mezclan las dos negaciones.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>行<rt>い</rt></ruby>かなくてはならない <em>(por &laquo;no hace falta&raquo;)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>行<rt>い</rt></ruby>かなくてもいい</span></div><div class="why">なくては es obligaci&oacute;n; el permiso de omitir es なくてもいい.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>飲<rt>の</rt></ruby>んちゃいけない</span> &nbsp; &#9675; <span class="good jp"><ruby>飲<rt>の</rt></ruby>んじゃいけない</span></div><div class="why">Si la forma て acaba en で (飲んで, 読んで), la contracci&oacute;n es じゃ, no ちゃ.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="52-proposito.html"><small>&larr; Anterior</small><span class="jp">ために・ように・に行く</span></a><a class="next" href="54-ordenes.html"><small>Siguiente &rarr;</small><span class="jp">てください・なさい・ないで・ずに</span></a></nav><!--/gen-bottom-->
+<footer>なければならない・べきだ・なくてもいい &middot; Obligaci&oacute;n y permiso &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

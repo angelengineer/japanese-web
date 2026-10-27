@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.strip{display:grid;grid-template-columns:60px repeat(10,1fr);gap:2px;margin-top:14px;}
+.strip>div{text-align:center;padding:5px 2px;font-family:"Poppins",sans-serif;font-size:9px;color:var(--sub);}
+.strip .lab{display:flex;align-items:center;justify-content:flex-start;font-size:9px;text-transform:uppercase;letter-spacing:.05em;}
+.strip .c{font-family:"Noto Serif JP",serif;font-size:16px;color:var(--sumi);}
+.strip .r{font-family:"Noto Serif JP",serif;font-size:11px;color:var(--midori);}
+.strip .r b{color:var(--shu);}
+.strip .t{font-family:"Noto Serif JP",serif;font-size:10.5px;color:var(--sub);}
+@media(max-width:620px){.strip{grid-template-columns:42px repeat(5,1fr);}
+ .strip>div:nth-child(n+7):nth-child(-n+12){display:none;}}
+.urow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px dotted #E6E9E2;font-size:13.5px;}
+.urow .n{font-family:"Poppins",sans-serif;color:var(--sub);font-size:11px;}
+.urow .k{font-family:"Noto Serif JP",serif;font-size:15px;}
+.urow .r{font-family:"Noto Serif JP",serif;color:var(--midori);font-size:13px;}
+.urow .r b{color:var(--shu);}
+.box{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:12px 14px;}
+.box .l{font-family:"Poppins",sans-serif;font-size:9px;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;}
+.box .num{font-family:"Poppins",sans-serif;font-size:15px;margin:4px 0;}
+.box .jp2{font-family:"Noto Serif JP",serif;font-size:15px;}
+.box p{font-size:12.5px;color:var(--sub);margin-top:8px;line-height:1.5;}
+.box p b{color:var(--midori);}
+.box h4{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--midori);margin-bottom:6px;}
+.box .l2{font-family:"Noto Serif JP",serif;font-size:13.5px;padding:2px 0;}
+.box .l2 span{font-family:"Lora",serif;font-style:italic;font-size:11.5px;color:var(--sub);}
+.ampm{display:flex;margin-top:14px;}
+.ampm div{flex:1;text-align:center;font-family:"Noto Serif JP",serif;font-size:15px;padding:8px 0;}
+.ampm .am{background:var(--midori-pale);border-radius:5px 0 0 5px;}
+.ampm .pm{background:var(--midori);color:#fff;border-radius:0 5px 5px 0;}
+.band{display:flex;margin-top:2px;}
+.band div{text-align:center;padding:8px 2px;font-family:"Noto Serif JP",serif;font-size:11px;}
+.band div small{display:block;font-family:"Poppins",sans-serif;font-size:7px;color:var(--sub);margin-top:2px;}
+</style><!--gen-head-->
+<title>数字・数え方 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#C">&larr; Gram&aacute;tica</a><span>C &middot; Vocabulario pr&#225;ctico</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>数字<rt>すうじ</rt></ruby>・<ruby>数<rt>かぞ</rt></ruby>え<ruby>方<rt>かた</rt></ruby></h1>
+<div class="sub">Los n&uacute;meros, y el <b>contador</b> que hay que ponerles detr&aacute;s.</div>
+<div class="rom">s&#363;ji &middot; kazoekata</div>
+</div><div class="badge"><span class="tag">JLPT N5</span><span class="cat">N&uacute;meros</span></div></header>
+
+<h2>Del 1 al 10 &mdash; dos series que conviven</h2>
+<div class="strip">
+<div class="lab">Cifra</div><div class="c jp">一</div><div class="c jp">二</div><div class="c jp">三</div><div class="c jp">四</div><div class="c jp">五</div><div class="c jp">六</div><div class="c jp">七</div><div class="c jp">八</div><div class="c jp">九</div><div class="c jp">十</div>
+<div class="lab">Serie china</div><div class="r jp">いち</div><div class="r jp">に</div><div class="r jp">さん</div><div class="r jp"><b>よん</b>・し</div><div class="r jp">ご</div><div class="r jp">ろく</div><div class="r jp"><b>なな</b>・しち</div><div class="r jp">はち</div><div class="r jp"><b>きゅう</b>・く</div><div class="r jp">じゅう</div>
+<div class="lab">Serie 〜つ</div><div class="t jp">ひとつ</div><div class="t jp">ふたつ</div><div class="t jp">みっつ</div><div class="t jp">よっつ</div><div class="t jp">いつつ</div><div class="t jp">むっつ</div><div class="t jp">ななつ</div><div class="t jp">やっつ</div><div class="t jp">ここのつ</div><div class="t jp">とお</div>
+</div>
+<ul class="nuance">
+<li>La serie 〜つ vale <b>sola</b>, sin contador, para cosas gen&eacute;ricas &mdash; y solo llega hasta とお (10).</li>
+<li>Con <b>4, 7 y 9</b> hay dos lecturas y no son intercambiables: en contadores casi siempre van <span class="rd">よん</span>, <span class="rd">なな</span> y <span class="rd">きゅう</span> &mdash; las otras suenan a hora o a mes.</li>
+<li><b>El contador va suelto detr&aacute;s del objeto</b>, no delante como adjetivo: <ruby>本<rt>ほん</rt></ruby>を<ruby>三冊<rt>さんさつ</rt></ruby><ruby>買<rt>か</rt></ruby>いました. <ruby>三冊<rt>さんさつ</rt></ruby>の<ruby>本<rt>ほん</rt></ruby> tambi&eacute;n existe, pero presenta los tres libros como un conjunto ya definido.</li>
+</ul>
+
+<h2>N&uacute;meros grandes &mdash; el japon&eacute;s cuenta de cuatro en cuatro</h2>
+<div class="cols"><div>
+<div class="urow"><span class="n">10</span><span class="k jp">十</span><span class="r jp">じゅう</span></div>
+<div class="urow"><span class="n">100</span><span class="k jp">百</span><span class="r jp">ひゃく</span></div>
+<div class="urow"><span class="n">1 000</span><span class="k jp">千</span><span class="r jp">せん</span></div>
+<div class="urow"><span class="n">10 000</span><span class="k jp">一万</span><span class="r jp"><b>いちまん</b></span></div>
+<div class="urow"><span class="n">100 000</span><span class="k jp">十万</span><span class="r jp">じゅうまん</span></div>
+<div class="urow"><span class="n">1 000 000</span><span class="k jp">百万</span><span class="r jp">ひゃくまん</span></div>
+<div class="urow"><span class="n">100 000 000</span><span class="k jp">一億</span><span class="r jp">いちおく</span></div>
+<div class="urow"><span class="n">0</span><span class="k jp">零・ゼロ</span><span class="r jp">れい・ゼロ</span></div>
+</div><div>
+<div class="box">
+<div class="l">ESPA&Ntilde;OL</div><div class="num">12&middot;345&middot;678</div>
+<div class="l">JAPON&Eacute;S</div><div class="num">1234&middot;5678</div>
+<div class="jp2">千二百三十四<span style="color:var(--midori)">万</span>五千六百七十八</div>
+<p>El espa&ntilde;ol agrupa de tres en tres (mil, mill&oacute;n); el japon&eacute;s, <b>de cuatro en cuatro</b>.
+Por eso 100&nbsp;000 no es &laquo;cien mil&raquo; sino 十万 (diez 万), y un mill&oacute;n es 百万 (cien 万).</p>
+</div>
+</div></div>
+<p style="font-size:13px;color:var(--sub);margin-top:8px;">Se deforman: <span class="rd"><ruby>三百<rt>さんびゃく</rt></ruby>・<ruby>六百<rt>ろっぴゃく</rt></ruby>・<ruby>八百<rt>はっぴゃく</rt></ruby></span> &nbsp;・&nbsp; <span class="rd"><ruby>三千<rt>さんぜん</rt></ruby>・<ruby>八千<rt>はっせん</rt></ruby></span> &nbsp;・&nbsp; y ante contadores <span class="rd"><ruby>一<rt>いっ</rt></ruby>・<ruby>六<rt>ろっ</rt></ruby>・<ruby>八<rt>はっ</rt></ruby>・<ruby>十<rt>じゅっ</rt></ruby></span>.</p>
+
+<h2>Contadores m&aacute;s usados</h2>
+<table>
+<thead><tr><th>Contador</th><th>Qu&eacute; cuenta</th><th>1</th><th>2</th><th>3</th></tr></thead>
+<tbody>
+<tr><td class="ctx">〜つ</td><td class="jp2">cosas en general</td><td class="jp2">ひとつ</td><td class="jp2">ふたつ</td><td class="jp2">みっつ</td></tr>
+<tr><td class="ctx">〜<ruby>人<rt>にん</rt></ruby></td><td class="jp2">personas</td><td class="jp2"><span class="rd">ひとり</span></td><td class="jp2"><span class="rd">ふたり</span></td><td class="jp2">さんにん</td></tr>
+<tr><td class="ctx">〜<ruby>本<rt>ほん</rt></ruby></td><td class="jp2">cosas alargadas</td><td class="jp2"><span class="rd">いっぽん</span></td><td class="jp2">にほん</td><td class="jp2"><span class="rd">さんぼん</span></td></tr>
+<tr><td class="ctx">〜<ruby>枚<rt>まい</rt></ruby></td><td class="jp2">cosas planas</td><td class="jp2">いちまい</td><td class="jp2">にまい</td><td class="jp2">さんまい</td></tr>
+<tr><td class="ctx">〜<ruby>冊<rt>さつ</rt></ruby></td><td class="jp2">libros y cuadernos</td><td class="jp2"><span class="rd">いっさつ</span></td><td class="jp2">にさつ</td><td class="jp2">さんさつ</td></tr>
+<tr><td class="ctx">〜<ruby>匹<rt>ひき</rt></ruby></td><td class="jp2">animales peque&ntilde;os</td><td class="jp2"><span class="rd">いっぴき</span></td><td class="jp2">にひき</td><td class="jp2"><span class="rd">さんびき</span></td></tr>
+<tr><td class="ctx">〜<ruby>頭<rt>とう</rt></ruby></td><td class="jp2">animales grandes</td><td class="jp2">いっとう</td><td class="jp2">にとう</td><td class="jp2">さんとう</td></tr>
+<tr><td class="ctx">〜<ruby>個<rt>こ</rt></ruby></td><td class="jp2">objetos peque&ntilde;os</td><td class="jp2"><span class="rd">いっこ</span></td><td class="jp2">にこ</td><td class="jp2">さんこ</td></tr>
+<tr><td class="ctx">〜<ruby>杯<rt>はい</rt></ruby></td><td class="jp2">vasos y tazas</td><td class="jp2"><span class="rd">いっぱい</span></td><td class="jp2">にはい</td><td class="jp2"><span class="rd">さんばい</span></td></tr>
+<tr><td class="ctx">〜<ruby>回<rt>かい</rt></ruby></td><td class="jp2">veces</td><td class="jp2"><span class="rd">いっかい</span></td><td class="jp2">にかい</td><td class="jp2">さんかい</td></tr>
+<tr><td class="ctx">〜<ruby>歳<rt>さい</rt></ruby></td><td class="jp2">edad (20 &rarr; <span class="rd">はたち</span>)</td><td class="jp2"><span class="rd">いっさい</span></td><td class="jp2">にさい</td><td class="jp2">さんさい</td></tr>
+<tr><td class="ctx">〜<ruby>階<rt>かい</rt></ruby></td><td class="jp2">pisos de un edificio</td><td class="jp2"><span class="rd">いっかい</span></td><td class="jp2">にかい</td><td class="jp2"><span class="rd">さんがい</span></td></tr>
+<tr><td class="ctx">〜<ruby>台<rt>だい</rt></ruby></td><td class="jp2">m&aacute;quinas, coches</td><td class="jp2">いちだい</td><td class="jp2">にだい</td><td class="jp2">さんだい</td></tr>
+<tr><td class="ctx">〜<ruby>着<rt>ちゃく</rt></ruby></td><td class="jp2">ropa</td><td class="jp2">いっちゃく</td><td class="jp2">にちゃく</td><td class="jp2">さんちゃく</td></tr>
+<tr><td class="ctx">〜<ruby>足<rt>そく</rt></ruby></td><td class="jp2">calzado (pares)</td><td class="jp2"><span class="rd">いっそく</span></td><td class="jp2">にそく</td><td class="jp2"><span class="rd">さんぞく</span></td></tr>
+</tbody></table>
+<ul class="nuance">
+<li><b>〜<ruby>個<rt>こ</rt></ruby> frente a 〜つ</b>: los dos cuentan objetos peque&ntilde;os y compactos (jabones, huevos, manzanas, caramelos, piezas). 〜つ es m&aacute;s hablado y se acaba en <ruby>十<rt>とお</rt></ruby>; 〜<ruby>個<rt>こ</rt></ruby> sigue sin l&iacute;mite (<ruby>十二個<rt>じゅうにこ</rt></ruby>, <ruby>二十個<rt>にじゅっこ</rt></ruby>) y es el que ver&aacute;s en tiendas, etiquetas y precios: 1<ruby>個<rt>こ</rt></ruby>100<ruby>円<rt>えん</rt></ruby>.</li>
+<li><b>La serie de 〜<ruby>個<rt>こ</rt></ruby></b>: <span class="rd">いっこ</span>・にこ・さんこ・よんこ・ごこ・<span class="rd">ろっこ</span>・ななこ・<span class="rd">はっこ</span>・きゅうこ・<span class="rd">じゅっこ</span>. Se pregunta con <ruby>何個<rt>なんこ</rt></ruby> o いくつ.</li>
+<li><b>Si dudas, 〜<ruby>個<rt>こ</rt></ruby> o 〜つ sirven para casi cualquier objeto peque&ntilde;o</b>. Lo que no aceptan son personas, animales, ni cosas que tienen contador claro: libros (<ruby>冊<rt>さつ</rt></ruby>), papel (<ruby>枚<rt>まい</rt></ruby>), botellas (<ruby>本<rt>ほん</rt></ruby>).</li>
+</ul>
+
+<h2>Por qu&eacute; cambian de sonido</h2>
+<div class="fig">
+<div class="z"><h4 class="jp">El n&uacute;mero se acorta</h4><div class="d">一&rarr;いっ &nbsp; 六&rarr;ろっ &nbsp; 八&rarr;はっ &nbsp; 十&rarr;じゅっ<br><span style='font-size:11px'>Ante contadores que empiezan por か・さ・た・は.</span></div></div>
+<div class="z"><h4 class="jp">El contador se sonoriza</h4><div class="d">は<ruby>行<rt>ぎょう</rt></ruby> &rarr; ぱ<ruby>行<rt>ぎょう</rt></ruby> tras っ<br>は<ruby>行<rt>ぎょう</rt></ruby> &rarr; ば<ruby>行<rt>ぎょう</rt></ruby> tras さん・なん<br><span style='font-size:11px'>ほん&rarr;いっ<b>ぽ</b>ん, さん<b>ぼ</b>ん, pero よんほん.</span></div></div>
+<div class="z"><h4 class="jp">Preguntar</h4><div class="d"><ruby>何<rt>なん</rt></ruby>〜<br><span style='font-size:11px'><ruby>何本<rt>なんぼん</rt></ruby>, <ruby>何人<rt>なんにん</rt></ruby>, <ruby>何回<rt>なんかい</rt></ruby>, いくつ.</span></div></div>
+</div>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">りんごを<span class="hi"><ruby>三<rt>みっ</rt></ruby>つ</span>ください。</div><div class="t">Deme tres manzanas, por favor.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>学生<rt>がくせい</rt></ruby>が<span class="hi"><ruby>五人<rt>ごにん</rt></ruby></span>います。</div><div class="t">Hay cinco estudiantes.</div></div>
+<div class="ex-item"><div class="s jp">ビールを<span class="hi"><ruby>二杯<rt>にはい</rt></ruby></span><ruby>飲<rt>の</rt></ruby>みました。</div><div class="t">Me tom&eacute; dos cervezas.</div></div>
+<div class="ex-item"><div class="s jp">せっけんを<span class="hi"><ruby>六個<rt>ろっこ</rt></ruby></span><ruby>買<rt>か</rt></ruby>いました。</div><div class="t">Compr&eacute; seis pastillas de jab&oacute;n. <em>(objeto peque&ntilde;o &rarr; 〜個)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">この<ruby>本<rt>ほん</rt></ruby>は<span class="hi"><ruby>千五百円<rt>せんごひゃくえん</rt></ruby></span>です。</div><div class="t">Este libro cuesta 1500 yenes.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>何回<rt>なんかい</rt></ruby></span><ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きましたか。</div><div class="t">&iquest;Cu&aacute;ntas veces has ido a Jap&oacute;n?</div></div>
+<div class="ex-item"><div class="s jp"><ruby>妹<rt>いもうと</rt></ruby>は<span class="hi">はたち</span>になりました。</div><div class="t">Mi hermana ha cumplido veinte. <em>(lectura irregular)</em></div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp">まん <em>(a secas)</em></span> &nbsp; &#9675; <span class="good jp">いちまん</span></div><div class="why">El 一 no se puede quitar, a diferencia de 百 y 千.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>二月<rt>にがつ</rt></ruby> <em>(por &laquo;dos meses&raquo;)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>二<rt>に</rt></ruby>か<ruby>月<rt>げつ</rt></ruby></span></div><div class="why"><ruby>二月<rt>にがつ</rt></ruby> se leer&iacute;a &laquo;febrero&raquo;.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>本<rt>ほん</rt></ruby>を<ruby>三<rt>みっ</rt></ruby>つ<ruby>買<rt>か</rt></ruby>いました。</span> &nbsp; &#9675; <span class="good jp"><ruby>本<rt>ほん</rt></ruby>を<ruby>三冊<rt>さんさつ</rt></ruby><ruby>買<rt>か</rt></ruby>いました。</span></div><div class="why">Los libros llevan su contador, 〜<ruby>冊<rt>さつ</rt></ruby>; 〜つ es para cosas sin contador propio. Y el contador va suelto tras el objeto.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">よんにん</span> &nbsp; &#9675; <span class="good jp">よにん</span></div><div class="why">Para contar personas, <ruby>四人<rt>よにん</rt></ruby> es irregular.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="16-raiz-masu.html"><small>&larr; Anterior</small><span class="jp">ます形の語幹</span></a><a class="next" href="18-horas.html"><small>Siguiente &rarr;</small><span class="jp">時間・何時</span></a></nav><!--/gen-bottom-->
+<footer>数字・数え方 &middot; N&uacute;meros &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>わけだ・わけではない・わけがない・わけにはいかない &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#F">&larr; Gram&aacute;tica</a><span>F &middot; Unir frases &#183; l&#243;gica</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">わけだ・わけではない・わけがない・わけにはいかない</h1>
+<div class="sub">Cuatro usos de <b>わけ</b> &mdash; lo que cuadra, lo que se niega a medias, lo imposible y lo que no se debe.</div>
+<div class="rom">&hellip;wake da &middot; &hellip;wake dewa nai &middot; &hellip;wake ga nai &middot; &hellip;wake ni wa ikanai</div>
+</div><div class="badge"><span class="tag">JLPT N3</span><span class="cat">L&oacute;gica y raz&oacute;n</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">わけ significa &laquo;raz&oacute;n, l&oacute;gica&raquo;, y las cuatro expresiones juegan con eso: una confirma que algo <b>cuadra</b>, otra niega parcialmente, otra lo declara <b>imposible</b>, y la &uacute;ltima dice que algo es <b>imposible por circunstancias</b>, no por capacidad.</p>
+<div class="fig">
+<div class="z solid"><h4 class="jp">わけだ</h4><div class="d">&laquo;con raz&oacute;n&raquo;, &laquo;o sea que&hellip;&raquo; &mdash; conclusi&oacute;n l&oacute;gica que por fin encaja</div></div>
+<div class="z pale"><h4 class="jp">わけではない</h4><div class="d">&laquo;no es que&hellip;&raquo; &mdash; niega solo una parte, no del todo</div></div>
+<div class="z warn"><h4 class="jp">わけがない</h4><div class="d">&laquo;es imposible que&hellip;&raquo; &mdash; lo niega <b>del todo</b></div></div>
+<div class="z"><h4 class="jp">わけにはいかない</h4><div class="d">&laquo;no puedo&raquo; &mdash; pero por <b>obligaci&oacute;n moral o social</b>, no por falta de capacidad</div></div>
+<div class="figcap">Las cuatro giran sobre la misma idea de <b>l&oacute;gica</b> o <b>raz&oacute;n</b>.</div>
+</div>
+<ul class="nuance">
+<li><b>わけだ es el &laquo;ah, claro&raquo;</b>: <ruby>北海道<rt>ほっかいどう</rt></ruby><ruby>出身<rt>しゅっしん</rt></ruby>なんですか。<ruby>道理<rt>どうり</rt></ruby>で<ruby>雪<rt>ゆき</rt></ruby>に<ruby>強<rt>つよ</rt></ruby>いわけだ. Encaja una pieza que faltaba.</li>
+<li><b>わけではない niega parcialmente</b>: <ruby>嫌<rt>きら</rt></ruby>いなわけではない no es &laquo;no me disgusta&raquo; sino &laquo;no es que me disguste&hellip; (pero hay algo)&raquo;. Suaviza mucho.</li>
+<li><b>わけにはいかない no es <ruby>出来<rt>でき</rt></ruby>ない</b>: <ruby>出来<rt>でき</rt></ruby>ない es que no puedes; わけにはいかない es que <b>podr&iacute;as, pero no debes</b> &mdash; hay un compromiso de por medio.</li>
+<li>Con verbo en negativo, わけにはいかない invierte a obligaci&oacute;n: <ruby>行<rt>い</rt></ruby>かないわけにはいかない es &laquo;no me queda m&aacute;s remedio que ir&raquo;.</li>
+<li><b>わけではない frente a わけがない</b>, la confusi&oacute;n t&iacute;pica del examen: <ruby>嫌<rt>きら</rt></ruby>いなわけではない es &laquo;no es que no me guste&raquo; (niega a medias); <ruby>彼<rt>かれ</rt></ruby>が<ruby>知<rt>し</rt></ruby>っているわけがない es &laquo;es imposible que lo sepa&raquo; (niega del todo). Equivale a はずがない, algo m&aacute;s coloquial.</li>
+<li><b>はず frente a わけ</b>: はず es una expectativa tuya (&laquo;deber&iacute;a ser&raquo;); わけ es una conclusi&oacute;n que se <b>deduce</b> de lo que acabas de saber.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Conclusi&oacute;n l&oacute;gica</td><td class="jp2">forma simple <span class="hi">＋わけだ</span></td><td class="jp2"><ruby>寒<rt>さむ</rt></ruby>い<span class="hi">わけだ</span> <em>con raz&oacute;n hace fr&iacute;o</em></td></tr>
+<tr><td class="ctx">No es que&hellip; (parcial)</td><td class="jp2">forma simple <span class="hi">＋わけではない</span></td><td class="jp2"><ruby>嫌<rt>きら</rt></ruby>いな<span class="hi">わけではない</span></td></tr>
+<tr><td class="ctx">No puedo (moral/social)</td><td class="jp2">Vる <span class="hi">＋わけにはいかない</span></td><td class="jp2"><ruby>休<rt>やす</rt></ruby>む<span class="hi">わけにはいかない</span></td></tr>
+<tr><td class="ctx">Es imposible que&hellip;</td><td class="jp2">forma simple <span class="hi">＋わけがない</span></td><td class="jp2"><ruby>知<rt>し</rt></ruby>っている<span class="hi">わけがない</span></td></tr>
+<tr><td class="ctx">No me queda m&aacute;s remedio</td><td class="jp2">Vない <span class="hi">＋わけにはいかない</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>かない<span class="hi">わけにはいかない</span></td></tr>
+<tr><td class="ctx">Con adj -な / sustantivo</td><td class="jp2">〜<span class="hi">な</span> ＋わけ</td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">な</span>わけだ &nbsp; <ruby>学生<rt>がくせい</rt></ruby><span class="hi">な</span>わけだ</td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いていた。<ruby>道理<rt>どうり</rt></ruby>で<ruby>寒<rt>さむ</rt></ruby>い<span class="hi">わけだ</span>。</div><div class="t">La ventana estaba abierta. Con raz&oacute;n hac&iacute;a fr&iacute;o.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>十年<rt>じゅうねん</rt></ruby><ruby>住<rt>す</rt></ruby>んでいるんですか。<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>な<span class="hi">わけです</span>ね。</div><div class="t">&iquest;Lleva diez a&ntilde;os viviendo aqu&iacute;? Con raz&oacute;n habla tan bien.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>嫌<rt>きら</rt></ruby>いな<span class="hi">わけではありません</span>が、あまり<ruby>食<rt>た</rt></ruby>べません。</div><div class="t">No es que no me guste, pero no lo como mucho.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>明日<rt>あした</rt></ruby>は<ruby>試験<rt>しけん</rt></ruby>だから、<ruby>休<rt>やす</rt></ruby>む<span class="hi">わけにはいきません</span>。</div><div class="t">Ma&ntilde;ana hay examen, as&iacute; que no puedo faltar. <em>(no debo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>約束<rt>やくそく</rt></ruby>したから、<ruby>行<rt>い</rt></ruby>かない<span class="hi">わけにはいかない</span>。</div><div class="t">Como lo promet&iacute;, no me queda m&aacute;s remedio que ir.</div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>泳<rt>およ</rt></ruby>ぐわけにはいかない <em>(por &laquo;no s&eacute; nadar&raquo;)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>泳<rt>およ</rt></ruby>げません</span></div><div class="why">わけにはいかない es impedimento moral, no falta de capacidad.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>静<rt>しず</rt></ruby>かだわけだ</span> &nbsp; &#9675; <span class="good jp"><ruby>静<rt>しず</rt></ruby>かなわけだ</span></div><div class="why">Los adjetivos -な llevan な delante de わけ.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>嫌<rt>きら</rt></ruby>いわけではない</span> &nbsp; &#9675; <span class="good jp"><ruby>嫌<rt>きら</rt></ruby>いなわけではない</span></div><div class="why"><ruby>嫌<rt>きら</rt></ruby>い es adjetivo -な pese a acabar en い.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="35-shi.html"><small>&larr; Anterior</small><span class="jp">〜し</span></a><a class="next" href="63-conectores.html"><small>Siguiente &rarr;</small><span class="jp">接続詞</span></a></nav><!--/gen-bottom-->
+<footer>わけだ・わけではない・わけがない・わけにはいかない &middot; L&oacute;gica y raz&oacute;n &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

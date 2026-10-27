@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>んです・ので・のに・から &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#F">&larr; Gram&aacute;tica</a><span>F &middot; Unir frases &#183; l&#243;gica</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">んです・ので・のに・から</h1>
+<div class="sub">Explicar, justificar y se&ntilde;alar lo que <b>no cuadra</b>.</div>
+<div class="rom">&hellip;n desu &middot; &hellip;node &middot; &hellip;noni &middot; &hellip;kara</div>
+</div><div class="badge"><span class="tag">JLPT N4</span><span class="cat">Explicar</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">んです, ので y のに giran alrededor de la misma <b>の</b> nominalizadora, que convierte una frase en un bloque explicable; から es la causa directa, sin の. La diferencia est&aacute; en si explicas, justificas o se&ntilde;alas un contraste que no cuadra.</p>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い<span class="hi">んです</span>。</span><span class="b">explico mi situaci&oacute;n</span></div>
+<div class="r"><span class="a jp"><ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い<span class="hi">ので</span>、<ruby>帰<rt>かえ</rt></ruby>ります。</span><span class="b">razón neutra, cortés</span></div>
+<div class="r"><span class="a jp"><ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い<span class="hi">から</span>、<ruby>帰<rt>かえ</rt></ruby>る。</span><span class="b">razón directa, m&aacute;s subjetiva</span></div>
+<div class="r"><span class="a jp"><ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い<span class="hi">のに</span>、<ruby>働<rt>はたら</rt></ruby>いた。</span><span class="b">contraste: no cuadra</span></div>
+<div class="figcap">La misma <b>の</b> en tres de ellas; から va sin ella.</div>
+</div>
+<ul class="nuance">
+<li><b>んです no da informaci&oacute;n nueva: la explica.</b> <ruby>雨<rt>あめ</rt></ruby>です es &laquo;llueve&raquo;; <ruby>雨<rt>あめ</rt></ruby>なんです es &laquo;es que llueve&raquo; &mdash; justifica algo que el otro ya ha notado.</li>
+<li><b>Con sustantivo y adjetivo -な hace falta な</b>: <ruby>学生<rt>がくせい</rt></ruby><span class="hi">な</span>んです, <ruby>静<rt>しず</rt></ruby>か<span class="hi">な</span>んです. Es el error m&aacute;s repetido de esta ficha.</li>
+<li><b>ので frente a から</b>: ので presenta la causa como un hecho objetivo y suena m&aacute;s cort&eacute;s; から es m&aacute;s directo y personal. Para excusas ante un superior, siempre ので.</li>
+<li><b>から admite detr&aacute;s voluntad, orden o invitaci&oacute;n</b>; ので encaja peor con &oacute;rdenes: <ruby>危<rt>あぶ</rt></ruby>ないから<ruby>気<rt>き</rt></ruby>をつけて suena mejor que <span class="rd">ので<ruby>気<rt>き</rt></ruby>をつけて</span>.</li>
+<li><b>のに es contraste con reproche o sorpresa</b>: hay algo que no cuadra. <ruby>勉強<rt>べんきょう</rt></ruby>したのに、<ruby>落<rt>お</rt></ruby>ちた lleva frustraci&oacute;n dentro; <ruby>勉強<rt>べんきょう</rt></ruby>したが、<ruby>落<rt>お</rt></ruby>ちた es neutro.</li>
+<li><b>Los tres registros de pregunta</b>: 〜の？ (&iacute;ntimo), 〜んだ？ (masculino, informal), 〜んですか (cort&eacute;s). El tono cambia mucho seg&uacute;n cu&aacute;l elijas.</li>
+</ul>
+
+<h3>〜んですが・〜んですけど: preparar el terreno</h3>
+<p class="lead">Explicas tu situaci&oacute;n <b>antes</b> de pedir, preguntar o proponer algo. Aqu&iacute; が／けど no significa &laquo;pero&raquo;: solo enlaza el contexto con lo que viene despu&eacute;s, y a menudo lo que viene ni se dice.</p>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>った<span class="hi">んですが</span>、<ruby>駅<rt>えき</rt></ruby>はどこですか。</span><span class="b">contexto &rarr; pregunta</span></div>
+<div class="r"><span class="a jp">この<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>読<rt>よ</rt></ruby>めない<span class="hi">んですけど</span>&hellip;</span><span class="b">frase colgada: &laquo;&iquest;me ayudas?&raquo;</span></div>
+<div class="r"><span class="a jp"><ruby>来週<rt>らいしゅう</rt></ruby>、<ruby>休<rt>やす</rt></ruby>みたい<span class="hi">のですが</span>、よろしいでしょうか。</span><span class="b">formal, con un superior</span></div>
+<div class="figcap">Lo que va antes de <b>んですが</b> es el porqu&eacute;; lo que va despu&eacute;s, el favor.</div>
+</div>
+<ul class="nuance">
+<li><b>Sin ん cambia el sentido.</b> <ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>いましたが、&hellip; suena a &laquo;me perd&iacute;, pero&hellip;&raquo;, una narraci&oacute;n con contraste. 迷った<span class="hi">んですが</span> es &laquo;es que me he perdido&hellip;&raquo; y anuncia que viene una petici&oacute;n.</li>
+<li><b>Dejar la frase colgada es lo m&aacute;s cort&eacute;s</b>: el oyente completa la petici&oacute;n y t&uacute; no tienes que formularla. Es t&iacute;pico en tiendas, oficinas y al tel&eacute;fono.</li>
+<li><b>Registro</b>: 〜のですが (formal, correos) &gt; 〜んですが (cort&eacute;s, hablado) &gt; 〜んですけど (cort&eacute;s, m&aacute;s suave) &gt; 〜んだけど／〜の（だ）けど (con amigos).</li>
+<li><b>Combinaci&oacute;n de examen</b>: 〜たいんですが／〜たいのですが + petici&oacute;n. En el <ruby>聴解<rt>ちょうかい</rt></ruby> del N3 la primera frase del di&aacute;logo suele ser as&iacute;, y la pregunta real llega despu&eacute;s.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Verbo / Adj -い</th><th>Adj -な / Sustantivo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Explicar (cort&eacute;s)</td><td class="jp2"><ruby>痛<rt>いた</rt></ruby>い<span class="hi">んです</span></td><td class="jp2"><ruby>学生<rt>がくせい</rt></ruby><span class="hi">なんです</span></td></tr>
+<tr><td class="ctx">Explicar (llano)</td><td class="jp2"><ruby>痛<rt>いた</rt></ruby>い<span class="hi">んだ</span></td><td class="jp2"><ruby>学生<rt>がくせい</rt></ruby><span class="hi">なんだ</span></td></tr>
+<tr><td class="ctx">Preguntar (&iacute;ntimo)</td><td class="jp2"><ruby>行<rt>い</rt></ruby>く<span class="hi">の？</span></td><td class="jp2"><ruby>学生<rt>がくせい</rt></ruby><span class="hi">なの？</span></td></tr>
+<tr><td class="ctx">Preguntar (cort&eacute;s)</td><td class="jp2"><ruby>行<rt>い</rt></ruby>く<span class="hi">んですか</span></td><td class="jp2"><ruby>学生<rt>がくせい</rt></ruby><span class="hi">なんですか</span></td></tr>
+<tr><td class="ctx">Introducir una petici&oacute;n</td><td class="jp2"><ruby>痛<rt>いた</rt></ruby>い<span class="hi">んですが／んですけど</span></td><td class="jp2"><ruby>学生<rt>がくせい</rt></ruby><span class="hi">なんですが</span></td></tr>
+<tr><td class="ctx">Causa cort&eacute;s</td><td class="jp2"><ruby>痛<rt>いた</rt></ruby>い<span class="hi">ので</span></td><td class="jp2"><ruby>学生<rt>がくせい</rt></ruby><span class="hi">なので</span></td></tr>
+<tr><td class="ctx">Causa directa</td><td class="jp2"><ruby>痛<rt>いた</rt></ruby>い<span class="hi">から</span></td><td class="jp2"><ruby>学生<rt>がくせい</rt></ruby><span class="hi">だから</span></td></tr>
+<tr><td class="ctx">Contraste</td><td class="jp2"><ruby>痛<rt>いた</rt></ruby>い<span class="hi">のに</span></td><td class="jp2"><ruby>学生<rt>がくせい</rt></ruby><span class="hi">なのに</span></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">どうしたんですか。&mdash; <ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い<span class="hi">んです</span>。</div><div class="t">&iquest;Qu&eacute; le pasa? &mdash; Es que me duele la cabeza.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れた<span class="hi">ので</span>、<ruby>遅刻<rt>ちこく</rt></ruby>しました。</div><div class="t">Como el tren se retras&oacute;, llegu&eacute; tarde. <em>(excusa cort&eacute;s)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>危<rt>あぶ</rt></ruby>ない<span class="hi">から</span>、<ruby>気<rt>き</rt></ruby>をつけてください。</div><div class="t">Ten cuidado, que es peligroso. <em>(から admite aviso)</em></div></div>
+<div class="ex-item"><div class="s jp">すみません、この<ruby>服<rt>ふく</rt></ruby>を<ruby>試着<rt>しちゃく</rt></ruby>したい<span class="hi">んですが</span>。</div><div class="t">Perdone, querr&iacute;a probarme esta ropa. <em>(petici&oacute;n sin formular)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">たくさん<ruby>勉強<rt>べんきょう</rt></ruby>した<span class="hi">のに</span>、<ruby>試験<rt>しけん</rt></ruby>に<ruby>落<rt>お</rt></ruby>ちた。</div><div class="t">Aunque estudi&eacute; mucho, suspend&iacute;. <em>(frustraci&oacute;n)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>留学生<rt>りゅうがくせい</rt></ruby><span class="hi">なんです</span>。</div><div class="t">Es que soy estudiante extranjero. <em>(sustantivo &rarr; な)</em></div></div>
+<div class="ex-item"><div class="s jp">もう<ruby>帰<rt>かえ</rt></ruby>る<span class="hi">の？</span></div><div class="t">&iquest;Ya te vas? <em>(&iacute;ntimo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>明日<rt>あした</rt></ruby>の<ruby>会議<rt>かいぎ</rt></ruby><span class="hi">なんですけど</span>、<ruby>時間<rt>じかん</rt></ruby>を<ruby>変<rt>か</rt></ruby>えてもらえませんか。</div><div class="t">Sobre la reuni&oacute;n de ma&ntilde;ana&hellip; &iquest;podr&iacute;a cambiar la hora? <em>(sacar un tema)</em></div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>学生<rt>がくせい</rt></ruby>だんです。</span> &nbsp; &#9675; <span class="good jp"><ruby>学生<rt>がくせい</rt></ruby>なんです。</span></div><div class="why">Con sustantivo, だ pasa a な delante de んです.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>静<rt>しず</rt></ruby>かだのに</span> &nbsp; &#9675; <span class="good jp"><ruby>静<rt>しず</rt></ruby>かなのに</span></div><div class="why">Misma regla con los adjetivos -な.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>遅<rt>おく</rt></ruby>れたから、すみません。 <em>(ante un jefe)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>遅<rt>おく</rt></ruby>れたので、すみません。</span></div><div class="why">Para excusarse con un superior, ので suena m&aacute;s cort&eacute;s.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>勉強<rt>べんきょう</rt></ruby>したのに、<ruby>合格<rt>ごうかく</rt></ruby>した。</span> &nbsp; &#9675; <span class="good jp"><ruby>勉強<rt>べんきょう</rt></ruby>したから、<ruby>合格<rt>ごうかく</rt></ruby>した。</span></div><div class="why">のに exige que el resultado <b>no cuadre</b> con lo esperado.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>いましたが、<ruby>駅<rt>えき</rt></ruby>はどこですか。</span> &nbsp; &#9675; <span class="good jp"><ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>った<span class="hi">んですが</span>、<ruby>駅<rt>えき</rt></ruby>はどこですか。</span></div><div class="why">Sin ん, が se lee como &laquo;pero&raquo;; para presentar tu situaci&oacute;n antes de pedir, hace falta んですが.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">ちょっと<ruby>聞<rt>き</rt></ruby>きたいですが&hellip;</span> &nbsp; &#9675; <span class="good jp">ちょっと<ruby>聞<rt>き</rt></ruby>きたい<span class="hi">んですが</span>&hellip;</span></div><div class="why">〜たいですが suena seco y casi contradictorio; para abrir una petici&oacute;n se dice 〜たいんですが.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="31-limite-hipotesis.html"><small>&larr; Anterior</small><span class="jp">限り・としたら</span></a><a class="next" href="33-causa.html"><small>Siguiente &rarr;</small><span class="jp">おかげで・せいで・ため</span></a></nav><!--/gen-bottom-->
+<footer>んです・ので・のに・から &middot; Explicar &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>自動詞・他動詞 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#B">&larr; Gram&aacute;tica</a><span>B &middot; Conjugaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>自動詞<rt>じどうし</rt></ruby>・<ruby>他動詞<rt>たどうし</rt></ruby></h1>
+<div class="sub">Parejas de verbos donde el espa&ntilde;ol usa <b>uno solo</b>.</div>
+<div class="rom">jid&#333;shi &middot; tad&#333;shi</div>
+</div><div class="badge"><span class="tag">JLPT N4</span><span class="cat">Pares de verbos</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">En espa&ntilde;ol dices &laquo;la puerta <b>se</b> abre&raquo; y &laquo;<b>abro</b> la puerta&raquo; con el mismo verbo. El japon&eacute;s tiene <b>dos verbos distintos</b>: uno describe lo que le pasa a la cosa, el otro lo que alguien le hace. Y la part&iacute;cula delata cu&aacute;l usas.</p>
+<div class="rows">
+<div class="r"><span class="a jp">ドア<span class="hi">が</span><ruby>開<rt>あ</rt></ruby>く &nbsp;&rarr;&nbsp; <ruby>開<rt>あ</rt></ruby>いている</span><span class="b">自動詞 &middot; sola, sin autor</span></div>
+<div class="r"><span class="a jp">ドア<span class="hi">を</span><ruby>開<rt>あ</rt></ruby>ける &nbsp;&rarr;&nbsp; <ruby>開<rt>あ</rt></ruby>けてある</span><span class="b">他動詞 &middot; alguien la abri&oacute;</span></div>
+<div class="figcap">La part&iacute;cula delata cu&aacute;l es: <b>が se abre sola, を la abre alguien.</b></div>
+</div>
+<ul class="nuance">
+<li><b>Apr&eacute;ndelos en pareja, nunca sueltos.</b> Saber <ruby>開<rt>あ</rt></ruby>ける sin saber <ruby>開<rt>あ</rt></ruby>く deja media frase inservible.</li>
+<li>Para el estado, cada uno tiene su forma: <span class="hi"><ruby>開<rt>あ</rt></ruby>いている</span> (est&aacute; abierta, sin m&aacute;s) frente a <span class="hi"><ruby>開<rt>あ</rt></ruby>けてある</span> (alguien la dej&oacute; abierta a prop&oacute;sito).</li>
+<li>No hay regla perfecta, pero s&iacute; patrones: los que acaban en <b>〜まる／〜がる／〜れる</b> suelen ser intransitivos; los de <b>〜める／〜げる／〜す</b>, transitivos.</li>
+<li><b>El intransitivo no admite を</b> de objeto. Si ves を, el verbo tiene que ser el transitivo. &Uacute;nica salvedad: el を de recorrido (<ruby>道<rt>みち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>く), que es otra cosa.</li>
+<li>Algunos verbos son <b>los dos a la vez</b> seg&uacute;n el contexto: <ruby>増<rt>ま</rt></ruby>す puede ser &laquo;aumentar&raquo; (algo aumenta) o &laquo;incrementar&raquo; (alguien lo incrementa).</li>
+</ul>
+
+<h2>Veinte parejas de uso diario</h2>
+<table>
+<thead><tr><th>Significado</th><th><ruby>自動詞<rt>じどうし</rt></ruby> &middot; が</th><th><ruby>他動詞<rt>たどうし</rt></ruby> &middot; を</th></tr></thead>
+<tbody>
+<tr><td class="ctx">abrir(se)</td><td class="jp2"><ruby>開<rt>あ</rt></ruby>く <em>aku</em></td><td class="jp2"><ruby>開<rt>あ</rt></ruby>ける <em>akeru</em></td></tr>
+<tr><td class="ctx">cerrar(se)</td><td class="jp2"><ruby>閉<rt>し</rt></ruby>まる <em>shimaru</em></td><td class="jp2"><ruby>閉<rt>し</rt></ruby>める <em>shimeru</em></td></tr>
+<tr><td class="ctx">empezar</td><td class="jp2"><ruby>始<rt>はじ</rt></ruby>まる <em>hajimaru</em></td><td class="jp2"><ruby>始<rt>はじ</rt></ruby>める <em>hajimeru</em></td></tr>
+<tr><td class="ctx">terminar(se)</td><td class="jp2"><ruby>終<rt>お</rt></ruby>わる <em>owaru</em></td><td class="jp2"><ruby>終<rt>お</rt></ruby>える <em>oeru</em></td></tr>
+<tr><td class="ctx">entrar / meter</td><td class="jp2"><ruby>入<rt>はい</rt></ruby>る <em>hairu</em></td><td class="jp2"><ruby>入<rt>い</rt></ruby>れる <em>ireru</em></td></tr>
+<tr><td class="ctx">salir / sacar</td><td class="jp2"><ruby>出<rt>で</rt></ruby>る <em>deru</em></td><td class="jp2"><ruby>出<rt>だ</rt></ruby>す <em>dasu</em></td></tr>
+<tr><td class="ctx">apagarse / apagar</td><td class="jp2"><ruby>消<rt>き</rt></ruby>える <em>kieru</em></td><td class="jp2"><ruby>消<rt>け</rt></ruby>す <em>kesu</em></td></tr>
+<tr><td class="ctx">encenderse / encender</td><td class="jp2">つく <em>tsuku</em></td><td class="jp2">つける <em>tsukeru</em></td></tr>
+<tr><td class="ctx">pararse / parar</td><td class="jp2"><ruby>止<rt>と</rt></ruby>まる <em>tomaru</em></td><td class="jp2"><ruby>止<rt>と</rt></ruby>める <em>tomeru</em></td></tr>
+<tr><td class="ctx">cambiar</td><td class="jp2"><ruby>変<rt>か</rt></ruby>わる <em>kawaru</em></td><td class="jp2"><ruby>変<rt>か</rt></ruby>える <em>kaeru</em></td></tr>
+<tr><td class="ctx">romperse / romper</td><td class="jp2"><ruby>壊<rt>こわ</rt></ruby>れる <em>kowareru</em></td><td class="jp2"><ruby>壊<rt>こわ</rt></ruby>す <em>kowasu</em></td></tr>
+<tr><td class="ctx">caerse / tirar</td><td class="jp2"><ruby>落<rt>お</rt></ruby>ちる <em>ochiru</em></td><td class="jp2"><ruby>落<rt>お</rt></ruby>とす <em>otosu</em></td></tr>
+<tr><td class="ctx">subir(se) / subir algo</td><td class="jp2"><ruby>上<rt>あ</rt></ruby>がる <em>agaru</em></td><td class="jp2"><ruby>上<rt>あ</rt></ruby>げる <em>ageru</em></td></tr>
+<tr><td class="ctx">bajar(se) / bajar algo</td><td class="jp2"><ruby>下<rt>さ</rt></ruby>がる <em>sagaru</em></td><td class="jp2"><ruby>下<rt>さ</rt></ruby>げる <em>sageru</em></td></tr>
+<tr><td class="ctx">reunirse / reunir</td><td class="jp2"><ruby>集<rt>あつ</rt></ruby>まる <em>atsumaru</em></td><td class="jp2"><ruby>集<rt>あつ</rt></ruby>める <em>atsumeru</em></td></tr>
+<tr><td class="ctx">encontrarse / encontrar</td><td class="jp2"><ruby>見<rt>み</rt></ruby>つかる <em>mitsukaru</em></td><td class="jp2"><ruby>見<rt>み</rt></ruby>つける <em>mitsukeru</em></td></tr>
+<tr><td class="ctx">continuar(se) / continuar</td><td class="jp2"><ruby>続<rt>つづ</rt></ruby>く <em>tsuzuku</em></td><td class="jp2"><ruby>続<rt>つづ</rt></ruby>ける <em>tsuzukeru</em></td></tr>
+<tr><td class="ctx">mojarse / mojar</td><td class="jp2"><ruby>濡<rt>ぬ</rt></ruby>れる <em>nureru</em></td><td class="jp2"><ruby>濡<rt>ぬ</rt></ruby>らす <em>nurasu</em></td></tr>
+<tr><td class="ctx">decidirse / decidir</td><td class="jp2"><ruby>決<rt>き</rt></ruby>まる <em>kimaru</em></td><td class="jp2"><ruby>決<rt>き</rt></ruby>める <em>kimeru</em></td></tr>
+<tr><td class="ctx">venderse / vender</td><td class="jp2"><ruby>売<rt>う</rt></ruby>れる <em>ureru</em></td><td class="jp2"><ruby>売<rt>う</rt></ruby>る <em>uru</em></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">ドア<span class="hi">が</span><ruby>開<rt>あ</rt></ruby>きました。</div><div class="t">La puerta se abri&oacute;. <em>(sola, sin autor)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>私<rt>わたし</rt></ruby><span class="hi">が</span>ドア<span class="hi">を</span><ruby>開<rt>あ</rt></ruby>けました。</div><div class="t">Yo abr&iacute; la puerta.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>電気<rt>でんき</rt></ruby>が<span class="hi"><ruby>消<rt>き</rt></ruby>えています</span>。</div><div class="t">La luz est&aacute; apagada. <em>(estado: intransitivo ＋ている)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>授業<rt>じゅぎょう</rt></ruby>は<ruby>九時<rt>くじ</rt></ruby>に<span class="hi"><ruby>始<rt>はじ</rt></ruby>まります</span>。</div><div class="t">La clase empieza a las nueve. <em>(intransitivo)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>先生<rt>せんせい</rt></ruby>が<ruby>授業<rt>じゅぎょう</rt></ruby>を<span class="hi"><ruby>始<rt>はじ</rt></ruby>めました</span>。</div><div class="t">El profesor empez&oacute; la clase. <em>(transitivo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>窓<rt>まど</rt></ruby>を<span class="hi"><ruby>閉<rt>し</rt></ruby>めて</span>ください。</div><div class="t">Cierre la ventana, por favor.</div></div>
+<div class="ex-item"><div class="s jp">この<ruby>本<rt>ほん</rt></ruby>、よく<span class="hi"><ruby>売<rt>う</rt></ruby>れて</span>いますね。</div><div class="t">Este libro se vende bien, &iquest;eh? <em>(intransitivo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>予定<rt>よてい</rt></ruby>がまだ<span class="hi"><ruby>決<rt>き</rt></ruby>まって</span>いません。</div><div class="t">Todav&iacute;a no est&aacute; decidido el plan.</div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp">ドアを<ruby>開<rt>あ</rt></ruby>きました。</span> &nbsp; &#9675; <span class="good jp">ドアを<ruby>開<rt>あ</rt></ruby>けました。</span></div><div class="why"><ruby>開<rt>あ</rt></ruby>く no admite objeto: con を va el transitivo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>電気<rt>でんき</rt></ruby>が<ruby>消<rt>け</rt></ruby>しています。</span> &nbsp; &#9675; <span class="good jp"><ruby>電気<rt>でんき</rt></ruby>が<ruby>消<rt>き</rt></ruby>えています。</span></div><div class="why">Para el estado va el intransitivo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>授業<rt>じゅぎょう</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>まります。</span> &nbsp; &#9675; <span class="good jp"><ruby>授業<rt>じゅぎょう</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めます。</span></div><div class="why">Con を hace falta el transitivo <ruby>始<rt>はじ</rt></ruby>める.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>財布<rt>さいふ</rt></ruby>が<ruby>落<rt>お</rt></ruby>としました。</span> &nbsp; &#9675; <span class="good jp"><ruby>財布<rt>さいふ</rt></ruby>を<ruby>落<rt>お</rt></ruby>としました。</span></div><div class="why"><ruby>落<rt>お</rt></ruby>とす es transitivo: la cartera es el objeto.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="09-teiru.html"><small>&larr; Anterior</small><span class="jp">ている</span></a><a class="next" href="11-forma-simple.html"><small>Siguiente &rarr;</small><span class="jp">普通形・と思う・と言う</span></a></nav><!--/gen-bottom-->
+<footer>自動詞・他動詞 &middot; Pares de verbos &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>あります／います &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#A">&larr; Gram&aacute;tica</a><span>A &middot; Cimientos</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">あります／います</h1>
+<div class="sub">Decir que algo <b>existe</b> &mdash; y el verbo cambia seg&uacute;n <b>qu&eacute;</b> sea.</div>
+<div class="rom">arimasu &middot; imasu</div>
+</div><div class="badge"><span class="tag">JLPT N5</span><span class="cat">Existencia</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">El espa&ntilde;ol tiene un solo &laquo;hay&raquo;. El japon&eacute;s tiene dos, y elegir mal se nota. La regla que se aprende primero &mdash;seres vivos frente a objetos&mdash; funciona casi siempre, pero <b>lo que de verdad decide es si la cosa se mueve por su cuenta</b>.</p>
+<div class="fig">
+<div class="z solid"><h4 class="jp">います</h4><div class="d">se mueve por su cuenta: personas, animales &mdash; y taxis o trenes cuando piensas en quien los conduce</div></div>
+<div class="z pale"><h4 class="jp">あります</h4><div class="d">no se mueve solo: objetos, plantas, edificios &mdash; y actos, planes y citas</div></div>
+<div class="figcap">No es &laquo;vivo o no vivo&raquo;:<br><b>es si se mueve por voluntad propia.</b></div>
+</div>
+<ul class="nuance">
+<li><b>El lugar lleva に y lo que existe lleva が</b>: <ruby>公園<rt>こうえん</rt></ruby>に<ruby>犬<rt>いぬ</rt></ruby>がいます. Si empiezas por la cosa, se invierte: <ruby>犬<rt>いぬ</rt></ruby>は<ruby>公園<rt>こうえん</rt></ruby>にいます.</li>
+<li><b>Las plantas van con あります</b> aunque est&eacute;n vivas: no se desplazan. Y los <b>veh&iacute;culos</b> pueden ir con います si piensas en el conductor: タクシーがいます.</li>
+<li>あります sirve tambi&eacute;n para <b>acontecimientos</b>: <ruby>明日<rt>あした</rt></ruby><ruby>試験<rt>しけん</rt></ruby>があります. Ah&iacute; no hay objeto ninguno &mdash; hay un suceso.</li>
+<li>Para <b>poseer</b>, cada uno con lo suyo: <ruby>兄弟<rt>きょうだい</rt></ruby>がいます (tengo hermanos) pero お<ruby>金<rt>かね</rt></ruby>があります (tengo dinero).</li>
+<li>La forma llana es ある / いる, y el negativo de ある es <b>irregular</b>: <span class="rd">ない</span>, nunca <span class="rd">&#10005; あらない</span>.</li>
+<li><b>には</b> es に ＋は: el lugar pasa a ser el tema, casi siempre para contrastar o negar. <ruby>東京<rt>とうきょう</rt></ruby><span class="hi">には</span><ruby>海<rt>うみ</rt></ruby>がありますが、<ruby>京都<rt>きょうと</rt></ruby><span class="hi">には</span>ありません. Si el lugar es el tema de una frase de existencia, conserva el に: <ruby>教室<rt>きょうしつ</rt></ruby><span class="hi">には</span><ruby>誰<rt>だれ</rt></ruby>もいません, nunca &#10005; <ruby>教室<rt>きょうしつ</rt></ruby>は<ruby>誰<rt>だれ</rt></ruby>もいません.</li>
+<li><b>Con acontecimientos el lugar lleva で</b>: <ruby>体育館<rt>たいいくかん</rt></ruby><span class="hi">で</span>パーティーがあります. Una fiesta no &laquo;est&aacute;&raquo; en un sitio: &laquo;se celebra&raquo; all&iacute;. Con objetos, personas y animales sigue siendo に.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se usa para</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Cosas y plantas</td><td class="jp2">[Lugar]に N<span class="hi">が</span> あります</td><td class="jp2"><ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>があります</td></tr>
+<tr><td class="ctx">Personas y animales</td><td class="jp2">[Lugar]に N<span class="hi">が</span> います</td><td class="jp2"><ruby>教室<rt>きょうしつ</rt></ruby>に<ruby>学生<rt>がくせい</rt></ruby>がいます</td></tr>
+<tr><td class="ctx">Empezando por la cosa</td><td class="jp2">N<span class="hi">は</span> [Lugar]に あります／います</td><td class="jp2"><ruby>犬<rt>いぬ</rt></ruby>は<ruby>公園<rt>こうえん</rt></ruby>にいます</td></tr>
+<tr><td class="ctx">Acontecimientos</td><td class="jp2">[Tiempo]に N<span class="hi">が</span> あります</td><td class="jp2"><ruby>明日<rt>あした</rt></ruby><ruby>試験<rt>しけん</rt></ruby>があります <em>hay examen</em></td></tr>
+<tr><td class="ctx">Tener (cosas)</td><td class="jp2">N<span class="hi">が</span> あります</td><td class="jp2"><ruby>時間<rt>じかん</rt></ruby>があります <em>tengo tiempo</em></td></tr>
+<tr><td class="ctx">Tener (personas)</td><td class="jp2">N<span class="hi">が</span> います</td><td class="jp2"><ruby>兄弟<rt>きょうだい</rt></ruby>がいます <em>tengo hermanos</em></td></tr>
+<tr><td class="ctx">Negativo</td><td class="jp2"><span class="hi">ありません</span> ／ <span class="hi">いません</span></td><td class="jp2"><ruby>誰<rt>だれ</rt></ruby>もいません <em>no hay nadie</em></td></tr>
+<tr><td class="ctx">Forma llana</td><td class="jp2"><span class="hi">ある</span>／<span class="hi">いる</span> &middot; neg. <span class="rd">ない</span>／<span class="hi">いない</span></td><td class="jp2">お<ruby>金<rt>かね</rt></ruby>がない</td></tr>
+<tr><td class="ctx">Pasado</td><td class="jp2"><span class="hi">ありました</span>／<span class="hi">いました</span></td><td class="jp2"><ruby>昨日<rt>きのう</rt></ruby>はここにありました</td></tr>
+<tr><td class="ctx">Preguntar</td><td class="jp2">[Lugar]に <ruby>何<rt>なに</rt></ruby>／<ruby>誰<rt>だれ</rt></ruby>が&hellip;か</td><td class="jp2"><ruby>何<rt>なに</rt></ruby>がありますか</td></tr>
+<tr><td class="ctx">Lugar como tema (contraste)</td><td class="jp2">[Lugar]<span class="hi">には</span> Nが あります／いません</td><td class="jp2"><ruby>教室<rt>きょうしつ</rt></ruby>には<ruby>誰<rt>だれ</rt></ruby>もいません</td></tr>
+<tr><td class="ctx">Acontecimiento con lugar</td><td class="jp2">[Lugar]<span class="hi">で</span> Nが あります</td><td class="jp2"><ruby>体育館<rt>たいいくかん</rt></ruby>で<ruby>試験<rt>しけん</rt></ruby>があります</td></tr>
+
+</tbody></table>
+
+<h2>Palabras de posici&oacute;n</h2>
+<table>
+<tbody>
+<tr><td class="ctx">encima &middot; debajo</td><td class="jp2"><ruby>上<rt>うえ</rt></ruby> ／ <ruby>下<rt>した</rt></ruby></td><td class="jp2">delante &middot; detr&aacute;s</td><td class="jp2"><ruby>前<rt>まえ</rt></ruby> ／ <ruby>後<rt>うし</rt></ruby>ろ</td></tr>
+<tr><td class="ctx">dentro &middot; fuera</td><td class="jp2"><ruby>中<rt>なか</rt></ruby> ／ <ruby>外<rt>そと</rt></ruby></td><td class="jp2">al lado &middot; cerca</td><td class="jp2"><ruby>隣<rt>となり</rt></ruby> ／ <ruby>近<rt>ちか</rt></ruby>く</td></tr>
+<tr><td class="ctx">derecha &middot; izquierda</td><td class="jp2"><ruby>右<rt>みぎ</rt></ruby> ／ <ruby>左<rt>ひだり</rt></ruby></td><td class="jp2">entre</td><td class="jp2"><ruby>間<rt>あいだ</rt></ruby></td></tr>
+</tbody></table>
+<p style="font-size:13px;color:var(--sub);margin-top:8px;">Todas se enganchan con の: <ruby>机<rt>つくえ</rt></ruby><b>の</b><ruby>上<rt>うえ</rt></ruby>に, <ruby>駅<rt>えき</rt></ruby><b>の</b><ruby>近<rt>ちか</rt></ruby>くに.</p>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>が<span class="hi">あります</span>。</div><div class="t">Encima de la mesa hay un libro.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>公園<rt>こうえん</rt></ruby>に<ruby>犬<rt>いぬ</rt></ruby>が<span class="hi">います</span>。</div><div class="t">En el parque hay un perro.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>庭<rt>にわ</rt></ruby>に<ruby>木<rt>き</rt></ruby>が<span class="hi">あります</span>。</div><div class="t">En el jard&iacute;n hay un &aacute;rbol. <em>(vivo, pero no se mueve)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>明日<rt>あした</rt></ruby><ruby>試験<rt>しけん</rt></ruby>が<span class="hi">あります</span>。</div><div class="t">Ma&ntilde;ana hay examen. <em>(un suceso, no un objeto)</em></div></div>
+<div class="ex-item"><div class="s jp">そこにタクシーが<span class="hi">います</span>ね。</div><div class="t">Ah&iacute; hay un taxi. <em>(います porque piensas en el taxista)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>教室<rt>きょうしつ</rt></ruby>には<ruby>誰<rt>だれ</rt></ruby>も<span class="hi">いません</span>。</div><div class="t">En el aula no hay nadie.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>今晩<rt>こんばん</rt></ruby>、<ruby>駅前<rt>えきまえ</rt></ruby>のホール<span class="hi">で</span>コンサートがあります。</div><div class="t">Esta noche hay un concierto en la sala de delante de la estaci&oacute;n. <em>(evento &rarr; で)</em></div></div>
+
+</div>
+</div>
+
+<h2>D&oacute;nde lo vas a encontrar</h2>
+<div class="where">
+<div class="row"><div class="k2 jp">〜があります</div><div class="v2">Avisos: お<ruby>知<rt>し</rt></ruby>らせがあります, <ruby>質問<rt>しつもん</rt></ruby>がありますか.</div></div>
+<div class="row"><div class="k2 jp">ある como base</div><div class="v2">ある sostiene mucha gram&aacute;tica posterior: ことがある, てある, はずがない.</div></div>
+<div class="row"><div class="k2 jp">いらっしゃいます</div><div class="v2">El います honor&iacute;fico: <ruby>先生<rt>せんせい</rt></ruby>はいらっしゃいますか.</div></div>
+<div class="row"><div class="k2 jp">ございます</div><div class="v2">El あります ultraformal de las tiendas: こちらにございます.</div></div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>公園<rt>こうえん</rt></ruby>で<ruby>犬<rt>いぬ</rt></ruby>がいます。</span> &nbsp; &#9675; <span class="good jp"><ruby>公園<rt>こうえん</rt></ruby>に<ruby>犬<rt>いぬ</rt></ruby>がいます。</span></div><div class="why">Para <b>existir</b> va に; で es donde se hace algo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>木<rt>き</rt></ruby>がいます。</span> &nbsp; &#9675; <span class="good jp"><ruby>木<rt>き</rt></ruby>があります。</span></div><div class="why">Las plantas est&aacute;n vivas pero no se desplazan.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">お<ruby>金<rt>かね</rt></ruby>があらない。</span> &nbsp; &#9675; <span class="good jp">お<ruby>金<rt>かね</rt></ruby>がない。</span></div><div class="why">El negativo de ある es irregular: ない.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>本<rt>ほん</rt></ruby>をあります。</span> &nbsp; &#9675; <span class="good jp"><ruby>本<rt>ほん</rt></ruby>があります。</span></div><div class="why">No es una acci&oacute;n sobre algo: lo que existe lleva が.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>体育館<rt>たいいくかん</rt></ruby>にコンサートがあります。</span> &nbsp; &#9675; <span class="good jp"><ruby>体育館<rt>たいいくかん</rt></ruby>でコンサートがあります。</span></div><div class="why">Un acontecimiento se celebra en un sitio: で.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>教室<rt>きょうしつ</rt></ruby>は<ruby>誰<rt>だれ</rt></ruby>もいません。</span> &nbsp; &#9675; <span class="good jp"><ruby>教室<rt>きょうしつ</rt></ruby>には<ruby>誰<rt>だれ</rt></ruby>もいません。</span></div><div class="why">Al hacer del lugar el tema, el に se queda: には.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="03-kosoado.html"><small>&larr; Anterior</small><span class="jp">こ・そ・あ・ど</span></a><a class="next" href="05-adjetivos.html"><small>Siguiente &rarr;</small><span class="jp">い形容詞・な形容詞</span></a></nav><!--/gen-bottom-->
+<footer>あります／います &middot; Existencia &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

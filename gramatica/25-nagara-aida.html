@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>ながら・間・間に &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#E">&larr; Gram&aacute;tica</a><span>E &middot; Unir frases &#183; tiempo</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">ながら・<ruby>間<rt>あいだ</rt></ruby>・<ruby>間<rt>あいだ</rt></ruby>に</h1>
+<div class="sub">Dos acciones a la vez &mdash; y qui&eacute;n las hace <b>importa mucho</b>.</div>
+<div class="rom">&hellip;nagara &middot; aida &middot; aida ni</div>
+</div><div class="badge"><span class="tag">JLPT N4</span><span class="cat">Simultaneidad</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Las tres unen acciones que ocurren <b>a la vez</b>, pero con reglas distintas sobre <b>qui&eacute;n las hace</b> y sobre si el segundo hecho dura o es puntual.</p>
+<div class="fig">
+<div class="z solid"><h4 class="jp">ながら</h4><div class="d"><b>el mismo sujeto</b> hace las dos cosas a la vez<br><ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きながら<ruby>勉強<rt>べんきょう</rt></ruby>する</div></div>
+<div class="z pale"><h4 class="jp"><ruby>間<rt>あいだ</rt></ruby></h4><div class="d">mismo sujeto o distinto; la segunda acci&oacute;n <b>dura todo ese rato</b><br><ruby>私<rt>わたし</rt></ruby>が<ruby>寝<rt>ね</rt></ruby>ている<ruby>間<rt>あいだ</rt></ruby>、<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っていた</div></div>
+<div class="z"><h4 class="jp"><ruby>間<rt>あいだ</rt></ruby>に</h4><div class="d">la segunda acci&oacute;n es <b>puntual</b>, cae dentro de esa ventana<br><ruby>寝<rt>ね</rt></ruby>ている<ruby>間<rt>あいだ</rt></ruby>に、<ruby>電話<rt>でんわ</rt></ruby>が<ruby>来<rt>き</rt></ruby>た</div></div>
+<div class="figcap">Misma ventana de tiempo, tres formas de encajar la segunda acci&oacute;n dentro.</div>
+</div>
+<ul class="nuance">
+<li><b>ながら exige el mismo sujeto</b> en las dos acciones. <ruby>間<rt>あいだ</rt></ruby> admite cualquiera de los dos casos, as&iacute; que con sujetos distintos es la opci&oacute;n.</li>
+<li><b><ruby>間<rt>あいだ</rt></ruby> frente a <ruby>間<rt>あいだ</rt></ruby>に: la clave es si la segunda acci&oacute;n dura o es un punto.</b> <ruby>間<rt>あいだ</rt></ruby> pinta un fondo continuo (llovi&oacute; todo el rato); <ruby>間<rt>あいだ</rt></ruby>に marca un suceso puntual dentro de la ventana (llamaron en alg&uacute;n momento).</li>
+<li>En ながら, <b>la acci&oacute;n principal es la segunda</b>: <ruby>歩<rt>ある</rt></ruby>きながら<ruby>話<rt>はな</rt></ruby>す es &laquo;hablar mientras se anda&raquo;, no al rev&eacute;s. Lo importante va al final.</li>
+<li>ながら tambi&eacute;n puede indicar <b>contraste</b>, no solo simultaneidad: <ruby>狭<rt>せま</rt></ruby>いながら、<ruby>住<rt>す</rt></ruby>みやすい (&laquo;aunque es peque&ntilde;o, se vive bien&raquo;).</li>
+<li><b><ruby>間<rt>あいだ</rt></ruby> tambi&eacute;n vale con sustantivos</b>: <ruby>夏<rt>なつ</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby> (durante el verano), <ruby>留守<rt>るす</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby> (mientras no estaba).</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Dos acciones, mismo sujeto</td><td class="jp2">ra&iacute;z ます <span class="hi">＋ながら</span></td><td class="jp2"><ruby>歩<rt>ある</rt></ruby>きながら<ruby>話<rt>はな</rt></ruby>す</td></tr>
+<tr><td class="ctx">Contraste</td><td class="jp2">ra&iacute;z ます／Aい <span class="hi">＋ながら</span></td><td class="jp2"><ruby>小<rt>ちい</rt></ruby>さいながら、<ruby>力<rt>ちから</rt></ruby>がある</td></tr>
+<tr><td class="ctx">Fondo continuo</td><td class="jp2">Vている ／ Nの <span class="hi">＋<ruby>間<rt>あいだ</rt></ruby></span></td><td class="jp2"><ruby>留守<rt>るす</rt></ruby>の<span class="hi"><ruby>間<rt>あいだ</rt></ruby></span>、<ruby>猫<rt>ねこ</rt></ruby>が<ruby>寝<rt>ね</rt></ruby>ていた</td></tr>
+<tr><td class="ctx">Suceso puntual</td><td class="jp2">Vている <span class="hi">＋<ruby>間<rt>あいだ</rt></ruby>に</span></td><td class="jp2">シャワーを<ruby>浴<rt>あ</rt></ruby>びている<span class="hi"><ruby>間<rt>あいだ</rt></ruby>に</span>、<ruby>電話<rt>でんわ</rt></ruby>が<ruby>来<rt>き</rt></ruby>た</td></tr>
+<tr><td class="ctx">Con sustantivo</td><td class="jp2">N<span class="hi">の ＋<ruby>間<rt>あいだ</rt></ruby>(に)</span></td><td class="jp2"><ruby>夏<rt>なつ</rt></ruby>の<span class="hi"><ruby>間<rt>あいだ</rt></ruby></span></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>き<span class="hi">ながら</span><ruby>勉強<rt>べんきょう</rt></ruby>します。</div><div class="t">Estudio mientras escucho m&uacute;sica. <em>(mismo sujeto)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>子供<rt>こども</rt></ruby>が<ruby>寝<rt>ね</rt></ruby>ている<span class="hi"><ruby>間<rt>あいだ</rt></ruby></span>、<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みました。</div><div class="t">Mientras el ni&ntilde;o dorm&iacute;a, le&iacute; un libro. <em>(fondo continuo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>子供<rt>こども</rt></ruby>が<ruby>寝<rt>ね</rt></ruby>ている<span class="hi"><ruby>間<rt>あいだ</rt></ruby>に</span>、<ruby>掃除<rt>そうじ</rt></ruby>をしました。</div><div class="t">Mientras el ni&ntilde;o dorm&iacute;a, aprovech&eacute; para limpiar. <em>(puntual)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>狭<rt>せま</rt></ruby>い<span class="hi">ながら</span>、とても<ruby>住<rt>す</rt></ruby>みやすい<ruby>部屋<rt>へや</rt></ruby>です。</div><div class="t">Aunque es peque&ntilde;a, es una habitaci&oacute;n muy c&oacute;moda. <em>(contraste)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>夏<rt>なつ</rt></ruby>の<span class="hi"><ruby>間<rt>あいだ</rt></ruby></span>、ずっと<ruby>海<rt>うみ</rt></ruby>にいました。</div><div class="t">Durante el verano estuve todo el rato en la playa.</div></div>
+<div class="ex-item"><div class="s jp">テレビを<ruby>見<rt>み</rt></ruby><span class="hi">ながら</span>ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べないで。</div><div class="t">No comas viendo la tele.</div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>私<rt>わたし</rt></ruby>が<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きながら、<ruby>彼<rt>かれ</rt></ruby>が<ruby>勉強<rt>べんきょう</rt></ruby>した。</span> &nbsp; &#9675; <span class="good jp">usar <ruby>間<rt>あいだ</rt></ruby></span></div><div class="why">ながら exige el mismo sujeto en las dos acciones.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>寝<rt>ね</rt></ruby>ている<ruby>間<rt>あいだ</rt></ruby>、<ruby>電話<rt>でんわ</rt></ruby>が<ruby>来<rt>き</rt></ruby>た。 <em>(si es un solo suceso puntual)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>間<rt>あいだ</rt></ruby>に</span></div><div class="why">Un suceso puntual dentro de la ventana pide <ruby>間<rt>あいだ</rt></ruby>に.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>食<rt>た</rt></ruby>べるながら</span> &nbsp; &#9675; <span class="good jp"><ruby>食<rt>た</rt></ruby>べながら</span></div><div class="why">ながら va sobre la ra&iacute;z de ます, no sobre el diccionario.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="24-toki.html"><small>&larr; Anterior</small><span class="jp">とき</span></a><a class="next" href="26-uchini.html"><small>Siguiente &rarr;</small><span class="jp">うちに・最中に・ところを</span></a></nav><!--/gen-bottom-->
+<footer>ながら・間・間に &middot; Simultaneidad &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

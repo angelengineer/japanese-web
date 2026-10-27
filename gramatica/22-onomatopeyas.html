@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.zonelab{display:flex;margin-top:12px;}
+.zonelab .z{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:5px 0;text-align:center;}
+.zonelab .neg{flex:3;background:var(--shu-pale);color:var(--shu);font-weight:600;}
+.zonelab .pos{flex:5;background:var(--midori-pale);color:var(--midori);margin-left:2px;}
+.pair{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dotted #E6E9E2;font-size:13px;gap:8px;}
+.pair .a{font-family:"Noto Serif JP",serif;}
+.pair .a.neg{color:var(--shu);font-weight:700;}
+.pair .b{font-size:11px;color:var(--sub);font-style:italic;text-align:right;}
+.pair .b.jp{font-family:"Noto Serif JP",serif;font-style:normal;color:var(--midori);font-size:12.5px;}
+.dk{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.dk .col{flex:1 1 150px;}
+.dk h4{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:5px;text-align:center;}
+.dk h4.g{color:var(--midori);font-weight:600;}
+.dk .r{background:#fff;border:1px solid var(--kasumi);border-radius:4px;padding:5px;text-align:center;margin-bottom:3px;}
+.dk .r.g{background:var(--midori-pale);}
+.dk .w{font-family:"Noto Serif JP",serif;font-size:14px;}
+.dk .e{font-size:9.5px;color:var(--sub);font-style:italic;}
+.it{padding:3px 0;border-bottom:1px dotted #E6E9E2;}
+.it .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.it .g{font-size:10.5px;color:var(--sub);font-style:italic;display:block;}
+</style><!--gen-head-->
+<title>オノマトペ &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#C">&larr; Gram&aacute;tica</a><span>C &middot; Vocabulario pr&#225;ctico</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">オノマトペ</h1>
+<div class="sub">Palabras que <b>imitan</b> &mdash; un sonido, un aspecto o una sensaci&oacute;n.</div>
+<div class="rom">onomatope &middot; giongo &middot; gitaigo</div>
+</div><div class="badge"><span class="tag">JLPT N4 &ndash; N3</span><span class="cat">Onomatopeyas</span></div></header>
+
+<h2>El truco: las dos rayitas pesan</h2>
+<div class="dk">
+<div class="col"><h4>SIN &#12443; &mdash; ligero, fino</h4>
+<div class="r"><div class="w jp">ころころ</div><div class="e">rueda algo peque&ntilde;o</div></div>
+<div class="r"><div class="w jp">きらきら</div><div class="e">brillo de estrellas</div></div>
+<div class="r"><div class="w jp">さらさら</div><div class="e">suave, seco</div></div>
+</div>
+<div class="col"><h4 class="g">CON &#12443; &mdash; grande, pesado</h4>
+<div class="r g"><div class="w jp">ごろごろ</div><div class="e">rueda algo pesado</div></div>
+<div class="r g"><div class="w jp">ぎらぎら</div><div class="e">sol que abrasa</div></div>
+<div class="r g"><div class="w jp">ざらざら</div><div class="e">&aacute;spero</div></div>
+</div></div>
+<ul class="nuance">
+<li>El <ruby>濁点<rt>だくてん</rt></ruby> (las dos rayitas) no es ortograf&iacute;a: <b>cambia el significado</b>. A&ntilde;adirlo hace la cosa m&aacute;s grande, m&aacute;s pesada o m&aacute;s tosca.</li>
+<li><b>Katakana para sonidos reales</b> (ワンワン), <b>hiragana para estados</b> (ぴかぴか). No es regla estricta, pero orienta.</li>
+<li>Muchas <b>no funcionan solas</b>: necesitan する para ser verbo (ドキドキする) o だ para ser adjetivo (お<ruby>腹<rt>なか</rt></ruby>がぺこぺこだ). Otras llevan と: はっきりと<ruby>言<rt>い</rt></ruby>う.</li>
+<li><b>No son lenguaje infantil.</b> Un peri&oacute;dico, un m&eacute;dico y un anuncio las usan igual: ずきずき<ruby>痛<rt>いた</rt></ruby>む es lo que le dices al m&eacute;dico.</li>
+<li>Las formas m&aacute;s comunes son <b>ABAB</b> (きらきら), <b>〜り</b> (ゆっくり), <b>〜っと</b> (さっと) y <b>〜ん</b> (ぐるん). La forma da pistas del matiz.</li>
+</ul>
+
+<h2>Las que m&aacute;s vas a o&iacute;r</h2>
+<div class="cols"><div>
+<h3>Sonidos reales</h3>
+<div class="it"><span class="w jp">ワンワン</span><span class="g">guau guau</span></div>
+<div class="it"><span class="w jp">ニャーニャー</span><span class="g">miau</span></div>
+<div class="it"><span class="w jp">ザーザー</span><span class="g">lluvia torrencial</span></div>
+<div class="it"><span class="w jp">ぽつぽつ</span><span class="g">gotas sueltas</span></div>
+<div class="it"><span class="w jp">ドンドン</span><span class="g">golpes fuertes (どんどん: cada vez m&aacute;s, sin parar)</span></div>
+<div class="it"><span class="w jp">しーん</span><span class="g">silencio absoluto</span></div>
+</div><div>
+<h3>C&oacute;mo se ve o se toca</h3>
+<div class="it"><span class="w jp">ぴかぴか</span><span class="g">reluciente</span></div>
+<div class="it"><span class="w jp">きらきら</span><span class="g">centelleante</span></div>
+<div class="it"><span class="w jp">つるつる</span><span class="g">liso, resbaladizo</span></div>
+<div class="it"><span class="w jp">ふわふわ</span><span class="g">mullido</span></div>
+<div class="it"><span class="w jp">べたべた</span><span class="g">pegajoso</span></div>
+<div class="it"><span class="w jp">もちもち</span><span class="g">el&aacute;stico al morder, como el mochi</span></div>
+</div><div>
+<h3>C&oacute;mo se hace</h3>
+<div class="it"><span class="w jp">ぶらぶら</span><span class="g">deambular</span></div>
+<div class="it"><span class="w jp">うろうろ</span><span class="g">dar vueltas sin rumbo</span></div>
+<div class="it"><span class="w jp">さっさと</span><span class="g">deprisa</span></div>
+<div class="it"><span class="w jp">こっそり</span><span class="g">a escondidas</span></div>
+<div class="it"><span class="w jp">ぺらぺら</span><span class="g">con soltura (idiomas)</span></div>
+<div class="it"><span class="w jp">だらだら</span><span class="g">sin ganas, alarg&aacute;ndose</span></div>
+<div class="it"><span class="w jp">ぐっすり</span><span class="g">dormir profundamente</span></div>
+<div class="it"><span class="w jp">じっと</span><span class="g">quieto, fijamente</span></div>
+</div><div>
+<h3>C&oacute;mo te sientes</h3>
+<div class="it"><span class="w jp">ドキドキ</span><span class="g">coraz&oacute;n acelerado</span></div>
+<div class="it"><span class="w jp">わくわく</span><span class="g">con ilusi&oacute;n</span></div>
+<div class="it"><span class="w jp">イライラ</span><span class="g">irritado</span></div>
+<div class="it"><span class="w jp">がっかり</span><span class="g">decepcionado</span></div>
+<div class="it"><span class="w jp">くたくた</span><span class="g">agotado</span></div>
+<div class="it"><span class="w jp">ぺこぺこ</span><span class="g">muerto de hambre</span></div>
+</div></div>
+
+<h2>Las del cuerpo &mdash; las que necesitas en el m&eacute;dico</h2>
+<table>
+<thead><tr><th>Palabra</th><th>Qu&eacute; dolor describe</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">ずきずき</td><td class="jp2">punzante, palpitante</td><td class="jp2"><ruby>頭<rt>あたま</rt></ruby>がずきずきする</td></tr>
+<tr><td class="ctx">きりきり</td><td class="jp2">agudo, como un pinchazo</td><td class="jp2">お<ruby>腹<rt>なか</rt></ruby>がきりきり<ruby>痛<rt>いた</rt></ruby>む</td></tr>
+<tr><td class="ctx">ちくちく</td><td class="jp2">picor, pinchacitos</td><td class="jp2">のどがちくちくする</td></tr>
+<tr><td class="ctx">がんがん</td><td class="jp2">martilleo en la cabeza</td><td class="jp2"><ruby>頭<rt>あたま</rt></ruby>ががんがんする</td></tr>
+<tr><td class="ctx">くらくら</td><td class="jp2">mareo, todo da vueltas</td><td class="jp2"><ruby>頭<rt>あたま</rt></ruby>がくらくらする</td></tr>
+</tbody></table>
+
+<h2>En una frase de verdad</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>雨<rt>あめ</rt></ruby>が<span class="hi">ザーザー</span><ruby>降<rt>ふ</rt></ruby>っています。</div><div class="t">Llueve a c&aacute;ntaros.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>彼<rt>かれ</rt></ruby>は<ruby>日本語<rt>にほんご</rt></ruby>が<span class="hi">ぺらぺら</span>です。</div><div class="t">Habla japon&eacute;s con soltura.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>週末<rt>しゅうまつ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>で<span class="hi">ごろごろ</span>していた。</div><div class="t">El finde estuve tirado en casa. <em>(&laquo;pesado rueda&raquo; &rarr; no hacer nada)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">お<ruby>腹<rt>なか</rt></ruby>が<span class="hi">ぺこぺこ</span>です。</div><div class="t">Estoy muerto de hambre.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>発表<rt>はっぴょう</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>は<span class="hi">ドキドキ</span>します。</div><div class="t">Antes de una presentaci&oacute;n me late fuerte el coraz&oacute;n.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>頭<rt>あたま</rt></ruby>が<span class="hi">ずきずき</span>します。</div><div class="t">Me late la cabeza de dolor. <em>(en el m&eacute;dico)</em></div></div>
+</div>
+</div>
+
+<h2>Lo que conviene saber</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>Se aprenden como <b>vocabulario</b>, no como gram&aacute;tica &mdash; pero el <ruby>濁点<rt>だくてん</rt></ruby> y la forma (ABAB, 〜り, 〜っと) te dejan adivinar bastante.</div></div>
+<div class="err"><div>Muchas tienen un sentido <b>literal</b> y otro <b>figurado</b> que sale de &eacute;l. Aprende el literal y el figurado se deduce: ごろごろ (rodar pesado) &rarr; estar tirado sin hacer nada.</div></div>
+<div class="err"><div><b>Cuidado con las que exigen する o だ.</b> ドキドキ sola no es una frase: <span class="rd">&#10005; <ruby>私<rt>わたし</rt></ruby>はドキドキ</span> &rarr; <ruby>私<rt>わたし</rt></ruby>はドキドキ<b>します</b>.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="21-adverbios.html"><small>&larr; Anterior</small><span class="jp">副詞</span></a><a class="next" href="23-prefijos-sufijos.html"><small>Siguiente &rarr;</small><span class="jp">接頭語・接尾語</span></a></nav><!--/gen-bottom-->
+<footer>オノマトペ &middot; Onomatopeyas &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

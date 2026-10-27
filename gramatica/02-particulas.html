@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>助詞 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#A">&larr; Gram&aacute;tica</a><span>A &middot; Cimientos</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>助詞<rt>じょし</rt></ruby></h1>
+<div class="sub">Qui&eacute;n hace qu&eacute; a qui&eacute;n &mdash; y <b>d&oacute;nde</b> se marca.</div>
+<div class="rom">joshi &middot; part&iacute;culas</div>
+</div><div class="badge"><span class="tag">JLPT N5 &ndash; N4</span><span class="cat">Part&iacute;culas</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Las part&iacute;culas van <b>detr&aacute;s</b> de la palabra a la que afectan y dicen qu&eacute; papel juega en la frase. No traducen una a una: la mayor&iacute;a tiene <b>varios oficios</b>, y ah&iacute; est&aacute; toda la dificultad.</p>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>私<rt>わたし</rt></ruby><span class="hi">は</span><ruby>学生<rt>がくせい</rt></ruby>です。</span><span class="b">は &middot; el tema del que hablo</span></div>
+<div class="r"><span class="a jp"><ruby>誰<rt>だれ</rt></ruby><span class="hi">が</span><ruby>来<rt>き</rt></ruby>ましたか。</span><span class="b">が &middot; el sujeto, informaci&oacute;n nueva</span></div>
+<div class="r"><span class="a jp">パン<span class="hi">を</span><ruby>食<rt>た</rt></ruby>べる。</span><span class="b">を &middot; el objeto directo</span></div>
+<div class="r"><span class="a jp"><ruby>東京<rt>とうきょう</rt></ruby><span class="hi">に</span><ruby>住<rt>す</rt></ruby>んでいる。</span><span class="b">に &middot; el punto de destino o existencia</span></div>
+<div class="r"><span class="a jp">カフェ<span class="hi">で</span><ruby>働<rt>はたら</rt></ruby>く。</span><span class="b">で &middot; el lugar donde se act&uacute;a</span></div>
+<div class="figcap">Cada part&iacute;cula marca el papel de <b>la palabra que va delante</b>.</div>
+</div>
+
+<h2>は frente a が &mdash; la distinci&oacute;n que m&aacute;s cuesta</h2>
+<div class="fig">
+<div class="z pale"><h4 class="jp">は &middot; el tema</h4><div class="d">Lo que ya est&aacute; sobre la mesa. Presenta de qu&eacute; vamos a hablar y suele contrastar con otra cosa impl&iacute;cita.</div></div>
+<div class="z solid"><h4 class="jp">が &middot; el sujeto</h4><div class="d">Informaci&oacute;n <b>nueva</b> o que se se&ntilde;ala. Responde a &laquo;&iquest;qui&eacute;n?&raquo; o &laquo;&iquest;qu&eacute;?&raquo;.</div></div>
+<div class="figcap">Regla pr&aacute;ctica: lo que va antes de <b>は</b> no es la respuesta;<br>lo que va antes de <b>が</b> s&iacute; lo es.</div>
+</div>
+<ul class="nuance">
+<li>A la pregunta <ruby>誰<rt>だれ</rt></ruby>が<ruby>来<rt>き</rt></ruby>ましたか, se responde <ruby>田中<rt>たなか</rt></ruby>さん<span class="hi">が</span><ruby>来<rt>き</rt></ruby>ました &mdash; nunca con は, porque el nombre <b>es</b> la informaci&oacute;n nueva.</li>
+<li>は marca <b>contraste</b> aunque no lo digas: <ruby>今日<rt>きょう</rt></ruby><span class="hi">は</span><ruby>行<rt>い</rt></ruby>きません insin&uacute;a &laquo;hoy no, otro d&iacute;a quiz&aacute;&raquo;.</li>
+<li>En una <b>oraci&oacute;n subordinada</b>, el sujeto lleva が, no は: <ruby>私<rt>わたし</rt></ruby><span class="hi">が</span><ruby>作<rt>つく</rt></ruby>った<ruby>料理<rt>りょうり</rt></ruby> (&laquo;la comida que yo hice&raquo;).</li>
+<li>Con <ruby>好<rt>す</rt></ruby>き, <ruby>嫌<rt>きら</rt></ruby>い, <ruby>上手<rt>じょうず</rt></ruby>, ほしい y el potencial, el complemento lleva <span class="hi">が</span>: <ruby>日本語<rt>にほんご</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです.</li>
+<li><b>Doble sujeto</b>: <ruby>象<rt>ぞう</rt></ruby><span class="hi">は</span><ruby>鼻<rt>はな</rt></ruby><span class="hi">が</span><ruby>長<rt>なが</rt></ruby>い. は marca el tema global (el elefante) y が lo que se describe (la trompa). Es una estructura normal, no un error.</li>
+<li><b>の frente a こと</b>: las dos convierten un verbo en sustantivo. の es lo concreto, lo que se percibe: <ruby>子供<rt>こども</rt></ruby>が<ruby>遊<rt>あそ</rt></ruby>んでいる<span class="hi">の</span>が<ruby>見<rt>み</rt></ruby>える. こと es la idea o el hecho: <ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>む<span class="hi">こと</span>です. Con <ruby>見<rt>み</rt></ruby>る・<ruby>聞<rt>き</rt></ruby>こえる・<ruby>待<rt>ま</rt></ruby>つ・<ruby>手伝<rt>てつだ</rt></ruby>う solo va の; ante です y en las estructuras fijas, solo こと: ことができる, ことにする, ことになる, ことがある. Con <ruby>好<rt>す</rt></ruby>き o <ruby>上手<rt>じょうず</rt></ruby>, las dos.</li>
+<li><b>わ</b> al final suaviza o recalca un sentimiento. En el japon&eacute;s est&aacute;ndar suena femenino y algo de libro (きれいだ<span class="hi">わ</span>); en Kansai lo dice todo el mundo con tono llano (<ruby>行<rt>い</rt></ruby>く<span class="hi">わ</span> = &laquo;voy, &iquest;eh?&raquo;). En el examen ayuda a saber qui&eacute;n habla en un di&aacute;logo.</li>
+</ul>
+
+<h2>に frente a で &mdash; el otro par que se confunde</h2>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>図書館<rt>としょかん</rt></ruby><span class="hi">に</span><ruby>本<rt>ほん</rt></ruby>があります。</span><span class="b">に &middot; donde algo EXISTE</span></div>
+<div class="r"><span class="a jp"><ruby>図書館<rt>としょかん</rt></ruby><span class="hi">で</span><ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>む。</span><span class="b">で &middot; donde algo SE HACE</span></div>
+<div class="r"><span class="a jp"><ruby>七時<rt>しちじ</rt></ruby><span class="hi">に</span><ruby>起<rt>お</rt></ruby>きる。</span><span class="b">に &middot; momento concreto del reloj</span></div>
+<div class="r"><span class="a jp">バス<span class="hi">で</span><ruby>行<rt>い</rt></ruby>く。</span><span class="b">で &middot; medio o instrumento</span></div>
+<div class="figcap"><b>に</b> es el punto; <b>で</b> es el escenario de la acci&oacute;n.</div>
+</div>
+
+<h2>Mapa completo de oficios</h2>
+<table>
+<thead><tr><th>Part&iacute;cula</th><th>Oficios</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">は</td><td class="jp2">tema &middot; contraste</td><td class="jp2"><ruby>今日<rt>きょう</rt></ruby><span class="hi">は</span><ruby>寒<rt>さむ</rt></ruby>い</td></tr>
+<tr><td class="ctx">が</td><td class="jp2">sujeto &middot; complemento de <ruby>好<rt>す</rt></ruby>き/potencial &middot; pero</td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">が</span><ruby>降<rt>ふ</rt></ruby>る &nbsp; <em><ruby>行<rt>い</rt></ruby>きたい<span class="hi">が</span>、<ruby>時間<rt>じかん</rt></ruby>がない</em></td></tr>
+<tr><td class="ctx">を</td><td class="jp2">objeto directo &middot; recorrido &middot; punto de salida</td><td class="jp2">パン<span class="hi">を</span><ruby>食<rt>た</rt></ruby>べる &nbsp; <ruby>公園<rt>こうえん</rt></ruby><span class="hi">を</span><ruby>歩<rt>ある</rt></ruby>く &nbsp; <ruby>家<rt>いえ</rt></ruby><span class="hi">を</span><ruby>出<rt>で</rt></ruby>る</td></tr>
+<tr><td class="ctx">に</td><td class="jp2">destino &middot; existencia &middot; hora &middot; receptor &middot; prop&oacute;sito &middot; agente de pasiva</td><td class="jp2"><ruby>駅<rt>えき</rt></ruby><span class="hi">に</span><ruby>行<rt>い</rt></ruby>く &nbsp; <ruby>友達<rt>ともだち</rt></ruby><span class="hi">に</span>あげる &nbsp; <ruby>見<rt>み</rt></ruby><span class="hi">に</span><ruby>行<rt>い</rt></ruby>く</td></tr>
+<tr><td class="ctx">で</td><td class="jp2">lugar de acci&oacute;n &middot; medio &middot; material &middot; causa &middot; l&iacute;mite</td><td class="jp2">カフェ<span class="hi">で</span> &nbsp; バス<span class="hi">で</span> &nbsp; <ruby>木<rt>き</rt></ruby><span class="hi">で</span><ruby>作<rt>つく</rt></ruby>る &nbsp; <ruby>病気<rt>びょうき</rt></ruby><span class="hi">で</span><ruby>休<rt>やす</rt></ruby>む</td></tr>
+<tr><td class="ctx">へ</td><td class="jp2">direcci&oacute;n (m&aacute;s vago que に)</td><td class="jp2"><ruby>日本<rt>にほん</rt></ruby><span class="hi">へ</span> &nbsp; <em>se lee <b>e</b></em></td></tr>
+<tr><td class="ctx">と</td><td class="jp2">compa&ntilde;&iacute;a &middot; y (lista cerrada) &middot; cita &middot; condicional</td><td class="jp2"><ruby>友達<rt>ともだち</rt></ruby><span class="hi">と</span> &nbsp; パン<span class="hi">と</span><ruby>卵<rt>たまご</rt></ruby> &nbsp; 〜<span class="hi">と</span><ruby>思<rt>おも</rt></ruby>う</td></tr>
+<tr><td class="ctx">や</td><td class="jp2">y (lista abierta)</td><td class="jp2">パン<span class="hi">や</span><ruby>卵<rt>たまご</rt></ruby>など</td></tr>
+<tr><td class="ctx">の</td><td class="jp2">posesi&oacute;n &middot; aposici&oacute;n &middot; nominaliza &middot; sujeto en subordinada</td><td class="jp2"><ruby>私<rt>わたし</rt></ruby><span class="hi">の</span><ruby>本<rt>ほん</rt></ruby> &nbsp; <ruby>走<rt>はし</rt></ruby>る<span class="hi">の</span>が<ruby>好<rt>す</rt></ruby>き</td></tr>
+<tr><td class="ctx">も</td><td class="jp2">tambi&eacute;n &middot; tampoco &middot; ni siquiera</td><td class="jp2"><ruby>私<rt>わたし</rt></ruby><span class="hi">も</span> &nbsp; <ruby>何<rt>なに</rt></ruby><span class="hi">も</span>ない</td></tr>
+<tr><td class="ctx">から</td><td class="jp2">desde (tiempo/lugar) &middot; porque &middot; materia prima</td><td class="jp2"><ruby>九時<rt>くじ</rt></ruby><span class="hi">から</span> &nbsp; <ruby>高<rt>たか</rt></ruby>い<span class="hi">から</span> &nbsp; <ruby>米<rt>こめ</rt></ruby><span class="hi">から</span><ruby>作<rt>つく</rt></ruby>る</td></tr>
+<tr><td class="ctx">まで</td><td class="jp2">hasta</td><td class="jp2"><ruby>五時<rt>ごじ</rt></ruby><span class="hi">まで</span></td></tr>
+<tr><td class="ctx">までに</td><td class="jp2">antes de (plazo l&iacute;mite)</td><td class="jp2"><ruby>金曜日<rt>きんようび</rt></ruby><span class="hi">までに</span><ruby>出<rt>だ</rt></ruby>す</td></tr>
+<tr><td class="ctx">より</td><td class="jp2">que (comparaci&oacute;n) &middot; desde (formal)</td><td class="jp2">これ<span class="hi">より</span><ruby>安<rt>やす</rt></ruby>い</td></tr>
+<tr><td class="ctx">か</td><td class="jp2">pregunta &middot; o</td><td class="jp2"><ruby>行<rt>い</rt></ruby>きます<span class="hi">か</span> &nbsp; パン<span class="hi">か</span>ご<ruby>飯<rt>はん</rt></ruby></td></tr>
+<tr><td class="ctx">ね / よ</td><td class="jp2">buscar acuerdo / informar</td><td class="jp2">いいです<span class="hi">ね</span> &nbsp; <ruby>違<rt>ちが</rt></ruby>います<span class="hi">よ</span></td></tr>
+<tr><td class="ctx">わ</td><td class="jp2">final suave &middot; femenino; en Kansai, neutro</td><td class="jp2">いいわ &nbsp; <ruby>行<rt>い</rt></ruby>くわ</td></tr>
+
+</tbody></table>
+
+<h2>Las que se parecen y no son iguales</h2>
+<table>
+<thead><tr><th>Par</th><th>Diferencia</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">と / や</td><td class="jp2">と cierra la lista; や la deja abierta</td><td class="jp2">パンと<ruby>卵<rt>たまご</rt></ruby> <em>(solo eso)</em> &nbsp; パンや<ruby>卵<rt>たまご</rt></ruby> <em>(entre otras)</em></td></tr>
+<tr><td class="ctx">に / へ</td><td class="jp2">に es el destino exacto; へ, la direcci&oacute;n</td><td class="jp2"><ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>く &nbsp; <ruby>南<rt>みなみ</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かう</td></tr>
+<tr><td class="ctx">まで / までに</td><td class="jp2">まで es continuo; までに es un plazo</td><td class="jp2"><ruby>五時<rt>ごじ</rt></ruby>まで<ruby>働<rt>はたら</rt></ruby>く &nbsp; <ruby>五時<rt>ごじ</rt></ruby>までに<ruby>終<rt>お</rt></ruby>わる</td></tr>
+<tr><td class="ctx">を / が (potencial)</td><td class="jp2">el potencial suele cambiar を por が (を también se oye)</td><td class="jp2"><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>話<rt>はな</rt></ruby>す &rarr; <ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せる</td></tr>
+<tr><td class="ctx">で / から (material)</td><td class="jp2">で si se ve el material; から si se transform&oacute;</td><td class="jp2"><ruby>木<rt>き</rt></ruby>で<ruby>作<rt>つく</rt></ruby>る &nbsp; <ruby>米<rt>こめ</rt></ruby>から<ruby>作<rt>つく</rt></ruby>る</td></tr>
+<tr><td class="ctx">の / こと</td><td class="jp2">の es lo percibido; こと, la idea o el hecho</td><td class="jp2"><ruby>歌<rt>うた</rt></ruby>うのが<ruby>聞<rt>き</rt></ruby>こえる &nbsp; <ruby>夢<rt>ゆめ</rt></ruby>は<ruby>歌手<rt>かしゅ</rt></ruby>になることだ</td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>象<rt>ぞう</rt></ruby><span class="hi">は</span><ruby>鼻<rt>はな</rt></ruby><span class="hi">が</span><ruby>長<rt>なが</rt></ruby>いです。</div><div class="t">Los elefantes tienen la trompa larga. <em>(doble sujeto)</em></div></div>
+<div class="ex-item"><div class="s jp">この<ruby>道<rt>みち</rt></ruby><span class="hi">を</span>まっすぐ<ruby>行<rt>い</rt></ruby>ってください。</div><div class="t">Siga recto por esta calle. <em>(を de recorrido)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>毎朝<rt>まいあさ</rt></ruby>、バス<span class="hi">で</span><ruby>学校<rt>がっこう</rt></ruby><span class="hi">に</span><ruby>行<rt>い</rt></ruby>きます。</div><div class="t">Cada ma&ntilde;ana voy al colegio en autob&uacute;s.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>金曜日<rt>きんようび</rt></ruby><span class="hi">までに</span>レポートを<ruby>出<rt>だ</rt></ruby>してください。</div><div class="t">Entregue el informe antes del viernes. <em>(plazo)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>弟<rt>おとうと</rt></ruby><span class="hi">に</span><ruby>本<rt>ほん</rt></ruby>をあげました。</div><div class="t">Le di un libro a mi hermano peque&ntilde;o. <em>(に de receptor)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>雨<rt>あめ</rt></ruby><span class="hi">で</span><ruby>試合<rt>しあい</rt></ruby>が<ruby>中止<rt>ちゅうし</rt></ruby>になった。</div><div class="t">Por la lluvia se cancel&oacute; el partido. <em>(で de causa)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>走<rt>はし</rt></ruby>る<span class="hi">の</span>が<ruby>好<rt>す</rt></ruby>きです。</div><div class="t">Me gusta correr. <em>(の nominaliza el verbo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>時間<rt>じかん</rt></ruby>はあります<span class="hi">が</span>、お<ruby>金<rt>かね</rt></ruby>がありません。</div><div class="t">Tiempo tengo, pero dinero no. <em>(が = pero)</em></div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>図書館<rt>としょかん</rt></ruby>で<ruby>本<rt>ほん</rt></ruby>があります</span> &nbsp; &#9675; <span class="good jp"><ruby>図書館<rt>としょかん</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>があります</span></div><div class="why">Para existir va に; で es donde se hace algo.</div></div>
+<div class="err"><div>&#9651; <span class="bad jp"><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>話<rt>はな</rt></ruby>せます</span> &nbsp; &#9675; <span class="good jp"><ruby>日本語<rt>にほんご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せます</span></div><div class="why">を no es incorrecto y se oye mucho, pero lo estándar &mdash;y lo que espera el JLPT&mdash; es が.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>私<rt>わたし</rt></ruby>は<ruby>作<rt>つく</rt></ruby>った<ruby>料理<rt>りょうり</rt></ruby></span> &nbsp; &#9675; <span class="good jp"><ruby>私<rt>わたし</rt></ruby>が<ruby>作<rt>つく</rt></ruby>った<ruby>料理<rt>りょうり</rt></ruby></span></div><div class="why">Dentro de una subordinada, el sujeto va con が.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>五時<rt>ごじ</rt></ruby>まで<ruby>終<rt>お</rt></ruby>わる</span> &nbsp; &#9675; <span class="good jp"><ruby>五時<rt>ごじ</rt></ruby>までに<ruby>終<rt>お</rt></ruby>わる</span></div><div class="why">Un plazo l&iacute;mite pide までに; まで es duraci&oacute;n continua.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">パンや<ruby>卵<rt>たまご</rt></ruby>を<ruby>買<rt>か</rt></ruby>った <em>(si solo compraste eso)</em></span> &nbsp; &#9675; <span class="good jp">パンと<ruby>卵<rt>たまご</rt></ruby>を<ruby>買<rt>か</rt></ruby>った</span></div><div class="why">や insin&uacute;a que hubo m&aacute;s cosas; si la lista est&aacute; completa, と.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>子供<rt>こども</rt></ruby>が<ruby>遊<rt>あそ</rt></ruby>んでいることが<ruby>見<rt>み</rt></ruby>える。</span> &nbsp; &#9675; <span class="good jp"><ruby>子供<rt>こども</rt></ruby>が<ruby>遊<rt>あそ</rt></ruby>んでいるのが<ruby>見<rt>み</rt></ruby>える。</span></div><div class="why">Con verbos de percepci&oacute;n va の.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>私<rt>わたし</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>になるのです。</span> &nbsp; &#9675; <span class="good jp"><ruby>私<rt>わたし</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>になることです。</span></div><div class="why">Delante de です, para definir algo, va こと.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="01-kana.html"><small>&larr; Anterior</small><span class="jp">ひらがな・カタカナ</span></a><a class="next" href="03-kosoado.html"><small>Siguiente &rarr;</small><span class="jp">こ・そ・あ・ど</span></a></nav><!--/gen-bottom-->
+<footer>助詞 &middot; Part&iacute;culas &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

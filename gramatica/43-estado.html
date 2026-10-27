@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>てある・たまま・っぱなし &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#H">&larr; Gram&aacute;tica</a><span>H &middot; Acciones y aspecto</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">てある・たまま・っぱなし</h1>
+<div class="sub">Un estado que <b>permanece</b> &mdash; y si alguien lo dej&oacute; as&iacute; queriendo.</div>
+<div class="rom">&hellip;te aru &middot; &hellip;ta mama &middot; &hellip;ppanashi</div>
+</div><div class="badge"><span class="tag">JLPT N4 &ndash; N3</span><span class="cat">Estado</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Tres formas de describir un estado que <b>permanece</b>, y lo que las separa es qui&eacute;n lo dej&oacute; as&iacute; y si estaba previsto.</p>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>い<span class="hi">ている</span></span><span class="b">estado, sin m&aacute;s &mdash; no dice qui&eacute;n</span></div>
+<div class="r"><span class="a jp"><ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>け<span class="hi">てある</span></span><span class="b">alguien lo dej&oacute; as&iacute; <b>a prop&oacute;sito</b></span></div>
+<div class="r"><span class="a jp"><ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>け<span class="hi">たまま</span></span><span class="b">sigue as&iacute; <b>mientras pasa otra cosa</b> (a menudo, sin querer)</span></div>
+<div class="figcap">Mismo estado visible; tres explicaciones distintas de c&oacute;mo lleg&oacute; ah&iacute;.</div>
+</div>
+<ul class="nuance">
+<li><b>てある va con verbo transitivo y sujeto en が</b>: <ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>けてある. Aunque hay un autor impl&iacute;cito, no se menciona &mdash; lo que importa es que se hizo con intenci&oacute;n.</li>
+<li><b>ている con intransitivo es el estado neutro</b>: <ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いている solo constata. Es la diferencia que ya viste en la ficha de <ruby>自動詞<rt>じどうし</rt></ruby>・<ruby>他動詞<rt>たどうし</rt></ruby>.</li>
+<li><b>たまま: el estado se mantiene mientras ocurre otra cosa</b>: <ruby>電気<rt>でんき</rt></ruby>をつけたまま<ruby>寝<rt>ね</rt></ruby>た. A menudo suena a descuido, pero no siempre: <ruby>立<rt>た</rt></ruby>ったまま<ruby>食<rt>た</rt></ruby>べる o <ruby>座<rt>すわ</rt></ruby>ったまま<ruby>話<rt>はな</rt></ruby>す son neutros.</li>
+<li><b>っぱなし</b> es coloquial y tiene dos usos: dejar algo sin recoger, con reproche (<ruby>出<rt>だ</rt></ruby>しっぱなし, つけっぱなし), y hacer algo <b>sin parar</b> (<ruby>立<rt>た</rt></ruby>ちっぱなし &laquo;de pie todo el rato&raquo;, <ruby>働<rt>はたら</rt></ruby>きっぱなし).</li>
+<li><b>まま tambi&eacute;n vale con sustantivos y adjetivos</b>: <ruby>昔<rt>むかし</rt></ruby>のまま (&laquo;igual que antes&raquo;), <ruby>若<rt>わか</rt></ruby>いまま (&laquo;joven todav&iacute;a&raquo;).</li>
+<li><b>たまま ≠ たきり</b>: <ruby>電気<rt>でんき</rt></ruby>をつけた<span class="hi">まま</span><ruby>寝<rt>ね</rt></ruby>た describe un estado que sigue; <ruby>出<rt>で</rt></ruby>かけた<span class="hi">きり</span><ruby>帰<rt>かえ</rt></ruby>ってこない dice que despu&eacute;s de eso no pas&oacute; nada m&aacute;s, y lo esperado no lleg&oacute;. たきり va casi siempre con negativo detr&aacute;s (ficha 58).</li>
+</ul>
+
+<h3>てある frente a ておく</h3>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>会議<rt>かいぎ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>資料<rt>しりょう</rt></ruby>をコピーし<span class="hi">ておく</span>。</span><span class="b">el acto: lo hago para despu&eacute;s</span></div>
+<div class="r"><span class="a jp"><ruby>資料<rt>しりょう</rt></ruby>はもうコピーし<span class="hi">てある</span>。</span><span class="b">el resultado: ya est&aacute; hecho</span></div>
+<div class="figcap">La misma preparaci&oacute;n en dos momentos: <b>ておく</b> antes, <b>てある</b> despu&eacute;s.</div>
+</div>
+<ul class="nuance">
+<li><b>ておく es la acci&oacute;n</b> y lleva a quien act&uacute;a: (<ruby>私<rt>わたし</rt></ruby>が)<ruby>資料<rt>しりょう</rt></ruby>をコピーしておく. Sirve para hoy, para ma&ntilde;ana o para pedir: コピーしておいてください.</li>
+<li><b>てある es el estado que queda</b>: la cosa va con が y no se dice qui&eacute;n lo hizo. No sirve para pedir: &#10005; <ruby>開<rt>あ</rt></ruby>けてあってください.</li>
+<li><b>Lo que vas a hacer siempre es ておく</b>: una preparaci&oacute;n que todav&iacute;a no existe no puede &laquo;estar hecha&raquo;.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Estado neutro</td><td class="jp2">V intransitivo て <span class="hi">＋いる</span></td><td class="jp2"><ruby>開<rt>あ</rt></ruby>い<span class="hi">ている</span></td></tr>
+<tr><td class="ctx">Dejado a prop&oacute;sito</td><td class="jp2">V transitivo て <span class="hi">＋ある</span></td><td class="jp2"><ruby>開<rt>あ</rt></ruby>け<span class="hi">てある</span></td></tr>
+<tr><td class="ctx">Se qued&oacute; as&iacute; (descuido)</td><td class="jp2">Vた <span class="hi">＋まま</span></td><td class="jp2">つけ<span class="hi">たまま</span></td></tr>
+<tr><td class="ctx">Sin hacer algo, en ese estado</td><td class="jp2">Vない <span class="hi">＋まま</span></td><td class="jp2"><ruby>食<rt>た</rt></ruby>べない<span class="hi">まま</span></td></tr>
+<tr><td class="ctx">Sustantivo / adjetivo</td><td class="jp2">Nの／Aい <span class="hi">＋まま</span></td><td class="jp2"><ruby>昔<rt>むかし</rt></ruby>の<span class="hi">まま</span> &nbsp; <ruby>若<rt>わか</rt></ruby>い<span class="hi">まま</span></td></tr>
+<tr><td class="ctx">Dejadez · sin parar (coloquial)</td><td class="jp2">ra&iacute;z ます <span class="hi">＋っぱなし</span></td><td class="jp2">つけ<span class="hi">っぱなし</span> ・ <ruby>立<rt>た</rt></ruby>ち<span class="hi">っぱなし</span></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>い<span class="hi">ています</span>。</div><div class="t">La ventana est&aacute; abierta. <em>(constato)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>資料<rt>しりょう</rt></ruby>が<ruby>置<rt>お</rt></ruby>い<span class="hi">てあります</span>。</div><div class="t">Sobre la mesa hay documentos puestos. <em>(alguien los dej&oacute; ah&iacute;)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>電気<rt>でんき</rt></ruby>をつけ<span class="hi">たまま</span><ruby>寝<rt>ね</rt></ruby>てしまった。</div><div class="t">Me dorm&iacute; con la luz encendida.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>靴<rt>くつ</rt></ruby>を<ruby>履<rt>は</rt></ruby>い<span class="hi">たまま</span><ruby>入<rt>はい</rt></ruby>らないでください。</div><div class="t">No entre con los zapatos puestos.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>水<rt>みず</rt></ruby>を<ruby>出<rt>だ</rt></ruby>し<span class="hi">っぱなし</span>にしないで。</div><div class="t">No dejes el grifo abierto. <em>(reproche)</em></div></div>
+<div class="ex-item"><div class="s jp">この<ruby>町<rt>まち</rt></ruby>は<ruby>昔<rt>むかし</rt></ruby>の<span class="hi">まま</span>です。</div><div class="t">Este pueblo sigue igual que antes.</div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#9651; <span class="bad jp"><ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けてあります。</span> &nbsp; &#9675; <span class="good jp"><ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>けてあります。</span></div><div class="why">Las dos se usan: con を destacas que alguien lo prepar&oacute;; con が, el estado resultante. La forma de manual &mdash;y la del examen&mdash; es が.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>開<rt>あ</rt></ruby>いてある</span> &nbsp; &#9675; <span class="good jp"><ruby>開<rt>あ</rt></ruby>けてある</span></div><div class="why">てある exige verbo transitivo (<ruby>開<rt>あ</rt></ruby>ける), no intransitivo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">つけたっぱなし</span> &nbsp; &#9675; <span class="good jp">つけっぱなし</span></div><div class="why">っぱなし va sobre la ra&iacute;z de ます, no sobre la た形.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>明日<rt>あした</rt></ruby>までに<ruby>資料<rt>しりょう</rt></ruby>をコピーしてあります。</span> &nbsp; &#9675; <span class="good jp"><ruby>明日<rt>あした</rt></ruby>までに<ruby>資料<rt>しりょう</rt></ruby>をコピーしておきます。</span></div><div class="why">Si todav&iacute;a no est&aacute; hecho, es la acci&oacute;n (ておく), no el resultado (てある).</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="42-auxiliares-te.html"><small>&larr; Anterior</small><span class="jp">ておく・てみる・てしまう</span></a><a class="next" href="44-experiencia.html"><small>Siguiente &rarr;</small><span class="jp">たことがある</span></a></nav><!--/gen-bottom-->
+<footer>てある・たまま・っぱなし &middot; Estado &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

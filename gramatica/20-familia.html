@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.rel{display:grid;grid-template-columns:34px repeat(5,1fr);gap:2px;margin-top:12px;}
+.rel .hd{font-family:"Poppins",sans-serif;font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--sub);text-align:center;padding-bottom:4px;}
+.rel .hd.now{color:var(--midori);font-weight:700;}
+.rel .rowlab{font-family:"Noto Serif JP",serif;font-size:14px;color:var(--midori);display:flex;align-items:center;}
+.rel .cell{background:#fff;border:1px solid var(--kasumi);border-radius:4px;text-align:center;padding:6px 2px;}
+.rel .cell.now{background:var(--midori-pale);}
+.rel .k{font-family:"Noto Serif JP",serif;font-size:12.5px;}
+.rel .r{font-family:"Noto Serif JP",serif;font-size:9.5px;color:var(--midori);}
+.rel .r b{color:var(--shu);}
+.rel .e{font-size:8.5px;color:var(--sub);font-style:italic;}
+@media(max-width:600px){.rel .k{font-size:11px;}.rel .e{display:none;}}
+.pair2{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dotted #E6E9E2;font-size:13px;}
+.pair2 .a{font-family:"Noto Serif JP",serif;}
+.pair2 .b{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.pair2 .b b{color:var(--shu);}
+.zones2{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.zones2 .z{flex:1 1 200px;border-radius:8px;padding:16px;text-align:center;}
+.zones2 .z.uchi{background:var(--midori);color:#fff;}
+.zones2 .z.soto{background:#fff;border:1px solid var(--kasumi);}
+.zones2 .zl{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.zones2 .uchi .zl{color:#C9DAC9;} .zones2 .soto .zl{color:var(--sub);}
+.zones2 .w{font-family:"Noto Serif JP",serif;font-size:22px;}
+.zones2 .g{font-style:italic;font-size:12px;margin-top:6px;}
+.zones2 .uchi .g{color:#DCE7DC;} .zones2 .soto .g{color:var(--sub);}
+td.jp2 em.rd2{font-style:normal;font-size:10.5px;color:var(--sub);display:block;}
+</style><!--gen-head-->
+<title>家族 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#C">&larr; Gram&aacute;tica</a><span>C &middot; Vocabulario pr&#225;ctico</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>家族<rt>かぞく</rt></ruby></h1>
+<div class="sub">Cada pariente tiene <b>dos palabras</b>: la tuya y la del otro.</div>
+<div class="rom">kazoku</div>
+</div><div class="badge"><span class="tag">JLPT N5 &ndash; N4</span><span class="cat">Familia</span></div></header>
+
+<h2>La misma persona, dos palabras &mdash; うち y そと</h2>
+<div class="zones2">
+<div class="z uchi"><div class="zl">うち &middot; en casa</div><div class="w jp">お<ruby>父<rt>とう</rt></ruby>さん</div><div class="g">as&iacute; lo llamas</div></div>
+<div class="z soto"><div class="zl">そと &middot; hablando de &eacute;l</div><div class="w jp"><ruby>父<rt>ちち</rt></ruby></div><div class="g">as&iacute; hablas de &eacute;l</div></div>
+</div>
+<div class="figcap">Es el mismo eje <b>うち／そと</b> del keigo: de puertas afuera, tu propia familia baja de nivel.</div>
+<ul class="nuance">
+<li>A tu propio padre <b>lo llamas</b> お<ruby>父<rt>とう</rt></ruby>さん, pero <b>hablas de &eacute;l</b> ante otros como <ruby>父<rt>ちち</rt></ruby>. Decir <span class="rd">&#10005; うちのお<ruby>父<rt>とう</rt></ruby>さんは&hellip;</span> a un desconocido suena infantil.</li>
+<li>Los hermanos <b>menores</b> no llevan お: son <ruby>弟<rt>おとうと</rt></ruby>さん y <ruby>妹<rt>いもうと</rt></ruby>さん, solo con さん. Los mayores s&iacute; &mdash; お<ruby>兄<rt>にい</rt></ruby>さん, お<ruby>姉<rt>ねえ</rt></ruby>さん.</li>
+<li><b>No existe &laquo;hermano&raquo; a secas.</b> Hay que decir si es mayor o menor: <ruby>兄<rt>あに</rt></ruby> o <ruby>弟<rt>おとうと</rt></ruby>. Para el conjunto vale <ruby>兄弟<rt>きょうだい</rt></ruby> &mdash; incluye a las hermanas, pese al kanji.</li>
+<li>Para contar personas va el contador irregular: <span class="rd"><ruby>一人<rt>ひとり</rt></ruby></span>, <span class="rd"><ruby>二人<rt>ふたり</rt></ruby></span>, y desde tres 〜にん. <span class="rd"><ruby>四人<rt>よにん</rt></ruby></span> es よにん, no <span class="rd">&#10005; よんにん</span>.</li>
+<li><b>A los hermanos mayores se les llama por el t&iacute;tulo</b>, no por el nombre: お<ruby>兄<rt>にい</rt></ruby>ちゃん. A los menores, por el nombre. Es una jerarqu&iacute;a que se nota a diario.</li>
+</ul>
+
+<h2>El vocabulario completo</h2>
+<table>
+<thead><tr><th>Parentesco</th><th>Mi familia</th><th>La del otro</th></tr></thead>
+<tbody>
+<tr><td class="ctx">padre</td><td class="jp2"><ruby>父<rt>ちち</rt></ruby></td><td class="jp2">お<ruby>父<rt>とう</rt></ruby>さん</td></tr>
+<tr><td class="ctx">madre</td><td class="jp2"><ruby>母<rt>はは</rt></ruby></td><td class="jp2">お<ruby>母<rt>かあ</rt></ruby>さん</td></tr>
+<tr><td class="ctx">hermano mayor</td><td class="jp2"><ruby>兄<rt>あに</rt></ruby></td><td class="jp2">お<ruby>兄<rt>にい</rt></ruby>さん</td></tr>
+<tr><td class="ctx">hermana mayor</td><td class="jp2"><ruby>姉<rt>あね</rt></ruby></td><td class="jp2">お<ruby>姉<rt>ねえ</rt></ruby>さん</td></tr>
+<tr><td class="ctx">hermano menor</td><td class="jp2"><ruby>弟<rt>おとうと</rt></ruby></td><td class="jp2"><ruby>弟<rt>おとうと</rt></ruby>さん</td></tr>
+<tr><td class="ctx">hermana menor</td><td class="jp2"><ruby>妹<rt>いもうと</rt></ruby></td><td class="jp2"><ruby>妹<rt>いもうと</rt></ruby>さん</td></tr>
+<tr><td class="ctx">abuelo &middot; abuela</td><td class="jp2"><ruby>祖父<rt>そふ</rt></ruby>・<ruby>祖母<rt>そぼ</rt></ruby></td><td class="jp2">おじいさん・おばあさん</td></tr>
+<tr><td class="ctx">t&iacute;o &middot; t&iacute;a</td><td class="jp2">おじ・おば</td><td class="jp2">おじさん・おばさん</td></tr>
+<tr><td class="ctx">primo &middot; prima</td><td class="jp2">いとこ</td><td class="jp2">いとこ</td></tr>
+<tr><td class="ctx">marido</td><td class="jp2"><ruby>夫<rt>おっと</rt></ruby></td><td class="jp2">ご<ruby>主人<rt>しゅじん</rt></ruby></td></tr>
+<tr><td class="ctx">esposa</td><td class="jp2"><ruby>妻<rt>つま</rt></ruby></td><td class="jp2"><ruby>奥<rt>おく</rt></ruby>さん</td></tr>
+<tr><td class="ctx">hijo &middot; hija</td><td class="jp2"><ruby>息子<rt>むすこ</rt></ruby>・<ruby>娘<rt>むすめ</rt></ruby></td><td class="jp2"><ruby>息子<rt>むすこ</rt></ruby>さん・<ruby>娘<rt>むすめ</rt></ruby>さん</td></tr>
+<tr><td class="ctx">hijos, ni&ntilde;os</td><td class="jp2"><ruby>子供<rt>こども</rt></ruby></td><td class="jp2">お<ruby>子<rt>こ</rt></ruby>さん</td></tr>
+<tr><td class="ctx">nieto</td><td class="jp2"><ruby>孫<rt>まご</rt></ruby></td><td class="jp2">お<ruby>孫<rt>まご</rt></ruby>さん</td></tr>
+<tr><td class="ctx">padres</td><td class="jp2"><ruby>両親<rt>りょうしん</rt></ruby></td><td class="jp2">ご<ruby>両親<rt>りょうしん</rt></ruby></td></tr>
+<tr><td class="ctx">hermanos</td><td class="jp2"><ruby>兄弟<rt>きょうだい</rt></ruby></td><td class="jp2">ご<ruby>兄弟<rt>きょうだい</rt></ruby></td></tr>
+<tr><td class="ctx">familia</td><td class="jp2"><ruby>家族<rt>かぞく</rt></ruby></td><td class="jp2">ご<ruby>家族<rt>かぞく</rt></ruby></td></tr>
+<tr><td class="ctx">hijo &uacute;nico</td><td class="jp2"><ruby>一人<rt>ひとり</rt></ruby>っ<ruby>子<rt>こ</rt></ruby></td><td class="jp2">&mdash;</td></tr>
+</tbody></table>
+
+<h2>Hablar de la familia</h2>
+<table>
+<thead><tr><th>Se usa para</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Cu&aacute;ntos sois</td><td class="jp2"><span class="hi"><ruby>何人家族<rt>なんにんかぞく</rt></ruby></span>ですか</td><td class="jp2"><ruby>四人家族<rt>よにんかぞく</rt></ruby>です</td></tr>
+<tr><td class="ctx">Tener hermanos</td><td class="jp2">ご<ruby>兄弟<rt>きょうだい</rt></ruby>が<span class="hi">いますか</span></td><td class="jp2"><ruby>姉<rt>あね</rt></ruby>が<ruby>二人<rt>ふたり</rt></ruby>います</td></tr>
+<tr><td class="ctx">Cu&aacute;ntos hijos</td><td class="jp2">お<ruby>子<rt>こ</rt></ruby>さんは<span class="hi"><ruby>何人<rt>なんにん</rt></ruby></span>ですか</td><td class="jp2"><ruby>二人<rt>ふたり</rt></ruby>です</td></tr>
+<tr><td class="ctx">Ser hijo &uacute;nico</td><td class="jp2"><span class="hi"><ruby>一人<rt>ひとり</rt></ruby>っ<ruby>子<rt>こ</rt></ruby></span>です</td><td class="jp2">&mdash;</td></tr>
+<tr><td class="ctx">Orden entre hermanos</td><td class="jp2"><ruby>一番上<rt>いちばんうえ</rt></ruby>／<ruby>一番下<rt>いちばんした</rt></ruby></td><td class="jp2"><ruby>一番上<rt>いちばんうえ</rt></ruby>の<ruby>兄<rt>あに</rt></ruby></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>父<rt>ちち</rt></ruby></span>は<ruby>医者<rt>いしゃ</rt></ruby>です。</div><div class="t">Mi padre es m&eacute;dico. <em>(hablando con alguien de fuera)</em></div></div>
+<div class="ex-item"><div class="s jp">お<span class="hi"><ruby>父<rt>とう</rt></ruby>さん</span>、ご<ruby>飯<rt>はん</rt></ruby>できたよ。</div><div class="t">&iexcl;Pap&aacute;, la comida est&aacute; lista! <em>(en casa)</em></div></div>
+<div class="ex-item"><div class="s jp">ご<span class="hi"><ruby>兄弟<rt>きょうだい</rt></ruby></span>はいらっしゃいますか。</div><div class="t">&iquest;Tiene usted hermanos? <em>(cort&eacute;s, familia ajena)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>姉<rt>あね</rt></ruby></span>が<span class="hi"><ruby>二人<rt>ふたり</rt></ruby></span>います。</div><div class="t">Tengo dos hermanas mayores.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>四人家族<rt>よにんかぞく</rt></ruby></span>です。</div><div class="t">Somos cuatro en casa.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>田中<rt>たなか</rt></ruby>さんの<span class="hi"><ruby>奥<rt>おく</rt></ruby>さん</span>にお<ruby>会<rt>あ</rt></ruby>いしました。</div><div class="t">Conoc&iacute; a la esposa del se&ntilde;or Tanaka.</div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp">うちのお<ruby>父<rt>とう</rt></ruby>さんは<ruby>医者<rt>いしゃ</rt></ruby>です。 <em>(ante un desconocido)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>父<rt>ちち</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>です。</span></div><div class="why">Fuera de casa hablas de tu padre como <ruby>父<rt>ちち</rt></ruby>.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">お<ruby>弟<rt>おとうと</rt></ruby>さん</span> &nbsp; &#9675; <span class="good jp"><ruby>弟<rt>おとうと</rt></ruby>さん</span></div><div class="why">Los hermanos menores no llevan お.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">よんにん</span> &nbsp; &#9675; <span class="good jp">よにん</span></div><div class="why">Para contar personas, <ruby>四人<rt>よにん</rt></ruby> es irregular.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>私<rt>わたし</rt></ruby>の<ruby>奥<rt>おく</rt></ruby>さん</span> &nbsp; &#9675; <span class="good jp"><ruby>私<rt>わたし</rt></ruby>の<ruby>妻<rt>つま</rt></ruby></span></div><div class="why"><ruby>奥<rt>おく</rt></ruby>さん es la esposa <b>del otro</b>; la tuya es <ruby>妻<rt>つま</rt></ruby>.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="19-calendario.html"><small>&larr; Anterior</small><span class="jp">日・週・月・年</span></a><a class="next" href="21-adverbios.html"><small>Siguiente &rarr;</small><span class="jp">副詞</span></a></nav><!--/gen-bottom-->
+<footer>家族 &middot; Familia &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

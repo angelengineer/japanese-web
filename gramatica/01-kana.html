@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.kg{display:grid;gap:3px;margin-top:6px;}
+.k{background:#fff;border:1px solid var(--kasumi);border-radius:4px;text-align:center;padding:7px 2px 5px;}
+.k .c{font-family:"Noto Serif JP",serif;font-size:clamp(16px,4.4vw,22px);line-height:1.15;}
+.k .r{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.05em;color:var(--sub);margin-top:3px;text-transform:uppercase;}
+.k.irr{background:#FDF3F1;border-color:#EBD6D3;}
+.k.irr .r{color:var(--shu);font-weight:600;}
+.k.void{background:#F2F3EF;border-style:dashed;}
+.k.void .c,.k.void .r{visibility:hidden;}
+@media(max-width:620px){.kg{grid-template-columns:repeat(6,1fr)!important;}}
+</style><!--gen-head-->
+<title>ひらがな・カタカナ &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#A">&larr; Gram&aacute;tica</a><span>A &middot; Cimientos</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">ひらがな・カタカナ</h1>
+<div class="sub">Los dos silabarios: <b>el mismo sonido, dos formas</b>.</div>
+<div class="rom">hiragana &middot; katakana &middot; 五十音</div>
+</div><div class="badge"><span class="tag">JLPT N5</span><span class="cat">Escritura</span></div></header>
+
+<h2>C&oacute;mo se reparten el trabajo</h2>
+<p class="lead">No compiten: <b>cada uno tiene su oficio</b>. El hiragana escribe lo japon&eacute;s &mdash;part&iacute;culas, terminaciones, palabras nativas&mdash;; el katakana, lo que viene de fuera, las onomatopeyas y lo que quieres destacar. Los dos representan <b>los mismos 46 sonidos</b>.</p>
+<ul class="nuance">
+<li><b>Cuatro rompen el patr&oacute;n</b> (en rojo): し es <b>shi</b>, ち es <b>chi</b>, つ es <b>tsu</b> y ふ es <b>fu</b>. Son los que m&aacute;s se fallan al teclear.</li>
+<li><b>Tres cambian de sonido como part&iacute;cula</b>: は se lee <b>wa</b>, へ se lee <b>e</b>, y を se lee <b>o</b> &mdash; y solo existe como part&iacute;cula, nunca dentro de una palabra.</li>
+<li>La <b>っ peque&ntilde;a</b> dobla la consonante siguiente y ocupa su propio tiempo: きって es <i>kitte</i> (sello), no <i>kite</i> (ven).</li>
+<li><b>ん es la &uacute;nica consonante que va sola</b> y cuenta como una s&iacute;laba entera. Su sonido var&iacute;a seg&uacute;n lo que siga: <i>n</i>, <i>m</i> ante ば・ぱ・ま (こんばんは suena <i>kombanwa</i>), o nasal al final.</li>
+<li><b>じ／ぢ y ず／づ suenan igual.</b> Se escriben casi siempre じ y ず; ぢ・づ solo aparecen en palabras compuestas (<ruby>鼻血<rt>はなぢ</rt></ruby>) o repetidas (<ruby>続<rt>つづ</rt></ruby>く).</li>
+</ul>
+
+<h2>Hiragana</h2>
+<h3>Kana b&aacute;sico</h3><div class="kg" style="grid-template-columns:repeat(11,1fr)">
+<div class="k"><div class="c jp">あ</div><div class="r">a</div></div>
+<div class="k"><div class="c jp">か</div><div class="r">ka</div></div>
+<div class="k"><div class="c jp">さ</div><div class="r">sa</div></div>
+<div class="k"><div class="c jp">た</div><div class="r">ta</div></div>
+<div class="k"><div class="c jp">な</div><div class="r">na</div></div>
+<div class="k"><div class="c jp">は</div><div class="r">ha</div></div>
+<div class="k"><div class="c jp">ま</div><div class="r">ma</div></div>
+<div class="k"><div class="c jp">や</div><div class="r">ya</div></div>
+<div class="k"><div class="c jp">ら</div><div class="r">ra</div></div>
+<div class="k"><div class="c jp">わ</div><div class="r">wa</div></div>
+<div class="k irr"><div class="c jp">ん</div><div class="r">n</div></div>
+<div class="k"><div class="c jp">い</div><div class="r">i</div></div>
+<div class="k"><div class="c jp">き</div><div class="r">ki</div></div>
+<div class="k irr"><div class="c jp">し</div><div class="r">shi</div></div>
+<div class="k irr"><div class="c jp">ち</div><div class="r">chi</div></div>
+<div class="k"><div class="c jp">に</div><div class="r">ni</div></div>
+<div class="k"><div class="c jp">ひ</div><div class="r">hi</div></div>
+<div class="k"><div class="c jp">み</div><div class="r">mi</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">り</div><div class="r">ri</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">う</div><div class="r">u</div></div>
+<div class="k"><div class="c jp">く</div><div class="r">ku</div></div>
+<div class="k"><div class="c jp">す</div><div class="r">su</div></div>
+<div class="k irr"><div class="c jp">つ</div><div class="r">tsu</div></div>
+<div class="k"><div class="c jp">ぬ</div><div class="r">nu</div></div>
+<div class="k irr"><div class="c jp">ふ</div><div class="r">fu</div></div>
+<div class="k"><div class="c jp">む</div><div class="r">mu</div></div>
+<div class="k"><div class="c jp">ゆ</div><div class="r">yu</div></div>
+<div class="k"><div class="c jp">る</div><div class="r">ru</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">え</div><div class="r">e</div></div>
+<div class="k"><div class="c jp">け</div><div class="r">ke</div></div>
+<div class="k"><div class="c jp">せ</div><div class="r">se</div></div>
+<div class="k"><div class="c jp">て</div><div class="r">te</div></div>
+<div class="k"><div class="c jp">ね</div><div class="r">ne</div></div>
+<div class="k"><div class="c jp">へ</div><div class="r">he</div></div>
+<div class="k"><div class="c jp">め</div><div class="r">me</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">れ</div><div class="r">re</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">お</div><div class="r">o</div></div>
+<div class="k"><div class="c jp">こ</div><div class="r">ko</div></div>
+<div class="k"><div class="c jp">そ</div><div class="r">so</div></div>
+<div class="k"><div class="c jp">と</div><div class="r">to</div></div>
+<div class="k"><div class="c jp">の</div><div class="r">no</div></div>
+<div class="k"><div class="c jp">ほ</div><div class="r">ho</div></div>
+<div class="k"><div class="c jp">も</div><div class="r">mo</div></div>
+<div class="k"><div class="c jp">よ</div><div class="r">yo</div></div>
+<div class="k"><div class="c jp">ろ</div><div class="r">ro</div></div>
+<div class="k irr"><div class="c jp">を</div><div class="r">o</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+</div>
+<h3>Dakuten y handakuten &middot; <ruby>濁音<rt>だくおん</rt></ruby>・<ruby>半濁音<rt>はんだくおん</rt></ruby></h3><div class="kg" style="grid-template-columns:repeat(5,1fr)">
+<div class="k"><div class="c jp">が</div><div class="r">ga</div></div>
+<div class="k"><div class="c jp">ざ</div><div class="r">za</div></div>
+<div class="k"><div class="c jp">だ</div><div class="r">da</div></div>
+<div class="k"><div class="c jp">ば</div><div class="r">ba</div></div>
+<div class="k"><div class="c jp">ぱ</div><div class="r">pa</div></div>
+<div class="k"><div class="c jp">ぎ</div><div class="r">gi</div></div>
+<div class="k irr"><div class="c jp">じ</div><div class="r">ji</div></div>
+<div class="k irr"><div class="c jp">ぢ</div><div class="r">ji</div></div>
+<div class="k"><div class="c jp">び</div><div class="r">bi</div></div>
+<div class="k"><div class="c jp">ぴ</div><div class="r">pi</div></div>
+<div class="k"><div class="c jp">ぐ</div><div class="r">gu</div></div>
+<div class="k irr"><div class="c jp">ず</div><div class="r">zu</div></div>
+<div class="k irr"><div class="c jp">づ</div><div class="r">zu</div></div>
+<div class="k"><div class="c jp">ぶ</div><div class="r">bu</div></div>
+<div class="k"><div class="c jp">ぷ</div><div class="r">pu</div></div>
+<div class="k"><div class="c jp">げ</div><div class="r">ge</div></div>
+<div class="k"><div class="c jp">ぜ</div><div class="r">ze</div></div>
+<div class="k"><div class="c jp">で</div><div class="r">de</div></div>
+<div class="k"><div class="c jp">べ</div><div class="r">be</div></div>
+<div class="k"><div class="c jp">ぺ</div><div class="r">pe</div></div>
+<div class="k"><div class="c jp">ご</div><div class="r">go</div></div>
+<div class="k"><div class="c jp">ぞ</div><div class="r">zo</div></div>
+<div class="k"><div class="c jp">ど</div><div class="r">do</div></div>
+<div class="k"><div class="c jp">ぼ</div><div class="r">bo</div></div>
+<div class="k"><div class="c jp">ぽ</div><div class="r">po</div></div>
+</div>
+<h3>Combinaciones &middot; <ruby>拗音<rt>ようおん</rt></ruby></h3><div class="kg" style="grid-template-columns:repeat(11,1fr)">
+<div class="k"><div class="c jp">きゃ</div><div class="r">kya</div></div>
+<div class="k"><div class="c jp">ぎゃ</div><div class="r">gya</div></div>
+<div class="k"><div class="c jp">しゃ</div><div class="r">sha</div></div>
+<div class="k"><div class="c jp">じゃ</div><div class="r">ja</div></div>
+<div class="k"><div class="c jp">ちゃ</div><div class="r">cha</div></div>
+<div class="k"><div class="c jp">にゃ</div><div class="r">nya</div></div>
+<div class="k"><div class="c jp">ひゃ</div><div class="r">hya</div></div>
+<div class="k"><div class="c jp">びゃ</div><div class="r">bya</div></div>
+<div class="k"><div class="c jp">ぴゃ</div><div class="r">pya</div></div>
+<div class="k"><div class="c jp">みゃ</div><div class="r">mya</div></div>
+<div class="k"><div class="c jp">りゃ</div><div class="r">rya</div></div>
+<div class="k"><div class="c jp">きゅ</div><div class="r">kyu</div></div>
+<div class="k"><div class="c jp">ぎゅ</div><div class="r">gyu</div></div>
+<div class="k"><div class="c jp">しゅ</div><div class="r">shu</div></div>
+<div class="k"><div class="c jp">じゅ</div><div class="r">ju</div></div>
+<div class="k"><div class="c jp">ちゅ</div><div class="r">chu</div></div>
+<div class="k"><div class="c jp">にゅ</div><div class="r">nyu</div></div>
+<div class="k"><div class="c jp">ひゅ</div><div class="r">hyu</div></div>
+<div class="k"><div class="c jp">びゅ</div><div class="r">byu</div></div>
+<div class="k"><div class="c jp">ぴゅ</div><div class="r">pyu</div></div>
+<div class="k"><div class="c jp">みゅ</div><div class="r">myu</div></div>
+<div class="k"><div class="c jp">りゅ</div><div class="r">ryu</div></div>
+<div class="k"><div class="c jp">きょ</div><div class="r">kyo</div></div>
+<div class="k"><div class="c jp">ぎょ</div><div class="r">gyo</div></div>
+<div class="k"><div class="c jp">しょ</div><div class="r">sho</div></div>
+<div class="k"><div class="c jp">じょ</div><div class="r">jo</div></div>
+<div class="k"><div class="c jp">ちょ</div><div class="r">cho</div></div>
+<div class="k"><div class="c jp">にょ</div><div class="r">nyo</div></div>
+<div class="k"><div class="c jp">ひょ</div><div class="r">hyo</div></div>
+<div class="k"><div class="c jp">びょ</div><div class="r">byo</div></div>
+<div class="k"><div class="c jp">ぴょ</div><div class="r">pyo</div></div>
+<div class="k"><div class="c jp">みょ</div><div class="r">myo</div></div>
+<div class="k"><div class="c jp">りょ</div><div class="r">ryo</div></div>
+</div>
+<h3>Los que se confunden</h3><div class="fig">
+<div class="z"><h4 class="jp">さ / ち</h4><div class="d">Casi espejo: la curva de <b>さ</b> abre a la derecha (como una c); la de <b>ち</b>, a la izquierda (como un 5).</div></div>
+<div class="z"><h4 class="jp">は / ほ</h4><div class="d"><b>ほ</b> lleva una barra m&aacute;s en el palo vertical.</div></div>
+<div class="z"><h4 class="jp">ぬ / め</h4><div class="d"><b>ぬ</b> termina en bucle; <b>め</b> no lo lleva.</div></div>
+<div class="z"><h4 class="jp">れ / わ / ね</h4><div class="d">La cola: <b>れ</b> recta, <b>わ</b> curva, <b>ね</b> en bucle.</div></div>
+<div class="z"><h4 class="jp">る / ろ</h4><div class="d"><b>る</b> cierra el bucle final; <b>ろ</b> lo deja abierto.</div></div>
+</div>
+
+<h2>Katakana</h2>
+<h3>Kana b&aacute;sico</h3><div class="kg" style="grid-template-columns:repeat(11,1fr)">
+<div class="k"><div class="c jp">ア</div><div class="r">a</div></div>
+<div class="k"><div class="c jp">カ</div><div class="r">ka</div></div>
+<div class="k"><div class="c jp">サ</div><div class="r">sa</div></div>
+<div class="k"><div class="c jp">タ</div><div class="r">ta</div></div>
+<div class="k"><div class="c jp">ナ</div><div class="r">na</div></div>
+<div class="k"><div class="c jp">ハ</div><div class="r">ha</div></div>
+<div class="k"><div class="c jp">マ</div><div class="r">ma</div></div>
+<div class="k"><div class="c jp">ヤ</div><div class="r">ya</div></div>
+<div class="k"><div class="c jp">ラ</div><div class="r">ra</div></div>
+<div class="k"><div class="c jp">ワ</div><div class="r">wa</div></div>
+<div class="k irr"><div class="c jp">ン</div><div class="r">n</div></div>
+<div class="k"><div class="c jp">イ</div><div class="r">i</div></div>
+<div class="k"><div class="c jp">キ</div><div class="r">ki</div></div>
+<div class="k irr"><div class="c jp">シ</div><div class="r">shi</div></div>
+<div class="k irr"><div class="c jp">チ</div><div class="r">chi</div></div>
+<div class="k"><div class="c jp">ニ</div><div class="r">ni</div></div>
+<div class="k"><div class="c jp">ヒ</div><div class="r">hi</div></div>
+<div class="k"><div class="c jp">ミ</div><div class="r">mi</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">リ</div><div class="r">ri</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">ウ</div><div class="r">u</div></div>
+<div class="k"><div class="c jp">ク</div><div class="r">ku</div></div>
+<div class="k"><div class="c jp">ス</div><div class="r">su</div></div>
+<div class="k irr"><div class="c jp">ツ</div><div class="r">tsu</div></div>
+<div class="k"><div class="c jp">ヌ</div><div class="r">nu</div></div>
+<div class="k irr"><div class="c jp">フ</div><div class="r">fu</div></div>
+<div class="k"><div class="c jp">ム</div><div class="r">mu</div></div>
+<div class="k"><div class="c jp">ユ</div><div class="r">yu</div></div>
+<div class="k"><div class="c jp">ル</div><div class="r">ru</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">エ</div><div class="r">e</div></div>
+<div class="k"><div class="c jp">ケ</div><div class="r">ke</div></div>
+<div class="k"><div class="c jp">セ</div><div class="r">se</div></div>
+<div class="k"><div class="c jp">テ</div><div class="r">te</div></div>
+<div class="k"><div class="c jp">ネ</div><div class="r">ne</div></div>
+<div class="k"><div class="c jp">ヘ</div><div class="r">he</div></div>
+<div class="k"><div class="c jp">メ</div><div class="r">me</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">レ</div><div class="r">re</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+<div class="k"><div class="c jp">オ</div><div class="r">o</div></div>
+<div class="k"><div class="c jp">コ</div><div class="r">ko</div></div>
+<div class="k"><div class="c jp">ソ</div><div class="r">so</div></div>
+<div class="k"><div class="c jp">ト</div><div class="r">to</div></div>
+<div class="k"><div class="c jp">ノ</div><div class="r">no</div></div>
+<div class="k"><div class="c jp">ホ</div><div class="r">ho</div></div>
+<div class="k"><div class="c jp">モ</div><div class="r">mo</div></div>
+<div class="k"><div class="c jp">ヨ</div><div class="r">yo</div></div>
+<div class="k"><div class="c jp">ロ</div><div class="r">ro</div></div>
+<div class="k irr"><div class="c jp">ヲ</div><div class="r">o</div></div>
+<div class="k void"><div class="c">&middot;</div><div class="r">-</div></div>
+</div>
+<h3>Dakuten y handakuten</h3><div class="kg" style="grid-template-columns:repeat(5,1fr)">
+<div class="k"><div class="c jp">ガ</div><div class="r">ga</div></div>
+<div class="k"><div class="c jp">ザ</div><div class="r">za</div></div>
+<div class="k"><div class="c jp">ダ</div><div class="r">da</div></div>
+<div class="k"><div class="c jp">バ</div><div class="r">ba</div></div>
+<div class="k"><div class="c jp">パ</div><div class="r">pa</div></div>
+<div class="k"><div class="c jp">ギ</div><div class="r">gi</div></div>
+<div class="k irr"><div class="c jp">ジ</div><div class="r">ji</div></div>
+<div class="k irr"><div class="c jp">ヂ</div><div class="r">ji</div></div>
+<div class="k"><div class="c jp">ビ</div><div class="r">bi</div></div>
+<div class="k"><div class="c jp">ピ</div><div class="r">pi</div></div>
+<div class="k"><div class="c jp">グ</div><div class="r">gu</div></div>
+<div class="k irr"><div class="c jp">ズ</div><div class="r">zu</div></div>
+<div class="k irr"><div class="c jp">ヅ</div><div class="r">zu</div></div>
+<div class="k"><div class="c jp">ブ</div><div class="r">bu</div></div>
+<div class="k"><div class="c jp">プ</div><div class="r">pu</div></div>
+<div class="k"><div class="c jp">ゲ</div><div class="r">ge</div></div>
+<div class="k"><div class="c jp">ゼ</div><div class="r">ze</div></div>
+<div class="k"><div class="c jp">デ</div><div class="r">de</div></div>
+<div class="k"><div class="c jp">ベ</div><div class="r">be</div></div>
+<div class="k"><div class="c jp">ペ</div><div class="r">pe</div></div>
+<div class="k"><div class="c jp">ゴ</div><div class="r">go</div></div>
+<div class="k"><div class="c jp">ゾ</div><div class="r">zo</div></div>
+<div class="k"><div class="c jp">ド</div><div class="r">do</div></div>
+<div class="k"><div class="c jp">ボ</div><div class="r">bo</div></div>
+<div class="k"><div class="c jp">ポ</div><div class="r">po</div></div>
+</div>
+<h3>Combinaciones</h3><div class="kg" style="grid-template-columns:repeat(11,1fr)">
+<div class="k"><div class="c jp">キャ</div><div class="r">kya</div></div>
+<div class="k"><div class="c jp">ギャ</div><div class="r">gya</div></div>
+<div class="k"><div class="c jp">シャ</div><div class="r">sha</div></div>
+<div class="k"><div class="c jp">ジャ</div><div class="r">ja</div></div>
+<div class="k"><div class="c jp">チャ</div><div class="r">cha</div></div>
+<div class="k"><div class="c jp">ニャ</div><div class="r">nya</div></div>
+<div class="k"><div class="c jp">ヒャ</div><div class="r">hya</div></div>
+<div class="k"><div class="c jp">ビャ</div><div class="r">bya</div></div>
+<div class="k"><div class="c jp">ピャ</div><div class="r">pya</div></div>
+<div class="k"><div class="c jp">ミャ</div><div class="r">mya</div></div>
+<div class="k"><div class="c jp">リャ</div><div class="r">rya</div></div>
+<div class="k"><div class="c jp">キュ</div><div class="r">kyu</div></div>
+<div class="k"><div class="c jp">ギュ</div><div class="r">gyu</div></div>
+<div class="k"><div class="c jp">シュ</div><div class="r">shu</div></div>
+<div class="k"><div class="c jp">ジュ</div><div class="r">ju</div></div>
+<div class="k"><div class="c jp">チュ</div><div class="r">chu</div></div>
+<div class="k"><div class="c jp">ニュ</div><div class="r">nyu</div></div>
+<div class="k"><div class="c jp">ヒュ</div><div class="r">hyu</div></div>
+<div class="k"><div class="c jp">ビュ</div><div class="r">byu</div></div>
+<div class="k"><div class="c jp">ピュ</div><div class="r">pyu</div></div>
+<div class="k"><div class="c jp">ミュ</div><div class="r">myu</div></div>
+<div class="k"><div class="c jp">リュ</div><div class="r">ryu</div></div>
+<div class="k"><div class="c jp">キョ</div><div class="r">kyo</div></div>
+<div class="k"><div class="c jp">ギョ</div><div class="r">gyo</div></div>
+<div class="k"><div class="c jp">ショ</div><div class="r">sho</div></div>
+<div class="k"><div class="c jp">ジョ</div><div class="r">jo</div></div>
+<div class="k"><div class="c jp">チョ</div><div class="r">cho</div></div>
+<div class="k"><div class="c jp">ニョ</div><div class="r">nyo</div></div>
+<div class="k"><div class="c jp">ヒョ</div><div class="r">hyo</div></div>
+<div class="k"><div class="c jp">ビョ</div><div class="r">byo</div></div>
+<div class="k"><div class="c jp">ピョ</div><div class="r">pyo</div></div>
+<div class="k"><div class="c jp">ミョ</div><div class="r">myo</div></div>
+<div class="k"><div class="c jp">リョ</div><div class="r">ryo</div></div>
+</div>
+<h3>Sonidos que el japon&eacute;s no ten&iacute;a &middot; <ruby>外来音<rt>がいらいおん</rt></ruby></h3><div class="kg" style="grid-template-columns:repeat(6,1fr)">
+<div class="k"><div class="c jp">ファ</div><div class="r">fa</div></div>
+<div class="k"><div class="c jp">フィ</div><div class="r">fi</div></div>
+<div class="k"><div class="c jp">フェ</div><div class="r">fe</div></div>
+<div class="k"><div class="c jp">フォ</div><div class="r">fo</div></div>
+<div class="k"><div class="c jp">ティ</div><div class="r">ti</div></div>
+<div class="k"><div class="c jp">ディ</div><div class="r">di</div></div>
+<div class="k"><div class="c jp">ウィ</div><div class="r">wi</div></div>
+<div class="k"><div class="c jp">ウェ</div><div class="r">we</div></div>
+<div class="k"><div class="c jp">シェ</div><div class="r">she</div></div>
+<div class="k"><div class="c jp">ジェ</div><div class="r">je</div></div>
+<div class="k"><div class="c jp">チェ</div><div class="r">che</div></div>
+<div class="k"><div class="c jp">ヴ</div><div class="r">vu</div></div>
+</div>
+<h3>Los que se confunden</h3><div class="fig">
+<div class="z"><h4 class="jp">シ / ツ</h4><div class="d"><b>シ</b> entra desde abajo, casi horizontal; <b>ツ</b> cae desde arriba, vertical.</div></div>
+<div class="z"><h4 class="jp">ソ / ン</h4><div class="d">Misma regla: <b>ソ</b> cae desde arriba, <b>ン</b> sube desde abajo.</div></div>
+<div class="z"><h4 class="jp">ク / タ / ケ</h4><div class="d"><b>タ</b> lleva trazo cruzado dentro; <b>ケ</b> sobresale por arriba.</div></div>
+<div class="z"><h4 class="jp">ワ / ウ / フ</h4><div class="d"><b>ウ</b> lleva sombrerito; <b>フ</b> es solo el trazo derecho.</div></div>
+<div class="z"><h4 class="jp">ノ / メ / ヌ</h4><div class="d"><b>ノ</b> es un trazo; <b>メ</b> dos cruzados; <b>ヌ</b> a&ntilde;ade la cola.</div></div>
+</div>
+
+<h2>Vocales largas</h2>
+<table>
+<thead><tr><th>Caso</th><th>Regla</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Hiragana &middot; お larga</td><td class="jp2">お＋<span class="hi">う</span></td><td class="jp2"><ruby>妹<rt>いもうと</rt></ruby> &nbsp; <em>im<b>ō</b>to</em></td></tr>
+<tr><td class="ctx">Hiragana &middot; え larga</td><td class="jp2">え＋<span class="hi">い</span></td><td class="jp2"><ruby>先生<rt>せんせい</rt></ruby> &nbsp; <em>sens<b>ē</b></em></td></tr>
+<tr><td class="ctx">Excepciones con お＋お</td><td class="jp2">se escriben con <span class="rd">お</span></td><td class="jp2"><ruby>大<rt>おお</rt></ruby>きい &nbsp; <ruby>通<rt>とお</rt></ruby>り &nbsp; <ruby>氷<rt>こおり</rt></ruby></td></tr>
+<tr><td class="ctx">Katakana</td><td class="jp2">raya <span class="hi">ー</span></td><td class="jp2">コーヒー &nbsp; ラーメン</td></tr>
+<tr><td class="ctx">あ・い・う largas</td><td class="jp2">se repite la vocal</td><td class="jp2">おばあさん &nbsp; おじいさん</td></tr>
+</tbody></table>
+
+<h2>Cu&aacute;ndo se usa cada uno</h2>
+<div class="where">
+<div class="row"><div class="k2 jp">ひらがな</div><div class="v2">Part&iacute;culas, terminaciones de verbo y adjetivo, palabras japonesas sin kanji, furigana.</div></div>
+<div class="row"><div class="k2 jp">カタカナ</div><div class="v2">Extranjerismos (コーヒー), nombres extranjeros, onomatopeyas de sonido real (ワンワン), nombres cient&iacute;ficos de animales y plantas, y &eacute;nfasis &mdash; como una cursiva.</div></div>
+<div class="row"><div class="k2 jp"><ruby>漢字<rt>かんじ</rt></ruby></div><div class="v2">Ra&iacute;ces de significado: sustantivos y la parte invariable de verbos y adjetivos.</div></div>
+<div class="row"><div class="k2 jp">ローマ字</div><div class="v2">Se usa en siglas, marcas y carteles para extranjeros, pero no para escribir japon&eacute;s de verdad.</div></div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp">こんにちわ</span> &nbsp; &#9675; <span class="good jp">こんにちは</span></div><div class="why">Es la part&iacute;cula は, aunque suene &laquo;wa&raquo;. Igual en こんばんは.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">きて (por &laquo;sello&raquo;)</span> &nbsp; &#9675; <span class="good jp">きって</span></div><div class="why">La っ peque&ntilde;a cambia la palabra entera: <i>kite</i> (ven) &ne; <i>kitte</i> (sello).</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">ヨウコソ</span> &nbsp; &#9675; <span class="good jp">ようこそ</span></div><div class="why">Poner en katakana algo japon&eacute;s suena a grito o a robot.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">こおひい</span> &nbsp; &#9675; <span class="good jp">コーヒー</span></div><div class="why">Los extranjerismos van en katakana y alargan con ー, no repitiendo vocal.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">おうきい</span> &nbsp; &#9675; <span class="good jp"><ruby>大<rt>おお</rt></ruby>きい</span></div><div class="why">Alguna palabra alarga la お con お, no con う. Hay que aprenderlas sueltas.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="next" href="02-particulas.html"><small>Siguiente &rarr;</small><span class="jp">助詞</span></a></nav><!--/gen-bottom-->
+<footer>ひらがな・カタカナ &middot; Escritura &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

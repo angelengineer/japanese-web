@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>接続詞 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#F">&larr; Gram&aacute;tica</a><span>F &middot; Unir frases &#183; l&#243;gica</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>接続詞<rt>せつぞくし</rt></ruby></h1>
+<div class="sub">C&oacute;mo se relaciona una frase con la anterior &mdash; y <b>qu&eacute; puede venir detr&aacute;s</b>.</div>
+<div class="rom">sorede &middot; sokode &middot; sono tame &middot; sore na noni &middot; sore nara &middot; chinami ni &middot; tokorode</div>
+</div><div class="badge"><span class="tag">JLPT N4 &ndash; N3</span><span class="cat">Conectores</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Van al principio de la segunda frase y dicen qu&eacute; relaci&oacute;n tiene con la primera. Varios se traducen igual (&laquo;as&iacute; que&raquo;, &laquo;por eso&raquo;): lo que los separa es <b>qu&eacute; puede ir detr&aacute;s</b>, sobre todo si cabe una decisi&oacute;n, una orden o una invitaci&oacute;n.</p>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきた。<span class="hi">それで</span>、<ruby>試合<rt>しあい</rt></ruby>が<ruby>中止<rt>ちゅうし</rt></ruby>になった。</span><span class="b">consecuencia &middot; hablado</span></div>
+<div class="r"><span class="a jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきた。<span class="hi">そのため</span>、<ruby>試合<rt>しあい</rt></ruby>は<ruby>中止<rt>ちゅうし</rt></ruby>となった。</span><span class="b">consecuencia &middot; escrito</span></div>
+<div class="r"><span class="a jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきた。<span class="hi">そこで</span>、<ruby>体育館<rt>たいいくかん</rt></ruby>で<ruby>練習<rt>れんしゅう</rt></ruby>することにした。</span><span class="b">situaci&oacute;n &rarr; medida</span></div>
+<div class="r"><span class="a jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきた。<span class="hi">それなのに</span>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>傘<rt>かさ</rt></ruby>を<ruby>持<rt>も</rt></ruby>たずに<ruby>出<rt>で</rt></ruby>かけた。</span><span class="b">no cuadra &middot; reproche</span></div>
+<div class="r"><span class="a jp">&mdash;<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきたよ。&mdash;<span class="hi">それなら</span>、<ruby>明日<rt>あした</rt></ruby>にしよう。</span><span class="b">retoma lo dicho &rarr; propuesta</span></div>
+<div class="figcap">El mismo punto de partida y cinco salidas: lo decide <b>lo que viene detr&aacute;s</b>.</div>
+</div>
+<ul class="nuance">
+<li><b>それで</b>: consecuencia natural, al hablar. Detr&aacute;s no va la voluntad del que habla (ni orden, ni invitaci&oacute;n, ni propuesta). Sola, con entonaci&oacute;n de pregunta, pide que sigas: それで？ (&laquo;&iquest;y entonces?&raquo;).</li>
+<li><b>そのため(に)</b>: la misma consecuencia en registro escrito, propia de noticias e informes. Tampoco admite voluntad detr&aacute;s.</li>
+<li><b>そこで</b>: ante una situaci&oacute;n, casi siempre un problema, alguien toma una medida. Detr&aacute;s va una acci&oacute;n con voluntad (〜ことにした, 〜てみた). Es justo lo que それで no hace bien.</li>
+<li><b>それなのに</b>: el resultado contradice lo esperado, con reproche o sorpresa. Es el のに de la ficha 32 al principio de frase, y detr&aacute;s nunca va voluntad. Para &laquo;aun as&iacute;, sigo adelante&raquo;, それでも.</li>
+<li><b>それなら</b> (hablado: なら, じゃあ): retoma lo que acaba de decir el otro y propone algo. Detr&aacute;s s&iacute; cabe sugerencia, orden o invitaci&oacute;n. Es el なら de la ficha de condicionales (30).</li>
+</ul>
+
+<h3>ところで・ちなみに: salirse de la l&iacute;nea</h3>
+<ul class="nuance">
+<li><b>ところで</b> abre un tema nuevo, sin relaci&oacute;n con lo anterior: ところで、<ruby>来週<rt>らいしゅう</rt></ruby>の<ruby>予定<rt>よてい</rt></ruby>は？ (&laquo;por cierto, cambiando de tema&hellip;&raquo;).</li>
+<li><b>ちなみに</b> a&ntilde;ade un dato al margen que s&iacute; cuelga de lo que se est&aacute; diciendo: no cambia de tema. &laquo;Por cierto, y ya que hablamos de esto&hellip;&raquo;.</li>
+<li><b>〜たところで</b> <span class="tag" style="font-size:9px;padding:2px 6px">N2</span> es otra cosa: &laquo;aunque&hellip;, no servir&aacute;&raquo;. <ruby>今<rt>いま</rt></ruby>から<ruby>急<rt>いそ</rt></ruby>いだところで、<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わない.</li>
+</ul>
+
+<h3>いわゆる</h3>
+<ul class="nuance">
+<li><b>いわゆる</b> = &laquo;lo que se suele llamar&hellip;&raquo;: presenta un t&eacute;rmino conocido, a menudo entre 「」. Va delante del sustantivo, como un adjetivo: いわゆる「ブラック<ruby>企業<rt>きぎょう</rt></ruby>」.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Conector</th><th>Relaci&oacute;n</th><th>&iquest;Voluntad detr&aacute;s?</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx jp">それで</td><td>consecuencia &middot; hablado</td><td>no</td><td class="jp2">それで<ruby>遅<rt>おく</rt></ruby>れた</td></tr>
+<tr><td class="ctx jp">そのため</td><td>consecuencia &middot; escrito</td><td>no</td><td class="jp2">そのため<ruby>中止<rt>ちゅうし</rt></ruby>となった</td></tr>
+<tr><td class="ctx jp">そこで</td><td>situaci&oacute;n &rarr; medida</td><td><b>s&iacute;</b></td><td class="jp2">そこで<ruby>相談<rt>そうだん</rt></ruby>した</td></tr>
+<tr><td class="ctx jp">それなのに</td><td>no cuadra &middot; reproche</td><td>no</td><td class="jp2">それなのに<ruby>来<rt>こ</rt></ruby>なかった</td></tr>
+<tr><td class="ctx jp">それでも</td><td>aun as&iacute;</td><td>s&iacute;</td><td class="jp2">それでも<ruby>続<rt>つづ</rt></ruby>ける</td></tr>
+<tr><td class="ctx jp">それなら</td><td>retoma lo dicho &rarr; propuesta</td><td><b>s&iacute;</b></td><td class="jp2">それなら<ruby>行<rt>い</rt></ruby>こう</td></tr>
+<tr><td class="ctx jp">ところで</td><td>cambio de tema</td><td>&mdash;</td><td class="jp2">ところで、&hellip;</td></tr>
+<tr><td class="ctx jp">ちなみに</td><td>dato al margen</td><td>&mdash;</td><td class="jp2">ちなみに、&hellip;</td></tr>
+<tr><td class="ctx jp">いわゆる</td><td>t&eacute;rmino conocido</td><td>&mdash;</td><td class="jp2">いわゆる ＋N</td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>道<rt>みち</rt></ruby>が<ruby>混<rt>こ</rt></ruby>んでいました。<span class="hi">それで</span>、<ruby>遅刻<rt>ちこく</rt></ruby>してしまいました。</div><div class="t">Hab&iacute;a atasco. Por eso llegu&eacute; tarde.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>大雪<rt>おおゆき</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>った。<span class="hi">そのため</span>、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まった。</div><div class="t">Nev&oacute; mucho. Por ese motivo se par&oacute; el tren. <em>(escrito)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>日本語<rt>にほんご</rt></ruby>の<ruby>本<rt>ほん</rt></ruby>が<ruby>読<rt>よ</rt></ruby>めなかった。<span class="hi">そこで</span>、<ruby>毎日<rt>まいにち</rt></ruby><ruby>少<rt>すこ</rt></ruby>しずつ<ruby>読<rt>よ</rt></ruby>むことにした。</div><div class="t">No pod&iacute;a leer libros en japon&eacute;s, as&iacute; que decid&iacute; leer un poco cada d&iacute;a. <em>(medida)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>何度<rt>なんど</rt></ruby>も<ruby>説明<rt>せつめい</rt></ruby>した。<span class="hi">それなのに</span>、<ruby>彼<rt>かれ</rt></ruby>はまた<ruby>同<rt>おな</rt></ruby>じ<ruby>間違<rt>まちが</rt></ruby>いをした。</div><div class="t">Se lo expliqu&eacute; mil veces. Y aun as&iacute; volvi&oacute; a cometer el mismo error.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">&mdash;<ruby>今日<rt>きょう</rt></ruby>はちょっと<ruby>忙<rt>いそが</rt></ruby>しいんです。&mdash;<span class="hi">それなら</span>、<ruby>明日<rt>あした</rt></ruby>にしましょう。</div><div class="t">&mdash;Hoy estoy un poco liado. &mdash;Entonces, lo dejamos para ma&ntilde;ana.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">ところで</span>、<ruby>駅前<rt>えきまえ</rt></ruby>の<ruby>新<rt>あたら</rt></ruby>しい<ruby>店<rt>みせ</rt></ruby>、もう<ruby>行<rt>い</rt></ruby>った？</div><div class="t">Por cierto, &iquest;has ido ya a la tienda nueva de delante de la estaci&oacute;n?</div></div>
+<div class="ex-item"><div class="s jp"><ruby>富士山<rt>ふじさん</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>で<ruby>一番<rt>いちばん</rt></ruby><ruby>高<rt>たか</rt></ruby>い<ruby>山<rt>やま</rt></ruby>です。<span class="hi">ちなみに</span>、<ruby>高<rt>たか</rt></ruby>さは3776メートルです。</div><div class="t">El Fuji es el monte m&aacute;s alto de Jap&oacute;n. Por cierto, mide 3776 metros. <em>(dato al margen)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>彼<rt>かれ</rt></ruby>は<span class="hi">いわゆる</span>「<ruby>天才<rt>てんさい</rt></ruby>」です。</div><div class="t">Es lo que se suele llamar un &laquo;genio&raquo;.</div></div>
+</div>
+</div>
+
+<h2>D&oacute;nde lo vas a encontrar</h2>
+<div class="where">
+<div class="row"><div class="k2 jp"><ruby>読解<rt>どっかい</rt></ruby></div><div class="v2">そこで・そのため・それなのに marcan la estructura del texto. La respuesta a &laquo;&iquest;qu&eacute; hizo?&raquo; o &laquo;&iquest;por qu&eacute;?&raquo; suele estar justo detr&aacute;s.</div></div>
+<div class="row"><div class="k2 jp"><ruby>文法<rt>ぶんぽう</rt></ruby></div><div class="v2">El hueco t&iacute;pico: principio de la segunda frase y cuatro conectores. Mira lo que hay detr&aacute;s: si es una decisi&oacute;n, そこで; si es un hecho, それで o そのため; si no cuadra, それなのに.</div></div>
+<div class="row"><div class="k2 jp"><ruby>会話<rt>かいわ</rt></ruby></div><div class="v2">それで？, それなら, ところで: los oir&aacute;s en cualquier conversaci&oacute;n. ちなみに es muy de explicaciones y presentaciones.</div></div>
+<div class="row"><div class="k2 jp">ニュース</div><div class="v2">そのため y いわゆる, casi en cada noticia.</div></div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っている。それで、<ruby>家<rt>いえ</rt></ruby>にいてください。</span> &nbsp; &#9675; <span class="good jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っている。それなら／だから、<ruby>家<rt>いえ</rt></ruby>にいてください。</span></div><div class="why">それで no admite una petici&oacute;n detr&aacute;s.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">△ <ruby>問題<rt>もんだい</rt></ruby>が<ruby>起<rt>お</rt></ruby>きた。それで、<ruby>会議<rt>かいぎ</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>くことにした。</span> &nbsp; &#9675; <span class="good jp"><ruby>問題<rt>もんだい</rt></ruby>が<ruby>起<rt>お</rt></ruby>きた。そこで、<ruby>会議<rt>かいぎ</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>くことにした。</span></div><div class="why">それで tambi&eacute;n se oye, pero cuando alguien toma una medida para resolver una situaci&oacute;n, el examen espera そこで.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>頑張<rt>がんば</rt></ruby>った。それなのに、もう<ruby>一度<rt>いちど</rt></ruby><ruby>頑張<rt>がんば</rt></ruby>ろう。</span> &nbsp; &#9675; <span class="good jp">うまくいかなかった。それでも、もう<ruby>一度<rt>いちど</rt></ruby><ruby>頑張<rt>がんば</rt></ruby>ろう。</span></div><div class="why">それなのに no admite voluntad detr&aacute;s; &laquo;aun as&iacute;, sigo&raquo; es それでも.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>東京<rt>とうきょう</rt></ruby>は<ruby>大<rt>おお</rt></ruby>きい。ところで、<ruby>人口<rt>じんこう</rt></ruby>は<ruby>約<rt>やく</rt></ruby><ruby>千四百万人<rt>せんよんひゃくまんにん</rt></ruby>だ。</span> &nbsp; &#9675; <span class="good jp"><ruby>東京<rt>とうきょう</rt></ruby>は<ruby>大<rt>おお</rt></ruby>きい。ちなみに、<ruby>人口<rt>じんこう</rt></ruby>は<ruby>約<rt>やく</rt></ruby><ruby>千四百万人<rt>せんよんひゃくまんにん</rt></ruby>だ。</span></div><div class="why">Si el dato cuelga de lo que se dice, es ちなみに; ところで cambia de tema.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="36-wake.html"><small>&larr; Anterior</small><span class="jp">わけだ・わけではない・わけがない・わけにはいかない</span></a><a class="next" href="37-posibilidad-certeza.html"><small>Siguiente &rarr;</small><span class="jp">かもしれない・はずだ・に違いない</span></a></nav><!--/gen-bottom-->
+<footer>接続詞 &middot; Conectores &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

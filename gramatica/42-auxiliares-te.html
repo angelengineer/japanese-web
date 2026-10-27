@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>ておく・てみる・てしまう &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#H">&larr; Gram&aacute;tica</a><span>H &middot; Acciones y aspecto</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">ておく・てみる・てしまう</h1>
+<div class="sub">Tres verbos que pegados a la forma て dejan de significar lo suyo y a&ntilde;aden <b>matiz</b>.</div>
+<div class="rom">&hellip;te oku &middot; &hellip;te miru &middot; &hellip;te shimau</div>
+</div><div class="badge"><span class="tag">JLPT N4</span><span class="cat">Auxiliares て</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Tres verbos que, pegados a la forma て, dejan de significar lo suyo y pasan a a&ntilde;adir <b>matiz</b>: preparaci&oacute;n, tanteo o consumaci&oacute;n. Son de lo m&aacute;s usado del japon&eacute;s hablado.</p>
+<div class="fig">
+<div class="z solid"><h4 class="jp">ておく</h4><div class="d">hacerlo <b>de antemano</b>, dejarlo listo<br><ruby>予約<rt>よやく</rt></ruby>しておく</div></div>
+<div class="z pale"><h4 class="jp">てみる</h4><div class="d">hacerlo <b>a ver qu&eacute; tal</b>, probar<br><ruby>食<rt>た</rt></ruby>べてみる</div></div>
+<div class="z"><h4 class="jp">てしまう</h4><div class="d">hacerlo <b>del todo</b>, o lamentarlo<br><ruby>食<rt>た</rt></ruby>べてしまった</div></div>
+<div class="figcap">El verbo original casi desaparece: lo que queda es el <b>matiz</b>.</div>
+</div>
+<ul class="nuance">
+<li><b>ておく tiene dos caras</b>: preparar algo con vistas al futuro (<ruby>予約<rt>よやく</rt></ruby>しておく) y <b>dejar las cosas como est&aacute;n</b> (<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けておく, dejar la ventana abierta).</li>
+<li><b>てしまう tambi&eacute;n tiene dos</b>: terminar algo por completo (<ruby>宿題<rt>しゅくだい</rt></ruby>をやってしまった, con satisfacci&oacute;n) o lamentar lo ocurrido (<ruby>財布<rt>さいふ</rt></ruby>をなくしてしまった). El contexto y el tono lo deciden.</li>
+<li><b>Las contracciones son constantes al hablar</b>: てしまう &rarr; <span class="hi">ちゃう</span>, でしまう &rarr; <span class="hi">じゃう</span>. <ruby>食<rt>た</rt></ruby>べちゃった, <ruby>飲<rt>の</rt></ruby>んじゃった. Y ておく &rarr; <span class="hi">とく</span>: <ruby>買<rt>か</rt></ruby>っとく.</li>
+<li><b>てみる no compromete</b>: es tantear. Por eso suena tan natural para sugerencias &mdash; <ruby>一度<rt>いちど</rt></ruby><ruby>行<rt>い</rt></ruby>ってみたらどうですか.</li>
+<li>てしまう tambi&eacute;n marca lo <b>involuntario</b>, lo que se te escapa: つい<ruby>笑<rt>わら</rt></ruby>ってしまった (&laquo;se me escap&oacute; la risa&raquo;). Muy frecuente con つい y うっかり.</li>
+<li><b>とく se conjuga como un verbo m&aacute;s</b>: とく・ときます・といて・とこう. <ruby>取<rt>と</rt></ruby>っ<span class="hi">とこう</span> = <ruby>取<rt>と</rt></ruby>っておこう (&laquo;vamos a guardarlo&raquo;); <ruby>買<rt>か</rt></ruby>っ<span class="hi">といて</span> = <ruby>買<rt>か</rt></ruby>っておいて (&laquo;c&oacute;mpralo, porfa&raquo;). Con て en で sale どく: <ruby>読<rt>よ</rt></ruby>ん<span class="hi">どく</span>.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Preparar de antemano</td><td class="jp2">Vて <span class="hi">＋おく</span></td><td class="jp2"><ruby>予約<rt>よやく</rt></ruby>して<span class="hi">おく</span></td></tr>
+<tr><td class="ctx">Dejar como est&aacute;</td><td class="jp2">Vて <span class="hi">＋おく</span></td><td class="jp2"><ruby>開<rt>あ</rt></ruby>けて<span class="hi">おく</span></td></tr>
+<tr><td class="ctx">Probar a ver</td><td class="jp2">Vて <span class="hi">＋みる</span></td><td class="jp2"><ruby>食<rt>た</rt></ruby>べて<span class="hi">みる</span></td></tr>
+<tr><td class="ctx">Sugerir con suavidad</td><td class="jp2">Vて <span class="hi">＋みたらどうですか</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>って<span class="hi">みたらどうですか</span></td></tr>
+<tr><td class="ctx">Terminar del todo</td><td class="jp2">Vて <span class="hi">＋しまう</span></td><td class="jp2"><ruby>読<rt>よ</rt></ruby>んで<span class="hi">しまう</span></td></tr>
+<tr><td class="ctx">Lamentar</td><td class="jp2">Vて <span class="hi">＋しまった</span></td><td class="jp2">なくして<span class="hi">しまった</span></td></tr>
+<tr><td class="ctx">Contracci&oacute;n (hablado)</td><td class="jp2">てしまう&rarr;<span class="hi">ちゃう</span> &middot; でしまう&rarr;<span class="hi">じゃう</span></td><td class="jp2"><ruby>忘<rt>わす</rt></ruby>れ<span class="hi">ちゃった</span></td></tr>
+<tr><td class="ctx">Contracci&oacute;n de ておく</td><td class="jp2">ておく&rarr;<span class="hi">とく</span></td><td class="jp2"><ruby>買<rt>か</rt></ruby>っ<span class="hi">とく</span></td></tr>
+<tr><td class="ctx">とく conjugado</td><td class="jp2">とく &rarr; <span class="hi">とこう・といて・ときます</span></td><td class="jp2"><ruby>取<rt>と</rt></ruby>っとこう ・ <ruby>読<rt>よ</rt></ruby>んどいて</td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>旅行<rt>りょこう</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>にホテルを<ruby>予約<rt>よやく</rt></ruby>して<span class="hi">おきます</span>。</div><div class="t">Antes del viaje reservo el hotel. <em>(preparaci&oacute;n)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>暑<rt>あつ</rt></ruby>いので、<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けて<span class="hi">おいて</span>ください。</div><div class="t">Hace calor, deja la ventana abierta. <em>(dejar como est&aacute;)</em></div></div>
+<div class="ex-item"><div class="s jp">この<ruby>料理<rt>りょうり</rt></ruby>、<ruby>食<rt>た</rt></ruby>べて<span class="hi">みて</span>ください。</div><div class="t">Prueba este plato a ver qu&eacute; te parece.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>宿題<rt>しゅくだい</rt></ruby>を<ruby>全部<rt>ぜんぶ</rt></ruby>やって<span class="hi">しまいました</span>。</div><div class="t">He terminado todos los deberes. <em>(del todo, con satisfacci&oacute;n)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>傘<rt>かさ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れて<span class="hi">しまいました</span>。</div><div class="t">Me dej&eacute; el paraguas en el tren. <em>(lamento)</em></div></div>
+<div class="ex-item"><div class="s jp">あ、<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べ<span class="hi">ちゃった</span>。</div><div class="t">Ay, me lo he comido todo. <em>(contracci&oacute;n)</em></div></div>
+<div class="ex-item"><div class="s jp">いい<ruby>席<rt>せき</rt></ruby>だね。ここ、<ruby>取<rt>と</rt></ruby>っ<span class="hi">とこう</span>。</div><div class="t">Buen sitio. Vamos a cogerlo. <em>(= 取っておこう)</em></div></div>
+
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>予約<rt>よやく</rt></ruby>するおく</span> &nbsp; &#9675; <span class="good jp"><ruby>予約<rt>よやく</rt></ruby>しておく</span></div><div class="why">Los tres se montan sobre la forma て.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>財布<rt>さいふ</rt></ruby>をなくしておきました。</span> &nbsp; &#9675; <span class="good jp"><ruby>財布<rt>さいふ</rt></ruby>をなくしてしまいました。</span></div><div class="why">ておく es intencional: preparas algo. Una p&eacute;rdida no se prepara; para lo que sali&oacute; mal, てしまう.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="41-reproche.html"><small>&larr; Anterior</small><span class="jp">ばよかった・くせに・どころか</span></a><a class="next" href="43-estado.html"><small>Siguiente &rarr;</small><span class="jp">てある・たまま・っぱなし</span></a></nav><!--/gen-bottom-->
+<footer>ておく・てみる・てしまう &middot; Auxiliares て &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

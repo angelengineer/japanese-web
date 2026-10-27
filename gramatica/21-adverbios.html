@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.zonelab{display:flex;margin-top:12px;}
+.zonelab .z{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:5px 0;text-align:center;}
+.zonelab .neg{flex:3;background:var(--shu-pale);color:var(--shu);font-weight:600;}
+.zonelab .pos{flex:5;background:var(--midori-pale);color:var(--midori);margin-left:2px;}
+.pair{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dotted #E6E9E2;font-size:13px;gap:8px;}
+.pair .a{font-family:"Noto Serif JP",serif;}
+.pair .a.neg{color:var(--shu);font-weight:700;}
+.pair .b{font-size:11px;color:var(--sub);font-style:italic;text-align:right;}
+.pair .b.jp{font-family:"Noto Serif JP",serif;font-style:normal;color:var(--midori);font-size:12.5px;}
+.dk{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.dk .col{flex:1 1 150px;}
+.dk h4{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:5px;text-align:center;}
+.dk h4.g{color:var(--midori);font-weight:600;}
+.dk .r{background:#fff;border:1px solid var(--kasumi);border-radius:4px;padding:5px;text-align:center;margin-bottom:3px;}
+.dk .r.g{background:var(--midori-pale);}
+.dk .w{font-family:"Noto Serif JP",serif;font-size:14px;}
+.dk .e{font-size:9.5px;color:var(--sub);font-style:italic;}
+.it{padding:3px 0;border-bottom:1px dotted #E6E9E2;}
+.it .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.it .g{font-size:10.5px;color:var(--sub);font-style:italic;display:block;}
+</style><!--gen-head-->
+<title>副詞 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#C">&larr; Gram&aacute;tica</a><span>C &middot; Vocabulario pr&#225;ctico</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>副詞<rt>ふくし</rt></ruby></h1>
+<div class="sub">Cu&aacute;nto y cu&aacute;ntas veces &mdash; y los que <b>obligan a negar</b>.</div>
+<div class="rom">fukushi</div>
+</div><div class="badge"><span class="tag">JLPT N5 &ndash; N4</span><span class="cat">Adverbios</span></div></header>
+
+<h2>Frecuencia &mdash; de nunca a siempre</h2>
+<div class="zonelab"><div class="z neg">PIDEN VERBO EN NEGATIVO</div><div class="z pos">VAN CON VERBO AFIRMATIVO</div></div>
+<div class="scale">
+<div class="c" style="background:var(--shu-pale)"><div class="w jp">ぜんぜん</div><div class="g">nunca</div></div>
+<div class="c" style="background:var(--shu-pale)"><div class="w jp">めったに</div><div class="g">casi nunca</div></div>
+<div class="c" style="background:var(--shu-pale)"><div class="w jp">あまり</div><div class="g">no mucho</div></div>
+<div class="c" style="background:var(--midori-pale)"><div class="w jp">たまに</div><div class="g">de vez en cuando</div></div>
+<div class="c" style="background:var(--midori-pale)"><div class="w jp">ときどき</div><div class="g">a veces</div></div>
+<div class="c" style="background:#E3EBE2"><div class="w jp">よく</div><div class="g">a menudo</div></div>
+<div class="c" style="background:#D9E6DC"><div class="w jp">たいてい</div><div class="g">casi siempre</div></div>
+<div class="c" style="background:var(--midori);color:#fff"><div class="w jp">いつも</div><div class="g" style="color:#DCE7DC">siempre</div></div>
+</div>
+
+<h2>Grado y modo</h2>
+<div class="cols"><div>
+<h3>Cu&aacute;nto &mdash; grado</h3>
+<div class="pair"><span class="a jp">とても・<ruby>大変<rt>たいへん</rt></ruby></span><span class="b">muy</span></div>
+<div class="pair"><span class="a jp">かなり</span><span class="b">bastante</span></div>
+<div class="pair"><span class="a jp">なかなか</span><span class="b">bastante (sorpresa)</span></div>
+<div class="pair"><span class="a jp"><ruby>結構<rt>けっこう</rt></ruby></span><span class="b">bastante, m&aacute;s de lo esperado</span></div>
+<div class="pair"><span class="a jp"><ruby>少<rt>すこ</rt></ruby>し・ちょっと</span><span class="b">un poco</span></div>
+<div class="pair"><span class="a jp neg">あまり</span><span class="b">no muy</span></div>
+<div class="pair"><span class="a jp neg">ほとんど</span><span class="b">casi nada</span></div>
+<div class="pair"><span class="a jp neg">まったく・<ruby>少<rt>すこ</rt></ruby>しも</span><span class="b">nada en absoluto</span></div>
+</div><div>
+<h3>C&oacute;mo &mdash; modo</h3>
+<div class="pair"><span class="a jp">ゆっくり</span><span class="b">con calma</span></div>
+<div class="pair"><span class="a jp">はっきり</span><span class="b">con claridad</span></div>
+<div class="pair"><span class="a jp">ちゃんと・きちんと</span><span class="b">como es debido</span></div>
+<div class="pair"><span class="a jp">しっかり</span><span class="b">a fondo</span></div>
+<div class="pair"><span class="a jp">なるべく・できるだけ</span><span class="b">en lo posible</span></div>
+<div class="pair"><span class="a jp">わざと</span><span class="b">a prop&oacute;sito</span></div>
+<div class="pair"><span class="a jp">うっかり</span><span class="b">por descuido</span></div>
+<div class="pair"><span class="a jp">やっと・ようやく</span><span class="b">por fin</span></div>
+</div><div>
+<h3>Cantidad y tiempo</h3>
+<div class="pair"><span class="a jp">たくさん</span><span class="b">mucho</span></div>
+<div class="pair"><span class="a jp">もっと</span><span class="b">m&aacute;s</span></div>
+<div class="pair"><span class="a jp">だいたい</span><span class="b">m&aacute;s o menos</span></div>
+<div class="pair"><span class="a jp">ちょうど</span><span class="b">exactamente</span></div>
+<div class="pair"><span class="a jp">すぐに</span><span class="b">enseguida</span></div>
+<div class="pair"><span class="a jp">そろそろ</span><span class="b">ya casi, va siendo hora</span></div>
+<div class="pair"><span class="a jp neg"><ruby>一度<rt>いちど</rt></ruby>も</span><span class="b">ni una vez</span></div>
+<div class="pair"><span class="a jp neg"><ruby>決<rt>けっ</rt></ruby>して</span><span class="b">jam&aacute;s</span></div>
+</div></div>
+
+<h2>Adverbios que anuncian el final de la frase</h2>
+<div class="cols"><div>
+<div class="pair"><span class="a jp">もし</span><span class="b jp">〜たら・〜なら</span></div>
+<div class="pair"><span class="a jp">たぶん</span><span class="b jp">〜でしょう</span></div>
+<div class="pair"><span class="a jp">きっと</span><span class="b jp">〜だろう／と<ruby>思<rt>おも</rt></ruby>う</span></div>
+</div><div>
+<div class="pair"><span class="a jp">もしかしたら</span><span class="b jp">〜かもしれない</span></div>
+<div class="pair"><span class="a jp">まるで</span><span class="b jp">〜ようだ</span></div>
+<div class="pair"><span class="a jp">ぜひ</span><span class="b jp">〜てください</span></div>
+</div><div>
+<div class="pair"><span class="a jp neg">なかなか</span><span class="b jp" style="color:var(--shu)">〜ない</span></div>
+<div class="pair"><span class="a jp">どうしても</span><span class="b jp">〜たい</span></div>
+<div class="pair"><span class="a jp">せっかく</span><span class="b jp">〜のに</span></div>
+</div></div>
+<p style="font-size:13px;color:var(--sub);margin-top:8px;">Van <b style="color:var(--midori)">en pareja</b>:
+si pones たぶん al principio, la frase pide でしょう al final.</p>
+
+<h3>まるで, dos usos</h3>
+<div class="rows">
+<div class="r"><span class="a jp">まるで<ruby>夢<rt>ゆめ</rt></ruby>の<span class="hi">ようだ</span> ・ まるで<ruby>夢<rt>ゆめ</rt></ruby><span class="hi">みたい</span></span><span class="b">como si&hellip; (comparaci&oacute;n irreal)</span></div>
+<div class="r"><span class="a jp">まるで<ruby>子供<rt>こども</rt></ruby>の<span class="hi">ような</span><ruby>人<rt>ひと</rt></ruby></span><span class="b">delante de sustantivo: ような／みたいな</span></div>
+<div class="r"><span class="a jp"><ruby>説明<rt>せつめい</rt></ruby>がまるで<ruby>分<rt>わ</rt></ruby>から<span class="hi">ない</span>。</span><span class="b">con negativo: en absoluto</span></div>
+</div>
+<ul class="nuance">
+<li><b>Con ようだ／みたいだ</b>, まるで subraya que la comparaci&oacute;n no es real: まるで<ruby>夢<rt>ゆめ</rt></ruby>のようだ = &laquo;es como un sue&ntilde;o&raquo;. みたい es la versi&oacute;n hablada y va sin の: <ruby>夢<rt>ゆめ</rt></ruby>みたい.</li>
+<li><b>Con negativo</b> cambia de sentido: &laquo;para nada&raquo;, como <ruby>全然<rt>ぜんぜん</rt></ruby> pero m&aacute;s expresivo y algo despectivo: まるで<ruby>役<rt>やく</rt></ruby>に<ruby>立<rt>た</rt></ruby>たない.</li>
+</ul>
+
+<h2>C&oacute;mo se forman desde adjetivos</h2>
+<table>
+<thead><tr><th>Origen</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Adjetivo -い</td><td class="jp2">Aい &rarr; A<span class="hi">く</span></td><td class="jp2"><ruby>早<rt>はや</rt></ruby>い &rarr; <ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>きる</td></tr>
+<tr><td class="ctx">Adjetivo -な</td><td class="jp2">A<span class="hi">に</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か &rarr; <ruby>静<rt>しず</rt></ruby>かに<ruby>話<rt>はな</rt></ruby>す</td></tr>
+<tr><td class="ctx">Sustantivo</td><td class="jp2">N<span class="hi">に</span></td><td class="jp2"><ruby>本当<rt>ほんとう</rt></ruby> &rarr; <ruby>本当<rt>ほんとう</rt></ruby>に</td></tr>
+<tr><td class="ctx">Repetici&oacute;n</td><td class="jp2">ABAB</td><td class="jp2">だんだん &nbsp; どんどん &nbsp; いろいろ</td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><span class="hi">ぜんぜん</span><ruby>分<rt>わ</rt></ruby>かり<span class="hi">ません</span>。</div><div class="t">No entiendo nada. <em>(exige negativo)</em></div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">ときどき</span><ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。</div><div class="t">A veces veo pel&iacute;culas.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">ゆっくり</span><ruby>話<rt>はな</rt></ruby>してください。</div><div class="t">Hable despacio, por favor.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">たぶん</span><ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby><span class="hi">でしょう</span>。</div><div class="t">Probablemente ma&ntilde;ana llueva. <em>(pareja fija)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">バスが<span class="hi">なかなか</span><ruby>来<rt>こ</rt></ruby><span class="hi">ない</span>。</div><div class="t">El autob&uacute;s no acaba de llegar.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">そろそろ</span><ruby>帰<rt>かえ</rt></ruby>りましょうか。</div><div class="t">&iquest;Nos vamos yendo ya?</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">うっかり</span><ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れました。</div><div class="t">Se me olvid&oacute; la cartera por descuido.</div></div>
+<div class="ex-item"><div class="s jp">この<ruby>料理<rt>りょうり</rt></ruby>、<span class="hi"><ruby>結構<rt>けっこう</rt></ruby></span>おいしいですね。</div><div class="t">Esta comida est&aacute; bastante buena. <em>(m&aacute;s de lo esperado)</em></div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div><b>Siempre con verbo en negativo:</b> あまり, ぜんぜん, めったに, <ruby>少<rt>すこ</rt></ruby>しも, <ruby>一度<rt>いちど</rt></ruby>も, <ruby>決<rt>けっ</rt></ruby>して. (En el habla se oye ぜんぜん<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>; en el examen, negativo.)</div></div>
+<div class="err"><div><b>ほとんど y まったく</b> van en negativo cuando significan &laquo;casi nada&raquo; y &laquo;nada en absoluto&raquo;, pero tambi&eacute;n funcionan en afirmativo: ほとんど<ruby>毎日<rt>まいにち</rt></ruby> (casi todos los d&iacute;as), まったく<ruby>同<rt>おな</rt></ruby>じ (exactamente igual).</div></div>
+<div class="err"><div><b>あまりに(も)</b> es afirmativo y significa &laquo;demasiado&raquo;: あまりにも<ruby>高<rt>たか</rt></ruby>くて<ruby>買<rt>か</rt></ruby>えなかった. Sale mucho en el N3.</div></div>
+<div class="err"><div><b>なかなか cambia de sentido seg&uacute;n el signo</b>: con afirmativo es &laquo;bastante bueno&raquo; (なかなかおいしい); con negativo es &laquo;no acaba de&hellip;&raquo; (なかなか<ruby>来<rt>こ</rt></ruby>ない).</div></div>
+<div class="err"><div><b>ちょっと no siempre es &laquo;un poco&raquo;.</b> Solo, dejando la frase colgando, es la manera educada de <b>decir que no</b>: <ruby>明日<rt>あした</rt></ruby>はちょっと&hellip;</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="20-familia.html"><small>&larr; Anterior</small><span class="jp">家族</span></a><a class="next" href="22-onomatopeyas.html"><small>Siguiente &rarr;</small><span class="jp">オノマトペ</span></a></nav><!--/gen-bottom-->
+<footer>副詞 &middot; Adverbios &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

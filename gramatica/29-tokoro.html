@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.tl{position:relative;height:46px;background:linear-gradient(to right,var(--midori-pale) 0%,var(--midori-pale) 70%,#fff 70%,#fff 100%);border:1px solid var(--kasumi);border-radius:5px;margin-top:22px;}
+.tl .mark{position:absolute;top:6px;bottom:6px;left:70%;width:2px;background:var(--shu);}
+.tl .lab{position:absolute;top:-16px;font-family:"Poppins",sans-serif;font-size:9px;color:var(--sub);letter-spacing:.05em;}
+.tl2{display:flex;align-items:center;gap:4px;margin-top:14px;}
+.tl2 .pt{flex:1;text-align:center;padding:10px 4px;border-radius:5px;font-family:"Noto Serif JP",serif;font-size:13px;}
+.tl2 .pt small{display:block;font-family:"Lora",serif;font-size:10px;margin-top:4px;font-style:italic;}
+.axis{display:flex;align-items:center;justify-content:space-between;gap:6px;}
+.axis .side{flex:1;text-align:center;}
+.axis .side .w{font-family:"Noto Serif JP",serif;font-size:15px;}
+.axis .side .l{font-family:"Poppins",sans-serif;font-size:9px;color:var(--sub);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;}
+.axis .mid{font-family:"Noto Serif JP",serif;font-size:13px;color:var(--midori);flex:0 0 80px;text-align:center;}
+</style><!--gen-head-->
+<title>ところです &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#E">&larr; Gram&aacute;tica</a><span>E &middot; Unir frases &#183; tiempo</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">ところです</h1>
+<div class="sub">El punto exacto de una acci&oacute;n &mdash; <b>justo antes, en pleno o reci&eacute;n acabada</b>.</div>
+<div class="rom">&hellip;tokoro desu</div>
+</div><div class="badge"><span class="tag">JLPT N4 &ndash; N3</span><span class="cat">Punto exacto</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">ところ significa literalmente &laquo;lugar&raquo;, y aqu&iacute; se usa para se&ntilde;alar un <b>lugar en el tiempo</b>: el instante exacto en que algo va a pasar, est&aacute; pasando o acaba de pasar.</p>
+<div class="tl2">
+<div class="pt" style="background:var(--midori-pale)">Vる ところ<small>justo antes</small></div>
+<div class="pt" style="background:var(--midori);color:#fff">Vている ところ<small style="color:#DCE7DC">en pleno proceso</small></div>
+<div class="pt" style="background:#fff;border:1px solid var(--kasumi)">Vた ところ<small>reci&eacute;n acabado</small></div>
+</div>
+<div class="figcap">Tres fotograf&iacute;as del mismo instante: <b>antes, durante y justo despu&eacute;s.</b></div>
+<ul class="nuance">
+<li><b>るところ es &laquo;estoy a punto de&raquo;</b>: <ruby>今<rt>いま</rt></ruby>から<ruby>食<rt>た</rt></ruby>べるところです.</li>
+<li><b>ているところ es &laquo;estoy en pleno&hellip;&raquo;</b>, m&aacute;s puntual que un simple ている: <ruby>今<rt>いま</rt></ruby>、<ruby>考<rt>かんが</rt></ruby>えているところです.</li>
+<li><b>たところ es &laquo;acabo de&hellip;&raquo;</b>, con la sensaci&oacute;n de que fue hace un instante: <ruby>今<rt>いま</rt></ruby>、<ruby>着<rt>つ</rt></ruby>いたところです.</li>
+<li><b>Distinto de たばかり</b>: たところ pone el foco en el <b>punto temporal justo</b>; たばかり puede estirarse m&aacute;s &mdash; &laquo;hace poco&raquo;, aunque hayan pasado horas o d&iacute;as. <ruby>先月<rt>せんげつ</rt></ruby><ruby>買<rt>か</rt></ruby>ったばかり s&iacute;; <span class="rd">&#10005; <ruby>先月<rt>せんげつ</rt></ruby><ruby>買<rt>か</rt></ruby>ったところ</span> no.</li>
+<li><b>ところだった es &laquo;por poco&raquo;</b>: <ruby>遅<rt>おく</rt></ruby>れるところだった (&laquo;por poco llego tarde&raquo;) &mdash; algo que estuvo a punto de pasar y no pas&oacute;.</li>
+<li><b>〜たところ(、)</b> sin です tiene otro uso, frecuente en textos: &laquo;al hacer X, result&oacute; que&hellip;&raquo;. <ruby>調<rt>しら</rt></ruby>べたところ、<ruby>間違<rt>まちが</rt></ruby>いが<ruby>見<rt>み</rt></ruby>つかった (&laquo;al revisarlo, apareci&oacute; un error&raquo;).</li>
+<li><b>〜たて</b> (ra&iacute;z de ます ＋たて) es &laquo;reci&eacute;n&hellip;&raquo;, pero describe <b>una cosa</b>, no lo que hiciste: <ruby>焼<rt>や</rt></ruby>き<span class="hi">たて</span>のパン (&laquo;pan reci&eacute;n hecho&raquo;), でき<span class="hi">たて</span>の<ruby>料理<rt>りょうり</rt></ruby>, ペンキ<ruby>塗<rt>ぬ</rt></ruby>り<span class="hi">たて</span> (&laquo;reci&eacute;n pintado&raquo;). Funciona como sustantivo: 〜たての＋N, 〜たてだ.</li>
+<li><b>たて va con pocos verbos</b>, casi siempre de hacer o producir algo: <ruby>焼<rt>や</rt></ruby>く, できる, <ruby>炊<rt>た</rt></ruby>く, <ruby>揚<rt>あ</rt></ruby>げる, <ruby>生<rt>う</rt></ruby>まれる, <ruby>取<rt>と</rt></ruby>れる (<ruby>取<rt>と</rt></ruby>れたての<ruby>野菜<rt>やさい</rt></ruby>), <ruby>入<rt>はい</rt></ruby>る (<ruby>入<rt>はい</rt></ruby>りたての<ruby>社員<rt>しゃいん</rt></ruby>). Para &laquo;acabo de llegar&raquo; o &laquo;acabo de comer&raquo; sigue siendo たところ o たばかり.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Momento</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Justo antes de&hellip;</td><td class="jp2">Vる <span class="hi">＋ところです</span></td><td class="jp2">これから<ruby>出<rt>で</rt></ruby>かける<span class="hi">ところです</span></td></tr>
+<tr><td class="ctx">En pleno proceso</td><td class="jp2">Vている <span class="hi">＋ところです</span></td><td class="jp2"><ruby>今<rt>いま</rt></ruby>、<ruby>準備<rt>じゅんび</rt></ruby>している<span class="hi">ところです</span></td></tr>
+<tr><td class="ctx">Reci&eacute;n acabado</td><td class="jp2">Vた <span class="hi">＋ところです</span></td><td class="jp2"><ruby>着<rt>つ</rt></ruby>いた<span class="hi">ところです</span></td></tr>
+<tr><td class="ctx">Por poco&hellip;</td><td class="jp2">Vる <span class="hi">＋ところだった</span></td><td class="jp2"><ruby>忘<rt>わす</rt></ruby>れる<span class="hi">ところだった</span></td></tr>
+<tr><td class="ctx">Al hacerlo, result&oacute; que&hellip;</td><td class="jp2">Vた <span class="hi">＋ところ</span>、resultado</td><td class="jp2"><ruby>聞<rt>き</rt></ruby>いてみた<span class="hi">ところ</span>、<ruby>無料<rt>むりょう</rt></ruby>だった</td></tr>
+<tr><td class="ctx">Hace poco (m&aacute;s ancho)</td><td class="jp2">Vた <span class="hi">＋ばかり</span></td><td class="jp2"><ruby>始<rt>はじ</rt></ruby>めた<span class="hi">ばかり</span></td></tr>
+<tr><td class="ctx">Reci&eacute;n hecho (una cosa)</td><td class="jp2">ra&iacute;z ます ＋<span class="hi">たて</span>(の N)</td><td class="jp2"><ruby>焼<rt>や</rt></ruby>き<span class="hi">たて</span>のパン</td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">これから<ruby>電話<rt>でんわ</rt></ruby>をかける<span class="hi">ところです</span>。</div><div class="t">Estoy a punto de llamar por tel&eacute;fono.</div></div>
+<div class="ex-item"><div class="s jp">すみません、<ruby>今<rt>いま</rt></ruby><ruby>資料<rt>しりょう</rt></ruby>を<ruby>作<rt>つく</rt></ruby>っている<span class="hi">ところです</span>。</div><div class="t">Disculpe, ahora estoy justo preparando los documentos.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>今<rt>いま</rt></ruby>、<ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いた<span class="hi">ところです</span>。</div><div class="t">Acabo de llegar a la estaci&oacute;n.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>始<rt>はじ</rt></ruby>まった<span class="hi">ところ</span>ですから、まだ<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>いますよ。</div><div class="t">Acaba de empezar, as&iacute; que todav&iacute;a llegas a tiempo.</div></div>
+<div class="ex-item"><div class="s jp">あぶない、<ruby>転<rt>ころ</rt></ruby>ぶ<span class="hi">ところでした</span>。</div><div class="t">&iexcl;Cuidado, por poco me caigo! <em>(ところだった)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>日本語<rt>にほんご</rt></ruby>を<ruby>習<rt>なら</rt></ruby>い<ruby>始<rt>はじ</rt></ruby>めた<span class="hi">ばかり</span>です。</div><div class="t">Acabo de empezar a aprender japon&eacute;s. <em>(ばかり: m&aacute;s ancho)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>焼<rt>や</rt></ruby>き<span class="hi">たて</span>のパンはやっぱりおいしいですね。</div><div class="t">El pan reci&eacute;n hecho est&aacute; buen&iacute;simo, &iquest;verdad? <em>(たて: estado de la cosa)</em></div></div>
+
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>先月<rt>せんげつ</rt></ruby><ruby>買<rt>か</rt></ruby>ったところです。</span> &nbsp; &#9675; <span class="good jp"><ruby>先月<rt>せんげつ</rt></ruby><ruby>買<rt>か</rt></ruby>ったばかりです。</span></div><div class="why">たところ implica que fue hace un instante; para m&aacute;s margen, たばかり.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>食<rt>た</rt></ruby>べるところでした <em>(confundido con &laquo;acabo de comer&raquo;)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>食<rt>た</rt></ruby>べたところです</span></div><div class="why">ところだった es &laquo;por poco&raquo;; el pasado reciente es たところ.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>焼<rt>や</rt></ruby>いたてのパン</span> &nbsp; &#9675; <span class="good jp"><ruby>焼<rt>や</rt></ruby>きたてのパン</span></div><div class="why">たて va sobre la ra&iacute;z de ます, no sobre la た形.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>きたてです。</span> &nbsp; &#9675; <span class="good jp"><ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いたばかりです。</span></div><div class="why">たて describe una cosa reci&eacute;n hecha; para lo que acabas de hacer t&uacute;, たところ o たばかり.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="28-tekuru-teiku.html"><small>&larr; Anterior</small><span class="jp">てくる・ていく</span></a><a class="next" href="30-condicionales.html"><small>Siguiente &rarr;</small><span class="jp">たら・と・ば・なら</span></a></nav><!--/gen-bottom-->
+<footer>ところです &middot; Punto exacto &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

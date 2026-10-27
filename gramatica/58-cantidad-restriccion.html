@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>だけ・しか・ばかり・くらい &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#J">&larr; Gram&aacute;tica</a><span>J &middot; Cantidad y comparaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">だけ・しか・ばかり・くらい</h1>
+<div class="sub">Cu&aacute;nto hay &mdash; y con qu&eacute; <b>actitud</b> lo cuentas.</div>
+<div class="rom">&hellip;dake &middot; &hellip;shika &middot; &hellip;bakari &middot; &hellip;kurai</div>
+</div><div class="badge"><span class="tag">JLPT N4 &ndash; N3</span><span class="cat">Cantidad y restricci&oacute;n</span></div></header>
+
+<h2>La misma cifra, cuatro actitudes</h2>
+<div class="scale">
+<div class="c" style="background:var(--midori-pale)"><div class="w jp">だけ</div><div class="g">solo &mdash; neutro</div></div>
+<div class="c" style="background:var(--shu-pale)"><div class="w jp">しか＋ない</div><div class="g">solo &mdash; y es poco</div></div>
+<div class="c" style="background:#D9E6DC"><div class="w jp">ばかり</div><div class="g">nada m&aacute;s que &mdash; reproche</div></div>
+<div class="c" style="background:#fff;border:1px solid var(--kasumi)"><div class="w jp">くらい・ほど</div><div class="g">aproximadamente</div></div>
+</div>
+<ul class="nuance">
+<li><b>だけ informa; しか valora.</b> <ruby>千円<rt>せんえん</rt></ruby>だけあります es un dato; <ruby>千円<rt>せんえん</rt></ruby>しかありません suena a que es poco. Y <b>しか exige verbo en negativo</b>, siempre.</li>
+<li><b>ばかり cambia de sentido seg&uacute;n el enganche</b>: tras sustantivo es &laquo;nada m&aacute;s que&raquo; con reproche (お<ruby>菓子<rt>かし</rt></ruby>ばかり<ruby>食<rt>た</rt></ruby>べる); tras <b>た形</b> es &laquo;acabar de&raquo; (<ruby>着<rt>つ</rt></ruby>いたばかり); y con <b>Vてばかりいる</b> es &laquo;no hacer otra cosa que&hellip;&raquo;, con reproche: <ruby>遊<rt>あそ</rt></ruby>んでばかりいる.</li>
+<li><b>くらい</b> tambi&eacute;n marca un m&iacute;nimo, algo tan simple que no deber&iacute;a costar: それくらい<ruby>自分<rt>じぶん</rt></ruby>でやって (&laquo;eso por lo menos hazlo t&uacute;&raquo;).</li>
+<li><b>ほど tiene un segundo uso de grado</b>, casi hiperb&oacute;lico: <ruby>死<rt>し</rt></ruby>ぬほど<ruby>疲<rt>つか</rt></ruby>れた (&laquo;cansado hasta morir&raquo;).</li>
+<li><b>だけしか〜ない combina las dos</b> para enfatizar al m&aacute;ximo la escasez: これだけしかない.</li>
+<li><b>ばかりでなく es &laquo;no solo&hellip; sino tambi&eacute;n&raquo;</b>: <ruby>英語<rt>えいご</rt></ruby>ばかりでなく、<ruby>中国語<rt>ちゅうごくご</rt></ruby>も<ruby>話<rt>はな</rt></ruby>せる.</li>
+<li><b>〜きり／〜っきり</b> = &laquo;solo, nada m&aacute;s&raquo;, como だけ pero subrayando que no hay m&aacute;s ni lo habr&aacute;: <ruby>二人<rt>ふたり</rt></ruby><span class="hi">きり</span> (&laquo;a solas los dos&raquo;), <ruby>一度<rt>いちど</rt></ruby><span class="hi">きり</span> (&laquo;una &uacute;nica vez&raquo;), これ<span class="hi">っきり</span> (&laquo;esto y se acab&oacute;&raquo;). っきり es la forma hablada.</li>
+<li><b>Vた ＋きり ＋negativo</b> = &laquo;desde que&hellip;, no ha vuelto a&hellip;&raquo;: la acci&oacute;n se qued&oacute; ah&iacute; y lo esperado no lleg&oacute;. <ruby>朝<rt>あさ</rt></ruby><ruby>出<rt>で</rt></ruby>かけた<span class="hi">きり</span>、まだ<ruby>帰<rt>かえ</rt></ruby>ってこない. Casi siempre con negativo detr&aacute;s y algo de preocupaci&oacute;n. Con それっきり／あれっきり: &laquo;desde entonces, nada&raquo; (<ruby>彼<rt>かれ</rt></ruby>とはあれっきり<ruby>会<rt>あ</rt></ruby>っていない).</li>
+</ul>
+
+<h3>ほど de grado: &laquo;tanto que&hellip;&raquo;</h3>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>泣<rt>な</rt></ruby>きたい<span class="hi">ほど</span><ruby>寒<rt>さむ</rt></ruby>い</span><span class="b">tanto fr&iacute;o que dan ganas de llorar</span></div>
+<div class="r"><span class="a jp"><ruby>数<rt>かぞ</rt></ruby>えきれない<span class="hi">ほど</span><ruby>星<rt>ほし</rt></ruby>が<ruby>見<rt>み</rt></ruby>える</span><span class="b">tantas que no se pueden contar</span></div>
+<div class="r"><span class="a jp"><ruby>読<rt>よ</rt></ruby>め<span class="hi">ば</span><ruby>読<rt>よ</rt></ruby>む<span class="hi">ほど</span><ruby>面白<rt>おもしろ</rt></ruby>い</span><span class="b">cuanto m&aacute;s&hellip;, m&aacute;s&hellip;</span></div>
+<div class="figcap">Delante de <b>ほど</b> va una imagen que mide el grado.</div>
+</div>
+<ul class="nuance">
+<li><b>Lo que va delante de ほど mide el grado</b> con una imagen exagerada: Vたい (<ruby>泣<rt>な</rt></ruby>きたいほど), negativo o potencial negativo (<ruby>信<rt>しん</rt></ruby>じられないほど, <ruby>数<rt>かぞ</rt></ruby>えきれないほど), Vる (<ruby>死<rt>し</rt></ruby>ぬほど, <ruby>驚<rt>おどろ</rt></ruby>くほど) o un sustantivo (<ruby>山<rt>やま</rt></ruby>ほど, &laquo;a montones&raquo;). Detr&aacute;s, el adjetivo o verbo que se intensifica. Tambi&eacute;n cierra frase: <ruby>寒<rt>さむ</rt></ruby>くて、<ruby>泣<rt>な</rt></ruby>きたい<span class="hi">ほどだ</span>.</li>
+<li><b>ほど ≈ くらい</b> en grado: くらい es m&aacute;s hablado y menos dram&aacute;tico (<ruby>泣<rt>な</rt></ruby>きたいくらい<ruby>寒<rt>さむ</rt></ruby>い). Pero solo くらい sirve para quitar importancia: それくらい<ruby>自分<rt>じぶん</rt></ruby>でやって.</li>
+<li><b>〜ば〜ほど</b> = &laquo;cuanto m&aacute;s&hellip;, m&aacute;s&hellip;&raquo;: el mismo verbo dos veces, en condicional ば y en diccionario ＋ほど. <ruby>練習<rt>れんしゅう</rt></ruby>すれ<span class="hi">ば</span>する<span class="hi">ほど</span><ruby>上手<rt>じょうず</rt></ruby>になる. Con adjetivo -い, <ruby>安<rt>やす</rt></ruby>ければ<ruby>安<rt>やす</rt></ruby>いほど; con -な, <ruby>静<rt>しず</rt></ruby>かなら<ruby>静<rt>しず</rt></ruby>かなほど. Hablando se puede omitir la parte con ば: <ruby>考<rt>かんが</rt></ruby>えるほど<ruby>分<rt>わ</rt></ruby>からなくなる.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se usa para</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Solo (neutro)</td><td class="jp2">N／cantidad <span class="hi">＋だけ</span></td><td class="jp2"><ruby>三<rt>みっ</rt></ruby>つ<span class="hi">だけ</span></td></tr>
+<tr><td class="ctx">Solo (y es poco)</td><td class="jp2">N <span class="hi">＋しか</span> ＋negativo</td><td class="jp2"><ruby>三<rt>みっ</rt></ruby>つ<span class="hi">しか</span>ない</td></tr>
+<tr><td class="ctx">&Eacute;nfasis m&aacute;ximo</td><td class="jp2">N <span class="hi">＋だけしか</span> ＋negativo</td><td class="jp2">これ<span class="hi">だけしか</span>ない</td></tr>
+<tr><td class="ctx">No hace otra cosa que&hellip;</td><td class="jp2">Vて <span class="hi">＋ばかりいる</span></td><td class="jp2"><ruby>寝<rt>ね</rt></ruby>て<span class="hi">ばかりいる</span></td></tr>
+<tr><td class="ctx">Nada m&aacute;s que (reproche)</td><td class="jp2">N <span class="hi">＋ばかり</span></td><td class="jp2">お<ruby>菓子<rt>かし</rt></ruby><span class="hi">ばかり</span></td></tr>
+<tr><td class="ctx">Acabar de</td><td class="jp2">Vた <span class="hi">＋ばかり</span></td><td class="jp2"><ruby>着<rt>つ</rt></ruby>いた<span class="hi">ばかり</span></td></tr>
+<tr><td class="ctx">No solo&hellip; sino</td><td class="jp2">N <span class="hi">＋ばかりでなく</span></td><td class="jp2"><ruby>英語<rt>えいご</rt></ruby><span class="hi">ばかりでなく</span></td></tr>
+<tr><td class="ctx">Aproximado</td><td class="jp2">cantidad <span class="hi">＋くらい／ほど</span></td><td class="jp2"><ruby>十人<rt>じゅうにん</rt></ruby><span class="hi">くらい</span></td></tr>
+<tr><td class="ctx">Grado (hip&eacute;rbole)</td><td class="jp2">Vる <span class="hi">＋ほど</span></td><td class="jp2"><ruby>死<rt>し</rt></ruby>ぬ<span class="hi">ほど</span></td></tr>
+<tr><td class="ctx">Solo, y no hay m&aacute;s</td><td class="jp2">N／cantidad ＋<span class="hi">きり／っきり</span></td><td class="jp2"><ruby>二人<rt>ふたり</rt></ruby>きり ・ これっきり</td></tr>
+<tr><td class="ctx">Desde que&hellip; no (N3)</td><td class="jp2">Vた ＋<span class="hi">きり</span> ＋negativo</td><td class="jp2"><ruby>行<rt>い</rt></ruby>ったきり<ruby>帰<rt>かえ</rt></ruby>らない</td></tr>
+
+<tr><td class="ctx">Tanto que&hellip; (grado)</td><td class="jp2">Vたい／Vない／Vる ＋<span class="hi">ほど</span> ＋Adj</td><td class="jp2"><ruby>泣<rt>な</rt></ruby>きたいほど<ruby>寒<rt>さむ</rt></ruby>い</td></tr>
+<tr><td class="ctx">Cuanto m&aacute;s&hellip;, m&aacute;s&hellip;</td><td class="jp2">V<span class="hi">ば</span> ＋Vる ＋<span class="hi">ほど</span></td><td class="jp2"><ruby>読<rt>よ</rt></ruby>めば<ruby>読<rt>よ</rt></ruby>むほど</td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">クッキーが<ruby>二枚<rt>にまい</rt></ruby><span class="hi">だけ</span>あります。</div><div class="t">Hay solo dos galletas. <em>(neutro)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>財布<rt>さいふ</rt></ruby>に<ruby>千円<rt>せんえん</rt></ruby><span class="hi">しか</span>ありません。</div><div class="t">Solo tengo mil yenes. <em>(y es poco)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>彼<rt>かれ</rt></ruby>は<ruby>文句<rt>もんく</rt></ruby><span class="hi">ばかり</span><ruby>言<rt>い</rt></ruby>っている。</div><div class="t">No para de quejarse.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>日本<rt>にほん</rt></ruby>に<ruby>来<rt>き</rt></ruby>た<span class="hi">ばかり</span>です。</div><div class="t">Acabo de llegar a Jap&oacute;n.</div></div>
+<div class="ex-item"><div class="s jp">この<ruby>荷物<rt>にもつ</rt></ruby>は<ruby>十<rt>じゅう</rt></ruby>キロ<span class="hi">ほど</span>あります。</div><div class="t">Este paquete pesa unos diez kilos.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>昨日<rt>きのう</rt></ruby>は<ruby>死<rt>し</rt></ruby>ぬ<span class="hi">ほど</span><ruby>疲<rt>つか</rt></ruby>れました。</div><div class="t">Ayer acab&eacute; muerto de cansancio.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>久<rt>ひさ</rt></ruby>しぶりに<ruby>彼女<rt>かのじょ</rt></ruby>と<ruby>二人<rt>ふたり</rt></ruby><span class="hi">きり</span>で<ruby>話<rt>はな</rt></ruby>した。</div><div class="t">Habl&eacute; a solas con ella por primera vez en mucho tiempo.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>兄<rt>あに</rt></ruby>は<ruby>十年前<rt>じゅうねんまえ</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>を<ruby>出<rt>で</rt></ruby>た<span class="hi">きり</span>、<ruby>一度<rt>いちど</rt></ruby>も<ruby>帰<rt>かえ</rt></ruby>ってこない。</div><div class="t">Mi hermano se fue de casa hace diez a&ntilde;os y no ha vuelto ni una vez. <em>(たきり + negativo)</em></div></div>
+
+<div class="ex-item"><div class="s jp"><ruby>今日<rt>きょう</rt></ruby>は<ruby>泣<rt>な</rt></ruby>きたい<span class="hi">ほど</span><ruby>寒<rt>さむ</rt></ruby>い。</div><div class="t">Hoy hace un fr&iacute;o que dan ganas de llorar.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>日本語<rt>にほんご</rt></ruby>は<ruby>勉強<rt>べんきょう</rt></ruby>すれ<span class="hi">ば</span>する<span class="hi">ほど</span><ruby>面白<rt>おもしろ</rt></ruby>くなる。</div><div class="t">Cuanto m&aacute;s estudio japon&eacute;s, m&aacute;s interesante se vuelve.</div></div>
+
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>千円<rt>せんえん</rt></ruby>しかあります。</span> &nbsp; &#9675; <span class="good jp"><ruby>千円<rt>せんえん</rt></ruby>しかありません。</span></div><div class="why">しか exige siempre verbo en negativo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>十人<rt>じゅうにん</rt></ruby>だけ<ruby>来<rt>き</rt></ruby>ました <em>(por aproximar)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>十人<rt>じゅうにん</rt></ruby>くらい<ruby>来<rt>き</rt></ruby>ました</span></div><div class="why">だけ es &laquo;solo&raquo;, no aproximaci&oacute;n.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>着<rt>つ</rt></ruby>くばかり</span> &nbsp; &#9675; <span class="good jp"><ruby>着<rt>つ</rt></ruby>いたばかり</span></div><div class="why">&laquo;Acabar de&raquo; va sobre la た形.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>出<rt>で</rt></ruby>かけるきり<ruby>帰<rt>かえ</rt></ruby>ってこない。</span> &nbsp; &#9675; <span class="good jp"><ruby>出<rt>で</rt></ruby>かけたきり<ruby>帰<rt>かえ</rt></ruby>ってこない。</span></div><div class="why">&laquo;Desde que&hellip;&raquo; va sobre la forma た.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>二人<rt>ふたり</rt></ruby>だけきりで<ruby>話<rt>はな</rt></ruby>した。</span> &nbsp; &#9675; <span class="good jp"><ruby>二人<rt>ふたり</rt></ruby>きりで<ruby>話<rt>はな</rt></ruby>した。</span></div><div class="why">きり ya significa &laquo;solo&raquo;: no se suma a だけ.</div></div>
+
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>安<rt>やす</rt></ruby>いば<ruby>安<rt>やす</rt></ruby>いほどいい。</span> &nbsp; &#9675; <span class="good jp"><ruby>安<rt>やす</rt></ruby>ければ<ruby>安<rt>やす</rt></ruby>いほどいい。</span></div><div class="why">La primera mitad va en condicional ば: con adjetivo -い, 〜ければ.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">△ それほど<ruby>自分<rt>じぶん</rt></ruby>でやって。</span> &nbsp; &#9675; <span class="good jp">それくらい<ruby>自分<rt>じぶん</rt></ruby>でやって。</span></div><div class="why">Para quitar importancia (&laquo;eso por lo menos&raquo;) va くらい; ほど intensifica.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="57-comparacion.html"><small>&larr; Anterior</small><span class="jp">より・ほど・一番・らしい</span></a><a class="next" href="59-enfasis.html"><small>Siguiente &rarr;</small><span class="jp">さえ・すら・こそ</span></a></nav><!--/gen-bottom-->
+<footer>だけ・しか・ばかり・くらい &middot; Cantidad y restricci&oacute;n &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

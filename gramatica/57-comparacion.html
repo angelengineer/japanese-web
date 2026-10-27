@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.zones2{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.zones2 .z{flex:1 1 200px;border-radius:8px;padding:15px;text-align:center;}
+.zones2 .z.up{background:var(--midori);color:#fff;}
+.zones2 .z.dn{background:var(--midori-pale);}
+.zones2 .zl{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px;}
+.zones2 .up .zl{color:#C9DAC9;} .zones2 .dn .zl{color:var(--sub);}
+.zones2 .w{font-family:"Noto Serif JP",serif;font-size:20px;}
+.zones2 .g{font-size:12px;margin-top:6px;}
+.zones2 .up .g{color:#DCE7DC;} .zones2 .dn .g{color:var(--sub);}
+th.g2{color:var(--midori);}
+.cmp2{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px;}
+.cmp2 .b{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:11px 12px;}
+.cmp2 .p{font-family:"Noto Serif JP",serif;font-size:15px;}
+.cmp2 .p b{color:var(--midori);}
+.cmp2 .d{font-size:11.5px;color:var(--sub);margin-top:5px;line-height:1.4;}
+.split{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px;}
+.split .h2b{flex:1 1 220px;border-radius:6px;padding:13px 14px;}
+.split .h2b.a{background:var(--midori-pale);}
+.split .h2b.b{background:#fff;border:1px solid var(--kasumi);}
+.split .t3{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:6px;}
+.split .e2{font-family:"Noto Serif JP",serif;font-size:14.5px;padding:3px 0;}
+.split .n2{font-size:11.5px;color:var(--sub);margin-top:6px;line-height:1.45;}
+</style><!--gen-head-->
+<title>より・ほど・一番・らしい &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#J">&larr; Gram&aacute;tica</a><span>J &middot; Cantidad y comparaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">より・ほど・<ruby>一番<rt>いちばん</rt></ruby>・らしい</h1>
+<div class="sub">Comparar dos cosas, ganar el primer puesto, o decir que <b>se parece a</b>.</div>
+<div class="rom">&hellip;yori &middot; &hellip;hodo &middot; ichiban &middot; &hellip;rashii</div>
+</div><div class="badge"><span class="tag">JLPT N5 &ndash; N4</span><span class="cat">Comparaci&oacute;n</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Comparar dos cosas, marcar el m&aacute;ximo de un grupo y decir que algo <b>se parece</b> a otra cosa. Tres operaciones que comparten vocabulario y se enredan con facilidad.</p>
+<div class="cmp2">
+<div class="b"><div class="p jp">A は B<b>より</b></div><div class="d">A supera a B &mdash; comparaci&oacute;n directa</div></div>
+<div class="b"><div class="p jp">A は B<b>ほど</b>〜ない</div><div class="d">A no llega al nivel de B</div></div>
+<div class="b"><div class="p jp">〜の<ruby>中<rt>なか</rt></ruby>で<b><ruby>一番<rt>いちばん</rt></ruby></b></div><div class="d">el m&aacute;ximo de un grupo de <b>tres o m&aacute;s</b></div></div>
+<div class="b"><div class="p jp">Nの<b>ような</b> N</div><div class="d">semejanza: &laquo;como un&hellip;&raquo;</div></div>
+</div>
+<ul class="nuance">
+<li><b><ruby>一番<rt>いちばん</rt></ruby> exige tres o m&aacute;s.</b> Entre dos se pregunta con どちら: <ruby>紅茶<rt>こうちゃ</rt></ruby>とコーヒーとどちらが<ruby>好<rt>す</rt></ruby>きですか.</li>
+<li><b>ほど〜ない es la comparaci&oacute;n en negativo</b>: <ruby>今年<rt>ことし</rt></ruby>は<ruby>去年<rt>きょねん</rt></ruby>ほど<ruby>暑<rt>あつ</rt></ruby>くない (&laquo;este a&ntilde;o no hace tanto calor como el pasado&raquo;).</li>
+<li><b>らしい tiene dos usos que no se mezclan.</b> Como <b>semejanza</b> se pega a un <b>sustantivo suelto</b> y describe lo t&iacute;pico: <ruby>彼<rt>かれ</rt></ruby>らしい, <ruby>男<rt>おとこ</rt></ruby>らしい. Como <b>rumor</b> se pega a una <b>frase entera</b>: <ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るらしい. El enganche los distingue.</li>
+<li><b>のほうが marca el lado que gana</b>: こちらのほうが<ruby>安<rt>やす</rt></ruby>いです. Se usa mucho al responder una comparaci&oacute;n.</li>
+<li><b>ような frente a みたいな</b>: son lo mismo, pero みたい es coloquial y se engancha directo al sustantivo (sin の): <ruby>天使<rt>てんし</rt></ruby>みたいな<ruby>子<rt>こ</rt></ruby> frente a <ruby>天使<rt>てんし</rt></ruby>のような<ruby>子<rt>こ</rt></ruby>.</li>
+<li><b>と<ruby>同<rt>おな</rt></ruby>じ marca igualdad</b>: これはあれと<ruby>同<rt>おな</rt></ruby>じです. Ojo: lleva と, no より.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se usa para</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Comparaci&oacute;n directa</td><td class="jp2">A は B<span class="hi">より</span> ＋Adj</td><td class="jp2">これはあれ<span class="hi">より</span><ruby>安<rt>やす</rt></ruby>い</td></tr>
+<tr><td class="ctx">Marcar el que gana</td><td class="jp2">A<span class="hi">のほうが</span> ＋Adj</td><td class="jp2">こちら<span class="hi">のほうが</span><ruby>安<rt>やす</rt></ruby>い</td></tr>
+<tr><td class="ctx">Preguntar entre dos</td><td class="jp2">A と B と<span class="hi">どちらが</span>&hellip;</td><td class="jp2"><span class="hi">どちらが</span><ruby>好<rt>す</rt></ruby>きですか</td></tr>
+<tr><td class="ctx">Comparaci&oacute;n negativa</td><td class="jp2">A は B<span class="hi">ほど</span> ＋Adjない</td><td class="jp2">あれ<span class="hi">ほど</span><ruby>高<rt>たか</rt></ruby>くない</td></tr>
+<tr><td class="ctx">M&aacute;ximo (3 o m&aacute;s)</td><td class="jp2">〜の<ruby>中<rt>なか</rt></ruby>で<span class="hi"><ruby>一番<rt>いちばん</rt></ruby></span> ＋Adj</td><td class="jp2">クラスで<span class="hi"><ruby>一番<rt>いちばん</rt></ruby></span></td></tr>
+<tr><td class="ctx">Igualdad</td><td class="jp2">A は B<span class="hi">と<ruby>同<rt>おな</rt></ruby>じ</span></td><td class="jp2">あれ<span class="hi">と<ruby>同<rt>おな</rt></ruby>じ</span>です</td></tr>
+<tr><td class="ctx">Semejanza (sustantivo)</td><td class="jp2">N<span class="hi">らしい</span></td><td class="jp2"><ruby>彼<rt>かれ</rt></ruby><span class="hi">らしい</span> <em>t&iacute;pico de &eacute;l</em></td></tr>
+<tr><td class="ctx">Rumor (frase entera)</td><td class="jp2">forma simple <span class="hi">＋らしい</span></td><td class="jp2"><ruby>降<rt>ふ</rt></ruby>る<span class="hi">らしい</span> <em>dicen que&hellip;</em></td></tr>
+<tr><td class="ctx">Comparaci&oacute;n figurada</td><td class="jp2">Nの<span class="hi">ような</span> ／ N<span class="hi">みたいな</span> ＋N</td><td class="jp2"><ruby>天使<rt>てんし</rt></ruby>の<span class="hi">ような</span><ruby>子<rt>こ</rt></ruby></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>今日<rt>きょう</rt></ruby>は<ruby>昨日<rt>きのう</rt></ruby><span class="hi">より</span><ruby>寒<rt>さむ</rt></ruby>いです。</div><div class="t">Hoy hace m&aacute;s fr&iacute;o que ayer.</div></div>
+<div class="ex-item"><div class="s jp">コーヒー<span class="hi">のほうが</span><ruby>好<rt>す</rt></ruby>きです。</div><div class="t">Prefiero el caf&eacute;.</div></div>
+<div class="ex-item"><div class="s jp">このクラスで<ruby>彼女<rt>かのじょ</rt></ruby>が<span class="hi"><ruby>一番<rt>いちばん</rt></ruby></span><ruby>頭<rt>あたま</rt></ruby>がいい。</div><div class="t">Ella es la m&aacute;s lista de la clase.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>今年<rt>ことし</rt></ruby>は<ruby>去年<rt>きょねん</rt></ruby><span class="hi">ほど</span><ruby>暑<rt>あつ</rt></ruby>く<span class="hi">ない</span>ですね。</div><div class="t">Este a&ntilde;o no hace tanto calor como el pasado.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">その<ruby>反応<rt>はんのう</rt></ruby>、いかにも<ruby>彼<rt>かれ</rt></ruby><span class="hi">らしい</span>ね。</div><div class="t">Esa reacci&oacute;n es muy t&iacute;pica de &eacute;l. <em>(semejanza)</em></div></div>
+<div class="ex-item"><div class="s jp">ニュースによると、<ruby>明日<rt>あした</rt></ruby>は<ruby>雪<rt>ゆき</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<span class="hi">らしい</span>。</div><div class="t">Seg&uacute;n las noticias, parece que ma&ntilde;ana nieva. <em>(rumor)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>夢<rt>ゆめ</rt></ruby>の<span class="hi">ような</span><ruby>一日<rt>いちにち</rt></ruby>でした。</div><div class="t">Fue un d&iacute;a de ensue&ntilde;o.</div></div>
+<div class="ex-item"><div class="s jp">この<ruby>時計<rt>とけい</rt></ruby>はあれ<span class="hi">と<ruby>同<rt>おな</rt></ruby>じ</span>です。</div><div class="t">Este reloj es igual que aquel.</div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>二人<rt>ふたり</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>一番<rt>いちばん</rt></ruby>いい</span> &nbsp; &#9675; <span class="good jp"><ruby>二人<rt>ふたり</rt></ruby>のうちどちらがいい</span></div><div class="why"><ruby>一番<rt>いちばん</rt></ruby> exige tres o m&aacute;s; entre dos va どちら.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">これはあれと<ruby>同<rt>おな</rt></ruby>じより<ruby>安<rt>やす</rt></ruby>い</span> &nbsp; &#9675; <span class="good jp">これはあれより<ruby>安<rt>やす</rt></ruby>い</span></div><div class="why">No se mezclan igualdad y comparaci&oacute;n.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>天使<rt>てんし</rt></ruby>のみたいな<ruby>子<rt>こ</rt></ruby></span> &nbsp; &#9675; <span class="good jp"><ruby>天使<rt>てんし</rt></ruby>みたいな<ruby>子<rt>こ</rt></ruby></span></div><div class="why">みたい se engancha directo, sin の.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="56-keigo.html"><small>&larr; Anterior</small><span class="jp">尊敬語・謙譲語</span></a><a class="next" href="58-cantidad-restriccion.html"><small>Siguiente &rarr;</small><span class="jp">だけ・しか・ばかり・くらい</span></a></nav><!--/gen-bottom-->
+<footer>より・ほど・一番・らしい &middot; Comparaci&oacute;n &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

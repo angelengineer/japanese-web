@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>がる・たがる・がち・気味・っぽい &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#G">&larr; Gram&aacute;tica</a><span>G &middot; Matices y modalidad</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">がる・たがる・がち・<ruby>気味<rt>ぎみ</rt></ruby>・っぽい</h1>
+<div class="sub">Decir que algo <b>tira hacia</b> algo &mdash; casi siempre con carga negativa.</div>
+<div class="rom">&hellip;garu &middot; &hellip;gachi &middot; &hellip;gimi &middot; &hellip;ppoi</div>
+</div><div class="badge"><span class="tag">JLPT N3</span><span class="cat">Tendencias</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Cinco sufijos para decir que algo <b>tira hacia</b> una direcci&oacute;n sin llegar a serlo del todo. Casi todos arrastran una valoraci&oacute;n negativa, y conviene saber cu&aacute;les.</p>
+<table>
+<thead><tr><th>Sufijo</th><th>Qu&eacute; dice</th><th>Carga</th></tr></thead>
+<tbody>
+<tr><td class="ctx">〜がる</td><td class="jp2">un tercero <b>manifiesta</b> un sentimiento</td><td class="jp2">neutra</td></tr>
+<tr><td class="ctx">〜たがる</td><td class="jp2">un tercero <b>quiere</b> hacer algo</td><td class="jp2">neutra</td></tr>
+<tr><td class="ctx">〜がち</td><td class="jp2">tiende a pasar, y suele ser malo</td><td class="jp2"><span class="rd">negativa</span></td></tr>
+<tr><td class="ctx">〜<ruby>気味<rt>ぎみ</rt></ruby></td><td class="jp2">un poco, un punto de&hellip;</td><td class="jp2"><span class="rd">leve, negativa</span></td></tr>
+<tr><td class="ctx">〜っぽい</td><td class="jp2">tira a&hellip;, tiene pinta de&hellip;</td><td class="jp2"><span class="rd">coloquial, a menudo negativa</span></td></tr>
+</tbody></table>
+<ul class="nuance">
+<li><b>がる resuelve un problema del japon&eacute;s</b>: no puedes afirmar los sentimientos de otro directamente. <ruby>嬉<rt>うれ</rt></ruby>しい es tuyo; de un tercero se dice <ruby>嬉<rt>うれ</rt></ruby>しがっている &mdash; &laquo;muestra alegr&iacute;a&raquo;, lo que t&uacute; observas desde fuera.</li>
+<li><b>たがる es lo mismo aplicado a たい</b>: <ruby>行<rt>い</rt></ruby>きたい es tu deseo; <ruby>弟<rt>おとうと</rt></ruby>は<ruby>行<rt>い</rt></ruby>きたがる es el de otro. Casi siempre en ている: <ruby>行<rt>い</rt></ruby>きたがっている.</li>
+<li><b>がち es una tendencia habitual y no deseada</b>: <ruby>忘<rt>わす</rt></ruby>れがち, <ruby>休<rt>やす</rt></ruby>みがち, <ruby>曇<rt>くも</rt></ruby>りがち. No se usa con cosas buenas.</li>
+<li><b><ruby>気味<rt>ぎみ</rt></ruby> es &laquo;un poquito&raquo;</b>, siempre de algo leve y molesto: <ruby>風邪気味<rt>かぜぎみ</rt></ruby> (algo resfriado), <ruby>疲<rt>つか</rt></ruby>れ<ruby>気味<rt>ぎみ</rt></ruby>, <ruby>太<rt>ふと</rt></ruby>り<ruby>気味<rt>ぎみ</rt></ruby>.</li>
+<li><b>っぽい es el m&aacute;s coloquial</b>, y con personas o calidad suele ser despectivo: <ruby>子供<rt>こども</rt></ruby>っぽい (infantil), <ruby>安<rt>やす</rt></ruby>っぽい (de aspecto barato), <ruby>忘<rt>わす</rt></ruby>れっぽい (olvidadizo). Con colores y sensaciones es neutro: <ruby>白<rt>しろ</rt></ruby>っぽい (blanquecino), <ruby>熱<rt>ねつ</rt></ruby>っぽい (con algo de fiebre).</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Sentimiento de un tercero</td><td class="jp2">Aい&minus;い／Aな <span class="hi">＋がる</span></td><td class="jp2"><ruby>嬉<rt>うれ</rt></ruby>し<span class="hi">がる</span> &nbsp; <ruby>怖<rt>こわ</rt></ruby><span class="hi">がる</span></td></tr>
+<tr><td class="ctx">Deseo de un tercero</td><td class="jp2">ra&iacute;z ます <span class="hi">＋たがる</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>き<span class="hi">たがる</span></td></tr>
+<tr><td class="ctx">En curso (lo normal)</td><td class="jp2">〜<span class="hi">がっている</span>／<span class="hi">たがっている</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>き<span class="hi">たがっている</span></td></tr>
+<tr><td class="ctx">Tiende a (negativo)</td><td class="jp2">ra&iacute;z ます／N <span class="hi">＋がち</span></td><td class="jp2"><ruby>忘<rt>わす</rt></ruby>れ<span class="hi">がち</span> &nbsp; <ruby>病気<rt>びょうき</rt></ruby><span class="hi">がち</span></td></tr>
+<tr><td class="ctx">Un poco de&hellip;</td><td class="jp2">ra&iacute;z ます／N <span class="hi">＋<ruby>気味<rt>ぎみ</rt></ruby></span></td><td class="jp2"><ruby>風邪<rt>かぜ</rt></ruby><span class="hi"><ruby>気味<rt>ぎみ</rt></ruby></span></td></tr>
+<tr><td class="ctx">Tira a&hellip;</td><td class="jp2">N／Aい&minus;い／ra&iacute;z ます <span class="hi">＋っぽい</span></td><td class="jp2"><ruby>子供<rt>こども</rt></ruby><span class="hi">っぽい</span></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>弟<rt>おとうと</rt></ruby>は<ruby>留学<rt>りゅうがく</rt></ruby>し<span class="hi">たがっています</span>。</div><div class="t">Mi hermano quiere irse a estudiar fuera. <em>(deseo de un tercero)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>子供<rt>こども</rt></ruby>が<ruby>犬<rt>いぬ</rt></ruby>を<ruby>怖<rt>こわ</rt></ruby><span class="hi">がって</span>います。</div><div class="t">El ni&ntilde;o le tiene miedo al perro.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>最近<rt>さいきん</rt></ruby>、<ruby>忘<rt>わす</rt></ruby>れ<span class="hi">がち</span>です。</div><div class="t">&Uacute;ltimamente se me olvidan las cosas.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">ちょっと<ruby>風邪<rt>かぜ</rt></ruby><span class="hi"><ruby>気味<rt>ぎみ</rt></ruby></span>なので、<ruby>早<rt>はや</rt></ruby>く<ruby>帰<rt>かえ</rt></ruby>ります。</div><div class="t">Estoy algo resfriado, as&iacute; que me voy pronto.</div></div>
+<div class="ex-item"><div class="s jp">その<ruby>言<rt>い</rt></ruby>い<ruby>方<rt>かた</rt></ruby>、ちょっと<ruby>子供<rt>こども</rt></ruby><span class="hi">っぽい</span>よ。</div><div class="t">Esa manera de hablar suena un poco infantil.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>冬<rt>ふゆ</rt></ruby>は<ruby>曇<rt>くも</rt></ruby>り<span class="hi">がち</span>の<ruby>日<rt>ひ</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い。</div><div class="t">En invierno hay muchos d&iacute;as nublados.</div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>妹<rt>いもうと</rt></ruby>は<ruby>行<rt>い</rt></ruby>きたいです。</span> &nbsp; &#9675; <span class="good jp"><ruby>妹<rt>いもうと</rt></ruby>は<ruby>行<rt>い</rt></ruby>きたがっています。</span></div><div class="why">El deseo directo たい solo vale para uno mismo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>元気<rt>げんき</rt></ruby>がち</span> &nbsp; &#9675; <span class="good jp"><ruby>病気<rt>びょうき</rt></ruby>がち</span></div><div class="why">がち no se usa con cosas buenas.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>嬉<rt>うれ</rt></ruby>しいがる</span> &nbsp; &#9675; <span class="good jp"><ruby>嬉<rt>うれ</rt></ruby>しがる</span></div><div class="why">El adjetivo pierde la い antes de がる.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="38-parece-de-oidas.html"><small>&larr; Anterior</small><span class="jp">そう・よう・みたい・らしい</span></a><a class="next" href="40-generalizar.html"><small>Siguiente &rarr;</small><span class="jp">ものだ・とか</span></a></nav><!--/gen-bottom-->
+<footer>がる・たがる・がち・気味・っぽい &middot; Tendencias &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

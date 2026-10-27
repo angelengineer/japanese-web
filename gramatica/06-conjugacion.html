@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.lad{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:14px 14px 12px;margin-top:16px;}
+.lrow{display:flex;align-items:baseline;gap:10px;padding:6px 0;border-bottom:1px dotted #E6E9E2;flex-wrap:wrap;}
+.lrow:last-of-type{border:none;}
+.lrow .a{font-family:"Noto Serif JP",serif;font-size:19px;flex:0 0 100px;}
+.lrow .a b{color:var(--midori);}
+.lrow .g{font-family:"Poppins",sans-serif;font-size:9.5px;letter-spacing:.09em;color:var(--sub);flex:0 0 42px;text-transform:uppercase;}
+.lrow .c{font-family:"Noto Serif JP",serif;font-size:14.5px;flex:1 1 150px;}
+.ladcap{font-size:13px;color:var(--sub);margin-top:11px;padding-top:9px;border-top:1px solid #EFF1EC;}
+.ladcap b{color:var(--midori);}
+th .v{display:block;font-family:"Noto Serif JP",serif;font-size:15px;color:var(--sumi);margin-top:3px;text-transform:none;letter-spacing:0;}
+td.ctx b{display:block;}
+td.ctx span{color:var(--sub);font-family:"Noto Serif JP",serif;font-size:11.5px;}
+tr.mark td{background:var(--midori-pale);}
+td.jp2 i{font-family:"Lora",serif;font-style:italic;font-size:11px;color:var(--shu);display:block;}
+@media(max-width:640px){td.ctx span{display:none;}}
+</style><!--gen-head-->
+<title>動詞活用表 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#B">&larr; Gram&aacute;tica</a><span>B &middot; Conjugaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>動詞活用表<rt>どうしかつようひょう</rt></ruby></h1>
+<div class="sub">Trece formas, cuatro clases &mdash; y <b>una sola regla</b> para los godan.</div>
+<div class="rom">d&#333;shi katsuy&#333;hy&#333;</div>
+</div><div class="badge"><span class="tag">JLPT N5 &ndash; N3</span><span class="cat">Conjugaci&oacute;n</span></div></header>
+
+<h2>La regla de los godan</h2>
+<p class="lead">Toda la conjugaci&oacute;n godan es <b>mover la &uacute;ltima s&iacute;laba por la fila あいうえお</b>. Cinco escalones y tienes la columna entera. Los ichidan no mueven nada: quitan る y pegan.</p>
+<div class="lad">
+<div class="lrow"><span class="a jp"><ruby>飲<rt>の</rt></ruby><b>ま</b></span><span class="g">あ段</span><span class="c jp">＋ない・れる・せる</span></div>
+<div class="lrow"><span class="a jp"><ruby>飲<rt>の</rt></ruby><b>み</b></span><span class="g">い段</span><span class="c jp">＋ます・たい・すぎる・ながら</span></div>
+<div class="lrow"><span class="a jp"><ruby>飲<rt>の</rt></ruby><b>む</b></span><span class="g">う段</span><span class="c jp"><ruby>辞書形<rt>じしょけい</rt></ruby>・＋な・＋こと</span></div>
+<div class="lrow"><span class="a jp"><ruby>飲<rt>の</rt></ruby><b>め</b></span><span class="g">え段</span><span class="c jp">＋ば・<ruby>可能形<rt>かのうけい</rt></ruby>・<ruby>命令形<rt>めいれいけい</rt></ruby></span></div>
+<div class="lrow"><span class="a jp"><ruby>飲<rt>の</rt></ruby><b>も</b></span><span class="g">お段</span><span class="c jp">＋う（<ruby>意向形<rt>いこうけい</rt></ruby>）</span></div>
+<div class="ladcap">&iquest;Godan o ichidan? Si <b>no acaba en る</b>, es godan siempre. Si acaba en る y antes hay
+sonido <i>i</i> o <i>e</i> (い段・え段: 見る, 食べる), normalmente es ichidan. <b>Trampas que parecen ichidan y son godan:</b>
+<ruby>帰<rt>かえ</rt></ruby>る・<ruby>入<rt>はい</rt></ruby>る・<ruby>走<rt>はし</rt></ruby>る・<ruby>切<rt>き</rt></ruby>る・<ruby>知<rt>し</rt></ruby>る・<ruby>要<rt>い</rt></ruby>る・<ruby>減<rt>へ</rt></ruby>る・<ruby>限<rt>かぎ</rt></ruby>る・<ruby>喋<rt>しゃべ</rt></ruby>る・<ruby>滑<rt>すべ</rt></ruby>る.</div>
+</div>
+
+<ul class="nuance">
+<li><b>El truco de la forma ない</b>: si sabes c&oacute;mo suena el negativo, sabes el grupo. Con ら delante de ない es godan (<ruby>帰<rt>かえ</rt></ruby><span class="hi">ら</span>ない, <ruby>切<rt>き</rt></ruby><span class="hi">ら</span>ない); sin ら, ichidan (<ruby>見<rt>み</rt></ruby>ない, <ruby>着<rt>き</rt></ruby>ない). De esa misma ra&iacute;z salen <ruby>帰<rt>かえ</rt></ruby>ります, <ruby>帰<rt>かえ</rt></ruby>って y <ruby>帰<rt>かえ</rt></ruby>れる.</li>
+<li><b>Parejas que suenan igual y no se conjugan igual</b>: <ruby>切<rt>き</rt></ruby>る (cortar, godan) frente a <ruby>着<rt>き</rt></ruby>る (vestir, ichidan); <ruby>帰<rt>かえ</rt></ruby>る (volver, godan) frente a <ruby>変<rt>か</rt></ruby>える (cambiar, ichidan); <ruby>要<rt>い</rt></ruby>る (necesitar, godan) frente a いる (estar, ichidan). El examen las pone juntas: <ruby>髪<rt>かみ</rt></ruby>を<ruby>切<rt>き</rt></ruby>って ／ シャツを<ruby>着<rt>き</rt></ruby>て.</li>
+<li><b>El potencial lo confirma</b>: los godan dan 〜える (<ruby>帰<rt>かえ</rt></ruby>れる, <ruby>切<rt>き</rt></ruby>れる) y los ichidan 〜られる (<ruby>見<rt>み</rt></ruby>られる, <ruby>着<rt>き</rt></ruby>られる).</li>
+</ul>
+
+<h2>Las trece formas</h2>
+<table>
+<thead><tr><th>Forma</th>
+<th>Godan<span class="v"><ruby>飲<rt>の</rt></ruby>む</span></th>
+<th>Ichidan<span class="v"><ruby>食<rt>た</rt></ruby>べる</span></th>
+<th>Irregular<span class="v">する</span></th>
+<th>Irregular<span class="v"><ruby>来<rt>く</rt></ruby>る</span></th></tr></thead>
+<tbody>
+<tr><td class="ctx"><b>Diccionario</b><span>辞書形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>む</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べる</td><td class="jp2">する</td><td class="jp2"><ruby>来<rt>く</rt></ruby>る</td></tr>
+<tr><td class="ctx"><b>Cort&eacute;s</b><span>ます形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>みます</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べます</td><td class="jp2">します</td><td class="jp2"><ruby>来<rt>き</rt></ruby>ます</td></tr>
+<tr><td class="ctx"><b>Negativo</b><span>ない形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>まない</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べない</td><td class="jp2">しない</td><td class="jp2"><ruby>来<rt>こ</rt></ruby>ない</td></tr>
+<tr><td class="ctx"><b>Pasado</b><span>た形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>んだ</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べた</td><td class="jp2">した</td><td class="jp2"><ruby>来<rt>き</rt></ruby>た</td></tr>
+<tr class="mark"><td class="ctx"><b>Enlace</b><span>て形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>んで</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べて</td><td class="jp2">して</td><td class="jp2"><ruby>来<rt>き</rt></ruby>て</td></tr>
+<tr><td class="ctx"><b>Volitiva</b><span>意向形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>もう</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べよう</td><td class="jp2">しよう</td><td class="jp2"><ruby>来<rt>こ</rt></ruby>よう</td></tr>
+<tr><td class="ctx"><b>Condicional</b><span>〜ば</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>めば</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べれば</td><td class="jp2">すれば</td><td class="jp2"><ruby>来<rt>く</rt></ruby>れば</td></tr>
+<tr><td class="ctx"><b>Imperativo</b><span>命令形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>め</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べろ</td><td class="jp2">しろ</td><td class="jp2"><ruby>来<rt>こ</rt></ruby>い</td></tr>
+<tr><td class="ctx"><b>Prohibitivo</b><span>禁止形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>むな</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べるな</td><td class="jp2">するな</td><td class="jp2"><ruby>来<rt>く</rt></ruby>るな</td></tr>
+<tr class="mark"><td class="ctx"><b>Potencial</b><span>可能形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>める</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べられる<i>= pasiva</i></td><td class="jp2">できる</td><td class="jp2"><ruby>来<rt>こ</rt></ruby>られる</td></tr>
+<tr class="mark"><td class="ctx"><b>Pasiva</b><span>受身形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>まれる</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べられる<i>= potencial</i></td><td class="jp2">される</td><td class="jp2"><ruby>来<rt>こ</rt></ruby>られる</td></tr>
+<tr><td class="ctx"><b>Causativa</b><span>使役形</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>ませる</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べさせる</td><td class="jp2">させる</td><td class="jp2"><ruby>来<rt>こ</rt></ruby>させる</td></tr>
+<tr><td class="ctx"><b>Causativa-pasiva</b><span>使役受身</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>まされる</td><td class="jp2"><ruby>食<rt>た</rt></ruby>べさせられる</td><td class="jp2">させられる</td><td class="jp2"><ruby>来<rt>こ</rt></ruby>させられる</td></tr>
+</tbody></table>
+
+<h2>Segunda tanda, para ver el patr&oacute;n repetido</h2>
+<table>
+<thead><tr><th>Forma</th>
+<th>Godan -く<span class="v"><ruby>書<rt>か</rt></ruby>く</span></th>
+<th>Godan -る<span class="v"><ruby>帰<rt>かえ</rt></ruby>る</span></th>
+<th>Ichidan<span class="v"><ruby>見<rt>み</rt></ruby>る</span></th></tr></thead>
+<tbody>
+<tr><td class="ctx"><b>ます形</b></td><td class="jp2"><ruby>書<rt>か</rt></ruby>きます</td><td class="jp2"><ruby>帰<rt>かえ</rt></ruby>ります</td><td class="jp2"><ruby>見<rt>み</rt></ruby>ます</td></tr>
+<tr><td class="ctx"><b>ない形</b></td><td class="jp2"><ruby>書<rt>か</rt></ruby>かない</td><td class="jp2"><ruby>帰<rt>かえ</rt></ruby>らない</td><td class="jp2"><ruby>見<rt>み</rt></ruby>ない</td></tr>
+<tr><td class="ctx"><b>て形</b></td><td class="jp2"><ruby>書<rt>か</rt></ruby>いて</td><td class="jp2"><ruby>帰<rt>かえ</rt></ruby>って</td><td class="jp2"><ruby>見<rt>み</rt></ruby>て</td></tr>
+<tr><td class="ctx"><b>た形</b></td><td class="jp2"><ruby>書<rt>か</rt></ruby>いた</td><td class="jp2"><ruby>帰<rt>かえ</rt></ruby>った</td><td class="jp2"><ruby>見<rt>み</rt></ruby>た</td></tr>
+<tr><td class="ctx"><b>可能形</b></td><td class="jp2"><ruby>書<rt>か</rt></ruby>ける</td><td class="jp2"><ruby>帰<rt>かえ</rt></ruby>れる</td><td class="jp2"><ruby>見<rt>み</rt></ruby>られる</td></tr>
+<tr><td class="ctx"><b>意向形</b></td><td class="jp2"><ruby>書<rt>か</rt></ruby>こう</td><td class="jp2"><ruby>帰<rt>かえ</rt></ruby>ろう</td><td class="jp2"><ruby>見<rt>み</rt></ruby>よう</td></tr>
+</tbody></table>
+<p style="font-size:13px;color:var(--sub);margin-top:9px;"><ruby>帰<rt>かえ</rt></ruby>る est&aacute; aqu&iacute; a prop&oacute;sito: acaba en る con え delante y aun as&iacute; es <b>godan</b>. Compara su columna con la de <ruby>見<rt>み</rt></ruby>る y ver&aacute;s la diferencia.</p>
+
+<h2>D&oacute;nde lo vas a encontrar</h2>
+<div class="where">
+<div class="row"><div class="k2 jp">て形</div><div class="v2">Es la base de media gram&aacute;tica: ている・ておく・てみる・てしまう・てから・てもいい・てください. Si solo dominas una forma, que sea esta.</div></div>
+<div class="row"><div class="k2 jp"><ruby>可能<rt>かのう</rt></ruby> = <ruby>受身<rt>うけみ</rt></ruby></div><div class="v2">En los ichidan son id&eacute;nticas. Las separan las part&iacute;culas: ケーキが<ruby>食<rt>た</rt></ruby>べられる (puedo) frente a <ruby>弟<rt>おとうと</rt></ruby>にケーキを<ruby>食<rt>た</rt></ruby>べられた (me la comieron).</div></div>
+<div class="row"><div class="k2 jp"><ruby>命令形<rt>めいれいけい</rt></ruby></div><div class="v2">Suena muy brusco. Fuera de carteles, deporte y enfados se usa てください o なさい.</div></div>
+<div class="row"><div class="k2 jp"><ruby>飲<rt>の</rt></ruby>まされる</div><div class="v2">La causativa-pasiva godan se contrae en el habla real: <ruby>飲<rt>の</rt></ruby>ませられる &rarr; <ruby>飲<rt>の</rt></ruby>まされる. Los verbos en す no se contraen.</div></div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>帰<rt>かえ</rt></ruby>ます ・ <ruby>帰<rt>かえ</rt></ruby>られる</span> &nbsp; &#9675; <span class="good jp"><ruby>帰<rt>かえ</rt></ruby>ります ・ <ruby>帰<rt>かえ</rt></ruby>れる</span></div><div class="why"><ruby>帰<rt>かえ</rt></ruby>る parece ichidan pero es godan. Igual <ruby>入<rt>はい</rt></ruby>る・<ruby>走<rt>はし</rt></ruby>る・<ruby>切<rt>き</rt></ruby>る・<ruby>知<rt>し</rt></ruby>る.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>書<rt>か</rt></ruby>くて</span> &nbsp; &#9675; <span class="good jp"><ruby>書<rt>か</rt></ruby>いて</span></div><div class="why">La て形 de los godan cambia seg&uacute;n la terminaci&oacute;n: く&rarr;いて, む&rarr;んで, る&rarr;って.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>来<rt>く</rt></ruby>ます</span> &nbsp; &#9675; <span class="good jp"><ruby>来<rt>き</rt></ruby>ます</span></div><div class="why"><ruby>来<rt>く</rt></ruby>る cambia de lectura en casi cada fila: く・き・こ.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>話<rt>はな</rt></ruby>さされる</span> &nbsp; &#9675; <span class="good jp"><ruby>話<rt>はな</rt></ruby>させられる</span></div><div class="why">Los verbos acabados en す no contraen la causativa-pasiva.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>髪<rt>かみ</rt></ruby>を<ruby>切<rt>き</rt></ruby>てもらった。</span> &nbsp; &#9675; <span class="good jp"><ruby>髪<rt>かみ</rt></ruby>を<ruby>切<rt>き</rt></ruby>ってもらった。</span></div><div class="why">切る (cortar) es godan: る &rarr; って. El que da 着て es 着る (vestir).</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="05-adjetivos.html"><small>&larr; Anterior</small><span class="jp">い形容詞・な形容詞</span></a><a class="next" href="07-tekei.html"><small>Siguiente &rarr;</small><span class="jp">て形</span></a></nav><!--/gen-bottom-->
+<footer>動詞活用表 &middot; Conjugaci&oacute;n &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

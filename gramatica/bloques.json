@@ -1,0 +1,170 @@
+[
+ {
+  "id": "A",
+  "emoji": "🧱",
+  "title": "Cimientos",
+  "desc": "kana, partículas, demostrativos, existencia, adjetivos",
+  "intro": "Lo que sostiene todo lo demás. Si algo de aquí cojea, lo notarás en los diez bloques siguientes.",
+  "warning": "Lo que más se atasca: <b>は frente a が</b>. La regla práctica — lo que va antes de は no es la respuesta; lo que va antes de が sí lo es.",
+  "fichas": [
+   "01-kana.html",
+   "02-particulas.html",
+   "03-kosoado.html",
+   "04-existencia.html",
+   "05-adjetivos.html"
+  ]
+ },
+ {
+  "id": "B",
+  "emoji": "⚙️",
+  "title": "Conjugación",
+  "desc": "la tabla maestra y las once formas que salen de ella",
+  "intro": "El bloque más denso y el más rentable. La <b>て形</b> es la pieza clave: sobre ella se monta media gramática posterior.",
+  "warning": "Cuidado con los verbos que <b>parecen ichidan y son godan</b>: 帰る・入る・走る・切る・知る. Están en la tabla maestra.",
+  "fichas": [
+   "06-conjugacion.html",
+   "07-tekei.html",
+   "08-takei.html",
+   "09-teiru.html",
+   "10-jidoshi-tadoshi.html",
+   "11-forma-simple.html",
+   "12-potencial.html",
+   "13-pasiva.html",
+   "14-causativa.html",
+   "15-causativa-pasiva.html",
+   "16-raiz-masu.html"
+  ]
+ },
+ {
+  "id": "C",
+  "emoji": "🗓️",
+  "title": "Vocabulario práctico",
+  "desc": "números, hora, calendario, familia, adverbios",
+  "intro": "Lo que hace falta a diario y casi nunca se estudia en serio. Los contadores y las lecturas irregulares de las fechas son de lo que más se falla.",
+  "fichas": [
+   "17-numeros.html",
+   "18-horas.html",
+   "19-calendario.html",
+   "20-familia.html",
+   "21-adverbios.html",
+   "22-onomatopeyas.html"
+  ]
+ },
+ {
+  "id": "D",
+  "emoji": "🧩",
+  "title": "Formar palabras",
+  "desc": "prefijos y sufijos",
+  "intro": "Moldes que convierten palabras que ya sabes en palabras nuevas. Un bloque corto y muy rentable.",
+  "fichas": [
+   "23-prefijos-sufijos.html"
+  ]
+ },
+ {
+  "id": "E",
+  "emoji": "⏳",
+  "title": "Unir frases · tiempo",
+  "desc": "cuando, mientras, antes, después",
+  "intro": "Aquí el tiempo del verbo casi nunca es el que esperas: lo que marca no es cuándo pasó, sino cómo se relaciona con la otra acción.",
+  "warning": "<b>前に</b> va siempre en diccionario y <b>後で</b> siempre en pasado, aunque toda la frase esté en pasado. Es simétrico y por eso se confunde.",
+  "fichas": [
+   "24-toki.html",
+   "25-nagara-aida.html",
+   "26-uchini.html",
+   "27-antes-despues.html",
+   "28-tekuru-teiku.html",
+   "29-tokoro.html"
+  ]
+ },
+ {
+  "id": "F",
+  "emoji": "🔀",
+  "title": "Unir frases · lógica",
+  "desc": "condicionales, causa, contraste, conectores",
+  "intro": "Los cuatro condicionales (<b>たら・と・ば・なら</b>) son de lo que más se consulta. No son intercambiables.",
+  "warning": "Detrás de <b>と</b> no puede ir una petición ni una invitación. Si dudas, <b>たら</b> funciona casi siempre.",
+  "fichas": [
+   "30-condicionales.html",
+   "31-limite-hipotesis.html",
+   "32-explicar.html",
+   "33-causa.html",
+   "34-contraste.html",
+   "35-shi.html",
+   "36-wake.html",
+   "63-conectores.html"
+  ]
+ },
+ {
+  "id": "G",
+  "emoji": "🌤️",
+  "title": "Matices y modalidad",
+  "desc": "posibilidad, certeza, apariencia, reproche",
+  "intro": "Cuánto te la juegas al afirmar, y de dónde sacas la información.",
+  "warning": "Las <b>dos そうだ</b> se distinguen solo por el enganche: 降りそう (raíz de ます) es lo que ves venir; 降るそう (forma simple) es lo que te han contado.",
+  "fichas": [
+   "37-posibilidad-certeza.html",
+   "38-parece-de-oidas.html",
+   "39-tendencias.html",
+   "40-generalizar.html",
+   "41-reproche.html"
+  ]
+ },
+ {
+  "id": "H",
+  "emoji": "🔁",
+  "title": "Acciones y aspecto",
+  "desc": "auxiliares て, estado, experiencia",
+  "intro": "Verbos que pegados a la forma <b>て</b> dejan de significar lo suyo y se vuelven matiz. De lo más usado al hablar.",
+  "fichas": [
+   "42-auxiliares-te.html",
+   "43-estado.html",
+   "44-experiencia.html",
+   "45-intentos.html",
+   "46-enumerar.html"
+  ]
+ },
+ {
+  "id": "I",
+  "emoji": "🤝",
+  "title": "Voluntad, trato y relación",
+  "desc": "deseos, obligación, dar y recibir, keigo",
+  "intro": "El bloque más largo, y el que más tiene que ver con <b>cómo tratas a la otra persona</b>. Termina en keigo, que es donde todo esto se pone serio.",
+  "warning": "En keigo, el error grave es <b>elevarse a uno mismo</b>. 尊敬語 sube al otro; 謙譲語 te baja a ti. Nunca al revés.",
+  "fichas": [
+   "47-deseos-invitaciones.html",
+   "48-tehoshii.html",
+   "49-intencion.html",
+   "50-decisiones.html",
+   "51-cambio.html",
+   "52-proposito.html",
+   "53-obligacion-permiso.html",
+   "54-ordenes.html",
+   "55-dar-recibir.html",
+   "56-keigo.html"
+  ]
+ },
+ {
+  "id": "J",
+  "emoji": "⚖️",
+  "title": "Cantidad y comparación",
+  "desc": "comparar, cantidad, énfasis",
+  "intro": "Cuánto hay y con qué actitud lo cuentas. Aquí está la distinción de <b>らしい</b> entre semejanza y rumor.",
+  "fichas": [
+   "57-comparacion.html",
+   "58-cantidad-restriccion.html",
+   "59-enfasis.html",
+   "60-respecto-a.html",
+   "61-depende-de.html"
+  ]
+ },
+ {
+  "id": "K",
+  "emoji": "🎌",
+  "title": "Remate",
+  "desc": "diez puntos sueltos que cierran el N3",
+  "intro": "Estructuras que no encajan en ningún bloque anterior pero completan el nivel.",
+  "fichas": [
+   "62-remate-n3.html"
+  ]
+ }
+]

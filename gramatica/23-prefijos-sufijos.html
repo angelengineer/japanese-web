@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>接頭語・接尾語 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#D">&larr; Gram&aacute;tica</a><span>D &middot; Formar palabras</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>接頭語<rt>せっとうご</rt></ruby>・<ruby>接尾語<rt>せつびご</rt></ruby></h1>
+<div class="sub">Moldes que convierten palabras que ya sabes en <b>palabras nuevas</b>.</div>
+<div class="rom">sett&#333;go &middot; setsubigo</div>
+</div><div class="badge"><span class="tag">JLPT N4 &ndash; N3</span><span class="cat">Formar palabras</span></div></header>
+
+<h2>El caso que hay que entender &mdash; さ frente a み</h2>
+<div class="fig">
+<div class="z solid"><h4 class="jp"><ruby>痛<rt>いた</rt></ruby>さ</h4><div class="d">&laquo;cu&aacute;nto duele&raquo; &mdash; la <b>medida</b>, objetiva. Vale con casi cualquier adjetivo.</div></div>
+<div class="z pale"><h4 class="jp"><ruby>痛<rt>いた</rt></ruby>み</h4><div class="d">&laquo;el dolor&raquo; &mdash; la <b>cosa</b>, lo que se siente. Solo con unos pocos, y suena m&aacute;s subjetivo.</div></div>
+<div class="figcap">Del mismo adjetivo <ruby>痛<rt>いた</rt></ruby>い salen dos sustantivos distintos.</div>
+</div>
+<ul class="nuance">
+<li>お va con palabras <b>japonesas</b> y ご con las de origen <b>chino</b>: お<ruby>名前<rt>なまえ</rt></ruby> pero ご<ruby>住所<rt>じゅうしょ</rt></ruby>. Acierta casi siempre, con excepciones muy usadas como お<ruby>電話<rt>でんわ</rt></ruby> y お<ruby>食事<rt>しょくじ</rt></ruby>.</li>
+<li>〜<ruby>中<rt>ちゅう</rt></ruby>／〜<ruby>中<rt>じゅう</rt></ruby> tiene <b>dos lecturas y dos sentidos</b>: ちゅう es &laquo;en proceso&raquo; (<ruby>工事中<rt>こうじちゅう</rt></ruby>, en obras) y じゅう es &laquo;durante todo&raquo; (<ruby>一日中<rt>いちにちじゅう</rt></ruby>, todo el d&iacute;a).</li>
+<li><b><ruby>不<rt>ふ</rt></ruby> y <ruby>無<rt>む</rt></ruby> no son lo mismo</b>: <ruby>不<rt>ふ</rt></ruby> niega una cualidad (<ruby>不便<rt>ふべん</rt></ruby>, poco pr&aacute;ctico) y <ruby>無<rt>む</rt></ruby> dice que algo <b>no existe</b> (<ruby>無料<rt>むりょう</rt></ruby>, sin coste).</li>
+<li>〜たち solo se usa con <b>personas y seres vivos</b>. El japon&eacute;s no marca el plural en los objetos: <ruby>本<rt>ほん</rt></ruby> es &laquo;libro&raquo; y &laquo;libros&raquo; a la vez.</li>
+<li><b>〜<ruby>的<rt>てき</rt></ruby> convierte cualquier sustantivo en adjetivo -な</b>: <ruby>経済<rt>けいざい</rt></ruby> (econom&iacute;a) &rarr; <ruby>経済的<rt>けいざいてき</rt></ruby>な (econ&oacute;mico). Es de los sufijos m&aacute;s productivos del N3.</li>
+<li><b>〜め</b> sobre la ra&iacute;z del adjetivo es &laquo;tirando a&hellip;&raquo;: <ruby>早<rt>はや</rt></ruby>め, <ruby>多<rt>おお</rt></ruby>め, <ruby>大<rt>おお</rt></ruby>きめ. Suaviza: <ruby>早<rt>はや</rt></ruby>めに<ruby>来<rt>き</rt></ruby>てください es &laquo;ven un poco antes&raquo;, m&aacute;s amable que <ruby>早<rt>はや</rt></ruby>く<ruby>来<rt>き</rt></ruby>て, que puede sonar a prisa. Funciona como adjetivo -な: <ruby>早<rt>はや</rt></ruby>めの<ruby>電車<rt>でんしゃ</rt></ruby>, <ruby>早<rt>はや</rt></ruby>めに<ruby>出<rt>で</rt></ruby>る.</li>
+<li><b>〜<ruby>分<rt>ぶん</rt></ruby></b> es la parte que corresponde: <ruby>明日<rt>あした</rt></ruby>の<ruby>分<rt>ぶん</rt></ruby> (&laquo;lo de ma&ntilde;ana&raquo;), <ruby>三人分<rt>さんにんぶん</rt></ruby> (&laquo;para tres&raquo;). No confundir con <ruby>分<rt>ふん</rt></ruby>, minutos.</li>
+<li><b>Plurales de persona seg&uacute;n el registro</b>: 〜<ruby>方<rt>がた</rt></ruby> (cort&eacute;s, para otros: <ruby>先生方<rt>せんせいがた</rt></ruby>) &gt; 〜たち (neutro) &gt; 〜ら (llano, algo brusco: <ruby>彼<rt>かれ</rt></ruby>ら) &gt; 〜ども (humilde, para los tuyos: <ruby>私<rt>わたくし</rt></ruby>ども, &laquo;nosotros, la empresa&raquo;).</li>
+</ul>
+
+<h2>Sufijos que crean sustantivos</h2>
+<table>
+<thead><tr><th>Sufijo</th><th>Se pega a</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">〜さ</td><td class="jp2">adjetivo (casi todos)</td><td class="jp2"><ruby>高<rt>たか</rt></ruby>い&rarr;<ruby>高<rt>たか</rt></ruby>さ <em>altura</em></td></tr>
+<tr><td class="ctx">〜み</td><td class="jp2">adjetivo (unos pocos)</td><td class="jp2"><ruby>楽<rt>たの</rt></ruby>しい&rarr;<ruby>楽<rt>たの</rt></ruby>しみ <em>ilusi&oacute;n</em></td></tr>
+<tr><td class="ctx">〜<ruby>方<rt>かた</rt></ruby></td><td class="jp2">ra&iacute;z de ます</td><td class="jp2"><ruby>読<rt>よ</rt></ruby>む&rarr;<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby> <em>modo de leer</em></td></tr>
+<tr><td class="ctx">〜<ruby>屋<rt>や</rt></ruby></td><td class="jp2">sustantivo</td><td class="jp2">パン&rarr;パン<ruby>屋<rt>や</rt></ruby> <em>panader&iacute;a</em></td></tr>
+<tr><td class="ctx">〜<ruby>者<rt>しゃ</rt></ruby></td><td class="jp2">sustantivo</td><td class="jp2"><ruby>研究<rt>けんきゅう</rt></ruby>&rarr;<ruby>研究者<rt>けんきゅうしゃ</rt></ruby> <em>investigador</em></td></tr>
+<tr><td class="ctx">〜<ruby>家<rt>か</rt></ruby></td><td class="jp2">sustantivo</td><td class="jp2"><ruby>音楽<rt>おんがく</rt></ruby>&rarr;<ruby>音楽家<rt>おんがくか</rt></ruby> <em>m&uacute;sico</em></td></tr>
+<tr><td class="ctx">〜<ruby>員<rt>いん</rt></ruby></td><td class="jp2">sustantivo</td><td class="jp2"><ruby>会社<rt>かいしゃ</rt></ruby>&rarr;<ruby>会社員<rt>かいしゃいん</rt></ruby> <em>empleado</em></td></tr>
+<tr><td class="ctx">〜<ruby>代<rt>だい</rt></ruby>・〜<ruby>料<rt>りょう</rt></ruby></td><td class="jp2">sustantivo</td><td class="jp2"><ruby>電気代<rt>でんきだい</rt></ruby> <em>la luz</em> &nbsp; <ruby>入場料<rt>にゅうじょうりょう</rt></ruby> <em>entrada</em></td></tr>
+</tbody></table>
+
+<h2>Sufijos que a&ntilde;aden matiz</h2>
+<table>
+<thead><tr><th>Sufijo</th><th>Qu&eacute; a&ntilde;ade</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">〜<ruby>的<rt>てき</rt></ruby></td><td class="jp2">&laquo;-ico, -al&raquo; &middot; crea adjetivo -な</td><td class="jp2"><ruby>経済的<rt>けいざいてき</rt></ruby> <em>econ&oacute;mico</em></td></tr>
+<tr><td class="ctx">〜<ruby>化<rt>か</rt></ruby></td><td class="jp2">&laquo;-izaci&oacute;n&raquo;</td><td class="jp2"><ruby>国際化<rt>こくさいか</rt></ruby> <em>internacionalizaci&oacute;n</em></td></tr>
+<tr><td class="ctx">〜<ruby>性<rt>せい</rt></ruby></td><td class="jp2">&laquo;-idad&raquo;</td><td class="jp2"><ruby>可能性<rt>かのうせい</rt></ruby> <em>posibilidad</em></td></tr>
+<tr><td class="ctx">〜<ruby>中<rt>ちゅう</rt></ruby>／〜<ruby>中<rt>じゅう</rt></ruby></td><td class="jp2">en proceso ／ durante todo</td><td class="jp2"><ruby>工事中<rt>こうじちゅう</rt></ruby> &nbsp; <ruby>一日中<rt>いちにちじゅう</rt></ruby></td></tr>
+<tr><td class="ctx">〜<ruby>以上<rt>いじょう</rt></ruby>／〜<ruby>以下<rt>いか</rt></ruby></td><td class="jp2"><b>incluyen</b> el n&uacute;mero: X o m&aacute;s ／ X o menos</td><td class="jp2"><ruby>二十歳<rt>はたち</rt></ruby><ruby>以上<rt>いじょう</rt></ruby> <em>de 20 en adelante</em></td></tr>
+<tr><td class="ctx">〜<ruby>以内<rt>いない</rt></ruby></td><td class="jp2">dentro de (plazo)</td><td class="jp2"><ruby>三日以内<rt>みっかいない</rt></ruby> <em>en tres d&iacute;as</em></td></tr>
+<tr><td class="ctx">〜たち・〜ら</td><td class="jp2">plural de personas</td><td class="jp2"><ruby>子供<rt>こども</rt></ruby>たち <em>los ni&ntilde;os</em></td></tr>
+<tr><td class="ctx">〜ごと</td><td class="jp2">cada&hellip;</td><td class="jp2"><ruby>三日<rt>みっか</rt></ruby>ごと <em>cada tres d&iacute;as</em></td></tr>
+<tr><td class="ctx">〜め</td><td class="jp2">&laquo;tirando a&hellip;&raquo;, un poco m&aacute;s</td><td class="jp2"><ruby>早<rt>はや</rt></ruby>め &nbsp; <ruby>多<rt>おお</rt></ruby>め &nbsp; <ruby>大<rt>おお</rt></ruby>きめ</td></tr>
+<tr><td class="ctx">〜<ruby>分<rt>ぶん</rt></ruby></td><td class="jp2">la parte que corresponde</td><td class="jp2"><ruby>明日<rt>あした</rt></ruby>の<ruby>分<rt>ぶん</rt></ruby> &nbsp; <ruby>三人分<rt>さんにんぶん</rt></ruby></td></tr>
+<tr><td class="ctx">〜<ruby>方<rt>がた</rt></ruby></td><td class="jp2">plural cort&eacute;s (para otros)</td><td class="jp2"><ruby>先生方<rt>せんせいがた</rt></ruby></td></tr>
+<tr><td class="ctx">〜ども</td><td class="jp2">plural humilde (para los tuyos)</td><td class="jp2"><ruby>私<rt>わたくし</rt></ruby>ども</td></tr>
+
+</tbody></table>
+
+<h2>Prefijos</h2>
+<table>
+<thead><tr><th>Prefijo</th><th>Qu&eacute; hace</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">お〜</td><td class="jp2">cortes&iacute;a &middot; palabra japonesa</td><td class="jp2">お<ruby>茶<rt>ちゃ</rt></ruby>・お<ruby>名前<rt>なまえ</rt></ruby>・お<ruby>金<rt>かね</rt></ruby></td></tr>
+<tr><td class="ctx">ご〜</td><td class="jp2">cortes&iacute;a &middot; palabra china</td><td class="jp2">ご<ruby>飯<rt>はん</rt></ruby>・ご<ruby>住所<rt>じゅうしょ</rt></ruby>・ご<ruby>家族<rt>かぞく</rt></ruby></td></tr>
+<tr><td class="ctx"><ruby>不<rt>ふ</rt></ruby>〜</td><td class="jp2">niega una cualidad</td><td class="jp2"><ruby>不便<rt>ふべん</rt></ruby> <em>inc&oacute;modo</em></td></tr>
+<tr><td class="ctx"><ruby>無<rt>む</rt></ruby>〜</td><td class="jp2">dice que no hay</td><td class="jp2"><ruby>無料<rt>むりょう</rt></ruby> <em>gratis</em></td></tr>
+<tr><td class="ctx"><ruby>未<rt>み</rt></ruby>〜</td><td class="jp2">todav&iacute;a no</td><td class="jp2"><ruby>未定<rt>みてい</rt></ruby> <em>sin decidir</em></td></tr>
+<tr><td class="ctx"><ruby>再<rt>さい</rt></ruby>〜</td><td class="jp2">otra vez</td><td class="jp2"><ruby>再開<rt>さいかい</rt></ruby> reanudar ・ <ruby>再利用<rt>さいりよう</rt></ruby> reutilizar</td></tr>
+<tr><td class="ctx"><ruby>最<rt>さい</rt></ruby>〜</td><td class="jp2">el m&aacute;s&hellip;</td><td class="jp2"><ruby>最高<rt>さいこう</rt></ruby> <em>lo mejor</em> &nbsp; <ruby>最新<rt>さいしん</rt></ruby> <em>lo m&aacute;s nuevo</em></td></tr>
+<tr><td class="ctx"><ruby>大<rt>だい</rt></ruby>〜</td><td class="jp2">muy, gran</td><td class="jp2"><ruby>大好<rt>だいす</rt></ruby>き <em>encantar</em> &nbsp; <ruby>大成功<rt>だいせいこう</rt></ruby></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">この<ruby>山<rt>やま</rt></ruby>の<span class="hi"><ruby>高<rt>たか</rt></ruby>さ</span>は<ruby>三千<rt>さんぜん</rt></ruby>メートルです。</div><div class="t">La altura de esta monta&ntilde;a es de 3000 metros.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>旅行<rt>りょこう</rt></ruby>を<span class="hi"><ruby>楽<rt>たの</rt></ruby>しみ</span>にしています。</div><div class="t">Tengo ilusi&oacute;n por el viaje.</div></div>
+<div class="ex-item"><div class="s jp">ご<span class="hi"><ruby>住所<rt>じゅうしょ</rt></ruby></span>をお<ruby>願<rt>ねが</rt></ruby>いします。</div><div class="t">Su direcci&oacute;n, por favor. <em>(palabra china &rarr; ご)</em></div></div>
+<div class="ex-item"><div class="s jp">この<ruby>道<rt>みち</rt></ruby>は<span class="hi"><ruby>工事中<rt>こうじちゅう</rt></ruby></span>です。</div><div class="t">Esta calle est&aacute; en obras.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>一日中<rt>いちにちじゅう</rt></ruby></span><ruby>歩<rt>ある</rt></ruby>きました。</div><div class="t">Anduve todo el d&iacute;a. <em>(じゅう: durante todo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>入場<rt>にゅうじょう</rt></ruby>は<span class="hi"><ruby>無料<rt>むりょう</rt></ruby></span>です。</div><div class="t">La entrada es gratuita.</div></div>
+<div class="ex-item"><div class="s jp">もっと<span class="hi"><ruby>経済的<rt>けいざいてき</rt></ruby></span>な<ruby>方法<rt>ほうほう</rt></ruby>はありませんか。</div><div class="t">&iquest;No hay un m&eacute;todo m&aacute;s econ&oacute;mico?</div></div>
+<div class="ex-item"><div class="s jp"><ruby>三日<rt>みっか</rt></ruby><span class="hi"><ruby>以内<rt>いない</rt></ruby></span>に<ruby>返事<rt>へんじ</rt></ruby>をください。</div><div class="t">Resp&oacute;ndame en un plazo de tres d&iacute;as.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>りそうなので、<ruby>早<rt>はや</rt></ruby><span class="hi">め</span>に<ruby>出<rt>で</rt></ruby>かけましょう。</div><div class="t">Parece que va a llover, salgamos un poco antes.</div></div>
+<div class="ex-item"><div class="s jp">ケーキを<ruby>三人<rt>さんにん</rt></ruby><span class="hi"><ruby>分<rt>ぶん</rt></ruby></span><ruby>買<rt>か</rt></ruby>いました。</div><div class="t">Compr&eacute; pastel para tres.</div></div>
+
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp">お<ruby>住所<rt>じゅうしょ</rt></ruby></span> &nbsp; &#9675; <span class="good jp">ご<ruby>住所<rt>じゅうしょ</rt></ruby></span></div><div class="why"><ruby>住所<rt>じゅうしょ</rt></ruby> es palabra de origen chino: lleva ご.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>不料<rt>ふりょう</rt></ruby></span> &nbsp; &#9675; <span class="good jp"><ruby>無料<rt>むりょう</rt></ruby></span></div><div class="why">&laquo;Sin coste&raquo; usa <ruby>無<rt>む</rt></ruby> (no existe), no <ruby>不<rt>ふ</rt></ruby> (niega cualidad).</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>本<rt>ほん</rt></ruby>たち</span> &nbsp; &#9675; <span class="good jp"><ruby>本<rt>ほん</rt></ruby></span></div><div class="why">〜たち no se usa con objetos.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>工事中<rt>こうじじゅう</rt></ruby></span> &nbsp; &#9675; <span class="good jp"><ruby>工事中<rt>こうじちゅう</rt></ruby></span></div><div class="why">&laquo;En proceso&raquo; se lee ちゅう; じゅう es &laquo;durante todo&raquo;.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>早<rt>はや</rt></ruby>いめ</span> &nbsp; &#9675; <span class="good jp"><ruby>早<rt>はや</rt></ruby>め</span></div><div class="why">〜め va sobre la ra&iacute;z, sin la い.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">お<ruby>客様<rt>きゃくさま</rt></ruby>ども</span> &nbsp; &#9675; <span class="good jp">お<ruby>客様方<rt>きゃくさまがた</rt></ruby></span></div><div class="why">ども rebaja: solo para los tuyos.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="22-onomatopeyas.html"><small>&larr; Anterior</small><span class="jp">オノマトペ</span></a><a class="next" href="24-toki.html"><small>Siguiente &rarr;</small><span class="jp">とき</span></a></nav><!--/gen-bottom-->
+<footer>接頭語・接尾語 &middot; Formar palabras &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

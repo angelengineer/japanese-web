@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;}
+.quad .q{border-radius:6px;padding:13px 14px;}
+.quad .q.a{background:var(--midori);color:#fff;}
+.quad .q.b{background:var(--midori-pale);}
+.quad .q.c{background:#fff;border:1px solid var(--kasumi);}
+.quad .q.d{background:var(--shu-pale);border:1px solid #EBD6D3;}
+.quad .w{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:700;}
+.quad .h{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.09em;text-transform:uppercase;margin:5px 0 6px;}
+.quad .a .h{color:#C9DAC9;} .quad .b .h,.quad .c .h{color:var(--sub);} .quad .d .h{color:var(--shu);}
+.quad .d2{font-size:12px;line-height:1.45;}
+.quad .a .d2{color:#E6EEE6;}
+.quad .ex{font-family:"Noto Serif JP",serif;font-size:13px;margin-top:7px;padding-top:7px;border-top:1px solid rgba(0,0,0,.09);}
+.quad .a .ex{border-top-color:rgba(255,255,255,.25);}
+@media(max-width:560px){.quad{grid-template-columns:1fr;}}
+.decide{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:14px;margin-top:14px;}
+.decide .st{display:flex;gap:10px;align-items:baseline;padding:7px 0;border-bottom:1px dotted #E6E9E2;}
+.decide .st:last-child{border:none;}
+.decide .n{font-family:"Poppins",sans-serif;font-size:9px;color:#fff;background:var(--midori);border-radius:50%;width:17px;height:17px;display:flex;align-items:center;justify-content:center;flex:0 0 17px;}
+.decide .q2{font-size:13.5px;flex:1;}
+.decide .q2 b{color:var(--midori);font-family:"Noto Serif JP",serif;}
+</style><!--gen-head-->
+<title>たら・と・ば・なら &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#F">&larr; Gram&aacute;tica</a><span>F &middot; Unir frases &#183; l&#243;gica</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">たら・と・ば・なら</h1>
+<div class="sub">Cuatro maneras de decir &laquo;si&raquo; &mdash; y <b>no son intercambiables</b>.</div>
+<div class="rom">&hellip;tara &middot; &hellip;to &middot; &hellip;ba &middot; &hellip;nara</div>
+</div><div class="badge"><span class="tag">JLPT N5 &ndash; N4</span><span class="cat">Condicionales</span></div></header>
+
+<h2>Los cuatro, de un vistazo</h2>
+<div class="quad">
+<div class="q a"><div class="w jp">たら</div><div class="h">EL COMOD&Iacute;N</div>
+<div class="d2">Sirve para casi todo: condici&oacute;n, hip&oacute;tesis, y tambi&eacute;n
+&laquo;cuando pase X&raquo;. <b>Si dudas, usa たら.</b> Es la m&aacute;s segura con
+petici&oacute;n o invitaci&oacute;n detr&aacute;s (と nunca las admite; ば, solo con verbos de estado).</div>
+<div class="ex jp"><ruby>時間<rt>じかん</rt></ruby>があったら、<ruby>手伝<rt>てつだ</rt></ruby>ってください。</div></div>
+
+<div class="q b"><div class="w jp">と</div><div class="h">CONSECUENCIA AUTOM&Aacute;TICA</div>
+<div class="d2">Siempre que pasa A, pasa B. Leyes naturales, m&aacute;quinas, caminos.
+<b>Detr&aacute;s no puede ir voluntad</b>: ni petici&oacute;n, ni invitaci&oacute;n, ni permiso.</div>
+<div class="ex jp"><ruby>春<rt>はる</rt></ruby>になると、<ruby>桜<rt>さくら</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>く。</div></div>
+
+<div class="q c"><div class="w jp">ば</div><div class="h">CONDICI&Oacute;N GEN&Eacute;RICA</div>
+<div class="d2">M&aacute;s formal y abstracta. Refranes, condiciones l&oacute;gicas y el
+patr&oacute;n 〜ばよかった (arrepentimiento). Con verbos de acci&oacute;n, restricciones parecidas a と.</div>
+<div class="ex jp"><ruby>安<rt>やす</rt></ruby>ければ<ruby>買<rt>か</rt></ruby>います。</div></div>
+
+<div class="q d"><div class="w jp">なら</div><div class="h">RETOMA LO QUE ME HAN DICHO</div>
+<div class="d2">&laquo;Si es el caso de que&hellip;&raquo;. Se apoya en algo que
+<b>acaba de decir el otro</b>. Es la &uacute;nica que puede ir tras un sustantivo desnudo.</div>
+<div class="ex jp"><ruby>京都<rt>きょうと</rt></ruby>なら、バスが<ruby>便利<rt>べんり</rt></ruby>ですよ。</div></div>
+</div>
+
+<h2>C&oacute;mo elegir en cuatro pasos</h2>
+<div class="decide">
+<div class="st"><span class="n">1</span><span class="q2">&iquest;Estoy respondiendo a algo que <b>acaba de decir</b> el otro?
+&rarr; <b>なら</b></span></div>
+<div class="st"><span class="n">2</span><span class="q2">&iquest;El resultado es <b>autom&aacute;tico</b>, sin voluntad de nadie?
+&rarr; <b>と</b></span></div>
+<div class="st"><span class="n">3</span><span class="q2">&iquest;Detr&aacute;s hay una <b>petici&oacute;n, invitaci&oacute;n u orden</b>?
+&rarr; <b>たら</b> (と nunca; ば solo si el verbo es de estado: あれば)</span></div>
+<div class="st"><span class="n">4</span><span class="q2">En cualquier otro caso &rarr; <b>たら</b> funciona;
+<b>ば</b> si quieres un tono m&aacute;s formal o gen&eacute;rico.</span></div>
+</div>
+<ul class="nuance">
+<li><b>La restricci&oacute;n que m&aacute;s se falla</b>: detr&aacute;s de と y de ば no puede ir voluntad del hablante. <span class="rd">&#10005; <ruby>時間<rt>じかん</rt></ruby>があると、<ruby>手伝<rt>てつだ</rt></ruby>ってください</span> no vale; hay que decir あったら.</li>
+<li><b>ば s&iacute; admite voluntad si el primer verbo es de estado</b> (あれば, <ruby>安<rt>やす</rt></ruby>ければ): <ruby>時間<rt>じかん</rt></ruby>があれば<ruby>手伝<rt>てつだ</rt></ruby>ってください es correcto. La restricci&oacute;n solo pega con verbos de acci&oacute;n.</li>
+<li><b>たら tambi&eacute;n sirve para hechos ya pasados</b>, sin nada de condicional: <ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>ったら、<ruby>誰<rt>だれ</rt></ruby>もいなかった (&laquo;cuando llegu&eacute;&hellip;&raquo;). Ah&iacute; es un simple &laquo;cuando&raquo; con sorpresa.</li>
+<li><b>と con pasado tambi&eacute;n narra un descubrimiento</b>: ドアを<ruby>開<rt>あ</rt></ruby>けると、<ruby>猫<rt>ねこ</rt></ruby>がいた (&laquo;al abrir la puerta, hab&iacute;a un gato&raquo;). Es narraci&oacute;n, no condici&oacute;n, y sale mucho en lecturas.</li>
+<li><b>なら invierte el orden temporal</b>: <ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>くなら、カメラを<ruby>買<rt>か</rt></ruby>ったほうがいい &mdash; comprar la c&aacute;mara va <b>antes</b> del viaje. Con たら ir&iacute;a despu&eacute;s.</li>
+<li><b>ば en refranes y arrepentimientos</b>: <ruby>塵<rt>ちり</rt></ruby>も<ruby>積<rt>つ</rt></ruby>もれば<ruby>山<rt>やま</rt></ruby>となる; もっと<ruby>勉強<rt>べんきょう</rt></ruby>すれば<ruby>良<rt>よ</rt></ruby>かった.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>たら</th><th>と</th><th>ば</th><th>なら</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Verbo</td><td class="jp2"><ruby>行<rt>い</rt></ruby>っ<span class="hi">たら</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>く<span class="hi">と</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>け<span class="hi">ば</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>く<span class="hi">なら</span></td></tr>
+<tr><td class="ctx">Verbo negativo</td><td class="jp2"><ruby>行<rt>い</rt></ruby>かなかっ<span class="hi">たら</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>かない<span class="hi">と</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>かなけれ<span class="hi">ば</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>かない<span class="hi">なら</span></td></tr>
+<tr><td class="ctx">Adjetivo -い</td><td class="jp2"><ruby>安<rt>やす</rt></ruby>かっ<span class="hi">たら</span></td><td class="jp2"><ruby>安<rt>やす</rt></ruby>い<span class="hi">と</span></td><td class="jp2"><ruby>安<rt>やす</rt></ruby>けれ<span class="hi">ば</span></td><td class="jp2"><ruby>安<rt>やす</rt></ruby>い<span class="hi">なら</span></td></tr>
+<tr><td class="ctx">Adjetivo -な</td><td class="jp2"><ruby>静<rt>しず</rt></ruby>かだっ<span class="hi">たら</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>かだ<span class="hi">と</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>かなら<span class="hi">ば</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>か<span class="hi">なら</span></td></tr>
+<tr><td class="ctx">Sustantivo</td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby>だっ<span class="hi">たら</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby>だ<span class="hi">と</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby>なら<span class="hi">ば</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">なら</span></td></tr>
+</tbody></table>
+
+<h2>La misma frase con los cuatro</h2>
+<table>
+<thead><tr><th>Condicional</th><th>Frase</th><th>Qu&eacute; sugiere</th></tr></thead>
+<tbody>
+<tr><td class="ctx">たら</td><td class="jp2"><ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>っ<span class="hi">たら</span>、お<ruby>寺<rt>てら</rt></ruby>を<ruby>見<rt>み</rt></ruby>てください。</td><td class="jp2">cuando llegues, visita templos</td></tr>
+<tr><td class="ctx">と</td><td class="jp2"><ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<span class="hi">と</span>、お<ruby>寺<rt>てら</rt></ruby>がたくさんある。</td><td class="jp2">siempre que vas, hay templos <em>(constataci&oacute;n)</em></td></tr>
+<tr><td class="ctx">ば</td><td class="jp2"><ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>け<span class="hi">ば</span>、お<ruby>寺<rt>てら</rt></ruby>が<ruby>見<rt>み</rt></ruby>られる。</td><td class="jp2">si vas, podr&aacute;s verlos <em>(l&oacute;gico)</em></td></tr>
+<tr><td class="ctx">なら</td><td class="jp2"><ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<span class="hi">なら</span>、バスが<ruby>便利<rt>べんり</rt></ruby>ですよ。</td><td class="jp2">ya que vas, te conviene el bus <em>(consejo previo)</em></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っ<span class="hi">たら</span>、<ruby>試合<rt>しあい</rt></ruby>は<ruby>中止<rt>ちゅうし</rt></ruby>です。</div><div class="t">Si llueve, se cancela el partido.</div></div>
+<div class="ex-item"><div class="s jp">このボタンを<ruby>押<rt>お</rt></ruby>す<span class="hi">と</span>、ドアが<ruby>開<rt>あ</rt></ruby>きます。</div><div class="t">Si pulsas este bot&oacute;n, se abre la puerta. <em>(autom&aacute;tico)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>春<rt>はる</rt></ruby>になる<span class="hi">と</span>、<ruby>桜<rt>さくら</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>きます。</div><div class="t">Cuando llega la primavera, florecen los cerezos.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>安<rt>やす</rt></ruby>けれ<span class="hi">ば</span><ruby>買<rt>か</rt></ruby>います。</div><div class="t">Si es barato, lo compro.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>寿司<rt>すし</rt></ruby><span class="hi">なら</span>、あの<ruby>店<rt>みせ</rt></ruby>がおいしいですよ。</div><div class="t">Si es sushi, ese sitio est&aacute; bueno. <em>(retoma lo dicho)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>っ<span class="hi">たら</span>、<ruby>誰<rt>だれ</rt></ruby>もいなかった。</div><div class="t">Cuando llegu&eacute; a casa, no hab&iacute;a nadie. <em>(hecho pasado)</em></div></div>
+<div class="ex-item"><div class="s jp">もっと<ruby>早<rt>はや</rt></ruby>く<ruby>出<rt>で</rt></ruby>れ<span class="hi">ば</span>よかった。</div><div class="t">Ojal&aacute; hubiera salido antes. <em>(arrepentimiento)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<span class="hi">なら</span>、カメラを<ruby>買<rt>か</rt></ruby>ったほうがいい。</div><div class="t">Si vas a Jap&oacute;n, c&oacute;mprate una c&aacute;mara antes. <em>(orden invertido)</em></div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>時間<rt>じかん</rt></ruby>があると、<ruby>手伝<rt>てつだ</rt></ruby>ってください。</span> &nbsp; &#9675; <span class="good jp"><ruby>時間<rt>じかん</rt></ruby>があったら、<ruby>手伝<rt>てつだ</rt></ruby>ってください。</span></div><div class="why">Detr&aacute;s de と no puede ir una petici&oacute;n.</div></div>
+<div class="err"><div>&#9651; <span class="bad jp"><ruby>春<rt>はる</rt></ruby>になったら、<ruby>桜<rt>さくら</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>く。 <em>(como ley general)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>春<rt>はる</rt></ruby>になると、<ruby>桜<rt>さくら</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>く。</span></div><div class="why">Es correcto, pero para una ley general que se repite lo m&aacute;s natural es と.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>京都<rt>きょうと</rt></ruby>に<ruby>行<rt>い</rt></ruby>ったら、バスが<ruby>便利<rt>べんり</rt></ruby>ですよ。 <em>(como consejo previo)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>行<rt>い</rt></ruby>くなら、バスが<ruby>便利<rt>べんり</rt></ruby>ですよ。</span></div><div class="why">El consejo <b>antes</b> de la acci&oacute;n pide なら.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>れば、<ruby>傘<rt>かさ</rt></ruby>を<ruby>持<rt>も</rt></ruby>っていってください。</span> &nbsp; &#9675; <span class="good jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ったら、&hellip;</span></div><div class="why">ば con verbo de acci&oacute;n (<ruby>降<rt>ふ</rt></ruby>る) no admite una petici&oacute;n detr&aacute;s; con たら s&iacute;.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="29-tokoro.html"><small>&larr; Anterior</small><span class="jp">ところです</span></a><a class="next" href="31-limite-hipotesis.html"><small>Siguiente &rarr;</small><span class="jp">限り・としたら</span></a></nav><!--/gen-bottom-->
+<footer>たら・と・ば・なら &middot; Condicionales &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;}
+.grid2 .c{border-radius:6px;padding:13px;text-align:center;}
+.grid2 .w{font-family:"Noto Serif JP",serif;font-size:15px;}
+.grid2 .l{font-family:"Poppins",sans-serif;font-size:8.5px;letter-spacing:.07em;margin-top:5px;text-transform:uppercase;}
+@media(max-width:520px){.grid2{grid-template-columns:1fr;}}
+.tri{display:flex;gap:8px;flex-wrap:wrap;}
+.tri .z{flex:1 1 140px;border-radius:6px;padding:12px;text-align:center;}
+.tri .w{font-family:"Noto Serif JP",serif;font-size:16px;}
+.tri .d{font-size:10.5px;margin-top:5px;line-height:1.4;}
+</style><!--gen-head-->
+<title>てください・なさい・ないで・ずに &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#I">&larr; Gram&aacute;tica</a><span>I &middot; Voluntad, trato y relaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">てください・なさい・ないで・ずに</h1>
+<div class="sub">Pedir, ordenar y prohibir &mdash; con distinto <b>nivel de autoridad</b>.</div>
+<div class="rom">&hellip;te kudasai &middot; &hellip;nasai &middot; &hellip;naide &middot; &hellip;zu ni</div>
+</div><div class="badge"><span class="tag">JLPT N5 &ndash; N4</span><span class="cat">&Oacute;rdenes y prohibiciones</span></div></header>
+
+<h2>Una escala de autoridad</h2>
+<div class="scale">
+<div class="c" style="background:var(--midori-pale)"><div class="w jp">ていただけませんか</div><div class="g">m&aacute;xima cortes&iacute;a</div></div>
+<div class="c" style="background:#E3EBE2"><div class="w jp">てください</div><div class="g">petici&oacute;n normal</div></div>
+<div class="c" style="background:#D9E6DC"><div class="w jp">なさい</div><div class="g">padres, profesores</div></div>
+<div class="c" style="background:var(--midori);color:#fff"><div class="w jp"><ruby>命令形<rt>めいれいけい</rt></ruby></div><div class="g" style="color:#DCE7DC">brusco &middot; carteles</div></div>
+</div>
+<ul class="nuance">
+<li><b>なさい marca jerarqu&iacute;a clara</b>: padres a hijos, profesores a alumnos. Nunca entre iguales ni hacia arriba.</li>
+<li><b>ないで es &laquo;sin hacer algo&raquo;</b> y se combina con otra acci&oacute;n: <ruby>朝<rt>あさ</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べないで<ruby>出<rt>で</rt></ruby>かけた.</li>
+<li><b>ずに es la versi&oacute;n escrita de ないで</b>. Excepci&oacute;n: する se convierte en <span class="rd">せずに</span>, nunca <span class="rd">&#10005; しずに</span>.</li>
+<li><b>El <ruby>命令形<rt>めいれいけい</rt></ruby> apenas se usa hablando</b>: aparece en carteles (<ruby>止<rt>と</rt></ruby>まれ), deporte (<ruby>頑張<rt>がんば</rt></ruby>れ) y enfados. En femenino pr&aacute;cticamente no se emplea.</li>
+<li><b>ていただけませんか es la petici&oacute;n m&aacute;s cort&eacute;s</b> de uso corriente: <ruby>教<rt>おし</rt></ruby>えていただけませんか. La versi&oacute;n negativa suena m&aacute;s suave que la afirmativa.</li>
+<li><b>〜ずにはいられない</b> (N2) = &laquo;no puedo evitar&hellip;&raquo;: <ruby>笑<rt>わら</rt></ruby>わ<span class="hi">ずにはいられない</span>. Es escrito; al hablar se dice つい〜てしまう o 〜ないではいられない. Lleva la misma ず de ずに: する &rarr; せずにはいられない.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Petici&oacute;n muy cort&eacute;s</td><td class="jp2">Vて <span class="hi">＋いただけませんか</span></td><td class="jp2"><ruby>教<rt>おし</rt></ruby>えて<span class="hi">いただけませんか</span></td></tr>
+<tr><td class="ctx">Petici&oacute;n normal</td><td class="jp2">Vて <span class="hi">＋ください</span></td><td class="jp2"><ruby>座<rt>すわ</rt></ruby>って<span class="hi">ください</span></td></tr>
+<tr><td class="ctx">Petici&oacute;n negativa</td><td class="jp2">Vないで <span class="hi">＋ください</span></td><td class="jp2"><ruby>触<rt>さわ</rt></ruby>らないで<span class="hi">ください</span></td></tr>
+<tr><td class="ctx">Orden con jerarqu&iacute;a</td><td class="jp2">ra&iacute;z ます <span class="hi">＋なさい</span></td><td class="jp2"><ruby>早<rt>はや</rt></ruby>く<ruby>寝<rt>ね</rt></ruby><span class="hi">なさい</span></td></tr>
+<tr><td class="ctx">Sin hacer algo (hablado)</td><td class="jp2">Vない <span class="hi">＋で</span></td><td class="jp2"><ruby>食<rt>た</rt></ruby>べない<span class="hi">で</span></td></tr>
+<tr><td class="ctx">Sin hacer algo (escrito)</td><td class="jp2">Vない&minus;ない <span class="hi">＋ずに</span></td><td class="jp2"><ruby>言<rt>い</rt></ruby>わ<span class="hi">ずに</span> &middot; する&rarr;<span class="rd">せずに</span></td></tr>
+<tr><td class="ctx">Imperativo brusco</td><td class="jp2"><ruby>命令形<rt>めいれいけい</rt></ruby></td><td class="jp2"><ruby>止<rt>と</rt></ruby>まれ &nbsp; <ruby>行<rt>い</rt></ruby>け</td></tr>
+<tr><td class="ctx">Prohibici&oacute;n brusca</td><td class="jp2">Vる <span class="hi">＋な</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>く<span class="hi">な</span></td></tr>
+<tr><td class="ctx">No poder evitar (N2)</td><td class="jp2">Vない−ない ＋<span class="hi">ずにはいられない</span></td><td class="jp2"><ruby>笑<rt>わら</rt></ruby>わずにはいられない</td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">ここに<ruby>名前<rt>なまえ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いて<span class="hi">ください</span>。</div><div class="t">Escriba su nombre aqu&iacute;, por favor.</div></div>
+<div class="ex-item"><div class="s jp">すみません、<ruby>道<rt>みち</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えて<span class="hi">いただけませんか</span>。</div><div class="t">Perdone, &iquest;podr&iacute;a indicarme el camino?</div></div>
+<div class="ex-item"><div class="s jp"><ruby>早<rt>はや</rt></ruby>く<ruby>宿題<rt>しゅくだい</rt></ruby>をし<span class="hi">なさい</span>。</div><div class="t">Haz los deberes ya. <em>(padre a hijo)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">ここで<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>らない<span class="hi">でください</span>。</div><div class="t">No haga fotos aqu&iacute;, por favor.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>何<rt>なに</rt></ruby>も<ruby>言<rt>い</rt></ruby>わ<span class="hi">ずに</span>、<ruby>部屋<rt>へや</rt></ruby>を<ruby>出<rt>で</rt></ruby>た。</div><div class="t">Sali&oacute; de la habitaci&oacute;n sin decir nada. <em>(escrito)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>朝<rt>あさ</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べない<span class="hi">で</span><ruby>学校<rt>がっこう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>った。</div><div class="t">Fue al colegio sin desayunar.</div></div>
+<div class="ex-item"><div class="s jp">あの<ruby>映画<rt>えいが</rt></ruby>は<ruby>泣<rt>な</rt></ruby>か<span class="hi">ずにはいられない</span>。</div><div class="t">Con esa pel&iacute;cula es imposible no llorar. <em>(N2)</em></div></div>
+
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>座<rt>すわ</rt></ruby>りなさい。 <em>(a un superior)</em></span> &nbsp; &#9675; <span class="good jp">お<ruby>座<rt>すわ</rt></ruby>りください。</span></div><div class="why">なさい solo cabe hacia abajo en la jerarqu&iacute;a.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">しずに</span> &nbsp; &#9675; <span class="good jp"><span class="rd">せずに</span></span></div><div class="why">する es irregular en esta forma.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>食<rt>た</rt></ruby>べなくて<ruby>出<rt>で</rt></ruby>かけた</span> &nbsp; &#9675; <span class="good jp"><ruby>食<rt>た</rt></ruby>べないで<ruby>出<rt>で</rt></ruby>かけた</span></div><div class="why">&laquo;Sin hacer algo&raquo; es ないで; なくて es causa.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="53-obligacion-permiso.html"><small>&larr; Anterior</small><span class="jp">なければならない・べきだ・なくてもいい</span></a><a class="next" href="55-dar-recibir.html"><small>Siguiente &rarr;</small><span class="jp">あげる・くれる・もらう</span></a></nav><!--/gen-bottom-->
+<footer>てください・なさい・ないで・ずに &middot; &Oacute;rdenes y prohibiciones &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

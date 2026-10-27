@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.zones2{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.zones2 .z{flex:1 1 200px;border-radius:8px;padding:15px;text-align:center;}
+.zones2 .z.up{background:var(--midori);color:#fff;}
+.zones2 .z.dn{background:var(--midori-pale);}
+.zones2 .zl{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px;}
+.zones2 .up .zl{color:#C9DAC9;} .zones2 .dn .zl{color:var(--sub);}
+.zones2 .w{font-family:"Noto Serif JP",serif;font-size:20px;}
+.zones2 .g{font-size:12px;margin-top:6px;}
+.zones2 .up .g{color:#DCE7DC;} .zones2 .dn .g{color:var(--sub);}
+th.g2{color:var(--midori);}
+.cmp2{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px;}
+.cmp2 .b{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:11px 12px;}
+.cmp2 .p{font-family:"Noto Serif JP",serif;font-size:15px;}
+.cmp2 .p b{color:var(--midori);}
+.cmp2 .d{font-size:11.5px;color:var(--sub);margin-top:5px;line-height:1.4;}
+.split{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px;}
+.split .h2b{flex:1 1 220px;border-radius:6px;padding:13px 14px;}
+.split .h2b.a{background:var(--midori-pale);}
+.split .h2b.b{background:#fff;border:1px solid var(--kasumi);}
+.split .t3{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:6px;}
+.split .e2{font-family:"Noto Serif JP",serif;font-size:14.5px;padding:3px 0;}
+.split .n2{font-size:11.5px;color:var(--sub);margin-top:6px;line-height:1.45;}
+</style><!--gen-head-->
+<title>尊敬語・謙譲語 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#I">&larr; Gram&aacute;tica</a><span>I &middot; Voluntad, trato y relaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>尊敬語<rt>そんけいご</rt></ruby>・<ruby>謙譲語<rt>けんじょうご</rt></ruby></h1>
+<div class="sub">Subir al otro o bajarte t&uacute; &mdash; <b>nunca al rev&eacute;s</b>.</div>
+<div class="rom">sonkeigo &middot; kenj&#333;go</div>
+</div><div class="badge"><span class="tag">JLPT N3</span><span class="cat">Keigo</span></div></header>
+
+<h2>Dos direcciones que no se cruzan</h2>
+<div class="zones2">
+<div class="z up"><div class="zl"><ruby>尊敬語<rt>そんけいご</rt></ruby></div><div class="w jp">なさる</div><div class="g">sube al <b>otro</b><br>su acci&oacute;n, sus cosas</div></div>
+<div class="z dn"><div class="zl"><ruby>謙譲語<rt>けんじょうご</rt></ruby></div><div class="w jp">いたす</div><div class="g">baja lo <b>tuyo</b><br>tu acci&oacute;n, tu grupo</div></div>
+</div>
+<div class="figcap">Es el mismo eje <b>うち／そと</b> de la ficha de familia, llevado a los verbos.</div>
+<ul class="nuance">
+<li><b>Aplicarlos al rev&eacute;s es el error grave</b>: usar <ruby>尊敬語<rt>そんけいご</rt></ruby> sobre ti mismo suena arrogante; usar <ruby>謙譲語<rt>けんじょうご</rt></ruby> sobre un superior lo rebaja.</li>
+<li><b>Tu grupo baja contigo</b>: hablando con un cliente, de tu propio jefe dices <ruby>社長<rt>しゃちょう</rt></ruby>は<ruby>申<rt>もう</rt></ruby>しております &mdash; sin honor&iacute;fico, porque frente a fuera &eacute;l es de los tuyos.</li>
+<li><b><ruby>丁寧語<rt>ていねいご</rt></ruby> es el tercer nivel</b>, el de です／ます: cortes&iacute;a neutra que no sube ni baja a nadie. Es el registro por defecto con desconocidos.</li>
+<li><b>〜れる／られる sirve de honor&iacute;fico suave</b>, pero es ambiguo con la pasiva. En contexto formal claro se prefiere la forma irregular: おっしゃる mejor que <ruby>言<rt>い</rt></ruby>われる.</li>
+<li><b>Cuidado con el doble keigo</b>: <span class="rd">&#10005; お<ruby>読<rt>よ</rt></ruby>みになられる</span> apila dos honor&iacute;ficos. Basta con お<ruby>読<rt>よ</rt></ruby>みになる. Es un error que cometen hasta los japoneses.</li>
+<li><b>ご<ruby>苦労<rt>くろう</rt></ruby>さま frente a お<ruby>疲<rt>つか</rt></ruby>れさま</b>: la primera va de arriba abajo; con un superior siempre お<ruby>疲<rt>つか</rt></ruby>れさまです.</li>
+<li><b>ございます</b> es el ある／です m&aacute;s formal (<ruby>丁重語<rt>ていちょうご</rt></ruby>): no sube ni baja a nadie, solo eleva el tono. Tiendas y anuncios: お<ruby>手洗<rt>てあら</rt></ruby>いはあちら<span class="hi">でございます</span>. Para personas no sirve: el honor&iacute;fico de いる es いらっしゃる y el humilde, おる.</li>
+</ul>
+
+<h2>Los pares irregulares</h2>
+<table><thead><tr><th>Diccionario</th><th class="g2"><ruby>尊敬語<rt>そんけいご</rt></ruby> &middot; el otro</th><th class="g2"><ruby>謙譲語<rt>けんじょうご</rt></ruby> &middot; yo</th></tr></thead><tbody>
+<tr><td class="ctx jp">する</td><td class="jp2">なさる</td><td class="jp2">いたす</td></tr>
+<tr><td class="ctx jp"><ruby>行<rt>い</rt></ruby>く・<ruby>来<rt>く</rt></ruby>る</td><td class="jp2">いらっしゃる・おいでになる</td><td class="jp2"><ruby>参<rt>まい</rt></ruby>る・<ruby>伺<rt>うかが</rt></ruby>う</td></tr>
+<tr><td class="ctx jp">いる</td><td class="jp2">いらっしゃる</td><td class="jp2">おる</td></tr>
+<tr><td class="ctx jp"><ruby>言<rt>い</rt></ruby>う</td><td class="jp2">おっしゃる</td><td class="jp2"><ruby>申<rt>もう</rt></ruby>す・<ruby>申<rt>もう</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げる</td></tr>
+<tr><td class="ctx jp"><ruby>食<rt>た</rt></ruby>べる・<ruby>飲<rt>の</rt></ruby>む</td><td class="jp2"><ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がる</td><td class="jp2">いただく</td></tr>
+<tr><td class="ctx jp"><ruby>見<rt>み</rt></ruby>る</td><td class="jp2">ご<ruby>覧<rt>らん</rt></ruby>になる</td><td class="jp2"><ruby>拝見<rt>はいけん</rt></ruby>する</td></tr>
+<tr><td class="ctx jp"><ruby>聞<rt>き</rt></ruby>く</td><td class="jp2">お<ruby>聞<rt>き</rt></ruby>きになる</td><td class="jp2"><ruby>伺<rt>うかが</rt></ruby>う・<ruby>承<rt>うけたまわ</rt></ruby>る</td></tr>
+<tr><td class="ctx jp"><ruby>知<rt>し</rt></ruby>っている</td><td class="jp2">ご<ruby>存<rt>ぞん</rt></ruby>じだ</td><td class="jp2"><ruby>存<rt>ぞん</rt></ruby>じております</td></tr>
+<tr><td class="ctx jp"><ruby>会<rt>あ</rt></ruby>う</td><td class="jp2">お<ruby>会<rt>あ</rt></ruby>いになる</td><td class="jp2">お<ruby>目<rt>め</rt></ruby>にかかる</td></tr>
+<tr><td class="ctx jp">あげる</td><td class="jp2">&mdash;</td><td class="jp2">さしあげる</td></tr>
+<tr><td class="ctx jp">くれる</td><td class="jp2">くださる</td><td class="jp2">&mdash;</td></tr>
+<tr><td class="ctx jp">もらう</td><td class="jp2">&mdash;</td><td class="jp2">いただく・<ruby>頂戴<rt>ちょうだい</rt></ruby>する</td></tr>
+<tr><td class="ctx jp">ある・です</td><td class="jp2">でいらっしゃる <em>(personas)</em></td><td class="jp2">ございます・でございます</td></tr>
+
+</tbody></table>
+
+<h2>El patr&oacute;n regular, para lo dem&aacute;s</h2>
+<table>
+<thead><tr><th>Registro</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx"><ruby>尊敬語<rt>そんけいご</rt></ruby> regular</td><td class="jp2"><span class="hi">お</span> ＋ra&iacute;z ます ＋<span class="hi">になる</span></td><td class="jp2">お<ruby>読<rt>よ</rt></ruby>み<span class="hi">になる</span></td></tr>
+<tr><td class="ctx"><ruby>尊敬語<rt>そんけいご</rt></ruby> suave</td><td class="jp2">V<span class="hi">れる／られる</span></td><td class="jp2"><ruby>読<rt>よ</rt></ruby>ま<span class="hi">れる</span></td></tr>
+<tr><td class="ctx"><ruby>謙譲語<rt>けんじょうご</rt></ruby> regular</td><td class="jp2"><span class="hi">お</span> ＋ra&iacute;z ます ＋<span class="hi">する</span></td><td class="jp2">お<ruby>持<rt>も</rt></ruby>ち<span class="hi">する</span></td></tr>
+<tr><td class="ctx"><ruby>謙譲語<rt>けんじょうご</rt></ruby> m&aacute;ximo</td><td class="jp2"><span class="hi">お</span> ＋ra&iacute;z ます ＋<span class="hi">いたします</span></td><td class="jp2">お<ruby>願<rt>ねが</rt></ruby>い<span class="hi">いたします</span></td></tr>
+<tr><td class="ctx">Petici&oacute;n honor&iacute;fica</td><td class="jp2"><span class="hi">お</span> ＋ra&iacute;z ます ＋<span class="hi">ください</span></td><td class="jp2">お<ruby>待<rt>ま</rt></ruby>ち<span class="hi">ください</span></td></tr>
+<tr><td class="ctx">Permiso humilde</td><td class="jp2">V causativa <span class="hi">＋ていただきます</span></td><td class="jp2"><ruby>休<rt>やす</rt></ruby>ませ<span class="hi">ていただきます</span></td></tr>
+<tr><td class="ctx">Verbos con ご (origen chino)</td><td class="jp2"><span class="hi">ご</span> ＋N ＋<span class="hi">になる／する</span></td><td class="jp2">ご<ruby>説明<rt>せつめい</rt></ruby><span class="hi">します</span></td></tr>
+</tbody></table>
+<ul class="nuance">
+<li><b>Mismo molde, sentido opuesto</b>: お<ruby>持<rt>も</rt></ruby>ち<span class="hi">になる</span> es &laquo;usted lleva&raquo;; お<ruby>持<rt>も</rt></ruby>ち<span class="hi">する</span> es &laquo;yo le llevo&raquo;. Lo &uacute;nico que cambia es el final, as&iacute; que m&iacute;ralo siempre antes que el resto.</li>
+<li><b>お〜する necesita a alguien que reciba la acci&oacute;n</b>: llevarle algo, esperarle, enviarle, avisarle (お<ruby>持<rt>も</rt></ruby>ちする, お<ruby>待<rt>ま</rt></ruby>ちする, お<ruby>送<rt>おく</rt></ruby>りする, お<ruby>知<rt>し</rt></ruby>らせする). Si tu acci&oacute;n no toca al otro, no hay nada que rebajar: <span class="rd">&#10005; お<ruby>歩<rt>ある</rt></ruby>きします</span>.</li>
+<li><b>No funciona con ra&iacute;ces de una s&iacute;laba</b> (<ruby>見<rt>み</rt></ruby>・<ruby>寝<rt>ね</rt></ruby>・い・<ruby>来<rt>き</rt></ruby>・し). Esos verbos usan su forma irregular: <span class="rd">&#10005; お<ruby>見<rt>み</rt></ruby>になる</span> &rarr; ご<ruby>覧<rt>らん</rt></ruby>になる. En general, si el verbo tiene forma irregular en la tabla de arriba, se prefiere la irregular.</li>
+<li><b>お o ご</b>: お con palabras japonesas (お<ruby>待<rt>ま</rt></ruby>ち, お<ruby>読<rt>よ</rt></ruby>み); ご con palabras de origen chino (ご<ruby>連絡<rt>れんらく</rt></ruby>, ご<ruby>案内<rt>あんない</rt></ruby>). Hay excepciones fijas: お<ruby>電話<rt>でんわ</rt></ruby>する, お<ruby>約束<rt>やくそく</rt></ruby>する.</li>
+</ul>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>社長<rt>しゃちょう</rt></ruby>は<ruby>何時<rt>なんじ</rt></ruby>に<span class="hi">いらっしゃいます</span>か。</div><div class="t">&iquest;A qu&eacute; hora viene el director? <em>(<ruby>尊敬語<rt>そんけいご</rt></ruby>)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>私<rt>わたし</rt></ruby>が<ruby>資料<rt>しりょう</rt></ruby>を<span class="hi">お<ruby>持<rt>も</rt></ruby>ちします</span>。</div><div class="t">Yo llevo los documentos. <em>(<ruby>謙譲語<rt>けんじょうご</rt></ruby>)</em></div></div>
+<div class="ex-item"><div class="s jp">こちらの<ruby>資料<rt>しりょう</rt></ruby>を<span class="hi">ご<ruby>覧<rt>らん</rt></ruby>になって</span>ください。</div><div class="t">Eche un vistazo a estos documentos.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>先生<rt>せんせい</rt></ruby>のお<ruby>名前<rt>なまえ</rt></ruby>は<span class="hi"><ruby>存<rt>ぞん</rt></ruby>じております</span>。</div><div class="t">Conozco su nombre, profesor.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>明日<rt>あした</rt></ruby>、<ruby>御社<rt>おんしゃ</rt></ruby>に<span class="hi"><ruby>伺<rt>うかが</rt></ruby>います</span>。</div><div class="t">Ma&ntilde;ana ir&eacute; a su empresa. <em>(humilde)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>少々<rt>しょうしょう</rt></ruby><span class="hi">お<ruby>待<rt>ま</rt></ruby>ちください</span>。</div><div class="t">Espere un momento, por favor.</div></div>
+</div>
+</div>
+
+<h2>D&oacute;nde lo vas a encontrar</h2>
+<div class="where">
+<div class="row"><div class="k2 jp">お<ruby>客様<rt>きゃくさま</rt></ruby></div><div class="v2">Tiendas y restaurantes: いらっしゃいませ, <ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちください, かしこまりました. Lo oir&aacute;s cien veces al d&iacute;a.</div></div>
+<div class="row"><div class="k2 jp"><ruby>面接<rt>めんせつ</rt></ruby></div><div class="v2">Entrevistas: de uno mismo siempre en <ruby>謙譲語<rt>けんじょうご</rt></ruby> &mdash; <ruby>参<rt>まい</rt></ruby>ります, いたします, <ruby>存<rt>ぞん</rt></ruby>じております.</div></div>
+<div class="row"><div class="k2 jp">メール</div><div class="v2">Correos de trabajo: <ruby>尊敬語<rt>そんけいご</rt></ruby> para el destinatario y <ruby>謙譲語<rt>けんじょうご</rt></ruby> para uno mismo, en la misma frase.</div></div>
+<div class="row"><div class="k2 jp"><ruby>電話<rt>でんわ</rt></ruby></div><div class="v2">Al tel&eacute;fono: <ruby>私<rt>わたし</rt></ruby>、<ruby>田中<rt>たなか</rt></ruby>と<ruby>申<rt>もう</rt></ruby>します. Nunca <ruby>言<rt>い</rt></ruby>います.</div></div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>私<rt>わたし</rt></ruby>がおっしゃいました。</span> &nbsp; &#9675; <span class="good jp"><ruby>私<rt>わたし</rt></ruby>が<ruby>申<rt>もう</rt></ruby>しました。</span></div><div class="why">Elevarse a uno mismo es el error m&aacute;s grave.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>社長<rt>しゃちょう</rt></ruby>が<ruby>参<rt>まい</rt></ruby>ります。 <em>(dentro de la empresa)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>社長<rt>しゃちょう</rt></ruby>がいらっしゃいます。</span></div><div class="why"><ruby>参<rt>まい</rt></ruby>る rebaja: no se usa para un superior de tu propio grupo hablando con &eacute;l.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">お<ruby>読<rt>よ</rt></ruby>みになられる</span> &nbsp; &#9675; <span class="good jp">お<ruby>読<rt>よ</rt></ruby>みになる</span></div><div class="why">Doble keigo: basta con un honor&iacute;fico.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちしてください。</span> &nbsp; &#9675; <span class="good jp"><ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちください。</span></div><div class="why">お〜する es humilde: pedirle al otro que lo haga es pedirle que se rebaje. Para pedir, お＋ra&iacute;z＋ください.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>先生<rt>せんせい</rt></ruby>がお<ruby>見<rt>み</rt></ruby>になりました。</span> &nbsp; &#9675; <span class="good jp"><ruby>先生<rt>せんせい</rt></ruby>がご<ruby>覧<rt>らん</rt></ruby>になりました。</span></div><div class="why"><ruby>見<rt>み</rt></ruby>る tiene ra&iacute;z de una s&iacute;laba y forma irregular propia.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">ご<ruby>苦労<rt>くろう</rt></ruby>さまです。 <em>(a un jefe)</em></span> &nbsp; &#9675; <span class="good jp">お<ruby>疲<rt>つか</rt></ruby>れさまです。</span></div><div class="why">ご<ruby>苦労<rt>くろう</rt></ruby>さま va de arriba abajo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>社長<rt>しゃちょう</rt></ruby>は<ruby>会議室<rt>かいぎしつ</rt></ruby>にございます。</span> &nbsp; &#9675; <span class="good jp"><ruby>社長<rt>しゃちょう</rt></ruby>は<ruby>会議室<rt>かいぎしつ</rt></ruby>にいらっしゃいます。</span></div><div class="why">ございます es para cosas; una persona &laquo;est&aacute;&raquo; con いらっしゃる (o おる, si es de tu grupo ante alguien de fuera).</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="55-dar-recibir.html"><small>&larr; Anterior</small><span class="jp">あげる・くれる・もらう</span></a><a class="next" href="57-comparacion.html"><small>Siguiente &rarr;</small><span class="jp">より・ほど・一番・らしい</span></a></nav><!--/gen-bottom-->
+<footer>尊敬語・謙譲語 &middot; Keigo &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

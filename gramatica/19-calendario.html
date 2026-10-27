@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.rel{display:grid;grid-template-columns:34px repeat(5,1fr);gap:2px;margin-top:12px;}
+.rel .hd{font-family:"Poppins",sans-serif;font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--sub);text-align:center;padding-bottom:4px;}
+.rel .hd.now{color:var(--midori);font-weight:700;}
+.rel .rowlab{font-family:"Noto Serif JP",serif;font-size:14px;color:var(--midori);display:flex;align-items:center;}
+.rel .cell{background:#fff;border:1px solid var(--kasumi);border-radius:4px;text-align:center;padding:6px 2px;}
+.rel .cell.now{background:var(--midori-pale);}
+.rel .k{font-family:"Noto Serif JP",serif;font-size:12.5px;}
+.rel .r{font-family:"Noto Serif JP",serif;font-size:9.5px;color:var(--midori);}
+.rel .r b{color:var(--shu);}
+.rel .e{font-size:8.5px;color:var(--sub);font-style:italic;}
+@media(max-width:600px){.rel .k{font-size:11px;}.rel .e{display:none;}}
+.pair2{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dotted #E6E9E2;font-size:13px;}
+.pair2 .a{font-family:"Noto Serif JP",serif;}
+.pair2 .b{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.pair2 .b b{color:var(--shu);}
+.zones2{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.zones2 .z{flex:1 1 200px;border-radius:8px;padding:16px;text-align:center;}
+.zones2 .z.uchi{background:var(--midori);color:#fff;}
+.zones2 .z.soto{background:#fff;border:1px solid var(--kasumi);}
+.zones2 .zl{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.zones2 .uchi .zl{color:#C9DAC9;} .zones2 .soto .zl{color:var(--sub);}
+.zones2 .w{font-family:"Noto Serif JP",serif;font-size:22px;}
+.zones2 .g{font-style:italic;font-size:12px;margin-top:6px;}
+.zones2 .uchi .g{color:#DCE7DC;} .zones2 .soto .g{color:var(--sub);}
+td.jp2 em.rd2{font-style:normal;font-size:10.5px;color:var(--sub);display:block;}
+</style><!--gen-head-->
+<title>日・週・月・年 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#C">&larr; Gram&aacute;tica</a><span>C &middot; Vocabulario pr&#225;ctico</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp"><ruby>日<rt>ひ</rt></ruby>・<ruby>週<rt>しゅう</rt></ruby>・<ruby>月<rt>つき</rt></ruby>・<ruby>年<rt>とし</rt></ruby></h1>
+<div class="sub">Todo lo que se cuenta <b>desde hoy</b>, y c&oacute;mo se leen las fechas.</div>
+<div class="rom">hi &middot; sh&#363; &middot; tsuki &middot; toshi</div>
+</div><div class="badge"><span class="tag">JLPT N5</span><span class="cat">Calendario</span></div></header>
+
+<h2>Tiempo relativo &mdash; contando desde hoy</h2>
+<div class="rel">
+<div class="hd"></div><div class="hd">&minus;2</div><div class="hd">&minus;1</div><div class="hd now">HOY</div><div class="hd">+1</div><div class="hd">+2</div>
+<div class="rowlab jp"><ruby>日<rt>ひ</rt></ruby></div>
+<div class="cell"><div class="k jp"><ruby>一昨日<rt>おととい</rt></ruby></div><div class="r jp"><b>おととい</b></div><div class="e">anteayer</div></div>
+<div class="cell"><div class="k jp"><ruby>昨日<rt>きのう</rt></ruby></div><div class="r jp"><b>きのう</b></div><div class="e">ayer</div></div>
+<div class="cell now"><div class="k jp"><ruby>今日<rt>きょう</rt></ruby></div><div class="r jp"><b>きょう</b></div><div class="e">hoy</div></div>
+<div class="cell"><div class="k jp"><ruby>明日<rt>あした</rt></ruby></div><div class="r jp"><b>あした</b></div><div class="e">ma&ntilde;ana</div></div>
+<div class="cell"><div class="k jp"><ruby>明後日<rt>あさって</rt></ruby></div><div class="r jp"><b>あさって</b></div><div class="e">pasado</div></div>
+<div class="rowlab jp"><ruby>週<rt>しゅう</rt></ruby></div>
+<div class="cell"><div class="k jp"><ruby>先々週<rt>せんせんしゅう</rt></ruby></div><div class="r jp">せんせんしゅう</div><div class="e">hace 2 sem.</div></div>
+<div class="cell"><div class="k jp"><ruby>先週<rt>せんしゅう</rt></ruby></div><div class="r jp">せんしゅう</div><div class="e">la pasada</div></div>
+<div class="cell now"><div class="k jp"><ruby>今週<rt>こんしゅう</rt></ruby></div><div class="r jp">こんしゅう</div><div class="e">esta</div></div>
+<div class="cell"><div class="k jp"><ruby>来週<rt>らいしゅう</rt></ruby></div><div class="r jp">らいしゅう</div><div class="e">la que viene</div></div>
+<div class="cell"><div class="k jp"><ruby>再来週<rt>さらいしゅう</rt></ruby></div><div class="r jp">さらいしゅう</div><div class="e">dentro de 2</div></div>
+<div class="rowlab jp"><ruby>月<rt>つき</rt></ruby></div>
+<div class="cell"><div class="k jp"><ruby>先々月<rt>せんせんげつ</rt></ruby></div><div class="r jp">せんせんげつ</div><div class="e">hace 2 meses</div></div>
+<div class="cell"><div class="k jp"><ruby>先月<rt>せんげつ</rt></ruby></div><div class="r jp">せんげつ</div><div class="e">el pasado</div></div>
+<div class="cell now"><div class="k jp"><ruby>今月<rt>こんげつ</rt></ruby></div><div class="r jp">こんげつ</div><div class="e">este</div></div>
+<div class="cell"><div class="k jp"><ruby>来月<rt>らいげつ</rt></ruby></div><div class="r jp">らいげつ</div><div class="e">el que viene</div></div>
+<div class="cell"><div class="k jp"><ruby>再来月<rt>さらいげつ</rt></ruby></div><div class="r jp">さらいげつ</div><div class="e">dentro de 2</div></div>
+<div class="rowlab jp"><ruby>年<rt>とし</rt></ruby></div>
+<div class="cell"><div class="k jp"><ruby>一昨年<rt>おととし</rt></ruby></div><div class="r jp"><b>おととし</b></div><div class="e">antea&ntilde;o</div></div>
+<div class="cell"><div class="k jp"><ruby>去年<rt>きょねん</rt></ruby></div><div class="r jp"><b>きょねん</b></div><div class="e">el pasado</div></div>
+<div class="cell now"><div class="k jp"><ruby>今年<rt>ことし</rt></ruby></div><div class="r jp"><b>ことし</b></div><div class="e">este</div></div>
+<div class="cell"><div class="k jp"><ruby>来年<rt>らいねん</rt></ruby></div><div class="r jp">らいねん</div><div class="e">el que viene</div></div>
+<div class="cell"><div class="k jp"><ruby>再来年<rt>さらいねん</rt></ruby></div><div class="r jp">さらいねん</div><div class="e">dentro de 2</div></div>
+</div>
+<p style="font-size:13px;color:var(--sub);margin-top:10px;">Las filas de <ruby>週<rt>しゅう</rt></ruby> y <ruby>月<rt>つき</rt></ruby> son un molde perfecto: <ruby>先々<rt>せんせん</rt></ruby>／<ruby>先<rt>せん</rt></ruby>／<ruby>今<rt>こん</rt></ruby>／<ruby>来<rt>らい</rt></ruby>／<ruby>再来<rt>さらい</rt></ruby>. En <b style="color:var(--shu)">rojo</b>, las lecturas que se salen del molde &mdash; casi toda la fila del d&iacute;a.</p>
+
+<h2>Fechas</h2>
+<div class="cols"><div>
+<h3>D&iacute;as del mes</h3>
+<div class="pair2"><span class="a jp">一日</span><span class="b jp"><b>ついたち</b></span></div>
+<div class="pair2"><span class="a jp">二日</span><span class="b jp"><b>ふつか</b></span></div>
+<div class="pair2"><span class="a jp">三日</span><span class="b jp"><b>みっか</b></span></div>
+<div class="pair2"><span class="a jp">四日</span><span class="b jp"><b>よっか</b></span></div>
+<div class="pair2"><span class="a jp">五日</span><span class="b jp"><b>いつか</b></span></div>
+<div class="pair2"><span class="a jp">六日</span><span class="b jp"><b>むいか</b></span></div>
+<div class="pair2"><span class="a jp">七日</span><span class="b jp"><b>なのか</b></span></div>
+<div class="pair2"><span class="a jp">八日</span><span class="b jp"><b>ようか</b></span></div>
+<div class="pair2"><span class="a jp">九日</span><span class="b jp"><b>ここのか</b></span></div>
+<div class="pair2"><span class="a jp">十日</span><span class="b jp"><b>とおか</b></span></div>
+<div class="pair2"><span class="a jp">十四日</span><span class="b jp"><b>じゅうよっか</b></span></div>
+<div class="pair2"><span class="a jp">二十日</span><span class="b jp"><b>はつか</b></span></div>
+<div class="pair2"><span class="a jp">二十四日</span><span class="b jp"><b>にじゅうよっか</b></span></div>
+<div class="pair2"><span class="a jp">その他</span><span class="b jp">〜にち</span></div>
+</div><div>
+<h3>Meses</h3>
+<div class="pair2"><span class="a jp">一月</span><span class="b jp">いちがつ</span></div>
+<div class="pair2"><span class="a jp">二月</span><span class="b jp">にがつ</span></div>
+<div class="pair2"><span class="a jp">三月</span><span class="b jp">さんがつ</span></div>
+<div class="pair2"><span class="a jp">四月</span><span class="b jp"><b>しがつ</b></span></div>
+<div class="pair2"><span class="a jp">五月</span><span class="b jp">ごがつ</span></div>
+<div class="pair2"><span class="a jp">六月</span><span class="b jp">ろくがつ</span></div>
+<div class="pair2"><span class="a jp">七月</span><span class="b jp"><b>しちがつ</b></span></div>
+<div class="pair2"><span class="a jp">八月</span><span class="b jp">はちがつ</span></div>
+<div class="pair2"><span class="a jp">九月</span><span class="b jp"><b>くがつ</b></span></div>
+<div class="pair2"><span class="a jp">十月</span><span class="b jp">じゅうがつ</span></div>
+<div class="pair2"><span class="a jp">十一月</span><span class="b jp">じゅういちがつ</span></div>
+<div class="pair2"><span class="a jp">十二月</span><span class="b jp">じゅうにがつ</span></div>
+<div class="pair2"><span class="a jp">何月</span><span class="b jp">なんがつ</span></div>
+</div><div>
+<h3>Semana y momentos</h3>
+<div class="pair2"><span class="a jp">月曜日</span><span class="b jp">げつようび</span></div>
+<div class="pair2"><span class="a jp">火曜日</span><span class="b jp">かようび</span></div>
+<div class="pair2"><span class="a jp">水曜日</span><span class="b jp">すいようび</span></div>
+<div class="pair2"><span class="a jp">木曜日</span><span class="b jp">もくようび</span></div>
+<div class="pair2"><span class="a jp">金曜日</span><span class="b jp">きんようび</span></div>
+<div class="pair2"><span class="a jp">土曜日</span><span class="b jp">どようび</span></div>
+<div class="pair2"><span class="a jp">日曜日</span><span class="b jp">にちようび</span></div>
+<div class="pair2"><span class="a jp">今朝</span><span class="b jp"><b>けさ</b></span></div>
+<div class="pair2"><span class="a jp">今晩</span><span class="b jp">こんばん</span></div>
+<div class="pair2"><span class="a jp">昨夜</span><span class="b jp"><b>ゆうべ</b></span></div>
+<div class="pair2"><span class="a jp">毎日・毎週</span><span class="b jp">まいにち・まいしゅう</span></div>
+<div class="pair2"><span class="a jp">週末</span><span class="b jp">しゅうまつ</span></div>
+</div></div>
+<ul class="nuance">
+<li>Los d&iacute;as <b>del 1 al 10</b> usan la serie japonesa antigua y hay que aprenderlos sueltos; del 11 en adelante son regulares con 〜にち, salvo 14, 20 y 24.</li>
+<li><b><ruby>一日<rt>ついたち</rt></ruby> frente a <ruby>一日<rt>いちにち</rt></ruby></b>: el mismo kanji se lee ついたち cuando es el <b>d&iacute;a 1 del mes</b>, y いちにち cuando significa &laquo;un d&iacute;a&raquo; de duraci&oacute;n.</li>
+<li>Los d&iacute;as de la semana salen de los <b>cinco elementos m&aacute;s sol y luna</b>: <ruby>月<rt>つき</rt></ruby> (luna), <ruby>火<rt>ひ</rt></ruby> (fuego), <ruby>水<rt>みず</rt></ruby> (agua), <ruby>木<rt>き</rt></ruby> (madera), <ruby>金<rt>きん</rt></ruby> (metal), <ruby>土<rt>つち</rt></ruby> (tierra), <ruby>日<rt>ひ</rt></ruby> (sol).</li>
+<li><b>El tiempo relativo no lleva に</b> (<ruby>今日<rt>きょう</rt></ruby>, <ruby>来年<rt>らいねん</rt></ruby>&hellip;); las fechas concretas s&iacute;: <ruby>四月<rt>しがつ</rt></ruby><span class="hi">に</span>, <ruby>月曜日<rt>げつようび</rt></ruby><span class="hi">に</span>.</li>
+</ul>
+
+<h2>Contar a partir de una fecha</h2>
+<table>
+<thead><tr><th>Sentido</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Hacia atr&aacute;s</td><td class="jp2">periodo <span class="hi">＋<ruby>前<rt>まえ</rt></ruby></span></td><td class="jp2"><ruby>三日前<rt>みっかまえ</rt></ruby> &nbsp; <ruby>一週間前<rt>いっしゅうかんまえ</rt></ruby></td></tr>
+<tr><td class="ctx">Hacia delante</td><td class="jp2">periodo <span class="hi">＋<ruby>後<rt>ご</rt></ruby></span></td><td class="jp2"><ruby>三日後<rt>みっかご</rt></ruby> &nbsp; <ruby>二<rt>に</rt></ruby>か<ruby>月後<rt>げつご</rt></ruby></td></tr>
+<tr><td class="ctx">Duraci&oacute;n &middot; d&iacute;as</td><td class="jp2">〜<ruby>日間<rt>にちかん</rt></ruby></td><td class="jp2"><ruby>三日間<rt>みっかかん</rt></ruby> <em>tres d&iacute;as</em></td></tr>
+<tr><td class="ctx">Duraci&oacute;n &middot; semanas</td><td class="jp2">〜<ruby>週間<rt>しゅうかん</rt></ruby></td><td class="jp2"><ruby>二週間<rt>にしゅうかん</rt></ruby></td></tr>
+<tr><td class="ctx">Duraci&oacute;n &middot; meses</td><td class="jp2">〜か<ruby>月<rt>げつ</rt></ruby></td><td class="jp2"><ruby>三<rt>さん</rt></ruby>か<ruby>月<rt>げつ</rt></ruby></td></tr>
+<tr><td class="ctx">Duraci&oacute;n &middot; a&ntilde;os</td><td class="jp2">〜<ruby>年間<rt>ねんかん</rt></ruby></td><td class="jp2"><ruby>五年間<rt>ごねんかん</rt></ruby></td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>来週<rt>らいしゅう</rt></ruby></span>の<span class="hi"><ruby>金曜日<rt>きんようび</rt></ruby></span>に<ruby>会<rt>あ</rt></ruby>いましょう。</div><div class="t">Quedamos el viernes que viene.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>誕生日<rt>たんじょうび</rt></ruby>は<span class="hi"><ruby>五月<rt>ごがつ</rt></ruby><ruby>五日<rt>いつか</rt></ruby></span>です。</div><div class="t">Mi cumplea&ntilde;os es el cinco de mayo.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>三日間<rt>みっかかん</rt></ruby></span><ruby>休<rt>やす</rt></ruby>みました。</div><div class="t">Descans&eacute; tres d&iacute;as. <em>(duraci&oacute;n)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>二<rt>に</rt></ruby>か<ruby>月後<rt>げつご</rt></ruby></span>に<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>します。</div><div class="t">Me mudo dentro de dos meses.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>今朝<rt>けさ</rt></ruby></span>、<ruby>早<rt>はや</rt></ruby>く<ruby>起<rt>お</rt></ruby>きました。</div><div class="t">Esta ma&ntilde;ana me levant&eacute; pronto.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi"><ruby>毎週<rt>まいしゅう</rt></ruby></span><ruby>日曜日<rt>にちようび</rt></ruby>にテニスをします。</div><div class="t">Juego al tenis todos los domingos.</div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp">よんがつ</span> &nbsp; &#9675; <span class="good jp">しがつ</span></div><div class="why"><ruby>四月<rt>しがつ</rt></ruby> es irregular, igual que <ruby>七月<rt>しちがつ</rt></ruby> y <ruby>九月<rt>くがつ</rt></ruby>.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>来年<rt>らいねん</rt></ruby>に<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。</span> &nbsp; &#9675; <span class="good jp"><ruby>来年<rt>らいねん</rt></ruby><ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。</span></div><div class="why">El tiempo relativo no lleva に. Las fechas concretas s&iacute;.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>一日<rt>いちにち</rt></ruby> <em>(por el d&iacute;a 1)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>一日<rt>ついたち</rt></ruby></span></div><div class="why">Depende del sentido: d&iacute;a del mes o duraci&oacute;n.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>二週<rt>にしゅう</rt></ruby><ruby>休<rt>やす</rt></ruby>みました</span> &nbsp; &#9675; <span class="good jp"><ruby>二週間<rt>にしゅうかん</rt></ruby><ruby>休<rt>やす</rt></ruby>みました</span></div><div class="why">Con semanas, <ruby>間<rt>かん</rt></ruby> es obligatorio. Con d&iacute;as es opcional: <ruby>三日<rt>みっか</rt></ruby>休みました y <ruby>三日間<rt>みっかかん</rt></ruby>休みました valen.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="18-horas.html"><small>&larr; Anterior</small><span class="jp">時間・何時</span></a><a class="next" href="20-familia.html"><small>Siguiente &rarr;</small><span class="jp">家族</span></a></nav><!--/gen-bottom-->
+<footer>日・週・月・年 &middot; Calendario &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>さえ・すら・こそ &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#J">&larr; Gram&aacute;tica</a><span>J &middot; Cantidad y comparaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">さえ・すら・こそ</h1>
+<div class="sub">Marcar el extremo &mdash; o se&ntilde;alar el <b>punto exacto</b>.</div>
+<div class="rom">&hellip;sae &middot; &hellip;sura &middot; &hellip;koso</div>
+</div><div class="badge"><span class="tag">JLPT N3</span><span class="cat">&Eacute;nfasis</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Tres part&iacute;culas que resaltan un elemento m&aacute;s de lo que har&iacute;a は o が: como caso extremo, o como el punto exacto de la frase.</p>
+<div class="fig">
+<div class="z pale"><h4 class="jp">さえ</h4><div class="d">&laquo;hasta, incluso&raquo; &mdash; el caso m&aacute;s extremo de una escala</div></div>
+<div class="z"><h4 class="jp">すら <span style="font-family:Poppins,sans-serif;font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--shu,#B23A2E);border:1px solid #EBD6D3;border-radius:3px;padding:0 4px;vertical-align:2px;">N2</span></h4><div class="d">igual que さえ, pero <b>literario</b> y m&aacute;s dram&aacute;tico</div></div>
+<div class="z solid"><h4 class="jp">こそ</h4><div class="d">&laquo;precisamente&raquo; &mdash; el foco exacto</div></div>
+<div class="figcap">Los dos primeros marcan un extremo; el tercero, el centro.</div>
+</div>
+<ul class="nuance">
+<li><b>さえ implica una escala</b>: <ruby>子供<rt>こども</rt></ruby>でさえ<ruby>分<rt>わ</rt></ruby>かる significa que si hasta un ni&ntilde;o lo entiende, cualquiera deber&iacute;a.</li>
+<li><b>さえ〜ば es otra construcci&oacute;n</b>, condicional: &laquo;con solo&hellip;&raquo;. お<ruby>金<rt>かね</rt></ruby>さえあれば (&laquo;con solo tener dinero&raquo;). No confundir con el さえ de &eacute;nfasis.</li>
+<li><b>すら es m&aacute;s formal y dram&aacute;tico</b>, propio de texto escrito. En conversaci&oacute;n normal suena recargado.</li>
+<li><b>こそ se&ntilde;ala exactamente ese elemento</b>: これこそ<ruby>本物<rt>ほんもの</rt></ruby>だ (&laquo;esto s&iacute; que es de verdad&raquo;). Y こちらこそ es f&oacute;rmula fija al agradecer.</li>
+<li><b>からこそ refuerza una causa</b>: <ruby>好<rt>す</rt></ruby>きだからこそ、<ruby>厳<rt>きび</rt></ruby>しく<ruby>言<rt>い</rt></ruby>う (&laquo;precisamente porque me importas, te lo digo duro&raquo;).</li>
+<li><b>なんか</b> (coloquial de など) resta valor a lo que marca. Con negativo, rechaza con fuerza: <ruby>行<rt>い</rt></ruby>きたく<span class="hi">なんか</span>ない (&laquo;no quiero ir, para nada&raquo;), <ruby>怖<rt>こわ</rt></ruby>く<span class="hi">なんか</span>ない. Sobre uno mismo es modestia (<ruby>私<rt>わたし</rt></ruby>なんかまだまだです); sobre otro, desprecio (あんな<ruby>人<rt>ひと</rt></ruby>なんか). En registro formal se usa など.</li>
+<li><b>まで de extremo</b> = &laquo;hasta, incluso&raquo;: suma algo que va m&aacute;s all&aacute; de lo esperado. <ruby>髪<rt>かみ</rt></ruby><span class="hi">まで</span><ruby>濡<rt>ぬ</rt></ruby>れた (&laquo;se me moj&oacute; hasta el pelo&raquo;), <ruby>寒<rt>さむ</rt></ruby>さが<ruby>骨<rt>ほね</rt></ruby><span class="hi">まで</span>しみる (&laquo;el fr&iacute;o cala hasta los huesos&raquo;), <ruby>子供<rt>こども</rt></ruby>に<span class="hi">まで</span><ruby>笑<rt>わら</rt></ruby>われた (&laquo;hasta los ni&ntilde;os se rieron de m&iacute;&raquo;). Ocupa el sitio de が／を; las dem&aacute;s part&iacute;culas van delante (<ruby>子供<rt>こども</rt></ruby>にまで).</li>
+<li><b>まで frente a さえ</b>: まで a&ntilde;ade un elemento m&aacute;s a algo que ya iba mal o sorprend&iacute;a, con asombro o fastidio (<ruby>財布<rt>さいふ</rt></ruby>だけでなく、パスポート<span class="hi">まで</span>なくした). さえ marca el caso extremo de una escala para deducir el resto (<ruby>子供<rt>こども</rt></ruby>でさえ<ruby>分<rt>わ</rt></ruby>かる). En frases afirmativas a menudo valen las dos; con negativo (&laquo;ni siquiera&raquo;), lo natural es さえ.</li>
+<li><b>Expresiones fijas</b>: <ruby>骨<rt>ほね</rt></ruby>の<ruby>髄<rt>ずい</rt></ruby>まで (hasta la m&eacute;dula), <ruby>夢<rt>ゆめ</rt></ruby>にまで<ruby>見<rt>み</rt></ruby>た (con lo que hasta so&ntilde;aba), そこまで<ruby>言<rt>い</rt></ruby>わなくても (&laquo;no hace falta decir tanto&raquo;).</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se usa para</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Caso extremo</td><td class="jp2">N(で) <span class="hi">＋さえ</span></td><td class="jp2"><ruby>子供<rt>こども</rt></ruby>で<span class="hi">さえ</span></td></tr>
+<tr><td class="ctx">Con solo&hellip;</td><td class="jp2">N<span class="hi">さえ</span> ＋condicional ば</td><td class="jp2">お<ruby>金<rt>かね</rt></ruby><span class="hi">さえ</span>あれば</td></tr>
+<tr><td class="ctx">Formal, dram&aacute;tico <span style="font-family:Poppins,sans-serif;font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--shu,#B23A2E);border:1px solid #EBD6D3;border-radius:3px;padding:0 4px;vertical-align:2px;">N2</span></td><td class="jp2">N(で) <span class="hi">＋すら</span></td><td class="jp2"><ruby>名前<rt>なまえ</rt></ruby><span class="hi">すら</span></td></tr>
+<tr><td class="ctx">Foco exacto</td><td class="jp2">N <span class="hi">＋こそ</span></td><td class="jp2">これ<span class="hi">こそ</span></td></tr>
+<tr><td class="ctx">Reforzar causa</td><td class="jp2">〜だから <span class="hi">＋こそ</span></td><td class="jp2"><ruby>好<rt>す</rt></ruby>きだから<span class="hi">こそ</span></td></tr>
+<tr><td class="ctx">F&oacute;rmula al agradecer</td><td class="jp2"><span class="hi">こちらこそ</span></td><td class="jp2">いいえ、<span class="hi">こちらこそ</span></td></tr>
+<tr><td class="ctx">Rechazo enf&aacute;tico (hablado)</td><td class="jp2">Aく／Vたく ＋<span class="hi">なんか</span>ない</td><td class="jp2"><ruby>怖<rt>こわ</rt></ruby>くなんかない</td></tr>
+
+<tr><td class="ctx">Incluso, hasta (se suma)</td><td class="jp2">N(＋part&iacute;cula) ＋<span class="hi">まで</span></td><td class="jp2"><ruby>髪<rt>かみ</rt></ruby>まで ・ <ruby>子供<rt>こども</rt></ruby>にまで</td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp">この<ruby>問題<rt>もんだい</rt></ruby>は<ruby>先生<rt>せんせい</rt></ruby>で<span class="hi">さえ</span><ruby>分<rt>わ</rt></ruby>かりません。</div><div class="t">Este problema ni el profesor lo entiende.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>時間<rt>じかん</rt></ruby><span class="hi">さえ</span>あれば、どこへでも<ruby>行<rt>い</rt></ruby>けるのに。</div><div class="t">Con solo tener tiempo, podr&iacute;a ir a cualquier parte.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>彼<rt>かれ</rt></ruby>は<ruby>自分<rt>じぶん</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby><span class="hi">すら</span><ruby>書<rt>か</rt></ruby>けなかった。</div><div class="t">&Eacute;l no sab&iacute;a ni escribir su propio nombre.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp">これ<span class="hi">こそ</span><ruby>私<rt>わたし</rt></ruby>が<ruby>探<rt>さが</rt></ruby>していたものです。</div><div class="t">Esto es justo lo que buscaba.</div></div>
+<div class="ex-item"><div class="s jp">&mdash;ありがとうございました。&mdash;いいえ、<span class="hi">こちらこそ</span>。</div><div class="t">&mdash;Muchas gracias. &mdash;No, gracias a usted.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>大切<rt>たいせつ</rt></ruby>だから<span class="hi">こそ</span>、<ruby>厳<rt>きび</rt></ruby>しく<ruby>言<rt>い</rt></ruby>うんです。</div><div class="t">Precisamente porque me importa, se lo digo con dureza.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>別<rt>べつ</rt></ruby>に<ruby>寂<rt>さび</rt></ruby>しく<span class="hi">なんか</span>ないよ。</div><div class="t">No me siento solo, para nada.</div></div>
+
+<div class="ex-item"><div class="s jp"><ruby>傘<rt>かさ</rt></ruby>をさしていたのに、<ruby>髪<rt>かみ</rt></ruby><span class="hi">まで</span><ruby>濡<rt>ぬ</rt></ruby>れてしまった。</div><div class="t">Llevaba paraguas y aun as&iacute; se me moj&oacute; hasta el pelo.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>今朝<rt>けさ</rt></ruby>は<ruby>寒<rt>さむ</rt></ruby>さが<ruby>骨<rt>ほね</rt></ruby><span class="hi">まで</span>しみた。</div><div class="t">Esta ma&ntilde;ana el fr&iacute;o calaba hasta los huesos.</div></div>
+
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp">お<ruby>金<rt>かね</rt></ruby>さえあると<ruby>幸<rt>しあわ</rt></ruby>せだ。</span> &nbsp; &#9675; <span class="good jp">お<ruby>金<rt>かね</rt></ruby>さえあれば<ruby>幸<rt>しあわ</rt></ruby>せだ。</span></div><div class="why">La construcci&oacute;n &laquo;con solo&raquo; va con ば.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">すら <em>(en conversaci&oacute;n casual)</em></span> &nbsp; &#9675; <span class="good jp">さえ</span></div><div class="why">すら es literario; entre amigos suena recargado.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>行<rt>い</rt></ruby>きたくないなんか</span> &nbsp; &#9675; <span class="good jp"><ruby>行<rt>い</rt></ruby>きたくなんかない</span></div><div class="why">なんか va entre el adjetivo en く y ない, no al final.</div></div>
+
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>子供<rt>こども</rt></ruby>までに<ruby>笑<rt>わら</rt></ruby>われた。</span> &nbsp; &#9675; <span class="good jp"><ruby>子供<rt>こども</rt></ruby>にまで<ruby>笑<rt>わら</rt></ruby>われた。</span></div><div class="why">La part&iacute;cula va delante: に ＋まで. までに es otra cosa: un plazo (&laquo;antes de&raquo;).</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">△ <ruby>名前<rt>なまえ</rt></ruby>まで<ruby>書<rt>か</rt></ruby>けなかった。</span> &nbsp; &#9675; <span class="good jp"><ruby>名前<rt>なまえ</rt></ruby>さえ<ruby>書<rt>か</rt></ruby>けなかった。</span></div><div class="why">Para &laquo;ni siquiera&raquo; con negativo, lo natural es さえ.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="58-cantidad-restriccion.html"><small>&larr; Anterior</small><span class="jp">だけ・しか・ばかり・くらい</span></a><a class="next" href="60-respecto-a.html"><small>Siguiente &rarr;</small><span class="jp">について・に関して・をめぐって</span></a></nav><!--/gen-bottom-->
+<footer>さえ・すら・こそ &middot; &Eacute;nfasis &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

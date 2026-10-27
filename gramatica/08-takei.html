@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>た形 &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#B">&larr; Gram&aacute;tica</a><span>B &middot; Conjugaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">た形</h1>
+<div class="sub">El pasado llano &mdash; y la puerta a <b>たら・たり・ことがある</b>.</div>
+<div class="rom">ta-kei</div>
+</div><div class="badge"><span class="tag">JLPT N5</span><span class="cat">Conjugaci&oacute;n</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">La forma た se construye <b>con las mismas reglas que la て形</b>: donde la て形 termina en て o で, la た形 termina en た o だ. Si ya dominas una, la otra sale gratis &mdash; solo cambia la &uacute;ltima letra.</p>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>書<rt>か</rt></ruby>く &nbsp;&rarr;&nbsp; <ruby>書<rt>か</rt></ruby>いて &nbsp;&rarr;&nbsp; <span class="hi"><ruby>書<rt>か</rt></ruby>いた</span></span><span class="b">misma irregularidad, otra letra</span></div>
+<div class="r"><span class="a jp"><ruby>飲<rt>の</rt></ruby>む &nbsp;&rarr;&nbsp; <ruby>飲<rt>の</rt></ruby>んで &nbsp;&rarr;&nbsp; <span class="hi"><ruby>飲<rt>の</rt></ruby>んだ</span></span><span class="b">て↔た &nbsp; で↔だ</span></div>
+<div class="figcap"><b>て形 y た形 son la misma irregularidad</b>, con una letra distinta al final.</div>
+</div>
+<ul class="nuance">
+<li><b>Mismo truco, misma excepci&oacute;n</b>: <ruby>行<rt>い</rt></ruby>く no es <span class="rd">&#10005; <ruby>行<rt>い</rt></ruby>いた</span>, es <span class="hi"><ruby>行<rt>い</rt></ruby>った</span> &mdash; igual que en la て形.</li>
+<li>Es el pasado <b>llano</b>, el que se usa entre amigos y dentro de casi toda la gram&aacute;tica compleja: たことがある, たり, たら, たあとで, たばかり, たところ.</li>
+<li>La cortes&iacute;a se marca <b>solo al final</b>: lo que va dentro de la frase (relativos, subordinadas) va en llano aunque acabes en ます &mdash; <ruby>昨日<rt>きのう</rt></ruby><ruby>買<rt>か</rt></ruby>った<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みました. Lo que no se mezcla es el estilo del final de frase a lo largo de un texto.</li>
+<li>El <b>negativo pasado</b> se construye desde ない, no desde た: <span class="hi"><ruby>行<rt>い</rt></ruby>かなかった</span>, nunca <span class="rd">&#10005; <ruby>行<rt>い</rt></ruby>ったない</span>.</li>
+<li><b>Tambi&eacute;n vale para adjetivos y sustantivos</b>: <ruby>高<rt>たか</rt></ruby>かった, <ruby>静<rt>しず</rt></ruby>かだった, <ruby>学生<rt>がくせい</rt></ruby>だった &mdash; y son la base de たら y たり con ellos.</li>
+<li>Delante de un sustantivo funciona como <b>oraci&oacute;n de relativo</b>: <ruby>昨日<rt>きのう</rt></ruby><ruby>買<rt>か</rt></ruby>った<ruby>本<rt>ほん</rt></ruby> (&laquo;el libro que compr&eacute; ayer&raquo;).</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Termina en</th><th>Se convierte en</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">〜く</td><td class="jp2">〜<span class="hi">いた</span></td><td class="jp2"><ruby>書<rt>か</rt></ruby>く &rarr; <ruby>書<rt>か</rt></ruby>いた &nbsp; <em>exc. <ruby>行<rt>い</rt></ruby>く &rarr; <ruby>行<rt>い</rt></ruby>った</em></td></tr>
+<tr><td class="ctx">〜ぐ</td><td class="jp2">〜<span class="hi">いだ</span></td><td class="jp2"><ruby>泳<rt>およ</rt></ruby>ぐ &rarr; <ruby>泳<rt>およ</rt></ruby>いだ</td></tr>
+<tr><td class="ctx">〜む・ぶ・ぬ</td><td class="jp2">〜<span class="hi">んだ</span></td><td class="jp2"><ruby>飲<rt>の</rt></ruby>む &rarr; <ruby>飲<rt>の</rt></ruby>んだ &nbsp; <ruby>遊<rt>あそ</rt></ruby>ぶ &rarr; <ruby>遊<rt>あそ</rt></ruby>んだ</td></tr>
+<tr><td class="ctx">〜う・つ・る</td><td class="jp2">〜<span class="hi">った</span></td><td class="jp2"><ruby>買<rt>か</rt></ruby>う &rarr; <ruby>買<rt>か</rt></ruby>った &nbsp; <ruby>待<rt>ま</rt></ruby>つ &rarr; <ruby>待<rt>ま</rt></ruby>った</td></tr>
+<tr><td class="ctx">〜す</td><td class="jp2">〜<span class="hi">した</span></td><td class="jp2"><ruby>話<rt>はな</rt></ruby>す &rarr; <ruby>話<rt>はな</rt></ruby>した</td></tr>
+<tr><td class="ctx">Ichidan</td><td class="jp2">quitar る, poner <span class="hi">た</span></td><td class="jp2"><ruby>食<rt>た</rt></ruby>べる &rarr; <ruby>食<rt>た</rt></ruby>べた</td></tr>
+<tr><td class="ctx">する ／ <ruby>来<rt>く</rt></ruby>る</td><td class="jp2"><span class="hi">した</span> ／ <span class="hi"><ruby>来<rt>き</rt></ruby>た</span></td><td class="jp2">する&rarr;した &nbsp; <ruby>来<rt>く</rt></ruby>る&rarr;<ruby>来<rt>き</rt></ruby>た</td></tr>
+<tr><td class="ctx">Negativo pasado</td><td class="jp2">Vない &rarr; 〜<span class="hi">なかった</span></td><td class="jp2"><ruby>行<rt>い</rt></ruby>かない &rarr; <ruby>行<rt>い</rt></ruby>かなかった</td></tr>
+<tr><td class="ctx">Adjetivo -い</td><td class="jp2">Aい &rarr; A<span class="hi">かった</span></td><td class="jp2"><ruby>高<rt>たか</rt></ruby>い &rarr; <ruby>高<rt>たか</rt></ruby>かった</td></tr>
+<tr><td class="ctx">Adjetivo -な ／ sustantivo</td><td class="jp2">〜<span class="hi">だった</span></td><td class="jp2"><ruby>静<rt>しず</rt></ruby>かだった &nbsp; <ruby>学生<rt>がくせい</rt></ruby>だった</td></tr>
+</tbody></table>
+
+<h2>D&oacute;nde lo vas a encontrar</h2>
+<div class="where">
+<div class="row"><div class="k2 jp">たことがある</div><div class="v2">Experiencia: <ruby>日本<rt>にほん</rt></ruby>に<ruby>行<rt>い</rt></ruby>ったことがあります.</div></div>
+<div class="row"><div class="k2 jp">たら</div><div class="v2">El condicional m&aacute;s flexible: <ruby>安<rt>やす</rt></ruby>かったら<ruby>買<rt>か</rt></ruby>います.</div></div>
+<div class="row"><div class="k2 jp">たり〜たり</div><div class="v2">Enumerar ejemplos: <ruby>読<rt>よ</rt></ruby>んだり<ruby>書<rt>か</rt></ruby>いたりします.</div></div>
+<div class="row"><div class="k2 jp">た<ruby>後<rt>あと</rt></ruby>で</div><div class="v2">Orden de acciones: <ruby>食<rt>た</rt></ruby>べた<ruby>後<rt>あと</rt></ruby>で、<ruby>歯<rt>は</rt></ruby>を<ruby>磨<rt>みが</rt></ruby>きます.</div></div>
+<div class="row"><div class="k2 jp">たばかり</div><div class="v2">Acabar de: <ruby>着<rt>つ</rt></ruby>いたばかりです.</div></div>
+<div class="row"><div class="k2 jp">たほうがいい</div><div class="v2">Aconsejar: <ruby>休<rt>やす</rt></ruby>んだほうがいいですよ.</div></div>
+</div>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>昨日<rt>きのう</rt></ruby>、<ruby>本<rt>ほん</rt></ruby>を<span class="hi"><ruby>読<rt>よ</rt></ruby>んだ</span>。</div><div class="t">Ayer le&iacute; un libro. <em>(llano, entre amigos)</em></div></div>
+<div class="ex-item"><div class="s jp">パーティーに<span class="hi"><ruby>行<rt>い</rt></ruby>った</span>？</div><div class="t">&iquest;Fuiste a la fiesta? <em>(<ruby>行<rt>い</rt></ruby>く: misma excepci&oacute;n que en て形)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>今日<rt>きょう</rt></ruby>は<ruby>学校<rt>がっこう</rt></ruby>に<span class="hi"><ruby>行<rt>い</rt></ruby>かなかった</span>。</div><div class="t">Hoy no fui al colegio. <em>(negativo desde ない)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>宿題<rt>しゅくだい</rt></ruby>はもう<span class="hi"><ruby>終<rt>お</rt></ruby>わった</span>。</div><div class="t">Ya he terminado los deberes.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>昨日<rt>きのう</rt></ruby><span class="hi"><ruby>買<rt>か</rt></ruby>った</span><ruby>本<rt>ほん</rt></ruby>はどこ？</div><div class="t">&iquest;D&oacute;nde est&aacute; el libro que compr&eacute; ayer? <em>(relativo)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>子供<rt>こども</rt></ruby>の<ruby>頃<rt>ころ</rt></ruby>、ここは<span class="hi"><ruby>静<rt>しず</rt></ruby>かだった</span>。</div><div class="t">De ni&ntilde;o, esto era tranquilo. <em>(な-adjetivo en pasado)</em></div></div>
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>行<rt>い</rt></ruby>いた</span> &nbsp; &#9675; <span class="good jp"><ruby>行<rt>い</rt></ruby>った</span></div><div class="why">Misma excepci&oacute;n que en て形.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>行<rt>い</rt></ruby>ったない</span> &nbsp; &#9675; <span class="good jp"><ruby>行<rt>い</rt></ruby>かなかった</span></div><div class="why">El negativo pasado se construye desde ない.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>食<rt>た</rt></ruby>べましたことがある</span> &nbsp; &#9675; <span class="good jp"><ruby>食<rt>た</rt></ruby>べたことがある</span></div><div class="why">Con ことがある siempre va la forma llana.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>高<rt>たか</rt></ruby>いでした</span> &nbsp; &#9675; <span class="good jp"><ruby>高<rt>たか</rt></ruby>かったです</span></div><div class="why">El adjetivo -い lleva el pasado en s&iacute; mismo.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="07-tekei.html"><small>&larr; Anterior</small><span class="jp">て形</span></a><a class="next" href="09-teiru.html"><small>Siguiente &rarr;</small><span class="jp">ている</span></a></nav><!--/gen-bottom-->
+<footer>た形 &middot; Conjugaci&oacute;n &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

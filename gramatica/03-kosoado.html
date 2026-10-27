@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>こ・そ・あ・ど &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#A">&larr; Gram&aacute;tica</a><span>A &middot; Cimientos</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">こ・そ・あ・ど</h1>
+<div class="sub">El sistema m&aacute;s regular del japon&eacute;s: <b>tres lados y una pregunta</b>.</div>
+<div class="rom">kore &middot; sore &middot; are &middot; dore</div>
+</div><div class="badge"><span class="tag">JLPT N5</span><span class="cat">Demostrativos</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">Nueve series que se comportan <b>exactamente igual</b>: aprendes una y tienes las dem&aacute;s. こ es lo que est&aacute; de mi lado, そ lo que est&aacute; del tuyo, あ lo que queda fuera de los dos, y ど es la pregunta.</p>
+<div class="fig">
+<div class="z solid"><h4 class="jp">こ</h4><div class="d">de mi lado &mdash; これ・ここ・この</div></div>
+<div class="z pale"><h4 class="jp">そ</h4><div class="d">de tu lado &mdash; それ・そこ・その</div></div>
+<div class="z"><h4 class="jp">あ</h4><div class="d">fuera de los dos &mdash; あれ・あそこ・あの</div></div>
+<div class="z"><h4 class="jp">ど</h4><div class="d">la pregunta &mdash; どれ・どこ・どの</div></div>
+<div class="figcap">Cara a cara cuenta <b>de qui&eacute;n es</b>; lado a lado, la <b>distancia</b>.</div>
+</div>
+<ul class="nuance">
+<li><b>Cara a cara, manda el territorio.</b> Por tel&eacute;fono, lo que digo yo es こ y lo que dices t&uacute; es そ, aunque est&eacute;is a mil kil&oacute;metros. <b>Lado a lado</b> (mirando los dos lo mismo) pasa a ser distancia: ここ aqu&iacute;, そこ ah&iacute; cerca, あそこ all&iacute; lejos.</li>
+<li>En conversaci&oacute;n abstracta, あ se&ntilde;ala algo que <b>los dos conoc&eacute;is</b> (あの<ruby>店<rt>みせ</rt></ruby>, &laquo;ese sitio que ya sabes&raquo;); そ es para lo que solo ha mencionado uno.</li>
+<li>これ va <b>sola</b>; この necesita un sustantivo detr&aacute;s. Nunca <span class="rd">&#10005; これ<ruby>本<rt>ほん</rt></ruby></span>.</li>
+<li>La serie こちら es la <b>cort&eacute;s</b>, y adem&aacute;s presenta personas: こちらは<ruby>田中<rt>たなか</rt></ruby>さんです.</li>
+<li>そう es la pieza m&aacute;s usada del sistema: そうです, そうですね, そうですか. Sirve para asentir, para dudar y para ganar tiempo.</li>
+<li><b>Tambi&eacute;n funcionan sobre el texto</b>, no solo sobre el espacio: それ retoma lo que se acaba de decir, y あれ, algo ya sabido por ambos.</li>
+<li><b>こんなに・そんなに・あんなに・どんなに</b> son de grado: &laquo;tan, tanto&raquo;. Van delante de adjetivos y verbos (こんなに<ruby>高<rt>たか</rt></ruby>い, そんなに<ruby>食<rt>た</rt></ruby>べる); こんな／そんな van delante de sustantivos (こんな<ruby>本<rt>ほん</rt></ruby>). Nivel N3.</li>
+<li><b>そんなに＋negativo rebaja</b>: そんなに<ruby>難<rt>むずか</rt></ruby>しくない = &laquo;no es tan dif&iacute;cil&raquo;. Y <b>どんなに〜ても</b> es &laquo;por mucho que&raquo;: どんなに<ruby>頑張<rt>がんば</rt></ruby>っても<ruby>無理<rt>むり</rt></ruby>だ.</li>
+</ul>
+
+<h2>Las nueve series</h2>
+<table>
+<thead><tr><th>Serie</th><th>こ &middot; そ &middot; あ</th><th>Pregunta ど</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Cosas (va sola)</td><td class="jp2">これ・それ・あれ</td><td class="jp2"><span class="hi">どれ</span></td></tr>
+<tr><td class="ctx">Delante de sustantivo</td><td class="jp2">この・その・あの ＋N</td><td class="jp2"><span class="hi">どの</span> ＋N</td></tr>
+<tr><td class="ctx">Lugar</td><td class="jp2">ここ・そこ・あそこ</td><td class="jp2"><span class="hi">どこ</span></td></tr>
+<tr><td class="ctx">Direcci&oacute;n &middot; cort&eacute;s</td><td class="jp2">こちら・そちら・あちら</td><td class="jp2"><span class="hi">どちら</span></td></tr>
+<tr><td class="ctx">Manera</td><td class="jp2">こう・そう・ああ</td><td class="jp2"><span class="hi">どう</span></td></tr>
+<tr><td class="ctx">Tipo de&hellip;</td><td class="jp2">こんな・そんな・あんな ＋N</td><td class="jp2"><span class="hi">どんな</span> ＋N</td></tr>
+<tr><td class="ctx">Persona (cort&eacute;s)</td><td class="jp2">この<ruby>方<rt>かた</rt></ruby>・その<ruby>方<rt>かた</rt></ruby>・あの<ruby>方<rt>かた</rt></ruby></td><td class="jp2"><span class="hi">どなた</span></td></tr>
+<tr><td class="ctx">Cantidad &middot; grado</td><td class="jp2">これくらい・それくらい</td><td class="jp2"><span class="hi">どれくらい</span></td></tr>
+<tr><td class="ctx">Coloquial (direcci&oacute;n)</td><td class="jp2">こっち・そっち・あっち</td><td class="jp2"><span class="hi">どっち</span></td></tr>
+<tr><td class="ctx">Grado &middot; &laquo;tan, tanto&raquo; (N3)</td><td class="jp2">こんなに・そんなに・あんなに</td><td class="jp2">どんなに</td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><span class="hi">これ</span>は<ruby>私<rt>わたし</rt></ruby>の<ruby>本<rt>ほん</rt></ruby>です。</div><div class="t">Esto es mi libro. <em>(これ va sola)</em></div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">その</span><ruby>本<rt>ほん</rt></ruby>を<ruby>見<rt>み</rt></ruby>せてください。</div><div class="t">Ens&eacute;&ntilde;ame ese libro. <em>(el que tienes t&uacute;)</em></div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">あそこ</span>に<ruby>駅<rt>えき</rt></ruby>があります。</div><div class="t">All&iacute; est&aacute; la estaci&oacute;n.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">どんな</span><ruby>音楽<rt>おんがく</rt></ruby>が<ruby>好<rt>す</rt></ruby>きですか。</div><div class="t">&iquest;Qu&eacute; tipo de m&uacute;sica te gusta?</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><span class="hi">どちら</span>が<ruby>好<rt>す</rt></ruby>きですか。</div><div class="t">&iquest;Cu&aacute;l de los dos te gusta m&aacute;s?</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">こちら</span>は<ruby>田中<rt>たなか</rt></ruby>さんです。</div><div class="t">Este es el se&ntilde;or Tanaka. <em>(presenta personas)</em></div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">あの</span><ruby>店<rt>みせ</rt></ruby>、おいしかったね。</div><div class="t">Aquel sitio estaba bueno, &iquest;eh? <em>(あ: lo conocemos los dos)</em></div></div>
+<div class="ex-item"><div class="s jp">&mdash; <span class="hi">そう</span>ですね。<ruby>私<rt>わたし</rt></ruby>も<span class="hi">そう</span><ruby>思<rt>おも</rt></ruby>います。</div><div class="t">&mdash; Pues s&iacute;. Yo tambi&eacute;n lo creo.</div></div>
+<div class="ex-item"><div class="s jp"><span class="hi">こんなに</span><ruby>高<rt>たか</rt></ruby>いとは<ruby>思<rt>おも</rt></ruby>わなかった。</div><div class="t">No me imaginaba que fuera tan caro. <em>(grado)</em></div></div>
+
+</div>
+</div>
+
+<h2>D&oacute;nde lo vas a encontrar</h2>
+<div class="where">
+<div class="row"><div class="k2 jp">そうですね</div><div class="v2">La muletilla m&aacute;s usada del japon&eacute;s. Sirve para asentir y para <b>ganar tiempo</b>.</div></div>
+<div class="row"><div class="k2 jp">どちら</div><div class="v2">En trato formal sustituye a どこ y a だれ: どちらから, どちら<ruby>様<rt>さま</rt></ruby>.</div></div>
+<div class="row"><div class="k2 jp">あの&hellip;</div><div class="v2">Solo y arrastrado, es el &laquo;esto&hellip;&raquo; con el que se aborda a alguien.</div></div>
+<div class="row"><div class="k2 jp">こっち・そっち</div><div class="v2">Versi&oacute;n coloquial de こちら. Entre amigos siempre; con un cliente jam&aacute;s.</div></div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp">これ<ruby>本<rt>ほん</rt></ruby></span> &nbsp; &#9675; <span class="good jp">この<ruby>本<rt>ほん</rt></ruby></span></div><div class="why">これ va sola; この pide sustantivo detr&aacute;s.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">どれの<ruby>本<rt>ほん</rt></ruby></span> &nbsp; &#9675; <span class="good jp">どの<ruby>本<rt>ほん</rt></ruby></span></div><div class="why">Misma regla aplicada a la serie ど.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">そこは<ruby>田中<rt>たなか</rt></ruby>さんです。</span> &nbsp; &#9675; <span class="good jp">こちらは<ruby>田中<rt>たなか</rt></ruby>さんです。</span></div><div class="why">Para presentar a alguien va こちら (cort&eacute;s), no ここ ni そこ.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">あんな<ruby>人<rt>ひと</rt></ruby>ですか。 <em>(por &laquo;&iquest;qu&eacute; tipo de persona es?&raquo;)</em></span> &nbsp; &#9675; <span class="good jp">どんな<ruby>人<rt>ひと</rt></ruby>ですか。</span></div><div class="why">あんな人ですか existe, pero significa &laquo;&iquest;es una persona as&iacute;?&raquo;. Para <b>preguntar</b> va la serie ど.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp">△ こんな<ruby>高<rt>たか</rt></ruby>いとは<ruby>思<rt>おも</rt></ruby>わなかった。</span> &nbsp; &#9675; <span class="good jp">こんなに<ruby>高<rt>たか</rt></ruby>いとは<ruby>思<rt>おも</rt></ruby>わなかった。</span></div><div class="why">Al hablar se oye こんな, pero delante de adjetivo o verbo la forma est&aacute;ndar &mdash;y la del examen&mdash; es こんなに.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="02-particulas.html"><small>&larr; Anterior</small><span class="jp">助詞</span></a><a class="next" href="04-existencia.html"><small>Siguiente &rarr;</small><span class="jp">あります／います</span></a></nav><!--/gen-bottom-->
+<footer>こ・そ・あ・ど &middot; Demostrativos &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+</style><!--gen-head-->
+<title>ている &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#B">&larr; Gram&aacute;tica</a><span>B &middot; Conjugaci&#243;n</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">ている</h1>
+<div class="sub">La forma m&aacute;s usada del japon&eacute;s &mdash; y <b>no siempre</b> es &laquo;estar haciendo&raquo;.</div>
+<div class="rom">&hellip;te iru &middot; &hellip;te imasu &middot; &hellip;teru</div>
+</div><div class="badge"><span class="tag">JLPT N5 &ndash; N4</span><span class="cat">Estado y curso</span></div></header>
+
+<h2>Significado y matiz</h2>
+<p class="lead">El error de partida es traducirla siempre por &laquo;estar haciendo&raquo;. ている dice que <b>algo sigue vigente</b>, y qu&eacute; es lo que sigue depende del verbo: si la acci&oacute;n dura, sigue la acci&oacute;n; si el verbo marca un <b>cambio instant&aacute;neo</b>, lo que sigue es el estado que dej&oacute;.</p>
+<div class="fig">
+<div class="z pale"><h4 class="jp"><ruby>読<rt>よ</rt></ruby>んでいる</h4><div class="d">el verbo <b>dura</b> &rarr; sigue la acci&oacute;n: &laquo;estoy leyendo&raquo;</div></div>
+<div class="z solid"><h4 class="jp"><ruby>結婚<rt>けっこん</rt></ruby>している</h4><div class="d">el verbo es un <b>cambio instant&aacute;neo</b> &rarr; sigue el estado: &laquo;estoy casado&raquo;</div></div>
+<div class="figcap">Acci&oacute;n que dura &rarr; <b>sigue la acci&oacute;n</b>.<br>Cambio instant&aacute;neo &rarr; <b>sigue el estado que dej&oacute;</b>.</div>
+</div>
+<ul class="nuance">
+<li><b>Con verbos de cambio instant&aacute;neo no es &laquo;estar haciendo&raquo;.</b> <ruby>結婚<rt>けっこん</rt></ruby>している no es &laquo;me estoy casando&raquo;, es &laquo;estoy casado&raquo;. Igual con <ruby>住<rt>す</rt></ruby>む・<ruby>知<rt>し</rt></ruby>る・<ruby>開<rt>あ</rt></ruby>く・<ruby>持<rt>も</rt></ruby>つ・<ruby>覚<rt>おぼ</rt></ruby>える・<ruby>疲<rt>つか</rt></ruby>れる.</li>
+<li><b>La excepci&oacute;n de <ruby>知<rt>し</rt></ruby>る</b>: el afirmativo es <ruby>知<rt>し</rt></ruby>っています, pero el negativo es <span class="rd"><b><ruby>知<rt>し</rt></ruby>りません</b></span> &mdash; nunca <span class="rd">&#10005; <ruby>知<rt>し</rt></ruby>っていません</span>.</li>
+<li>Tambi&eacute;n sirve para <b>h&aacute;bitos</b>: <ruby>毎日<rt>まいにち</rt></ruby><ruby>走<rt>はし</rt></ruby>っています no es que est&eacute;s corriendo ahora, es que corres a diario.</li>
+<li>Y para <b>experiencia o historial</b>: <ruby>彼<rt>かれ</rt></ruby>は<ruby>三回<rt>さんかい</rt></ruby><ruby>日本<rt>にほん</rt></ruby>に<ruby>来<rt>き</rt></ruby>ている (ya ha venido tres veces). Ojo: <ruby>三年<rt>さんねん</rt></ruby><ruby>住<rt>す</rt></ruby>んでいる no es esto, es un estado que dura (&laquo;llevo tres a&ntilde;os&raquo;).</li>
+<li>Al hablar se contrae a <span class="hi">〜てる</span>: <ruby>何<rt>なに</rt></ruby>してる？, <ruby>読<rt>よ</rt></ruby>んでる. Lo oir&aacute;s mucho m&aacute;s que la forma completa.</li>
+<li><b>Diferencia con てある</b>: <ruby>開<rt>あ</rt></ruby>いている describe el estado sin m&aacute;s; <ruby>開<rt>あ</rt></ruby>けてある dice que <b>alguien lo dej&oacute; as&iacute; a prop&oacute;sito</b>.</li>
+</ul>
+
+<h2>Los cuatro usos</h2>
+<table>
+<thead><tr><th>Uso</th><th>Patr&oacute;n</th><th>Ejemplo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Acci&oacute;n en curso</td><td class="jp2">Vて ＋<span class="hi">いる</span></td><td class="jp2"><ruby>今<rt>いま</rt></ruby><ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んでいます <em>estoy leyendo</em></td></tr>
+<tr><td class="ctx">Estado tras un cambio</td><td class="jp2">Vて <em>(cambio instant&aacute;neo)</em> ＋<span class="hi">いる</span></td><td class="jp2"><ruby>姉<rt>あね</rt></ruby>は<ruby>結婚<rt>けっこん</rt></ruby>しています <em>est&aacute; casada</em></td></tr>
+<tr><td class="ctx">H&aacute;bito</td><td class="jp2">Vて ＋<span class="hi">いる</span></td><td class="jp2"><ruby>毎日<rt>まいにち</rt></ruby><ruby>走<rt>はし</rt></ruby>っています <em>corro a diario</em></td></tr>
+<tr><td class="ctx">Experiencia · historial</td><td class="jp2">Vて ＋<span class="hi">いる</span></td><td class="jp2"><ruby>三回<rt>さんかい</rt></ruby><ruby>来<rt>き</rt></ruby>ています <em>ha venido tres veces</em></td></tr>
+<tr><td class="ctx">Cort&eacute;s</td><td class="jp2">〜<span class="hi">ています</span></td><td class="jp2"><ruby>読<rt>よ</rt></ruby>んでいます</td></tr>
+<tr><td class="ctx">Negativo</td><td class="jp2">〜<span class="hi">ていません</span></td><td class="jp2">まだ<ruby>食<rt>た</rt></ruby>べていません <em>todav&iacute;a no he comido</em></td></tr>
+<tr><td class="ctx">Pasado</td><td class="jp2">〜<span class="hi">ていました</span></td><td class="jp2"><ruby>待<rt>ま</rt></ruby>っていました <em>estaba esperando</em></td></tr>
+<tr><td class="ctx">Excepci&oacute;n <ruby>知<rt>し</rt></ruby>る</td><td class="jp2"><span class="hi"><ruby>知<rt>し</rt></ruby>っています</span> ／ <span class="rd"><ruby>知<rt>し</rt></ruby>りません</span></td><td class="jp2"><ruby>知<rt>し</rt></ruby>りません <em>no lo s&eacute;</em></td></tr>
+<tr><td class="ctx">Contracci&oacute;n (hablado)</td><td class="jp2">〜<span class="hi">てる</span> ／ 〜<span class="hi">でる</span></td><td class="jp2"><ruby>何<rt>なに</rt></ruby>してる？</td></tr>
+<tr><td class="ctx">Delante de sustantivo</td><td class="jp2">〜ている ＋N</td><td class="jp2"><ruby>働<rt>はたら</rt></ruby>いている<ruby>人<rt>ひと</rt></ruby> <em>la gente que trabaja</em></td></tr>
+</tbody></table>
+
+<h2>Verbos que casi siempre van en ている</h2>
+<table>
+<tbody>
+<tr><td class="ctx">vivir en</td><td class="jp2"><ruby>住<rt>す</rt></ruby>んでいる</td><td class="jp2">saber</td><td class="jp2"><ruby>知<rt>し</rt></ruby>っている</td></tr>
+<tr><td class="ctx">tener puesto</td><td class="jp2"><ruby>着<rt>き</rt></ruby>ている</td><td class="jp2">llevar encima</td><td class="jp2"><ruby>持<rt>も</rt></ruby>っている</td></tr>
+<tr><td class="ctx">estar casado</td><td class="jp2"><ruby>結婚<rt>けっこん</rt></ruby>している</td><td class="jp2">estar cansado</td><td class="jp2"><ruby>疲<rt>つか</rt></ruby>れている</td></tr>
+<tr><td class="ctx">recordar</td><td class="jp2"><ruby>覚<rt>おぼ</rt></ruby>えている</td><td class="jp2">parecerse a</td><td class="jp2"><ruby>似<rt>に</rt></ruby>ている</td></tr>
+<tr><td class="ctx">estar de pie</td><td class="jp2"><ruby>立<rt>た</rt></ruby>っている</td><td class="jp2">estar sentado</td><td class="jp2"><ruby>座<rt>すわ</rt></ruby>っている</td></tr>
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>今<rt>いま</rt></ruby>、<ruby>本<rt>ほん</rt></ruby>を<span class="hi"><ruby>読<rt>よ</rt></ruby>んでいます</span>。</div><div class="t">Ahora estoy leyendo un libro. <em>(acci&oacute;n en curso)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>姉<rt>あね</rt></ruby>は<ruby>結婚<rt>けっこん</rt></ruby><span class="hi">しています</span>。</div><div class="t">Mi hermana est&aacute; casada. <em>(no &laquo;se est&aacute; casando&raquo;)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>母<rt>はは</rt></ruby>に<span class="hi"><ruby>似<rt>に</rt></ruby>ています</span>ね。</div><div class="t">Te pareces a tu madre. <em>(<ruby>似<rt>に</rt></ruby>る casi nunca va sin ている)</em></div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>東京<rt>とうきょう</rt></ruby>に<span class="hi"><ruby>住<rt>す</rt></ruby>んでいます</span>。</div><div class="t">Vivo en Tokio.</div></div>
+<div class="ex-item"><div class="s jp">その<ruby>人<rt>ひと</rt></ruby>を<span class="hi"><ruby>知<rt>し</rt></ruby>っています</span>か。&mdash; いいえ、<span class="rd"><ruby>知<rt>し</rt></ruby>りません</span>。</div><div class="t">&iquest;Conoces a esa persona? &mdash; No, no la conozco.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>今<rt>いま</rt></ruby>、<ruby>何<rt>なに</rt></ruby>し<span class="hi">てる</span>？</div><div class="t">&iquest;Qu&eacute; haces ahora? <em>(contracci&oacute;n, muy com&uacute;n)</em></div></div>
+</div>
+</div>
+
+<h2>D&oacute;nde lo vas a encontrar</h2>
+<div class="where">
+<div class="row"><div class="k2 jp"><ruby>住<rt>す</rt></ruby>んでいます</div><div class="v2">Al presentarte: <ruby>東京<rt>とうきょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます. Decir <ruby>住<rt>す</rt></ruby>みます suena a que te mudas ma&ntilde;ana.</div></div>
+<div class="row"><div class="k2 jp">まだ〜ていません</div><div class="v2">&laquo;Todav&iacute;a no&raquo;. La respuesta natural a もう〜ましたか.</div></div>
+<div class="row"><div class="k2 jp">〜ていらっしゃる</div><div class="v2">La versi&oacute;n honor&iacute;fica: <ruby>先生<rt>せんせい</rt></ruby>は<ruby>何<rt>なに</rt></ruby>をしていらっしゃいますか.</div></div>
+<div class="row"><div class="k2 jp">〜とる / 〜よる</div><div class="v2">En Kansai y otras zonas, ている se dice とる: <ruby>何<rt>なに</rt></ruby>しとん？ No lo uses, pero recon&oacute;celo.</div></div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>知<rt>し</rt></ruby>っていません。</span> &nbsp; &#9675; <span class="good jp"><ruby>知<rt>し</rt></ruby>りません。</span></div><div class="why"><ruby>知<rt>し</rt></ruby>る es irregular en negativo.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>東京<rt>とうきょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>みます。</span> &nbsp; &#9675; <span class="good jp"><ruby>東京<rt>とうきょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。</span></div><div class="why">Para el estado hace falta ている; sin &eacute;l suena a plan futuro.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>むています。</span> &nbsp; &#9675; <span class="good jp"><ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んでいます。</span></div><div class="why">Se monta sobre la forma て, no sobre el diccionario.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>今<rt>いま</rt></ruby>、<ruby>結婚<rt>けっこん</rt></ruby>しています。 <em>(por &laquo;me caso hoy&raquo;)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>今日<rt>きょう</rt></ruby><ruby>結婚<rt>けっこん</rt></ruby>します。</span></div><div class="why"><ruby>結婚<rt>けっこん</rt></ruby>している significa &laquo;estoy casado&raquo;, no la boda de hoy.</div></div>
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="08-takei.html"><small>&larr; Anterior</small><span class="jp">た形</span></a><a class="next" href="10-jidoshi-tadoshi.html"><small>Siguiente &rarr;</small><span class="jp">自動詞・他動詞</span></a></nav><!--/gen-bottom-->
+<footer>ている &middot; Estado y curso &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>

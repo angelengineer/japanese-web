@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--sumi:#16211C;--washi:#FCFBF7;--midori:#3F6B4E;--midori-pale:#EAF0E9;
+--shu:#B23A2E;--shu-pale:#FDF8F7;--kasumi:#DCE2D8;--sub:#6E7A72;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Lora",Georgia,serif;background:var(--washi);color:var(--sumi);
+font-size:15px;line-height:1.55;padding:20px 16px 34px;}
+.jp{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;}
+ruby{ruby-position:over;-webkit-ruby-position:before;}
+rt{font-family:"Noto Serif JP",serif;font-size:.48em;color:var(--sub);
+line-height:1.1;user-select:none;}
+header{border-top:3px solid var(--sumi);border-bottom:1px solid var(--kasumi);
+padding:14px 0 12px;margin-bottom:18px;display:flex;flex-wrap:wrap;
+align-items:flex-end;gap:12px;}
+.head-l{flex:1 1 240px;}
+h1{font-family:"Noto Serif JP",serif;font-size:clamp(23px,5.4vw,33px);
+font-weight:700;line-height:1.15;}
+.sub{margin-top:8px;font-size:clamp(14px,2.6vw,17px);}
+.sub b{color:var(--midori);}
+.rom{font-family:"Poppins",sans-serif;font-size:12px;color:var(--sub);margin-top:5px;}
+.badge{flex:0 0 auto;text-align:right;}
+.tag{display:inline-block;border:1px solid var(--midori);color:var(--midori);
+font-family:"Poppins",sans-serif;font-weight:500;font-size:11px;letter-spacing:.12em;
+padding:4px 9px;border-radius:4px;}
+.cat{display:block;margin-top:7px;font-family:"Poppins",sans-serif;font-size:11px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--sub);}
+h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--midori);padding-bottom:5px;margin:26px 0 12px;
+border-bottom:1px solid var(--kasumi);}
+h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin:16px 0 8px;}
+.lead b{color:var(--midori);}
+ul.nuance{list-style:none;margin-top:12px;}
+ul.nuance li{padding-left:17px;position:relative;margin-bottom:8px;}
+ul.nuance li::before{content:"\2014";position:absolute;left:0;color:var(--midori);font-weight:700;}
+/* figura generica de tarjetas */
+.fig{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.fig .z{flex:1 1 150px;background:#fff;border:1px solid var(--kasumi);
+border-radius:6px;padding:12px;}
+.fig .z.solid{background:var(--midori);color:#fff;border-color:var(--midori);}
+.fig .z.pale{background:var(--midori-pale);border-color:var(--midori-pale);}
+.fig .z.warn{background:var(--shu-pale);border-color:#EBD6D3;}
+.fig .z h4{font-family:"Noto Serif JP",serif;font-size:15px;color:var(--midori);margin-bottom:5px;}
+.fig .z.solid h4{color:#fff;}
+.fig .z .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.fig .z.solid .d{color:#DCE7DC;}
+.figcap{width:100%;text-align:center;font-size:13px;color:var(--sub);margin-top:11px;}
+.figcap b{color:var(--midori);}
+/* figura de filas comparadas */
+.rows{background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:15px 14px;margin-top:16px;}
+.rows .r{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 0;
+border-bottom:1px dotted #E6E9E2;}
+.rows .r:last-child{border:none;}
+.rows .r .a{font-family:"Noto Serif JP",serif;font-size:15px;flex:1 1 210px;}
+.rows .r .b{font-family:"Poppins",sans-serif;font-size:9px;letter-spacing:.08em;
+color:var(--sub);text-transform:uppercase;}
+/* escala horizontal */
+.scale{display:flex;margin-top:14px;}
+.scale .c{flex:1;text-align:center;padding:10px 4px;border-right:2px solid #fff;}
+.scale .c:last-child{border-right:none;}
+.scale .w{font-family:"Noto Serif JP",serif;font-size:13.5px;}
+.scale .g{font-style:italic;font-size:9.5px;color:var(--sub);margin-top:4px;}
+table{width:100%;border-collapse:collapse;margin-top:4px;}
+th{font-family:"Poppins",sans-serif;font-weight:500;font-size:10px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--sub);text-align:left;padding:6px 8px 6px 0;
+border-bottom:1px solid var(--kasumi);}
+th.g{color:var(--midori);}
+td{padding:8px 8px 8px 0;border-bottom:1px solid #EFF1EC;vertical-align:baseline;font-size:14px;}
+td.ctx{width:26%;color:var(--sub);font-size:13px;}
+td.jp2{font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.9;}
+td.jp2 em{font-family:"Lora",serif;font-style:italic;font-size:12px;color:var(--sub);}
+.hi{color:var(--midori);font-weight:700;}
+.rd{color:var(--shu);font-weight:700;}
+@media(max-width:560px){
+ thead{display:none;}
+ tr{display:block;padding:8px 0;border-bottom:1px solid #EFF1EC;}
+ td{display:block;border:none;padding:1px 0;width:auto;}
+ td.ctx{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;}
+}
+.ex-item{padding:10px 0;border-bottom:1px solid #EFF1EC;}
+.ex-item:last-child{border:none;}
+.s{font-family:"Noto Serif JP",serif;font-size:clamp(15px,3.6vw,18px);line-height:2.5;}
+.t{font-size:13.5px;color:#333;margin-top:1px;}
+.t em{color:var(--sub);font-size:12.5px;}
+.cols{display:flex;gap:22px;flex-wrap:wrap;}
+.cols>div{flex:1 1 250px;}
+.where{background:var(--midori-pale);border-radius:6px;padding:13px 15px;margin-top:8px;}
+.where .row{display:flex;gap:12px;padding:6px 0;
+border-bottom:1px solid rgba(63,107,78,.13);flex-wrap:wrap;}
+.where .row:last-child{border:none;}
+.where .k2{font-family:"Noto Serif JP",serif;font-size:15px;flex:0 0 130px;
+color:var(--midori);font-weight:700;}
+.where .v2{flex:1 1 200px;font-size:13.5px;}
+.errors{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);
+border-radius:5px;padding:13px 15px;margin-top:8px;}
+.errors h3{color:var(--shu);margin:0 0 9px;}
+.err{padding:7px 0;border-bottom:1px dotted #EBD6D3;}
+.err:last-child{border:none;}
+.err .bad{font-family:"Noto Serif JP",serif;color:var(--shu);}
+.err .good{font-family:"Noto Serif JP",serif;color:var(--midori);}
+.err .why{font-size:12.5px;color:var(--sub);margin-top:2px;}
+footer{margin-top:26px;padding-top:10px;border-top:1px solid var(--kasumi);
+font-family:"Poppins",sans-serif;font-size:10px;color:#9AA69E;text-align:center;}
+
+.gauge{display:flex;margin-top:14px;border-radius:5px;overflow:hidden;}
+.gauge .g{flex:1;text-align:center;padding:11px 4px;}
+.gauge .w{font-family:"Noto Serif JP",serif;font-size:14px;}
+.gauge .p{font-family:"Poppins",sans-serif;font-size:9px;margin-top:4px;letter-spacing:.05em;}
+.srcbox{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+.srcbox .s2{flex:1 1 160px;background:#fff;border:1px solid var(--kasumi);border-radius:6px;padding:11px 12px;}
+.srcbox .s2 .w{font-family:"Noto Serif JP",serif;font-size:16px;color:var(--midori);}
+.srcbox .s2 .src{font-family:"Poppins",sans-serif;font-size:8.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);margin:5px 0 6px;}
+.srcbox .s2 .d{font-size:11.5px;color:var(--sub);line-height:1.4;}
+.warnbox{background:var(--shu-pale);border:1px solid #EBD6D3;border-left:3px solid var(--shu);border-radius:5px;padding:12px 14px;margin-top:12px;}
+.warnbox .t2{font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--shu);margin-bottom:7px;font-weight:600;}
+.warnbox .r2{display:flex;gap:10px;padding:4px 0;font-size:13px;flex-wrap:wrap;}
+.warnbox .r2 .a{font-family:"Noto Serif JP",serif;flex:0 0 150px;}
+.warnbox .r2 .b{flex:1 1 160px;color:var(--sub);font-size:12.5px;}
+</style><!--gen-head-->
+<title>かもしれない・はずだ・に違いない &middot; Gram&aacute;tica</title>
+<style>
+.gnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+font-family:"Poppins",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--sub);margin-bottom:10px;}
+.gnav a{color:var(--midori);text-decoration:none;font-weight:500;}
+.gpn{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+.gpn a{flex:1 1 220px;display:block;text-decoration:none;color:var(--sumi);background:#fff;
+border:1px solid var(--kasumi);border-radius:6px;padding:10px 13px;}
+.gpn a:hover{border-color:var(--midori);}
+.gpn a.next{text-align:right;}
+.gpn small{display:block;font-family:"Poppins",sans-serif;font-size:10px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--sub);margin-bottom:2px;}
+.gpn .jp{font-size:15px;color:var(--midori);}
+</style>
+<!--/gen-head-->
+</head><body>
+<!--gen-top--><nav class="gnav"><a href="./#G">&larr; Gram&aacute;tica</a><span>G &middot; Matices y modalidad</span></nav><!--/gen-top-->
+<header><div class="head-l">
+<h1 class="jp">かもしれない・はずだ・に<ruby>違<rt>ちが</rt></ruby>いない</h1>
+<div class="sub">Cu&aacute;nto te la juegas al afirmar &mdash; de un <b>quiz&aacute;</b> a un <b>segurísimo</b>.</div>
+<div class="rom">&hellip;kamoshirenai &middot; &hellip;hazu da &middot; &hellip;ni chigainai</div>
+</div><div class="badge"><span class="tag">JLPT N4 &ndash; N3</span><span class="cat">Posibilidad y certeza</span></div></header>
+
+<h2>Una escala de seguridad</h2>
+<div class="gauge">
+<div class="g" style="background:var(--shu-pale)"><div class="w jp">かもしれない</div><div class="p" style="color:var(--shu)">~50% &middot; PUEDE QUE</div></div>
+<div class="g" style="background:var(--midori-pale)"><div class="w jp">でしょう</div><div class="p" style="color:var(--sub)">~70% &middot; PROBABLEMENTE</div></div>
+<div class="g" style="background:#D9E6DC"><div class="w jp">はずだ</div><div class="p" style="color:var(--sub)">~90% &middot; DEBER&Iacute;A</div></div>
+<div class="g" style="background:var(--midori);color:#fff"><div class="w jp">に<ruby>違<rt>ちが</rt></ruby>いない</div><div class="p" style="color:#DCE7DC">~99% &middot; SEGURO</div></div>
+</div>
+<ul class="nuance">
+<li><b>かもしれない admite lo contrario</b>: si dices <ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>るかもしれない, aceptas igual de bien que no llueva. Es la m&aacute;s abierta de las cuatro.</li>
+<li><b>はずだ se apoya en una razón concreta</b>: sabes que sali&oacute; a las tres, luego ya deber&iacute;a haber llegado. No es una corazonada &mdash; hay un dato detr&aacute;s.</li>
+<li><b>はずがない es la negaci&oacute;n fuerte</b>: &laquo;no puede ser&raquo;. Distinto de <ruby>来<rt>こ</rt></ruby>ないはずだ (&laquo;se supone que no viene&raquo;), que es una expectativa normal en negativo.</li>
+<li><b>はずだったのに es la expectativa fallida</b>: <ruby>来<rt>く</rt></ruby>るはずだったのに、<ruby>来<rt>こ</rt></ruby>なかった (&laquo;se supon&iacute;a que ven&iacute;a, y no vino&raquo;).</li>
+<li><b>に<ruby>違<rt>ちが</rt></ruby>いない es escrito o enf&aacute;tico</b>; en conversaci&oacute;n normal se prefiere きっと〜でしょう o はずだ.</li>
+</ul>
+
+<h3>はずだ m&aacute;s all&aacute; de la escala</h3>
+<div class="rows">
+<div class="r"><span class="a jp"><ruby>会議<rt>かいぎ</rt></ruby>は<ruby>三時<rt>さんじ</rt></ruby>から<span class="hi">のはずです</span>。</span><span class="b">lo que est&aacute; previsto</span></div>
+<div class="r"><span class="a jp"><ruby>寒<rt>さむ</rt></ruby>い<span class="hi">はずだ</span>。<ruby>窓<rt>まど</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いている。</span><span class="b">con raz&oacute;n: ya lo entiendo</span></div>
+<div class="r"><span class="a jp"><ruby>学生<rt>がくせい</rt></ruby>はもっと<ruby>勉強<rt>べんきょう</rt></ruby>する<span class="rd">べきだ</span>。</span><span class="b">deber moral: no es はず</span></div>
+</div>
+<ul class="nuance">
+<li><b>&laquo;Con raz&oacute;n&raquo;</b>: primero notas algo raro (hace fr&iacute;o) y luego descubres la causa (la ventana est&aacute; abierta). はずだ cierra el razonamiento, a menudo con どうりで delante: どうりで<ruby>寒<rt>さむ</rt></ruby>いはずだ. Es el mismo uso que わけだ (<b>36-wake</b>, bloque F).</li>
+<li><b>はず ≠ べき</b>. En espa&ntilde;ol las dos son &laquo;deber&iacute;a&raquo;, pero はず es <b>lo que esperas</b> que pase y べき, <b>lo que es correcto</b> hacer. 来るはずだ: &laquo;deber&iacute;a venir (seg&uacute;n lo que s&eacute;)&raquo;; 来るべきだ: &laquo;tendr&iacute;a que venir (es su obligaci&oacute;n)&raquo;.</li>
+<li><b>No sirve para tu propia voluntad.</b> Lo que t&uacute; decides va con つもり; はず solo vale si el plan depende de otros: <ruby>出張<rt>しゅっちょう</rt></ruby>で<ruby>大阪<rt>おおさか</rt></ruby>に<ruby>行<rt>い</rt></ruby>くはずです (lo ha decidido la empresa).</li>
+</ul>
+
+<h3>Opinar sin afirmar</h3>
+<ul class="nuance">
+<li><b>だろうと<ruby>思<rt>おも</rt></ruby>う</b> = &laquo;creo que probablemente&hellip;&raquo;. Suaviza dos veces (だろう ＋と思う) y es muy de redacciones: <ruby>明日<rt>あした</rt></ruby>は<ruby>晴<rt>は</rt></ruby>れるだろうと<ruby>思<rt>おも</rt></ruby>う.</li>
+<li><b>のではないかと<ruby>思<rt>おも</rt></ruby>う</b> (hablado: んじゃないかと思う) = &laquo;me da que&hellip;, &iquest;no ser&aacute; que&hellip;?&raquo;. Plantea la idea como pregunta: m&aacute;s tentativo, y la forma educada de llevar la contraria: <ruby>彼<rt>かれ</rt></ruby>は<ruby>来<rt>こ</rt></ruby>ないのではないかと<ruby>思<rt>おも</rt></ruby>います.</li>
+<li>Con sustantivo y adjetivo -な, なの: <ruby>病気<rt>びょうき</rt></ruby><span class="hi">なの</span>ではないか.</li>
+</ul>
+
+<h2>Formaci&oacute;n</h2>
+<table>
+<thead><tr><th>Se une a</th><th>Verbo / Adj -い</th><th>Adj -な / Sustantivo</th></tr></thead>
+<tbody>
+<tr><td class="ctx">Puede que&hellip;</td><td class="jp2"><ruby>降<rt>ふ</rt></ruby>る<span class="hi">かもしれない</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">かもしれない</span></td></tr>
+<tr><td class="ctx">Probablemente</td><td class="jp2"><ruby>降<rt>ふ</rt></ruby>る<span class="hi">でしょう</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">でしょう</span></td></tr>
+<tr><td class="ctx">Deber&iacute;a (con motivo)</td><td class="jp2"><ruby>降<rt>ふ</rt></ruby>る<span class="hi">はずだ</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">のはずだ</span> &middot; <ruby>静<rt>しず</rt></ruby>か<span class="hi">なはずだ</span></td></tr>
+<tr><td class="ctx">Con raz&oacute;n&hellip;</td><td class="jp2">どうりで<ruby>寒<rt>さむ</rt></ruby>い<span class="hi">はずだ</span></td><td class="jp2">どうりで<ruby>静<rt>しず</rt></ruby>か<span class="hi">なはずだ</span></td></tr>
+<tr><td class="ctx">No puede ser</td><td class="jp2"><ruby>降<rt>ふ</rt></ruby>る<span class="hi">はずがない</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">のはずがない</span></td></tr>
+<tr><td class="ctx">Se supon&iacute;a que&hellip;</td><td class="jp2"><ruby>来<rt>く</rt></ruby>る<span class="hi">はずだったのに</span></td><td class="jp2">&mdash;</td></tr>
+<tr><td class="ctx">Seguro que&hellip;</td><td class="jp2"><ruby>降<rt>ふ</rt></ruby>る<span class="hi">に<ruby>違<rt>ちが</rt></ruby>いない</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">に<ruby>違<rt>ちが</rt></ruby>いない</span></td></tr>
+<tr><td class="ctx">Probablemente (opini&oacute;n)</td><td class="jp2"><ruby>降<rt>ふ</rt></ruby>る<span class="hi">だろうと<ruby>思<rt>おも</rt></ruby>う</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">だろうと<ruby>思<rt>おも</rt></ruby>う</span></td></tr>
+<tr><td class="ctx">Sospecha suave</td><td class="jp2"><ruby>降<rt>ふ</rt></ruby>る<span class="hi">のではないか</span></td><td class="jp2"><ruby>雨<rt>あめ</rt></ruby><span class="hi">なのではないか</span></td></tr>
+
+</tbody></table>
+
+<h2>Ejemplos</h2>
+<div class="cols">
+<div>
+<div class="ex-item"><div class="s jp"><ruby>午後<rt>ごご</rt></ruby>から<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る<span class="hi">かもしれません</span>。</div><div class="t">Puede que llueva por la tarde.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>彼<rt>かれ</rt></ruby>はもう<ruby>着<rt>つ</rt></ruby>いている<span class="hi">はずです</span>。<ruby>三時<rt>さんじ</rt></ruby>に<ruby>出<rt>で</rt></ruby>ましたから。</div><div class="t">Ya deber&iacute;a haber llegado: sali&oacute; a las tres.</div></div>
+<div class="ex-item"><div class="s jp">そんなこと、ある<span class="hi">はずがありません</span>。</div><div class="t">Eso no puede ser.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>彼<rt>かれ</rt></ruby>は<ruby>十年<rt>じゅうねん</rt></ruby>も<ruby>日本<rt>にほん</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいたの？ どうりで<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>な<span class="hi">はずだ</span>。</div><div class="t">&iquest;Vivi&oacute; diez a&ntilde;os en Jap&oacute;n? Con raz&oacute;n habla tan bien japon&eacute;s.</div></div>
+</div>
+<div>
+<div class="ex-item"><div class="s jp"><ruby>来<rt>く</rt></ruby>る<span class="hi">はずだったのに</span>、<ruby>結局<rt>けっきょく</rt></ruby><ruby>来<rt>こ</rt></ruby>なかった。</div><div class="t">Se supon&iacute;a que ven&iacute;a y al final no vino.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>電気<rt>でんき</rt></ruby>がついている。<ruby>誰<rt>だれ</rt></ruby>かいる<span class="hi">に<ruby>違<rt>ちが</rt></ruby>いない</span>。</div><div class="t">La luz est&aacute; encendida. Seguro que hay alguien.</div></div>
+<div class="ex-item"><div class="s jp"><ruby>明日<rt>あした</rt></ruby>は<ruby>晴<rt>は</rt></ruby>れる<span class="hi">でしょう</span>。</div><div class="t">Ma&ntilde;ana probablemente haga sol. <em>(parte meteorol&oacute;gico)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>荷物<rt>にもつ</rt></ruby>は<ruby>明日<rt>あした</rt></ruby><ruby>届<rt>とど</rt></ruby>く<span class="hi">はずです</span>。</div><div class="t">El paquete deber&iacute;a llegar ma&ntilde;ana. <em>(seg&uacute;n el seguimiento)</em></div></div>
+<div class="ex-item"><div class="s jp"><ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>になる<span class="hi">のではないかと<ruby>思<rt>おも</rt></ruby>います</span>。</div><div class="t">Me da que ma&ntilde;ana va a llover.</div></div>
+
+</div>
+</div>
+
+<h2>Lo que se falla</h2>
+<div class="errors"><h3>Errores frecuentes</h3>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>静<rt>しず</rt></ruby>かだはずだ</span> &nbsp; &#9675; <span class="good jp"><ruby>静<rt>しず</rt></ruby>かなはずだ</span></div><div class="why">Los adjetivos -な llevan な delante de はず.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>雨<rt>あめ</rt></ruby>はずだ</span> &nbsp; &#9675; <span class="good jp"><ruby>雨<rt>あめ</rt></ruby>のはずだ</span></div><div class="why">El sustantivo se engancha con の.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>来<rt>こ</rt></ruby>ないはずがない <em>(por &laquo;seguro que no viene&raquo;)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>来<rt>く</rt></ruby>るはずがない</span></div><div class="why">はずがない ya niega; doblar la negaci&oacute;n invierte el sentido.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>約束<rt>やくそく</rt></ruby>は<ruby>守<rt>まも</rt></ruby>るはずだ。 <em>(por &laquo;hay que cumplirlas&raquo;)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>約束<rt>やくそく</rt></ruby>は<ruby>守<rt>まも</rt></ruby>るべきだ。</span></div><div class="why">&laquo;Deber&iacute;a&raquo; como obligaci&oacute;n moral es べき; はず es solo lo que esperas que ocurra.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>今年<rt>ことし</rt></ruby>こそN3に<ruby>合格<rt>ごうかく</rt></ruby>するはずです。 <em>(como prop&oacute;sito)</em></span> &nbsp; &#9675; <span class="good jp"><ruby>今年<rt>ことし</rt></ruby>こそN3に<ruby>合格<rt>ごうかく</rt></ruby>するつもりです。</span></div><div class="why">Para un prop&oacute;sito tuyo se usa つもり; はず presenta el resultado como algo que se deduce de los datos.</div></div>
+<div class="err"><div>&#10005; <span class="bad jp"><ruby>学生<rt>がくせい</rt></ruby>だのではないか</span> &nbsp; &#9675; <span class="good jp"><ruby>学生<rt>がくせい</rt></ruby>なのではないか</span></div><div class="why">Delante de の, だ pasa a な.</div></div>
+
+</div>
+
+<!--gen-bottom--><nav class="gpn"><a class="prev" href="63-conectores.html"><small>&larr; Anterior</small><span class="jp">接続詞</span></a><a class="next" href="38-parece-de-oidas.html"><small>Siguiente &rarr;</small><span class="jp">そう・よう・みたい・らしい</span></a></nav><!--/gen-bottom-->
+<footer>かもしれない・はずだ・に違いない &middot; Posibilidad y certeza &middot; Biblioteca de gram&aacute;tica japonesa</footer>
+</body></html>
