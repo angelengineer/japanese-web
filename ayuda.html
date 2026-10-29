@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/tokens.css?v=202610291003">
-  <link rel="stylesheet" href="css/style.css?v=202610291003">
+  <link rel="stylesheet" href="css/tokens.css?v=202610291016">
+  <link rel="stylesheet" href="css/style.css?v=202610291016">
 </head>
 <body>
   <header class="top">
@@ -29,14 +29,14 @@
         <span class="chip pol"><span class="ja">丁寧</span><span class="es">Cortés</span></span>
       </div>
       <ul>
-        <li><b>Azul — voz / base</b>: transforma el verbo primero (potencial, pasiva, causativa, causativa-pasiva, たい). Si no aparece, se usa el verbo tal cual.</li>
-        <li><b>Morado — forma</b>: presente, pasado, て, ば, たら, たり, volitiva, imperativo, ながら, そう.</li>
+        <li><b>Azul — voz / base</b>: transforma el verbo primero (potencial, pasiva, causativa, causativa-pasiva, たい, los auxiliares con て como 〜ている o 〜てもらう, 〜すぎる, 〜ことができる y el keigo お〜になる / お〜する). Si no aparece, se usa el verbo tal cual.</li>
+        <li><b>Morado — forma</b>: presente, pasado, て, ば, たら, たり, volitiva, imperativo, ながら, そう, o una expresión fija (〜てもいい, 〜なければならない, 〜たことがある, 〜つもりだ…).</li>
         <li><b>Naranja — polaridad</b>: afirmativo (肯定) o negativo (否定).</li>
         <li><b>Verde — registro</b>: llano (普通) o cortés con ます (丁寧).</li>
       </ul>
       <p>Se aplican <b>en ese orden</b>: primero la voz y después la forma. Ejemplo con <span class="ex">行く</span>:</p>
       <p class="ex">行く → 行かれる (受身) → 行かれませんでした (過去・否定・丁寧)</p>
-      <p>Escribe <b>solo el verbo conjugado</b>: sin sujeto, sin partículas, sin espacios y sin 「。」.</p>
+      <p>Escribe <b>solo el verbo conjugado</b>: sin sujeto, sin partículas, sin espacios y sin 「。」. Con una expresión fija, escríbela entera: <span class="ex">行ったことがあります</span>, <span class="ex">寝たほうがいい</span>.</p>
     </section>
 
     <section>
@@ -65,12 +65,15 @@
         <li>Causativa-pasiva de godan: forma corta <span class="ex">書かされる</span> y larga <span class="ex">書かせられる</span> (los verbos en す solo tienen la larga: <span class="ex">話させられる</span>).</li>
         <li>Imperativo: <span class="ex">食べろ / 食べよ</span>, <span class="ex">しろ / せよ</span>.</li>
         <li>たい cortés negativo: <span class="ex">行きたくないです</span> y <span class="ex">行きたくありません</span>.</li>
+        <li>Contracciones de los auxiliares: <span class="ex">〜てる</span> (ている), <span class="ex">〜ちゃう / じゃう</span> (てしまう), <span class="ex">〜とく / どく</span> (ておく), <span class="ex">〜ちゃいけない</span> (てはいけない), <span class="ex">〜なきゃいけない</span>.</li>
+        <li>Keigo con más de una forma: <span class="ex">伺う</span> / <span class="ex">お聞きする</span>, <span class="ex">お目にかかる</span> / <span class="ex">お会いする</span>, <span class="ex">いらっしゃる</span> / <span class="ex">おいでになる</span>.</li>
+        <li>Obligación: <span class="ex">〜なければならない / いけない</span> y <span class="ex">〜なくてはならない / いけない</span>.</li>
       </ul>
       <h3>Lo que no se acepta</h3>
       <ul>
         <li>ら抜き: <span class="ex">見れる</span>, <span class="ex">来れる</span> → escribe <span class="ex">見られる</span>, <span class="ex">来られる</span>.</li>
         <li>Negativo cortés coloquial <span class="ex">行かなかったです</span> → escribe <span class="ex">行きませんでした</span> (excepto con たい, que es adjetivo).</li>
-        <li>Causativa corta de ichidan (<span class="ex">食べさす</span>) y contracciones habladas (<span class="ex">〜ちゃう</span>, <span class="ex">〜なきゃ</span>).</li>
+        <li>Causativa corta de ichidan (<span class="ex">食べさす</span>) y contracciones que no son de auxiliares (<span class="ex">〜なきゃ</span> a secas, <span class="ex">〜ちゃった</span> por 〜てしまった fuera de 〜てしまう).</li>
       </ul>
       <p class="muted">Después de responder se muestra siempre la respuesta correcta, las variantes válidas y la derivación paso a paso.</p>
       <h3>Frase de ejemplo</h3>
@@ -79,7 +82,7 @@
 
     <section>
       <h2>Referencia: voces</h2>
-      <p class="muted">Todas las voces convierten el verbo en un verbo del grupo 2 (る), que después se conjuga normal. たい lo convierte en un adjetivo い.</p>
+      <p class="muted">Las voces convierten el verbo en otro verbo que después se conjuga normal: potencial, pasiva y causativas en uno del grupo 2 (る); たい en un adjetivo い; los auxiliares (〜ている, 〜てしまう…) y el keigo se conjugan como el verbo final (いる, しまう, なる, する…). Solo se preguntan con los verbos y formas en que tienen sentido: 〜てある con transitivos, 〜てみる o 〜てあげる con acciones voluntarias, el keigo en cortés.</p>
       <div id="voices"></div>
     </section>
 
@@ -100,14 +103,14 @@
     <a class="back" href="index.html">← Volver a practicar</a>
   </main>
 
-  <script src="js/conjugate.js?v=202610291003"></script>
+  <script src="js/conjugate.js?v=202610291016"></script>
   <script>
   (function () {
     'use strict';
     const { VOICES, INFLS, comboValid, verbAllows, conjugate } = window.Conj;
     const SAMPLE = [
-      { k: '書く', r: 'かく', g: '1' }, { k: '読む', r: 'よむ', g: '1' },
-      { k: '食べる', r: 'たべる', g: '2' }, { k: 'する', r: 'する', g: '3' }, { k: '来る', r: 'くる', g: '3' },
+      { k: '書く', r: 'かく', g: '1', t: 'tr' }, { k: '読む', r: 'よむ', g: '1', t: 'tr' },
+      { k: '食べる', r: 'たべる', g: '2', t: 'tr' }, { k: 'する', r: 'する', g: '3', t: 'tr' }, { k: '来る', r: 'くる', g: '3', t: 'intr' },
     ];
     const HEAD = '<th></th>' + SAMPLE.map((v) => `<th lang="ja">${v.k}</th>`).join('');
 
@@ -117,6 +120,25 @@
       cau: 'Godan: う→あ + せる. Ichidan: る→させる. する→させる, 来る→こさせる.',
       cp: 'Godan: う→あ + される (o せられる). Verbos en す e ichidan: させられる. する→させられる, 来る→こさせられる.',
       tai: 'Raíz de ます + たい. Se conjuga como adjetivo い: たくない, たかった, たくて, たければ…',
+      teiru: 'Forma て + いる: acción en curso (読んでいる) o estado resultante (結婚している). Hablado: 〜てる.',
+      teshimau: 'Forma て + しまう: terminar del todo, o algo que pasa sin querer y se lamenta. Hablado: 〜ちゃう / 〜じゃう.',
+      tearu: 'Forma て + ある, solo con transitivos: algo quedó hecho a propósito (窓が開けてある).',
+      teoku: 'Forma て + おく: hacer algo de antemano o dejarlo así. Hablado: 〜とく / 〜どく.',
+      temiru: 'Forma て + みる: hacer algo para ver qué tal.',
+      teiku: 'Forma て + いく: alejarse haciendo algo, o un cambio que sigue a partir de ahora.',
+      tekuru: 'Forma て + くる: venir haciendo algo, ir a hacer algo y volver, o un cambio hasta ahora.',
+      teageru: 'Forma て + あげる: yo (o alguien) hago algo por otra persona.',
+      tekureru: 'Forma て + くれる: otra persona hace algo por mí o por los míos.',
+      temorau: 'Forma て + もらう: consigo que alguien haga algo por mí.',
+      tesashiageru: 'Versión humilde de 〜てあげる, hacia un superior. Solo en cortés.',
+      tekudasaru: 'Versión respetuosa de 〜てくれる: くださる hace くださいます.',
+      teitadaku: 'Versión humilde de 〜てもらう.',
+      sugiru: 'Raíz de ます + すぎる (grupo 2): hacer algo en exceso.',
+      tagaru: 'Raíz de ます + たがる (grupo 1): las ganas de otra persona, vistas desde fuera.',
+      koto: 'Diccionario + ことができる: «poder», más formal que el potencial.',
+      youninaru: 'Diccionario + ようになる: llegar a hacer algo que antes no se hacía.',
+      sonkei: 'お + raíz de ます + になる para lo que hace otra persona. Verbos con forma propia: いらっしゃる (行く・来る・いる), おっしゃる, 召し上がる, ご覧になる, なさる. Con する: 〜なさる.',
+      kenjou: 'お + raíz de ます + する para lo que hago yo hacia otro (solo transitivos). Verbos con forma propia: 参る, 伺う, おる, 申す, いただく, 拝見する, いたす, 存じる, お目にかかる, 差し上げる.',
     };
     const INFL_RULE = {
       pres: 'Negativo: godan う→あ + ない (う→わ), ichidan る→ない. Cortés: raíz de ます + ます / ません. El afirmativo llano solo se pregunta combinado con una voz.',
@@ -129,6 +151,22 @@
       imp: 'Godan: う→え. Ichidan: る→ろ. する→しろ, 来る→こい. Negativo: diccionario + な. Cortés: raíz de ます + なさい.',
       nagara: 'Raíz de ます + ながら: dos acciones a la vez.',
       sou: 'Raíz de ます + そう: «parece que va a…» (no es el そう de «he oído que»). También con potencial: 書けそう.',
+      temo: 'Forma て + も. Negativo: なくても.',
+      temoii: 'Forma て + もいい: permiso. Negativo なくてもいい: no hace falta. También vale かまわない.',
+      tewa: 'Forma て + はいけない: prohibición. Hablado: 〜ちゃいけない / 〜じゃいけない.',
+      nakereba: 'Raíz de ない + ければならない (o いけない), o なくてはならない / いけない.',
+      kudasai: 'Forma て + ください. Negativo: ないでください. Con la causativa: させてください (déjeme…).',
+      itadake: 'Forma て + いただけませんか: petición muy cortés. Con la causativa: させていただけませんか.',
+      okudasai: 'お + raíz de ます + ください. Con forma propia: ご覧ください, お召し上がりください, おいでください…',
+      goran: 'Forma て + ごらん: anima a alguien (de igual o inferior) a probar.',
+      keiken: 'Pasado + ことがある: experiencia. Negativo: ことがない.',
+      youto: 'Volitiva + と思う: lo que pienso hacer. También と思っている.',
+      tsumori: 'Diccionario + つもりだ. Negativo: ないつもりだ (o つもりはない, más tajante).',
+      hou: 'Pasado + ほうがいい para aconsejar hacer; ない + ほうがいい para no hacer.',
+      bakari: 'Pasado + ばかりだ: acabar de hacer algo.',
+      densou: 'Forma llana + そうだ: «dicen que…» (no es el そう de apariencia).',
+      furi: 'Forma llana + ふりをする: hacer como que…',
+      ppanashi: 'Raíz de ます + っぱなし: dejar algo como está (encendido, abierto…).',
     };
 
     const cell = (v, c) => {
@@ -140,10 +178,12 @@
     const table = (rows) => `<div class="scroll"><table class="ref"><thead><tr>${HEAD}</tr></thead><tbody>${rows}</tbody></table></div>`;
 
     document.getElementById('voices').innerHTML = VOICES.filter((v) => v.id !== 'plain').map((voice) => {
-      const c = { voice: voice.id, infl: 'pres', neg: false, pol: false };
+      // Keigo is polite only, so its sample row is the polite present.
+      const pol = !comboValid({ voice: voice.id, infl: 'pres', neg: false, pol: false });
+      const c = { voice: voice.id, infl: 'pres', neg: false, pol };
       return `<h3><span class="ja">${voice.jp}</span>${voice.es} <span class="muted">— ${voice.gloss}</span></h3>` +
         `<p class="muted">${VOICE_RULE[voice.id]}</p>` +
-        table(`<tr><td class="lbl">Presente</td>${SAMPLE.map((v) => cell(v, c)).join('')}</tr>`);
+        table(`<tr><td class="lbl">${pol ? 'Presente cortés' : 'Presente'}</td>${SAMPLE.map((v) => cell(v, c)).join('')}</tr>`);
     }).join('');
 
     const VARIANTS = [

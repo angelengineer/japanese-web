@@ -11,7 +11,15 @@ Each question takes a random verb and a random form:
 | Inflection | 現在 · 過去 · て · ば · たら · たり · 意向 · 命令 · ながら · そう |
 | Polarity / register | 肯定/否定 · 普通/丁寧 (where the form has them) |
 
-Only real combinations are asked (108 forms; no potential volitional, no 〜たい imperative, …).
+| Auxiliaries | 〜ている · 〜てしまう · 〜てある · 〜ておく · 〜てみる · 〜ていく · 〜てくる · 〜てあげる/くれる/もらう (+ さしあげる/くださる/いただく) · 〜すぎる · 〜たがる · 〜ことができる · 〜ようになる |
+| Keigo | お〜になる (尊敬語) · お〜する (謙譲語), with the suppletive verbs (いらっしゃる, 参る, 伺う…) |
+| Set expressions | 〜ても · 〜てもいい · 〜てはいけない · 〜なければならない · 〜てください · 〜ていただけませんか · お〜ください · 〜てごらん · 〜たことがある · 〜(よ)うと思う · 〜つもりだ · 〜ほうがいい · 〜たばかりだ · 〜そうだ (hearsay) · 〜ふりをする · 〜っぱなし |
+
+Only real combinations are asked (332 forms; no potential volitional, no 〜たい imperative, …).
+The auxiliaries, keigo and expressions are the verb patterns of the Notion *Verbos* and
+*Variado* lists; each declares in `js/conjugate.js` which inflections it takes and which verbs
+it fits (〜てある transitive only; 〜てみる, 〜てあげる and keigo only volitional verbs, listed in
+`VOL_INTR` for intransitives).
 Type in romaji (converted live by WanaKana) or with a Japanese IME; kana and kanji
 answers are both accepted. Missed questions come back four turns later.
 After each answer the verb's Notion example sentence is shown rewritten in the

@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs');
 const C = require('../js/conjugate.js');
 
-const V = (k, r, g) => ({ k, r, g });
+const V = (k, r, g, t) => ({ k, r, g, t });
 const iku = V('行く', 'いく', '1'), kaku = V('書く', 'かく', '1'), hanasu = V('話す', 'はなす', '1');
 const matsu = V('待つ', 'まつ', '1'), yomu = V('読む', 'よむ', '1'), kau = V('買う', 'かう', '1');
 const taberu = V('食べる', 'たべる', '2'), miru = V('見る', 'みる', '2'), kaeru = V('帰る', 'かえる', '1');
@@ -15,10 +15,16 @@ const kuru = V('来る', 'くる', '3'), ittekuru = V('行って来る', 'いっ
 const aru = V('ある', 'ある', '1'), irassharu = V('いらっしゃる', 'いらっしゃる', '1');
 const kureru = V('くれる', 'くれる', '2'), kakureru = V('隠れる', 'かくれる', '2');
 const tsureteiku = V('連れて行く', 'つれていく', '1'), check = V('チェックする', 'チェックする', '3');
+const kakuT = V('書く', 'かく', '1', 'tr'), matsuT = V('待つ', 'まつ', '1', 'tr'), taberuT = V('食べる', 'たべる', '2', 'tr');
+const miruT = V('見る', 'みる', '2', 'tr'), kiku = V('聞く', 'きく', '1', 'tr'), au = V('会う', 'あう', '1', 'intr');
+const kaeruI = V('帰る', 'かえる', '1', 'intr'), furu = V('降る', 'ふる', '1', 'intr'), yomuT = V('読む', 'よむ', '1', 'tr');
+const kuruI = V('来る', 'くる', '3', 'intr'), benkyouT = V('勉強する', 'べんきょうする', '3', 'tr');
+const mottekuruT = V('持ってくる', 'もってくる', '3', 'tr'), konde = V('混んでいる', 'こんでいる', '2', 'intr');
 
 const c = (voice, infl, neg = false, pol = false) => ({ voice, infl, neg, pol });
 
 // [verb, combo, expected kana forms (canonical first), expected canonical kanji]
+// A kanji-only variant (下さい, 方) repeats its reading in the kana list.
 const CASES = [
   [iku, c('plain', 'te'), ['いって'], '行って'],
   [iku, c('plain', 'past'), ['いった']],
@@ -64,6 +70,43 @@ const CASES = [
   [iku, c('plain', 'nagara'), ['いきながら']],
   [yomu, c('plain', 'tari', true), ['よまなかったり']],
   [check, c('pas', 'past'), ['チェックされた']],
+  // 〜て auxiliaries
+  [kakuT, c('teiru', 'pres'), ['かいている', 'かいてる'], '書いている'],
+  [yomuT, c('teshimau', 'past'), ['よんでしまった', 'よんじゃった']],
+  [kakuT, c('tearu', 'pres', false, true), ['かいてあります']],
+  [kakuT, c('teoku', 'vol'), ['かいておこう', 'かいとこう']],
+  [taberuT, c('temiru', 'tara'), ['たべてみたら']],
+  [kakuT, c('teiku', 'past'), ['かいていった']],
+  [kakuT, c('tekuru', 'pres', true), ['かいてこない']],
+  [kakuT, c('tekureru', 'pres', true, true), ['かいてくれません']],
+  [kakuT, c('tekudasaru', 'past', false, true), ['かいてくださいました']],
+  [kakuT, c('teitadaku', 'pres', false, true), ['かいていただきます']],
+  [taberuT, c('sugiru', 'past'), ['たべすぎた']],
+  [iku, c('tagaru', 'pres', true), ['いきたがらない']],
+  // keigo
+  [iku, c('sonkei', 'pres', false, true), ['いらっしゃいます', 'おいでになります']],
+  [kuruI, c('kenjou', 'pres', false, true), ['まいります', 'うかがいます'], '参ります'],
+  [miruT, c('sonkei', 'past', false, true), ['ごらんになりました'], 'ご覧になりました'],
+  [kiku, c('kenjou', 'pres', false, true), ['うかがいます', 'おききします']],
+  [au, c('kenjou', 'pres', false, true), ['おめにかかります', 'おあいします']],
+  [matsuT, c('sonkei', 'te'), ['おまちになって'], 'お待ちになって'],
+  [matsuT, c('kenjou', 'vol', false, true), ['おまちしましょう']],
+  [benkyouT, c('sonkei', 'pres', false, true), ['べんきょうなさいます']],
+  [mottekuruT, c('kenjou', 'pres', false, true), ['もってまいります'], '持って参ります'],
+  [kaeruI, c('sonkei', 'past', false, true), ['おかえりになりました']],
+  // set expressions
+  [kakuT, c('plain', 'temoii', true), ['かかなくてもいい', 'かかなくてもかまわない']],
+  [yomuT, c('plain', 'tewa'), ['よんではいけない', 'よんじゃいけない']],
+  [iku, c('plain', 'nakereba', false, true), ['いかなければなりません', 'いかなければいけません', 'いかなくてはなりません', 'いかなくてはいけません']],
+  [matsuT, c('plain', 'kudasai', true), ['またないでください', 'またないでください']],
+  [kaeruI, c('cau', 'itadake'), ['かえらせていただけませんか', 'かえらせていただけませんか']],
+  [matsuT, c('plain', 'okudasai'), ['おまちください']],
+  [miruT, c('plain', 'okudasai'), ['ごらんください']],
+  [iku, c('plain', 'keiken', true, true), ['いったことがありません']],
+  [kuruI, c('plain', 'youto'), ['こようとおもう', 'こようとおもっている'], '来ようと思う'],
+  [V('する', 'する', '3', 'tr'), c('plain', 'tsumori', true), ['しないつもりだ', 'しないつもり', 'するつもりはない']],
+  [taberu, c('plain', 'hou', true), ['たべないほうがいい', 'たべないほうがいい']],
+  [furu, c('plain', 'densou', true), ['ふらないそうだ']],
 ];
 
 let fail = 0;
@@ -89,6 +132,14 @@ const rejected = [
   [aru, c('plain', 'imp')],
   [irassharu, c('plain', 'imp', false, true)],
   [taberu, c('plain', 'imp', true, true)],
+  [furu, c('teageru', 'pres')],          // needs a volitional verb
+  [furu, c('tearu', 'pres')],            // transitive only
+  [kakuT, c('tearu', 'pres', true)],     // no negative
+  [kakuT, c('sonkei', 'pres')],          // keigo is polite only
+  [kaeruI, c('kenjou', 'pres', false, true)], // お〜する needs a transitive verb
+  [konde, c('teiru', 'pres')],           // already 〜でいる
+  [kuruI, c('tekuru', 'pres')],
+  [aru, c('plain', 'keiken')],
 ];
 for (const [v, combo] of rejected) {
   if (C.comboValid(combo) && C.verbAllows(v, combo)) { fail++; console.error('FAIL accepted', v.k, JSON.stringify(combo)); }

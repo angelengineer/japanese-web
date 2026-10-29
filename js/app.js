@@ -26,6 +26,19 @@
     showKanji: true, furigana: true, showEs: true, showGroup: true,
   };
   const settings = Object.assign({}, DEFAULTS, store.get('settings', {}));
+
+  // Voices and forms added after a browser saved its settings start enabled
+  // there too. `seen` records which ids that browser has already been offered.
+  const FIRST_RELEASE = {
+    voices: ['plain', 'pot', 'pas', 'cau', 'cp', 'tai'],
+    infls: ['pres', 'past', 'te', 'ba', 'tara', 'tari', 'vol', 'imp', 'nagara', 'sou'],
+  };
+  const seen = store.get('seen', FIRST_RELEASE);
+  for (const [name, list] of [['voices', VOICES], ['infls', INFLS]]) {
+    for (const { id } of list) if (!seen[name].includes(id) && !settings[name].includes(id)) settings[name].push(id);
+  }
+  store.set('seen', { voices: VOICES.map((v) => v.id), infls: INFLS.map((i) => i.id) });
+  store.set('settings', settings);
   let formStats = store.get('stats', {});
   let best = store.get('best', 0);
 
@@ -85,7 +98,7 @@
   }
 
   // Forms that cannot end a sentence get "…" instead of the original 。
-  const OPEN_ENDED = ['te', 'ba', 'tara', 'tari', 'nagara'];
+  const OPEN_ENDED = ['te', 'ba', 'tara', 'tari', 'nagara', 'temo'];
 
   // The example with its final verb swapped for `ans`: {html, prefix}, or null
   // when the sentence does not end in a recognisable form of the verb.
@@ -325,15 +338,19 @@
       `<span>${ja ? `<span class="ja">${ja}</span>` : ''}${es}</span></label>`;
   }
 
+  // Settings groups: [cat in conjugate.js, legend]. No cat = the original set.
+  const VOICE_GROUPS = [[undefined, 'Voz / base'], ['te', 'Auxiliares con て'], ['aux', 'Otras construcciones'], ['keigo', 'Keigo']];
+  const INFL_GROUPS = [[undefined, 'Forma'], ['expr', 'Expresiones']];
+
   function renderSettings() {
     const s = settings;
+    const groups = (name, list, defs) => defs.map(([cat, legend]) => `
+      <fieldset><legend>${legend}</legend><div class="opts">
+        ${list.filter((x) => x.cat === cat).map((x) => optHTML(name, x.id, s[name].includes(x.id), x.jp, x.es)).join('')}
+      </div></fieldset>`).join('');
     $('settings').innerHTML = `
-      <fieldset><legend>Voz / base</legend><div class="opts">
-        ${VOICES.map((v) => optHTML('voices', v.id, s.voices.includes(v.id), v.jp, v.es)).join('')}
-      </div></fieldset>
-      <fieldset><legend>Forma</legend><div class="opts">
-        ${INFLS.map((i) => optHTML('infls', i.id, s.infls.includes(i.id), i.jp, i.es)).join('')}
-      </div></fieldset>
+      ${groups('voices', VOICES, VOICE_GROUPS)}
+      ${groups('infls', INFLS, INFL_GROUPS)}
       <fieldset><legend>Polaridad y registro</legend><div class="opts">
         ${optHTML('aff', 1, s.aff, '肯定', 'Afirmativo')}${optHTML('neg', 1, s.neg, '否定', 'Negativo')}
         ${optHTML('plain', 1, s.plain, '普通', 'Llano')}${optHTML('polite', 1, s.polite, '丁寧', 'Cortés')}
