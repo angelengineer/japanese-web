@@ -78,7 +78,7 @@ python3 scripts/build_gramatica.py --list   # block, level and title of every fi
 The build fails if a ficha is missing from `bloques.json` (or vice versa). It owns the
 `<!--gen-head-->`, `<!--gen-top-->` and `<!--gen-bottom-->` regions of each ficha (title,
 link back to the index, previous/next); do not edit those or `gramatica/index.html` by hand.
-The tutoring workflow that writes the fichas is in `../fichas-notion/AGENTS.md`.
+The tutoring workflow that writes the fichas is in `../fichas/AGENTS.md`.
 
 ## Deploying
 
