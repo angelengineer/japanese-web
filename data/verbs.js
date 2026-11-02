@@ -109,6 +109,7 @@ window.VERBS = [
 {"k": "貸す", "r": "かす", "g": "1", "t": "tr", "es": "Prestar", "ej": "友達(ともだち)に傘(かさ)を貸(か)します — Le presto el paraguas a mi amigo"},
 {"k": "数える", "r": "かぞえる", "g": "2", "t": "tr", "es": "Contar, enumerar", "ej": "お金(かね)を数(かぞ)えます — Cuento el dinero"},
 {"k": "片付ける", "r": "かたづける", "g": "2", "t": "tr", "es": "Recoger / colocar", "ej": "部屋(へや)を片付(かたづ)けます — Ordeno la habitación"},
+{"k": "語り合う", "r": "かたりあう", "g": "1", "t": "tr", "es": "Hablar entre sí, conversar a fondo", "ej": "昨夜(ゆうべ)は友達(ともだち)と将来(しょうらい)の夢(ゆめ)を語(かた)り合(あ)いました — Anoche hablé con mis amigos de nuestros sueños para el futuro"},
 {"k": "勝つ", "r": "かつ", "g": "1", "t": "intr", "es": "Ganar", "ej": "試合(しあい)に勝(か)ちます — Gano el partido"},
 {"k": "被る", "r": "かぶる", "g": "1", "t": "tr", "es": "Ponerse / llevar (sombrero)", "ej": "帽子(ぼうし)を被(かぶ)ります — Me pongo el sombrero"},
 {"k": "噛む", "r": "かむ", "g": "1", "t": "tr", "es": "morder", "ej": "ガムを噛(か)みます — Masco chicle"},
