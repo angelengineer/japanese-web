@@ -547,7 +547,9 @@
     return { answers, base };
   }
 
-  const api = { VOICES, INFLS, voiceById, inflById, comboValid, verbAllows, allCombos, conjugate, classify };
+  // inflect: the plain-voice inflection of a {k, r, cls} word, reused by the
+  // adjective engine for 〜すぎる / 〜くなる (js/adjconj.js).
+  const api = { VOICES, INFLS, voiceById, inflById, comboValid, verbAllows, allCombos, conjugate, classify, inflect: verbInflect };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.Conj = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

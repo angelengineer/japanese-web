@@ -237,7 +237,8 @@ border-radius:8px;padding:2px 8px;white-space:nowrap;}}
 </head>
 <body>
 <nav class="switch" aria-label="Sección">
-<a href="../"><span lang="ja">活用</span> Conjugación</a>
+<a href="../"><span lang="ja">動詞</span> Verbos</a>
+<a href="../adjetivos.html"><span lang="ja">形容詞</span> Adjetivos</a>
 <a href="./" aria-current="page"><span lang="ja">文法</span> Gramática</a>
 </nav>
 <div class="wrap">

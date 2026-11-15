@@ -1,19 +1,29 @@
-// Quiz UI. Depends on window.wanakana, window.VERBS and window.Conj.
+// Quiz UI shared by the verb page (index.html) and the adjective page
+// (adjetivos.html). Depends on window.wanakana and window.DRILL, the page's
+// configuration (js/drill-verbos.js, js/drill-adjetivos.js):
+//   engine   {VOICES, INFLS, voiceById, inflById, allCombos, conjugate}
+//   items    the word list ({k, r, es, ej, …}); allows(item, combo)
+//   store    localStorage prefix · noun  'verbos' · classKey/classes/classLegend
+//   meta(item)  line above the word · voiceGroups / inflGroups  settings groups
+//   optional: firstRelease, extraForms(item), examples (Spanish of the
+//   rewritten example), emptyHint
 (function () {
   'use strict';
 
-  const { VOICES, INFLS, voiceById, inflById, allCombos, verbAllows, conjugate } = window.Conj;
-  const VERBS = window.VERBS;
+  const D = window.DRILL;
+  const { VOICES, INFLS, voiceById, inflById, allCombos, conjugate } = D.engine;
+  const VERBS = D.items;
+  const verbAllows = D.allows;
   const $ = (id) => document.getElementById(id);
 
   // --- persistence (per-browser convenience only; everything works without it)
 
   const store = {
     get(key, fallback) {
-      try { const v = localStorage.getItem('conj:' + key); return v ? JSON.parse(v) : fallback; } catch (e) { return fallback; }
+      try { const v = localStorage.getItem(D.store + key); return v ? JSON.parse(v) : fallback; } catch (e) { return fallback; }
     },
     set(key, value) {
-      try { localStorage.setItem('conj:' + key, JSON.stringify(value)); } catch (e) { /* private mode */ }
+      try { localStorage.setItem(D.store + key, JSON.stringify(value)); } catch (e) { /* private mode */ }
     },
   };
 
@@ -22,22 +32,19 @@
     infls: INFLS.map((i) => i.id),
     aff: true, neg: true,
     plain: true, polite: true,
-    groups: ['1', '2', '3'],
+    groups: Object.keys(D.classes),
     showKanji: true, furigana: true, showEs: true, showGroup: true,
   };
   const settings = Object.assign({}, DEFAULTS, store.get('settings', {}));
 
   // Voices and forms added after a browser saved its settings start enabled
   // there too. `seen` records which ids that browser has already been offered.
-  const FIRST_RELEASE = {
-    voices: ['plain', 'pot', 'pas', 'cau', 'cp', 'tai'],
-    infls: ['pres', 'past', 'te', 'ba', 'tara', 'tari', 'vol', 'imp', 'nagara', 'sou'],
-  };
-  const seen = store.get('seen', FIRST_RELEASE);
+  const current = { voices: VOICES.map((v) => v.id), infls: INFLS.map((i) => i.id) };
+  const seen = store.get('seen', D.firstRelease || current);
   for (const [name, list] of [['voices', VOICES], ['infls', INFLS]]) {
     for (const { id } of list) if (!seen[name].includes(id) && !settings[name].includes(id)) settings[name].push(id);
   }
-  store.set('seen', { voices: VOICES.map((v) => v.id), infls: INFLS.map((i) => i.id) });
+  store.set('seen', current);
   store.set('settings', settings);
   let formStats = store.get('stats', {});
   let best = store.get('best', 0);
@@ -77,9 +84,8 @@
   }
   const segHTML = (g) => (g.rt ? `<ruby>${esc(g.s)}<rt>${esc(g.rt)}</rt></ruby>` : esc(g.s));
 
-  // Every spelling (kanji and kana) of every form of verb vi, longest first,
-  // including 〜ている so progressive examples (住んでいます) are recognised.
-  const IRU = ['いませんでした', 'いました', 'いません', 'います', 'いなかった', 'いない', 'いた', 'いる'];
+  // Every spelling (kanji and kana) of every form of word vi, longest first,
+  // plus the page's extra forms (〜ている, so 住んでいます is recognised).
   const formCache = new Map();
   function knownForms(vi) {
     if (formCache.has(vi)) return formCache.get(vi);
@@ -89,16 +95,14 @@
       if (!verbAllows(v, c)) continue;
       for (const a of conjugate(v, c).answers) { set.add(a.k); set.add(a.r); }
     }
-    for (const t of conjugate(v, { voice: 'plain', infl: 'te', neg: false, pol: false }).answers) {
-      for (const i of IRU) { set.add(t.k + i); set.add(t.r + i); }
-    }
+    for (const f of D.extraForms ? D.extraForms(v) : []) { set.add(f.k); set.add(f.r); }
     const list = [...set].sort((a, b) => b.length - a.length);
     formCache.set(vi, list);
     return list;
   }
 
   // Forms that cannot end a sentence get "…" instead of the original 。
-  const OPEN_ENDED = ['te', 'ba', 'tara', 'tari', 'nagara', 'temo'];
+  const OPEN_ENDED = ['te', 'ba', 'tara', 'tari', 'nagara', 'temo', 'adv', 'kara', 'node', 'noni'];
 
   // The example with its final verb swapped for `ans`: {html, prefix}, or null
   // when the sentence does not end in a recognisable form of the verb.
@@ -129,7 +133,7 @@
   const bare = (s) => s.replace(/[.。…]+$/, '');
   function spanishFor(vi, combo, prefix) {
     const v = VERBS[vi];
-    const e = (window.EXAMPLES_ES || {})[v.k + '|' + v.r];
+    const e = (D.examples || {})[v.k + '|' + v.r];
     const t = e && e.src === prefix && e[combo.voice];
     if (!t) return null;
     const pres = t[combo.neg ? 1 : 0], past = t[combo.neg ? 3 : 2];
@@ -181,25 +185,25 @@
 
   let pool = []; // [{combo, verbs: [index]}]
   function rebuildPool() {
-    const verbIdx = VERBS.map((v, i) => i).filter((i) => settings.groups.includes(VERBS[i].g));
+    const verbIdx = VERBS.map((v, i) => i).filter((i) => settings.groups.includes(VERBS[i][D.classKey]));
     pool = COMBOS.filter(comboEnabled)
       .map((combo) => ({ combo, verbs: verbIdx.filter((i) => verbAllows(VERBS[i], combo)) }))
       .filter((p) => p.verbs.length);
     const n = pool.reduce((a, p) => a + p.verbs.length, 0);
     // Name the section that left the pool empty instead of a generic warning.
     const empty = [
-      !settings.voices.length && 'Voz / base',
+      !settings.voices.length && D.voiceGroups[0][1],
       !settings.infls.length && 'Forma',
       !settings.aff && !settings.neg && 'Afirmativo o Negativo',
       !settings.plain && !settings.polite && 'Llano o Cortés',
-      !settings.groups.length && 'Grupos de verbos',
+      !settings.groups.length && D.classLegend,
     ].filter(Boolean);
     const el = $('pool-count');
     el.textContent = pool.length
-      ? `${pool.length} formas × ${verbIdx.length} verbos → ${n.toLocaleString('es')} preguntas posibles`
+      ? `${pool.length} formas × ${verbIdx.length} ${D.noun} → ${n.toLocaleString('es')} preguntas posibles`
       : empty.length
         ? `Sin preguntas: marca al menos una opción en ${empty.join(', ')}.`
-        : 'Sin preguntas: esas voces y formas no se combinan entre sí (p. ej. 可能 no tiene 意向 ni 命令). Activa otra forma.';
+        : `Sin preguntas: esas bases y formas no se combinan entre sí${D.emptyHint ? ` (${D.emptyHint})` : ''}. Activa otra forma.`;
     el.classList.toggle('warn', !pool.length);
   }
 
@@ -227,9 +231,6 @@
   let answered = false;
   let streak = 0, ok = 0, total = 0;
 
-  const GROUP_NAME = { '1': 'Grupo 1 · godan', '2': 'Grupo 2 · ichidan', '3': 'Grupo 3 · irregular' };
-  const TYPE_NAME = { tr: 'transitivo', intr: 'intransitivo' };
-
   function chips(c) {
     const v = voiceById[c.voice], inf = inflById[c.infl];
     const out = [];
@@ -254,7 +255,7 @@
       return;
     }
     const v = VERBS[q.verb];
-    $('meta').textContent = settings.showGroup ? [GROUP_NAME[v.g], TYPE_NAME[v.t]].filter(Boolean).join(' · ') : '';
+    $('meta').textContent = settings.showGroup ? D.meta(v) : '';
     $('verb').innerHTML = settings.showKanji ? ruby(v.k, v.r) : esc(v.r);
     $('meaning').textContent = settings.showEs ? v.es : '';
     $('form').innerHTML = chips(q.combo);
@@ -338,9 +339,9 @@
       `<span>${ja ? `<span class="ja">${ja}</span>` : ''}${es}</span></label>`;
   }
 
-  // Settings groups: [cat in conjugate.js, legend]. No cat = the original set.
-  const VOICE_GROUPS = [[undefined, 'Voz / base'], ['te', 'Auxiliares con て'], ['aux', 'Otras construcciones'], ['keigo', 'Keigo']];
-  const INFL_GROUPS = [[undefined, 'Forma'], ['expr', 'Expresiones']];
+  // Settings groups: [cat in the engine, legend]. No cat = the original set.
+  const VOICE_GROUPS = D.voiceGroups;
+  const INFL_GROUPS = D.inflGroups;
 
   function renderSettings() {
     const s = settings;
@@ -355,12 +356,12 @@
         ${optHTML('aff', 1, s.aff, '肯定', 'Afirmativo')}${optHTML('neg', 1, s.neg, '否定', 'Negativo')}
         ${optHTML('plain', 1, s.plain, '普通', 'Llano')}${optHTML('polite', 1, s.polite, '丁寧', 'Cortés')}
       </div></fieldset>
-      <fieldset><legend>Grupos de verbos</legend><div class="opts">
-        ${['1', '2', '3'].map((g) => optHTML('groups', g, s.groups.includes(g), '', GROUP_NAME[g])).join('')}
+      <fieldset><legend>${D.classLegend}</legend><div class="opts">
+        ${Object.entries(D.classes).map(([g, name]) => optHTML('groups', g, s.groups.includes(g), '', name)).join('')}
       </div></fieldset>
       <fieldset><legend>Mostrar</legend><div class="opts">
         ${optHTML('showKanji', 1, s.showKanji, '漢字', 'Kanji')}${optHTML('furigana', 1, s.furigana, 'ふりがな', 'Furigana')}
-        ${optHTML('showEs', 1, s.showEs, '', 'Traducción')}${optHTML('showGroup', 1, s.showGroup, '', 'Grupo y tipo')}
+        ${optHTML('showEs', 1, s.showEs, '', 'Traducción')}${optHTML('showGroup', 1, s.showGroup, '', D.metaLabel)}
       </div></fieldset>`;
   }
 
@@ -379,7 +380,7 @@
     const displayOnly = ['showKanji', 'furigana', 'showEs', 'showGroup'].includes(name);
     if (displayOnly) { renderQuestion(); return; }
     rebuildPool();
-    if (!q || !comboEnabled(q.combo) || !settings.groups.includes(VERBS[q.verb].g)) next();
+    if (!q || !comboEnabled(q.combo) || !settings.groups.includes(VERBS[q.verb][D.classKey])) next();
   }
 
   // --- per-form stats ------------------------------------------------------------
@@ -410,7 +411,7 @@
   // --- wiring ----------------------------------------------------------------------
 
   function init() {
-    $('verb-count').textContent = VERBS.length;
+    $('item-count').textContent = VERBS.length;
     $('best').textContent = best;
     renderSettings();
     rebuildPool();
