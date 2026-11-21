@@ -412,6 +412,7 @@ window.VERBS = [
 {"k": "乗せる", "r": "のせる", "g": "2", "t": "tr", "es": "Colocar encima / subir a alguien", "ej": "車(くるま)に友達(ともだち)を乗(の)せます — Llevo a mi amigo en el coche"},
 {"k": "伸ばす", "r": "のばす", "g": "1", "t": "tr", "es": "Alargar, estirar", "ej": "髪(かみ)を伸(の)ばすことにしました — He decidido dejarme el pelo largo"},
 {"k": "伸びる", "r": "のびる", "g": "2", "t": "intr", "es": "Desarrollarse / crecer", "ej": "髪(かみ)が伸(の)びます — El pelo crece"},
+{"k": "述べる", "r": "のべる", "g": "2", "t": "tr", "es": "Exponer, expresar (una opinión)", "ej": "会議(かいぎ)で自分(じぶん)の意見(いけん)を述(の)べました — Expuse mi opinión en la reunión"},
 {"k": "登る", "r": "のぼる", "g": "1", "t": "intr", "es": "Escalar", "ej": "富士山(ふじさん)に登(のぼ)ります — Escalo el monte Fuji"},
 {"k": "飲む", "r": "のむ", "g": "1", "t": "tr", "es": "Beber", "ej": "水(みず)を飲(の)みます — Bebo agua"},
 {"k": "乗り換える", "r": "のりかえる", "g": "2", "t": "intr", "es": "Transbordar / cambiar de transporte", "ej": "新宿(しんじゅく)で電車(でんしゃ)を乗(の)り換(か)えます — Hago transbordo en Shinjuku"},
