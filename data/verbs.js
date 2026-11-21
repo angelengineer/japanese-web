@@ -325,6 +325,7 @@ window.VERBS = [
 {"k": "付ける", "r": "つける", "g": "2", "t": "tr", "es": "Poner, aplicar (crema, medicina)", "ej": "傷(きず)に薬(くすり)を付(つ)けます — Me aplico medicina en la herida"},
 {"k": "点ける", "r": "つける", "g": "2", "t": "tr", "es": "Encender", "ej": "テレビを点(つ)けます — Enciendo la tele"},
 {"k": "伝える", "r": "つたえる", "g": "2", "t": "tr", "es": "Transmitir / reportar", "ej": "メッセージを伝(つた)えます — Transmito el mensaje"},
+{"k": "伝わる", "r": "つたわる", "g": "1", "t": "intr", "es": "Transmitirse, llegar (una noticia, un sentimiento)", "ej": "地震(じしん)のニュースはすぐに世界中(せかいじゅう)に伝(つた)わりました — La noticia del terremoto llegó enseguida a todo el mundo"},
 {"k": "包む", "r": "つつむ", "g": "1", "t": "tr", "es": "Envolver / empaquetar", "ej": "プレゼントを包(つつ)みます — Envuelvo el regalo"},
 {"k": "続く", "r": "つづく", "g": "1", "t": "intr", "es": "Continuar, seguir", "ej": "雨(あめ)が三日(みっか)も続(つづ)いています — Lleva tres días seguidos lloviendo"},
 {"k": "続ける", "r": "つづける", "g": "2", "t": "tr", "es": "continuar", "ej": "日本語(にほんご)の勉強(べんきょう)を続(つづ)けます — Continúo estudiando japonés"},
