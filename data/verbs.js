@@ -472,6 +472,7 @@ window.VERBS = [
 {"k": "跨る", "r": "またがる", "g": "1", "t": "tr", "es": "montar a horcajadas, cruzar por encima", "ej": "馬(うま)に跨(またが)ります — Monto a horcajadas en el caballo"},
 {"k": "間違える", "r": "まちがえる", "g": "2", "t": "tr", "es": "Cometer un error", "ej": "漢字(かんじ)を間違(まちが)えます — Me equivoco con el kanji"},
 {"k": "待つ", "r": "まつ", "g": "1", "t": "tr", "es": "Esperar", "ej": "駅(えき)で友達(ともだち)を待(ま)ちます — Espero a mi amigo en la estación"},
+{"k": "まとめ上げる", "r": "まとめあげる", "g": "2", "t": "tr", "es": "Dejar recopilado y terminado", "ej": "ゼミの資料(しりょう)を一晩(ひとばん)でまとめ上(あ)げました — Dejé listo el material del seminario en una noche"},
 {"k": "纏める", "r": "まとめる", "g": "2", "t": "tr", "es": "Agrupar, juntar; resumir", "ej": "資料(しりょう)を一(ひと)つに纏(まと)めます — Agrupo los documentos en uno"},
 {"k": "学ぶ", "r": "まなぶ", "g": "1", "t": "tr", "es": "Aprender", "ej": "大学(だいがく)で経済(けいざい)を学(まな)びます — Estudio economía en la universidad"},
 {"k": "間に合う", "r": "まにあう", "g": "1", "t": "intr", "es": "Llegar a tiempo", "ej": "終電(しゅうでん)に間(ま)に合(あ)います — Llego a tiempo al último tren"},
